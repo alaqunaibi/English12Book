@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 09 – Unbelievable | وحدة 09 – لا يُصدَّق</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --en-bg: #fdf8f0;
+    --ar-bg: #eaf4fb;
+    --en-border: #e8c87a;
+    --ar-border: #7ab8d4;
+    --answer-bg: #d4edda;
+    --answer-color: #155724;
+    --header-bg: #2c3e6b;
+    --accent: #c0392b;
+    --gold: #d4a017;
+  }
+  body { font-family: 'Source Sans 3', sans-serif; background: #f5f5f5; font-size: 15px; }
+  h1,h2,h3 { font-family: 'Playfair Display', serif; }
+  .ar { font-family: 'Noto Naskh Arabic', serif; direction: rtl; text-align: right; }
+  .unit-header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 2rem;
+    border-bottom: 5px solid var(--gold);
+    text-align: center;
+  }
+  .unit-header h1 { font-size: 2.8rem; letter-spacing: 2px; margin-bottom: .3rem; }
+  .unit-header .subtitle { font-size: 1.1rem; opacity: .85; }
+  .section-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.10);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .section-header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: .7rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-header .ar { color: #f0d080; font-size: 1rem; }
+  .col-en { background: var(--en-bg); border-right: 3px solid var(--en-border); padding: 1rem 1.2rem; }
+  .col-ar { background: var(--ar-bg); border-left: 3px solid var(--ar-border); padding: 1rem 1.2rem; }
+  .answer { background: var(--answer-bg); color: var(--answer-color); font-weight: 700; border-radius: 4px; padding: 1px 6px; display: inline-block; }
+  .blank-filled { border-bottom: 2px solid var(--answer-color); background: var(--answer-bg); color: var(--answer-color); padding: 1px 8px; border-radius: 3px; font-weight: 700; }
+  .vocab-table th { background: var(--header-bg); color: #fff; font-size: .88rem; }
+  .vocab-table td { vertical-align: middle; font-size: .88rem; }
+  .vocab-table .ar { font-size: 1rem; }
+  .syn { color: #1a6e3a; font-weight: 600; }
+  .ant { color: #8b2500; font-weight: 600; }
+  .tab-btn { cursor: pointer; }
+  /* Exam */
+  .exam-section { background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 3px 12px rgba(0,0,0,.12); }
+  .q-card { background: #f9f9f9; border-left: 4px solid var(--header-bg); border-radius: 6px; padding: .9rem 1rem; margin-bottom: 1rem; }
+  .q-card .q-num { color: var(--header-bg); font-weight: 700; font-size: 1rem; }
+  .option-label { display: block; padding: .3rem .6rem; border-radius: 4px; cursor: pointer; margin-bottom: 3px; transition: background .15s; }
+  .option-label:hover { background: #e8f0ff; }
+  .option-label.correct-ans { background: #d4edda; color: #155724; font-weight: 700; }
+  .option-label.wrong-ans { background: #f8d7da; color: #721c24; }
+  .grade-box { background: var(--header-bg); color: #fff; border-radius: 10px; padding: 1.5rem; text-align: center; display: none; }
+  .grade-box .grade-num { font-size: 3.5rem; font-family: 'Playfair Display',serif; color: var(--gold); }
+  .search-box { position: sticky; top: 0; z-index: 100; background: #fff; padding: .6rem 1rem; border-bottom: 2px solid var(--en-border); }
+  .nav-pills .nav-link.active { background: var(--header-bg); }
+  .lesson-badge { background: var(--gold); color: #fff; border-radius: 20px; padding: 2px 12px; font-size: .8rem; font-weight: 700; display: inline-block; margin-bottom: .5rem; }
+  .expl-box { background: #fff8e1; border-left: 4px solid var(--gold); border-radius: 6px; padding: .7rem 1rem; margin-top: .5rem; }
+  .expl-box .ar { font-size: 1.05rem; color: #5a3e00; }
+  table.styled-ex td, table.styled-ex th { border: 1px solid #dee2e6; padding: .45rem .7rem; }
+  table.styled-ex { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  @media(max-width:767px){ .col-en,.col-ar { border-right: none; border-left: none; border-bottom: 2px solid #ccc; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="unit-header">
+  <div class="lesson-badge">Advanced English – Level B2/C1</div>
+  <h1>09 · Unbelievable</h1>
+  <p class="subtitle">Bilingual Study Sheet &nbsp;|&nbsp; <span class="ar" style="display:inline">ورقة دراسية ثنائية اللغة</span></p>
+  <p class="mt-2" style="font-size:.9rem;opacity:.7">Pages 38–47 &nbsp;·&nbsp; Vocabulary · Grammar · Listening · Speaking · Writing</p>
+</div>
+
+<!-- NAV TABS -->
+<div class="container-fluid mt-3">
+<ul class="nav nav-pills mb-3 flex-wrap" id="mainTabs">
+  <li class="nav-item"><a class="nav-link active tab-btn" href="#lessons" onclick="show('lessons')">📚 Lessons</a></li>
+  <li class="nav-item"><a class="nav-link tab-btn" href="#vocab" onclick="show('vocab')">📖 Vocabulary</a></li>
+  <li class="nav-item"><a class="nav-link tab-btn" href="#dict" onclick="show('dict')">🔍 Dictionary</a></li>
+  <li class="nav-item"><a class="nav-link tab-btn" href="#exam" onclick="show('exam')">✏️ Exam (50Q)</a></li>
+</ul>
+
+<!-- ===================== LESSONS ===================== -->
+<div id="lessons">
+
+<!-- LESSON 1A -->
+<div class="section-card">
+  <div class="section-header">
+    <span>LESSON 1A – Vocabulary & Speaking</span>
+    <span class="ar">الدرس الأول أ – المفردات والتحدث</span>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-6 col-en">
+      <div class="lesson-badge">Exercise 3 – Adjectives: Disbelief & Surprise</div>
+      <p><strong>Match adjectives to meanings:</strong></p>
+      <p><strong>1. You can't explain or believe it:</strong><br>
+        <span class="answer">baffling</span> / <span class="answer">mind-boggling</span> / <span class="answer">mystifying</span>
+      </p>
+      <p><strong>2. You can't look away:</strong><br>
+        <span class="answer">mesmerising</span> / <span class="answer">riveting</span>
+      </p>
+      <p><strong>3. You can't move; very exciting:</strong><br>
+        <span class="answer">breathtaking</span> / <span class="answer">electrifying</span> / <span class="answer">heart-stopping</span>
+      </p>
+    </div>
+    <div class="col-md-6 col-ar">
+      <div class="lesson-badge">تمرين 3 – الصفات: عدم التصديق والمفاجأة</div>
+      <p><strong>صِل الصفات بمعانيها:</strong></p>
+      <p><strong>١. لا تستطيع تفسيره أو تصديقه:</strong><br>
+        <span class="ar">baffling = محيِّر / mind-boggling = مدهش / mystifying = غامض</span>
+      </p>
+      <p><strong>٢. لا تستطيع أن تبعد نظرك عنه:</strong><br>
+        <span class="ar">mesmerising = آسِر / riveting = شيِّق</span>
+      </p>
+      <p><strong>٣. لا تستطيع الحركة؛ مثير جداً:</strong><br>
+        <span class="ar">breathtaking = مبهر / electrifying = مُشحون بالإثارة / heart-stopping = موقف للقلب</span>
+      </p>
+      <div class="expl-box">
+        <span class="ar">💡 نصيحة: هذه الصفات تُستخدم لوصف ردود الفعل تجاه الأوهام والعروض المذهلة. لاحظ أن كلها تأتي مع "completely" للتعبير عن الدرجة القصوى.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ex 4 -->
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Exercise 4 – Complete Sentences</div>
+      <ol>
+        <li>Whenever I see illusions like this, it's completely <span class="blank-filled">mind-boggling</span>.</li>
+        <li>The effect was completely <span class="blank-filled">mesmerising</span>.</li>
+        <li>At that age, the appearance of the building was completely <span class="blank-filled">breathtaking</span>.</li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">تمرين 4 – أكمل الجمل</div>
+      <ol class="ar">
+        <li>كلما رأيت أوهاماً كهذه، تكون مُدهِشة تماماً.</li>
+        <li>كان التأثير آسِراً تماماً.</li>
+        <li>في تلك السن، كان مظهر المبنى مبهراً تماماً.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Ex 5 -->
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Exercise 5 – Expressions: Disbelief & Surprise</div>
+      <p>Complete with: <em>aback, against, beats, belief, blew, bowled, heads, something, pulled, taken</em></p>
+      <p><strong>A:</strong> It had everyone scratching their <span class="blank-filled">heads</span>.</p>
+      <p><strong>B:</strong> It <span class="blank-filled">beats</span> me how it didn't fall. It seemed to go <span class="blank-filled">against</span> all the rules of gravity!</p>
+      <p><strong>C:</strong> It <span class="blank-filled">bowled</span> me over – I was completely <span class="blank-filled">taken</span> in by the clever illusions.</p>
+      <p><strong>D:</strong> Seeing yourself a completely different shape was <span class="blank-filled">something</span> else, mind-boggling.</p>
+      <p><strong>E:</strong> We had no idea how he <span class="blank-filled">pulled</span> it off!</p>
+      <p><strong>F:</strong> It completely defied <span class="blank-filled">belief</span>. I was really taken <span class="blank-filled">aback</span>.</p>
+      <p><strong>G:</strong> It completely <span class="blank-filled">blew</span> me away!</p>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">تمرين 5 – تعبيرات عدم التصديق والمفاجأة</div>
+      <div class="ar">
+        <p><strong>A:</strong> أربك الجميع تماماً (حرفياً: جعلهم يحكون رؤوسهم).</p>
+        <p><strong>B:</strong> it beats me = يُحيّرني تماماً | go against = يخالف/يعارض</p>
+        <p><strong>C:</strong> bowled me over = أذهلني | taken in = خُدعت/انبهرت</p>
+        <p><strong>D:</strong> something else = شيء لا يُوصف (تعبير غير رسمي)</p>
+        <p><strong>E:</strong> pulled it off = نجح في تنفيذه رغم صعوبته</p>
+        <p><strong>F:</strong> defied belief = تحدّى المنطق | taken aback = صُدم/فُوجئ</p>
+        <p><strong>G:</strong> blew me away = أذهلني/بهرني</p>
+      </div>
+      <div class="expl-box">
+        <span class="ar">💡 تعلّم هذه التعبيرات كوحدات كاملة لأنها تُستخدم في الكلام اليومي كثيراً عند التعبير عن الدهشة.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ex 6 Word Families -->
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Exercise 6 – Word Families (Article: "Would You Believe That?")</div>
+      <ol>
+        <li>deceptively (DECEIVE) – الكلمة: <span class="blank-filled">deceptively</span></li>
+        <li>believable (BELIEVE) – <span class="blank-filled">believable</span></li>
+        <li>assumption (ASSUME) – <span class="blank-filled">assumption</span></li>
+        <li>inexplicable (EXPLAIN) – <span class="blank-filled">inexplicable</span></li>
+        <li>deception (DECEIVE) – <span class="blank-filled">deception</span></li>
+        <li>imaginative (IMAGINE) – <span class="blank-filled">imaginative</span></li>
+        <li>convincing (CONVINCE) – <span class="blank-filled">convincing</span></li>
+        <li>illusory (ILLUSION) – <span class="blank-filled">illusory</span></li>
+        <li>realities (REALITY) – <span class="blank-filled">realities</span></li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">تمرين 6 – عائلات الكلمات</div>
+      <div class="ar">
+        <table class="styled-ex">
+          <tr><th>الكلمة الأصل</th><th>الإجابة</th><th>المعنى بالعربية</th></tr>
+          <tr><td>DECEIVE</td><td class="answer">deceptively</td><td>بشكل خادع</td></tr>
+          <tr><td>BELIEVE</td><td class="answer">believable</td><td>مقبول/يُصدَّق</td></tr>
+          <tr><td>ASSUME</td><td class="answer">assumption</td><td>افتراض</td></tr>
+          <tr><td>EXPLAIN</td><td class="answer">inexplicable</td><td>لا يمكن تفسيره</td></tr>
+          <tr><td>DECEIVE</td><td class="answer">deception</td><td>خداع</td></tr>
+          <tr><td>IMAGINE</td><td class="answer">imaginative</td><td>خيالي/مبدع</td></tr>
+          <tr><td>CONVINCE</td><td class="answer">convincing</td><td>مقنع</td></tr>
+          <tr><td>ILLUSION</td><td class="answer">illusory</td><td>وهمي/خيالي</td></tr>
+          <tr><td>REALITY</td><td class="answer">realities</td><td>حقائق/واقعيات</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 2A GRAMMAR -->
+<div class="section-card">
+  <div class="section-header">
+    <span>LESSON 2A – Grammar: Uses of WILL & WOULD</span>
+    <span class="ar">الدرس الثاني أ – قواعد: استخدامات will و would</span>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-6 col-en">
+      <div class="lesson-badge">Exercise 1 – Article: "What's the Method?" (correct form)</div>
+      <ol>
+        <li><span class="blank-filled">'ll hear</span> – highly likely in reviews</li>
+        <li><span class="blank-filled">will mean</span> – the term means different things</li>
+        <li><span class="blank-filled">'ll see</span> – you have seen recent reports</li>
+        <li><span class="blank-filled">probably be seeing</span> – something we'll see more of</li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar">
+      <div class="lesson-badge">تمرين 1 – المقالة: "ما هي الطريقة؟"</div>
+      <div class="ar">
+        <ol>
+          <li>'ll hear – تعبير عن احتمال عالٍ في المستقبل القريب</li>
+          <li>will mean – حقيقة عامة/تعريف</li>
+          <li>'ll see – المستقبل المتوقع</li>
+          <li>probably be seeing – المستقبل المستمر المتوقع</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Exercise 3 – Uses of WILL (Match a–f)</div>
+      <table class="styled-ex">
+        <tr><th>#</th><th>Use</th><th>Example</th></tr>
+        <tr><td>1</td><td>Certainty</td><td class="answer">d – That quote will be from a director</td></tr>
+        <tr><td>2</td><td>Typical behaviour</td><td class="answer">a – He'll research; f – He'll adopt unusual habits</td></tr>
+        <tr><td>3</td><td>Surprising behaviour</td><td class="answer">b – He will bring his character home</td></tr>
+        <tr><td>4</td><td>Insistence</td><td class="answer">b – He will bring… (emphatic stress)</td></tr>
+        <tr><td>5</td><td>Insistence in conditional</td><td class="answer">c – If he will keep accepting…</td></tr>
+        <tr><td>6</td><td>Replaces REFUSE</td><td class="answer">e – He won't discuss new projects</td></tr>
+      </table>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">تمرين 3 – استخدامات WILL</div>
+      <div class="ar">
+        <table class="styled-ex">
+          <tr><th>الاستخدام</th><th>الشرح</th></tr>
+          <tr><td>اليقين</td><td>متأكد تقريباً من شيء حاضر أو مستقبلي</td></tr>
+          <tr><td>السلوك المعتاد</td><td>عادة متكررة (مثل used to للماضي)</td></tr>
+          <tr><td>السلوك المفاجئ/المزعج</td><td>شيء يثير الانزعاج (مع النبرة)</td></tr>
+          <tr><td>الإصرار</td><td>الشخص يصرّ على فعل شيء ما</td></tr>
+          <tr><td>الإصرار في الشرط</td><td>If he will… = إذا أصرّ على…</td></tr>
+          <tr><td>رفض (won't)</td><td>won't = refuses to</td></tr>
+        </table>
+        <div class="expl-box mt-2">
+          <span>💡 الفرق الرئيسي: النبرة (word stress) هي التي تُحدد إذا كانت will تعبّر عن حقيقة أو عن ضيق/انزعاج.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Exercise 5 – Rewrite using WILL / WOULD</div>
+      <ol>
+        <li>If he <span class="blank-filled">will</span> work so hard, he's bound to be exhausted.</li>
+        <li>I <span class="blank-filled">would hope</span> for Darcy to get into drama school this autumn.</li>
+        <li>They <span class="blank-filled">'ll be</span> at the restaurant now.</li>
+        <li>Lauren <span class="blank-filled">won't have</span> fresh flowers backstage.</li>
+        <li>She <span class="blank-filled">'ll walk</span> up and down the corridor repeating her lines before the play.</li>
+        <li>That <span class="blank-filled">would be</span> my signature on the programme.</li>
+        <li>He <span class="blank-filled">'ll be waiting</span> in the wings just about to go on stage at this moment.</li>
+        <li>I <span class="blank-filled">would call</span> my grandmother every night at 9 to wish her good night.</li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">تمرين 5 – أعد الكتابة باستخدام will / would</div>
+      <div class="ar">
+        <ol>
+          <li>If he will work so hard… – إذا أصرّ على العمل بهذا الجهد</li>
+          <li>I would hope – أتمنى / أرجو (would يُليّن الأمل)</li>
+          <li>They'll be – اليقين في الحاضر</li>
+          <li>Lauren won't have – رفض/إصرار على عدم الفعل</li>
+          <li>She'll walk – سلوك معتاد</li>
+          <li>That would be – would يُبعّد/يُليّن التأكيد</li>
+          <li>He'll be waiting – يقين في اللحظة الحالية</li>
+          <li>I would call – عادة متكررة في الماضي (= used to)</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCH OUT BOX -->
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc; background:#fff8e8;">
+      <div class="lesson-badge">⚠ WATCH OUT! – Will vs Would</div>
+      <ul>
+        <li><strong>will → would</strong> when talking about the past (typical past behaviour)</li>
+        <li>Use <strong>would</strong> to soften/distance: <em>"That would be my responsibility"</em></li>
+        <li>Many uses of <em>will</em> refer to someone else's behaviour (annoying/surprising)</li>
+      </ul>
+      <p><em>He will take on these difficult roles.</em> → <em>He would take on those difficult roles.</em> (past)</p>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc; background:#fff8e8;">
+      <div class="lesson-badge">⚠ تحذير: will مقابل would</div>
+      <div class="ar">
+        <ul>
+          <li>يمكن استبدال will بـ would عند الحديث عن الماضي (عادة ماضية)</li>
+          <li>would يُستخدم لتليين التأكيد أو إبداء الرأي بأدب</li>
+          <li>الكثير من استخدامات will تصف سلوك شخص آخر (مُزعج أو مفاجئ)</li>
+        </ul>
+        <p>He <strong>will</strong> take on difficult roles (حاضر/مزعج) ↔ He <strong>would</strong> take on difficult roles (ماضٍ)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 3A SPEAKING -->
+<div class="section-card">
+  <div class="section-header">
+    <span>LESSON 3A – Speaking: Making Speculations</span>
+    <span class="ar">الدرس الثالث أ – التحدث: صياغة التخمينات</span>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-6 col-en">
+      <div class="lesson-badge">Key Vocabulary</div>
+      <p><strong>hyperphantasia</strong> – extreme mental imagery (can vividly visualise anything)</p>
+      <p><strong>aphantasia</strong> – inability to visualise images mentally</p>
+      <div class="lesson-badge mt-2">Exercise 3 – Complete Speculations</div>
+      <ol>
+        <li>I'm <span class="blank-filled">pretty sure / certain</span> that it <span class="blank-filled">must</span> affect all sorts of aspects of their lives.</li>
+        <li>I <span class="blank-filled">would imagine</span> that if he's always had this problem, he <span class="blank-filled">must have had</span> to live with it.</li>
+        <li>That's <span class="blank-filled">exactly</span> what artists have, wouldn't you say?</li>
+        <li>It <span class="blank-filled">seems</span> that a picture just pops into their brain.</li>
+        <li>I <span class="blank-filled">doubt</span> that <span class="blank-filled">would</span> work.</li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar">
+      <div class="lesson-badge">مفردات أساسية</div>
+      <div class="ar">
+        <p><strong>hyperphantasia</strong> = فرط التخيّل البصري (قدرة مبالغة على تصوّر الصور الذهنية)</p>
+        <p><strong>aphantasia</strong> = العمى الخيالي (عدم القدرة على تخيّل الصور ذهنياً)</p>
+      </div>
+      <div class="lesson-badge mt-2">تمرين 3 – أكمل التخمينات</div>
+      <div class="ar">
+        <ol>
+          <li>I'm pretty sure / certain – أنا متأكد تقريباً</li>
+          <li>I would imagine – أتخيّل / أفترض</li>
+          <li>That's exactly – هذا بالضبط ما يملكه الفنانون</li>
+          <li>It seems – يبدو أن</li>
+          <li>I doubt that would work – أشك في أن ذلك سينجح</li>
+        </ol>
+      </div>
+      <div class="expl-box">
+        <span class="ar">💡 عبارات التخمين تتغير بحسب الزمن: للحاضر = must be، للماضي = must have been، للمستقبل = will probably be.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Speaking Box -->
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Speaking Box – Key Phrases for Speculation</div>
+      <table class="styled-ex">
+        <tr><th>Phrase</th><th>Time</th></tr>
+        <tr><td>It might involve / have involved …</td><td>Present / Past</td></tr>
+        <tr><td>She must be / have been …</td><td>Present / Past</td></tr>
+        <tr><td>I would imagine they'll / they have …</td><td>Future / Past</td></tr>
+        <tr><td>It's highly likely that they'll …</td><td>Future</td></tr>
+        <tr><td>My gut feeling is that …</td><td>Any</td></tr>
+        <tr><td>It could well be / have been …</td><td>Present / Past</td></tr>
+        <tr><td>I'd say it's pretty certain that …</td><td>Any</td></tr>
+      </table>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">عبارات التخمين – الترجمة</div>
+      <div class="ar">
+        <table class="styled-ex">
+          <tr><th>العبارة</th><th>الزمن</th></tr>
+          <tr><td>قد يتضمن / قد كان يتضمن</td><td>حاضر/ماضٍ</td></tr>
+          <tr><td>يجب أن تكون / كانت</td><td>حاضر/ماضٍ</td></tr>
+          <tr><td>أتخيل أنهم سيقررون / قد قرروا</td><td>مستقبل/ماضٍ</td></tr>
+          <tr><td>من المرجح جداً أنهم سـ…</td><td>مستقبل</td></tr>
+          <tr><td>حدسي يقول أن…</td><td>أي زمن</td></tr>
+          <tr><td>يمكن أن يكون / كان</td><td>حاضر/ماضٍ</td></tr>
+          <tr><td>أرى أنه من المؤكد تقريباً أن…</td><td>أي زمن</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 4A LISTENING -->
+<div class="section-card">
+  <div class="section-header">
+    <span>LESSON 4A – Listening & Vocabulary: Dreams</span>
+    <span class="ar">الدرس الرابع أ – الاستماع والمفردات: الأحلام</span>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-6 col-en">
+      <div class="lesson-badge">Exercise 6 – Adjective-Noun Collocations (Dreams)</div>
+      <p>Fill with: <em>broken, graphic, light, deep, recurring, vivid</em></p>
+      <ol>
+        <li>I often get a <span class="blank-filled">broken</span> night's sleep.</li>
+        <li>I used to get very <span class="blank-filled">vivid</span> dreams when I was a child.</li>
+        <li>A friend always gives a <span class="blank-filled">graphic</span> description of his dreams.</li>
+        <li>It's hard to wake me up when I'm in <span class="blank-filled">deep</span> sleep.</li>
+        <li>I'm quite a <span class="blank-filled">light</span> sleeper.</li>
+        <li>My <span class="blank-filled">recurring</span> dreams are definitely anxiety-based.</li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar">
+      <div class="lesson-badge">تمرين 6 – تلازمات الصفة والاسم (الأحلام)</div>
+      <div class="ar">
+        <ol>
+          <li>broken night's sleep = نوم متقطع/مضطرب</li>
+          <li>vivid dreams = أحلام حية/واضحة جداً</li>
+          <li>graphic description = وصف مفصّل وصريح</li>
+          <li>deep sleep = نوم عميق</li>
+          <li>light sleeper = شخص ينام خفيفاً (يستيقظ بسهولة)</li>
+          <li>recurring dreams = أحلام متكررة</li>
+        </ol>
+        <div class="expl-box">
+          <span>💡 تعلّم هذه التلازمات كوحدات لأنها الأكثر استخداماً في وصف النوم والأحلام.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5A READING -->
+<div class="section-card">
+  <div class="section-header">
+    <span>LESSON 5A – Reading & Vocabulary: Nature's Illusions</span>
+    <span class="ar">الدرس الخامس أ – القراءة والمفردات: أوهام الطبيعة</span>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-6 col-en">
+      <div class="lesson-badge">Exercise 5 – Collocations with Verbs</div>
+      <p><em>disregard, have, lay, make, open, ridicule</em></p>
+      <ol>
+        <li>The company needs to <span class="blank-filled">lay</span> to rest the rumours.</li>
+        <li>People need to <span class="blank-filled">have</span> an open mind.</li>
+        <li>The police are planning to <span class="blank-filled">open</span> an investigation.</li>
+        <li>No one can <span class="blank-filled">disregard</span> the possibility.</li>
+        <li>It's rude to <span class="blank-filled">ridicule</span> someone's ideas.</li>
+        <li>The newspapers <span class="blank-filled">made</span> detailed mention of the claims.</li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar">
+      <div class="lesson-badge">تمرين 5 – التلازمات اللفظية</div>
+      <div class="ar">
+        <ol>
+          <li>lay to rest = يُنهي/يُخمد (الشائعات)</li>
+          <li>have an open mind = يكون ذو عقل متفتح</li>
+          <li>open an investigation = يفتح تحقيقاً</li>
+          <li>disregard = يتجاهل/يرفض الاعتراف</li>
+          <li>ridicule = يسخر من</li>
+          <li>make mention = يذكر/يشير</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Exercise 6 – Collocations with RAISE</div>
+      <ol>
+        <li>raised <span class="blank-filled">questions</span> about authenticity</li>
+        <li>raising <span class="blank-filled">awareness</span> of world health issues</li>
+        <li>raised <span class="blank-filled">doubts</span> about readiness</li>
+        <li>raised a few <span class="blank-filled">eyebrows</span> (unexpected choice)</li>
+        <li>raised <span class="blank-filled">hopes</span> that medications will improve</li>
+        <li>raise his <span class="blank-filled">voice</span> to be heard</li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">تمرين 6 – التلازمات مع RAISE</div>
+      <div class="ar">
+        <ol>
+          <li>raise questions = يُثير تساؤلات</li>
+          <li>raise awareness = يرفع الوعي/ينشر الوعي</li>
+          <li>raise doubts = يُثير الشكوك</li>
+          <li>raise eyebrows = يُثير الاستغراب (تعبير اصطلاحي)</li>
+          <li>raise hopes = يعطي أملاً/يرفع الآمال</li>
+          <li>raise one's voice = يرفع صوته</li>
+        </ol>
+        <div class="expl-box">
+          <span>💡 raise eyebrows = رد فعل مفاجئ من الناس تجاه خبر غير متوقع. مثال: "The decision raised eyebrows among experts."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Commenters -->
+  <div class="row g-0">
+    <div class="col-md-6 col-en" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">Exercise 3 – Commenters A–D Answers</div>
+      <ol>
+        <li>Doesn't agree about reliability → <span class="answer">D (JameelaB2B)</span></li>
+        <li>Didn't learn anything new → <span class="answer">C (Samia2532)</span> or B</li>
+        <li>Doesn't expect partner to see an illusion → <span class="answer">A (Issa008)</span></li>
+        <li>Made a point of seeing illusions → <span class="answer">B (Kamal_79)</span></li>
+        <li>Gave reason for popularity → <span class="answer">C (Samia2532)</span></li>
+      </ol>
+    </div>
+    <div class="col-md-6 col-ar" style="border-top:2px dashed #ccc">
+      <div class="lesson-badge">تمرين 3 – المعلّقون أ-د</div>
+      <div class="ar">
+        <ol>
+          <li>D – جامعة لا تتفق مع موثوقية الخبراء</li>
+          <li>C – سامية لم تتعلم شيئاً جديداً</li>
+          <li>A – عصى لا يتوقع أن ترى زوجته وهماً محدداً</li>
+          <li>B – كمال زار الأوهام الطبيعية بنفسه</li>
+          <li>C – سامية ذكرت سبب شعبية الوثائقي</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 6A WRITING -->
+<div class="section-card">
+  <div class="section-header">
+    <span>LESSON 6A – Writing: A Proposal</span>
+    <span class="ar">الدرس السادس أ – الكتابة: اقتراح رسمي</span>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-6 col-en">
+      <div class="lesson-badge">Exercise 3 – Writing Box (Key Phrases)</div>
+      <table class="styled-ex">
+        <tr><th>Section</th><th>Phrase</th><th>Word</th></tr>
+        <tr><td>Introduction</td><td>The ___ of this proposal is to…</td><td class="answer">purpose</td></tr>
+        <tr><td>Current Situation</td><td>One of our main ___</td><td class="answer">priorities</td></tr>
+        <tr><td>Current Situation</td><td>A ___ aspect of what we do</td><td class="answer">key</td></tr>
+        <tr><td>Current Situation</td><td>What is ___ at the moment</td><td class="answer">lacking</td></tr>
+        <tr><td>Recommendations</td><td>This would ___ that…</td><td class="answer">ensure</td></tr>
+        <tr><td>Recommendations</td><td>… would ___ the issue of</td><td class="answer">address</td></tr>
+        <tr><td>Recommendations</td><td>… would ___ us to…</td><td class="answer">enable</td></tr>
+        <tr><td>Recommendations</td><td>There is no ___ that…</td><td class="answer">doubt</td></tr>
+        <tr><td>Conclusion</td><td>To ___ the current…</td><td class="answer">maintain</td></tr>
+        <tr><td>Conclusion</td><td>I would ___ you to consider…</td><td class="answer">urge</td></tr>
+        <tr><td>Conclusion</td><td>I feel ___ that you will…</td><td class="answer">confident</td></tr>
+        <tr><td>Conclusion</td><td>Give this proposal your full ___</td><td class="answer">consideration</td></tr>
+      </table>
+    </div>
+    <div class="col-md-6 col-ar">
+      <div class="lesson-badge">تمرين 3 – عبارات كتابة الاقتراح</div>
+      <div class="ar">
+        <table class="styled-ex">
+          <tr><th>القسم</th><th>الترجمة</th></tr>
+          <tr><td>المقدمة</td><td>الهدف من هذا الاقتراح هو…</td></tr>
+          <tr><td>الوضع الحالي</td><td>إحدى أولوياتنا الرئيسية هي…</td></tr>
+          <tr><td>الوضع الحالي</td><td>جانب أساسي مما نقوم به…</td></tr>
+          <tr><td>الوضع الحالي</td><td>ما يفتقر إليه الوضع حالياً…</td></tr>
+          <tr><td>التوصيات</td><td>هذا من شأنه أن يضمن…</td></tr>
+          <tr><td>التوصيات</td><td>سيعالج المشكلة المتعلقة بـ…</td></tr>
+          <tr><td>التوصيات</td><td>سيمكّننا من…</td></tr>
+          <tr><td>التوصيات</td><td>لا شك في أن…</td></tr>
+          <tr><td>الخاتمة</td><td>للحفاظ على الوضع الحالي…</td></tr>
+          <tr><td>الخاتمة</td><td>أحثّك على النظر في…</td></tr>
+          <tr><td>الخاتمة</td><td>أشعر بالثقة أنك ستأخذ هذا الاقتراح بجدية</td></tr>
+          <tr><td>الخاتمة</td><td>آمل أن تمنح هذا الاقتراح اهتمامك الكامل</td></tr>
+        </table>
+        <div class="expl-box mt-2">
+          <span>💡 بنية الاقتراح الرسمي: مقدمة ← الوضع الحالي ← الاحتياجات والفوائد ← التوصيات ← الخاتمة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end #lessons -->
+
+<!-- ===================== VOCABULARY ===================== -->
+<div id="vocab" style="display:none">
+<div class="section-card">
+  <div class="section-header">
+    <span>Unit 09 – Complete Vocabulary Summary</span>
+    <span class="ar">ملخص المفردات الكامل</span>
+  </div>
+  <div class="row g-0">
+    <div class="col-md-6 col-en">
+      <h5 class="p-3">Adjectives: Disbelief & Surprise</h5>
+      <table class="styled-ex mx-3" style="width:95%">
+        <tr><th>Word</th><th>Meaning</th></tr>
+        <tr><td>baffling</td><td>impossible to understand</td></tr>
+        <tr><td>breathtaking</td><td>so beautiful/exciting it takes your breath away</td></tr>
+        <tr><td>electrifying</td><td>extremely exciting, thrilling</td></tr>
+        <tr><td>heart-stopping</td><td>so exciting/scary your heart seems to stop</td></tr>
+        <tr><td>mesmerising</td><td>holding attention completely</td></tr>
+        <tr><td>mind-boggling</td><td>impossible to comprehend</td></tr>
+        <tr><td>mystifying</td><td>very puzzling, hard to explain</td></tr>
+        <tr><td>riveting</td><td>completely engaging, can't look away</td></tr>
+      </table>
+      <h5 class="p-3 mt-2">Key Expressions</h5>
+      <table class="styled-ex mx-3" style="width:95%">
+        <tr><th>Expression</th><th>Meaning</th></tr>
+        <tr><td>scratching their heads</td><td>puzzled/confused</td></tr>
+        <tr><td>beats me</td><td>I have no idea / baffles me</td></tr>
+        <tr><td>go against</td><td>contradict / oppose</td></tr>
+        <tr><td>bowled me over</td><td>overwhelmed/amazed me</td></tr>
+        <tr><td>taken in</td><td>deceived / fooled</td></tr>
+        <tr><td>something else</td><td>extraordinary (informal)</td></tr>
+        <tr><td>pulled it off</td><td>succeeded in doing something difficult</td></tr>
+        <tr><td>defy belief</td><td>be impossible to believe</td></tr>
+        <tr><td>taken aback</td><td>shocked/surprised</td></tr>
+        <tr><td>blew me away</td><td>overwhelmed/amazed me</td></tr>
+      </table>
+    </div>
+    <div class="col-md-6 col-ar">
+      <h5 class="p-3 ar">صفات: عدم التصديق والمفاجأة</h5>
+      <table class="styled-ex mx-3" style="width:95%">
+        <tr><th>الكلمة</th><th class="ar">المعنى بالعربية</th></tr>
+        <tr><td>baffling</td><td class="ar">محيِّر / مُربِك</td></tr>
+        <tr><td>breathtaking</td><td class="ar">مبهر / يسلب الأنفاس</td></tr>
+        <tr><td>electrifying</td><td class="ar">مثير للغاية / مُكهرب</td></tr>
+        <tr><td>heart-stopping</td><td class="ar">يوقف القلب من الإثارة</td></tr>
+        <tr><td>mesmerising</td><td class="ar">آسِر / ساحر</td></tr>
+        <tr><td>mind-boggling</td><td class="ar">يُبهر العقل / لا يُصدَّق</td></tr>
+        <tr><td>mystifying</td><td class="ar">غامض / محيِّر</td></tr>
+        <tr><td>riveting</td><td class="ar">شيِّق / جذّاب</td></tr>
+      </table>
+      <h5 class="p-3 mt-2 ar">التعبيرات الاصطلاحية الرئيسية</h5>
+      <table class="styled-ex mx-3" style="width:95%">
+        <tr><th>التعبير</th><th class="ar">المعنى</th></tr>
+        <tr><td>scratching their heads</td><td class="ar">في حيرة تامة</td></tr>
+        <tr><td>beats me</td><td class="ar">لا أعرف / يُحيّرني</td></tr>
+        <tr><td>go against</td><td class="ar">يخالف / يعارض</td></tr>
+        <tr><td>bowled me over</td><td class="ar">أذهلني / أدهشني</td></tr>
+        <tr><td>taken in</td><td class="ar">خُدع / انبهر</td></tr>
+        <tr><td>something else</td><td class="ar">شيء لا يُوصف (عامي)</td></tr>
+        <tr><td>pulled it off</td><td class="ar">نجح في شيء صعب</td></tr>
+        <tr><td>defy belief</td><td class="ar">يتحدى المنطق</td></tr>
+        <tr><td>taken aback</td><td class="ar">صُدم / فُوجئ</td></tr>
+        <tr><td>blew me away</td><td class="ar">بهرني تماماً</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== DICTIONARY ===================== -->
+<div id="dict" style="display:none">
+<div class="section-card">
+  <div class="section-header">
+    <span>📖 Bilingual Searchable Vocabulary Dictionary</span>
+    <span class="ar">قاموس مفردات ثنائي اللغة قابل للبحث</span>
+  </div>
+  <div class="p-3">
+    <div class="search-box">
+      <input type="text" id="dictSearch" class="form-control" placeholder="🔍 Search word... / ابحث عن كلمة..." oninput="filterDict()">
+    </div>
+    <div class="table-responsive mt-2">
+      <table class="table table-bordered table-hover vocab-table" id="dictTable">
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Example (EN)</th>
+            <th class="ar">المعنى (عربي)</th>
+            <th>English Meaning</th>
+            <th class="syn">SYN</th>
+            <th class="ant">ANT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>baffling</strong></td><td>The magic trick was completely baffling – no one could explain it.</td><td class="ar">محيِّر / مُربِك</td><td>impossible to understand or explain</td><td class="syn">puzzling, mystifying, bewildering</td><td class="ant">clear, straightforward</td></tr>
+          <tr><td><strong>breathtaking</strong></td><td>The view from the mountain top was breathtaking.</td><td class="ar">مبهر / يسلب الأنفاس</td><td>astonishing or awe-inspiring</td><td class="syn">stunning, spectacular, awe-inspiring</td><td class="ant">dull, unremarkable</td></tr>
+          <tr><td><strong>electrifying</strong></td><td>The performer gave an electrifying show that the crowd loved.</td><td class="ar">مثير للغاية / مُشعِّر بالإثارة</td><td>causing a sudden feeling of excitement</td><td class="syn">thrilling, exhilarating, rousing</td><td class="ant">dull, boring, flat</td></tr>
+          <tr><td><strong>heart-stopping</strong></td><td>The acrobat's heart-stopping leap left the audience speechless.</td><td class="ar">يُوقف القلب / مثير للرعب والإثارة معاً</td><td>so exciting or frightening that it seems to stop your heart</td><td class="syn">thrilling, terrifying, exhilarating</td><td class="ant">mundane, routine</td></tr>
+          <tr><td><strong>mesmerising</strong></td><td>The dancer's mesmerising performance held everyone's attention.</td><td class="ar">آسِر / يجذب الانتباه كلياً</td><td>holding someone's attention completely</td><td class="syn">hypnotic, riveting, captivating</td><td class="ant">boring, dull, distracting</td></tr>
+          <tr><td><strong>mind-boggling</strong></td><td>The scale of the universe is truly mind-boggling.</td><td class="ar">يُبهر العقل / لا يُصدَّق</td><td>so large or complex that it is hard to comprehend</td><td class="syn">staggering, astonishing, baffling</td><td class="ant">comprehensible, simple</td></tr>
+          <tr><td><strong>mystifying</strong></td><td>The magician's mystifying tricks had the children open-mouthed.</td><td class="ar">غامض / محيِّر</td><td>impossible to understand or explain</td><td class="syn">puzzling, baffling, perplexing</td><td class="ant">obvious, transparent</td></tr>
+          <tr><td><strong>riveting</strong></td><td>The documentary was so riveting I couldn't turn it off.</td><td class="ar">شيِّق / جذّاب للغاية</td><td>completely engrossing; impossible to look away from</td><td class="syn">gripping, compelling, absorbing</td><td class="ant">boring, tedious</td></tr>
+          <tr><td><strong>deceptive</strong></td><td>The calm surface of the river was deceptive – it was actually very fast.</td><td class="ar">مضلِّل / خادع</td><td>giving a false impression; misleading</td><td class="syn">misleading, illusory, false</td><td class="ant">genuine, straightforward</td></tr>
+          <tr><td><strong>deceitful</strong></td><td>He was a deceitful person who lied to get what he wanted.</td><td class="ar">كاذب / غشّاش</td><td>dishonest; intended to deceive</td><td class="syn">dishonest, fraudulent, untrustworthy</td><td class="ant">honest, sincere, trustworthy</td></tr>
+          <tr><td><strong>illusion</strong></td><td>The oasis turned out to be an illusion created by the heat.</td><td class="ar">وهم / خداع بصري</td><td>something that appears to exist but doesn't, or misleads the senses</td><td class="syn">mirage, delusion, hallucination</td><td class="ant">reality, truth, fact</td></tr>
+          <tr><td><strong>illusory</strong></td><td>The profits were illusory – the company was actually losing money.</td><td class="ar">وهمي / خيالي / غير حقيقي</td><td>not real; based on illusion</td><td class="syn">imaginary, deceptive, unreal</td><td class="ant">real, genuine, actual</td></tr>
+          <tr><td><strong>assumption</strong></td><td>The report was based on the assumption that costs would remain stable.</td><td class="ar">افتراض / تخمين غير مدروس</td><td>something accepted as true without proof</td><td class="syn">presumption, supposition, hypothesis</td><td class="ant">fact, certainty, proof</td></tr>
+          <tr><td><strong>convincing</strong></td><td>The actor gave a convincing performance as the villain.</td><td class="ar">مقنع / موثوق</td><td>able to make someone believe something is true</td><td class="syn">persuasive, compelling, believable</td><td class="ant">unconvincing, implausible</td></tr>
+          <tr><td><strong>inexplicable</strong></td><td>Her inexplicable behaviour left her friends confused and worried.</td><td class="ar">لا يمكن تفسيره</td><td>unable to be explained or understood</td><td class="syn">incomprehensible, mysterious, baffling</td><td class="ant">explicable, understandable, clear</td></tr>
+          <tr><td><strong>hyperphantasia</strong></td><td>People with hyperphantasia can vividly visualise any scene they imagine.</td><td class="ar">فرط التخيّل البصري</td><td>an ability to experience extremely vivid mental imagery</td><td class="syn">vivid imagination</td><td class="ant">aphantasia</td></tr>
+          <tr><td><strong>aphantasia</strong></td><td>Because of aphantasia, he cannot picture his mother's face in his mind.</td><td class="ar">العمى الخيالي / عدم القدرة على التخيّل</td><td>inability to visualise images mentally</td><td class="syn">visual imagination deficit</td><td class="ant">hyperphantasia</td></tr>
+          <tr><td><strong>speculation</strong></td><td>There was a lot of speculation about who would win the prize.</td><td class="ar">تخمين / تكهّن</td><td>the act of forming theories without firm evidence</td><td class="syn">conjecture, hypothesis, guesswork</td><td class="ant">certainty, fact, proof</td></tr>
+          <tr><td><strong>recurring</strong></td><td>She had a recurring dream about being chased through a forest.</td><td class="ar">متكرر / يعود مراراً</td><td>happening or appearing repeatedly</td><td class="syn">repeated, persistent, regular</td><td class="ant">unique, once-off, rare</td></tr>
+          <tr><td><strong>vivid</strong></td><td>She has such vivid memories of her childhood holiday.</td><td class="ar">حيّ / واضح جداً / زاهٍ</td><td>producing strong, clear images in the mind</td><td class="syn">clear, lifelike, graphic, sharp</td><td class="ant">vague, blurry, faint</td></tr>
+          <tr><td><strong>lucid (dream)</strong></td><td>In a lucid dream, you are aware that you are dreaming.</td><td class="ar">حلم واضح / حلم واعٍ</td><td>a dream in which the dreamer is aware they are dreaming</td><td class="syn">conscious dreaming</td><td class="ant">non-lucid dream</td></tr>
+          <tr><td><strong>reputable</strong></td><td>Always consult reputable sources when doing research.</td><td class="ar">موثوق / ذو سمعة طيبة</td><td>generally considered to be honest and reliable</td><td class="syn">trustworthy, credible, respected</td><td class="ant">disreputable, unreliable</td></tr>
+          <tr><td><strong>far-fetched</strong></td><td>The idea that aliens built the pyramids seems far-fetched.</td><td class="ar">متعسَّف / بعيد المنال / غير معقول</td><td>unlikely and hard to believe</td><td class="syn">implausible, unconvincing, absurd</td><td class="ant">plausible, credible, reasonable</td></tr>
+          <tr><td><strong>compelling</strong></td><td>The documentary was so compelling that I watched it twice.</td><td class="ar">مُقنع / جذّاب لدرجة لا تُقاوَم</td><td>evoking interest, attention, or admiration in a forceful way</td><td class="syn">riveting, gripping, persuasive</td><td class="ant">unconvincing, dull, weak</td></tr>
+          <tr><td><strong>underwhelmed</strong></td><td>I was underwhelmed by the film – it didn't meet my expectations.</td><td class="ar">غير مبهور / محبَط من شيء دون التوقعات</td><td>failing to impress or make a positive impact</td><td class="syn">disappointed, unimpressed, let down</td><td class="ant">overwhelmed, amazed, impressed</td></tr>
+          <tr><td><strong>patronising</strong></td><td>He spoke to the students in a patronising way, as if they were children.</td><td class="ar">متعالٍ / مُتصاغِر بشكل مُزعج</td><td>treating someone as if they are less intelligent</td><td class="syn">condescending, dismissive, superior</td><td class="ant">respectful, humble, considerate</td></tr>
+          <tr><td><strong>reluctant</strong></td><td>She was reluctant to travel so far from home.</td><td class="ar">متردد / غير راغب</td><td>unwilling or hesitant</td><td class="syn">unwilling, hesitant, disinclined</td><td class="ant">eager, willing, keen</td></tr>
+          <tr><td><strong>intriguing</strong></td><td>The documentary was far more intriguing than I expected.</td><td class="ar">مثير للاهتمام / يُثير الفضول</td><td>arousing one's curiosity or interest</td><td class="syn">fascinating, captivating, compelling</td><td class="ant">boring, dull, uninteresting</td></tr>
+          <tr><td><strong>elaborate</strong></td><td>The artist created an elaborate illusion using just mirrors.</td><td class="ar">مُفصَّل / معقّد / متقن</td><td>involving many carefully arranged parts; detailed and complicated</td><td class="syn">complex, intricate, detailed</td><td class="ant">simple, basic, straightforward</td></tr>
+          <tr><td><strong>insistence</strong></td><td>Despite his insistence, no one believed his story.</td><td class="ar">إصرار / تمسّك</td><td>the act of demanding or insisting on something</td><td class="syn">persistence, determination, stubbornness</td><td class="ant">flexibility, compliance</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===================== EXAM ===================== -->
+<div id="exam" style="display:none">
+<div class="exam-section">
+  <h3 class="text-center mb-1" style="color:var(--header-bg)">📝 Unit 09 – Final Exam</h3>
+  <p class="text-center text-muted mb-3">50 Multiple Choice Questions | اختبار من 50 سؤال اختيار من متعدد</p>
+  <div id="examQuestions"></div>
+  <div class="text-center mt-4">
+    <button class="btn btn-lg" style="background:var(--header-bg);color:#fff" onclick="submitExam()">✔ Submit & See Results | تسليم الاختبار</button>
+  </div>
+  <div class="grade-box mt-4" id="gradeBox">
+    <div class="grade-num" id="gradeNum"></div>
+    <p id="gradeTxt" style="font-size:1.2rem"></p>
+    <hr style="border-color:#fff4">
+    <div id="answerKey" class="text-start" style="font-size:.88rem;max-height:400px;overflow-y:auto"></div>
+  </div>
+</div>
+</div>
+
+</div><!-- container -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function show(id){
+  ['lessons','vocab','dict','exam'].forEach(s=>{
+    document.getElementById(s).style.display = s===id?'block':'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('href')==='#'+id);
+  });
+}
+
+function filterDict(){
+  const q = document.getElementById('dictSearch').value.toLowerCase();
+  document.querySelectorAll('#dictTable tbody tr').forEach(r=>{
+    r.style.display = r.textContent.toLowerCase().includes(q)?'':'none';
+  });
+}
+
+// ============ EXAM DATA ============
+const questions = [
+  {q:"Which adjective means 'impossible to explain or understand'?", opts:["breathtaking","baffling","riveting","electrifying"], ans:1},
+  {q:"Which adjective means 'you can't look away; completely engaging'?", opts:["heart-stopping","baffling","mesmerising","mystifying"], ans:2},
+  {q:"'Breathtaking' belongs to which category of adjectives?", opts:["You can't look away","You can't move; very exciting","You can't explain it","You can't hear"], ans:1},
+  {q:"Complete: 'The performance had everyone scratching their ___.'", opts:["heads","eyes","hands","feet"], ans:0},
+  {q:"'It beats me how it didn't fall' means:", opts:["I know exactly how","I find it confusing / I have no idea","I can explain it","I'm not interested"], ans:1},
+  {q:"'Bowled me over' means:", opts:["knocked me down physically","disappointed me","overwhelmed/amazed me","bored me completely"], ans:2},
+  {q:"'Taken aback' means:", opts:["moved backwards","shocked/surprised","cheated","excited"], ans:1},
+  {q:"'Pulled it off' means:", opts:["removed something","failed at something","succeeded at something difficult","gave up"], ans:2},
+  {q:"'Blew me away' is equivalent in meaning to:", opts:["bored me","confused me","overwhelmed/amazed me","frightened me"], ans:2},
+  {q:"'Defy belief' means:", opts:["to support logic","to be impossible to believe","to argue strongly","to accept facts"], ans:1},
+  {q:"From the word DECEIVE, which word means 'giving a false impression' (adjective)?", opts:["deception","deceitful","deceptive","deceivable"], ans:2},
+  {q:"From the word DECEIVE, which word means 'deliberately dishonest' (adjective)?", opts:["deceptive","deceptively","deceitful","deceit"], ans:2},
+  {q:"The word formed from ASSUME (noun) is:", opts:["assumption","assumptive","assumed","assumable"], ans:0},
+  {q:"INEXPLICABLE is formed from which root word?", opts:["ASSUME","EXPLAIN","BELIEVE","ILLUSION"], ans:1},
+  {q:"'The worlds created are ___ (ILLUSION)' – correct form:", opts:["illusionary","illusively","illusory","illusive"], ans:2},
+  {q:"'She must be / have been extremely busy' – this phrase is used for:", opts:["certainty only","speculation in present or past","commands","refusal"], ans:1},
+  {q:"Which use of 'will' is shown here: 'He'll research his character thoroughly'?", opts:["Certainty","Insistence","Typical behaviour","Replaces refuse"], ans:2},
+  {q:"Which use of 'will' is shown: 'He won't discuss new projects in the early stages'?", opts:["Certainty","Replaces refuse in present tense","Typical behaviour","Surprising behaviour"], ans:1},
+  {q:"'If he will keep accepting the sorts of parts he does…' – this use of 'will' is:", opts:["Certainty","Insistence as part of a conditional","Typical behaviour","Replaces refuse"], ans:1},
+  {q:"'That quote will be from a director of the play.' – this use of 'will' expresses:", opts:["Typical behaviour","Surprising behaviour","Certainty","Insistence"], ans:2},
+  {q:"'He will bring his character home with him!' (with stress on WILL) expresses:", opts:["certainty about the future","typical calm behaviour","irritation at repeated behaviour","a polite request"], ans:2},
+  {q:"'Would' can replace 'will' when talking about:", opts:["the future","the present","the past","polite requests only"], ans:2},
+  {q:"'That would be my signature on the programme.' Here 'would' is used to:", opts:["express refusal","soften/distance the statement","talk about the future","express certainty"], ans:1},
+  {q:"'I would call my grandmother every night at 9.' This is equivalent to:", opts:["I will call","I used to call","I am calling","I must call"], ans:1},
+  {q:"Rewrite using WILL: 'Lauren refuses to have fresh flowers backstage.' → Lauren ___ fresh flowers backstage.", opts:["will have","won't have","would have","shall have"], ans:1},
+  {q:"Aphantasia is:", opts:["ability to visualise very clearly","inability to voluntarily visualise images","extreme mental imagery","a type of optical illusion"], ans:1},
+  {q:"Hyperphantasia is:", opts:["inability to dream","extreme/vivid mental imagery","fear of illusions","colour blindness"], ans:1},
+  {q:"'It seems that a picture just pops into their brain.' – 'It seems' is used for:", opts:["expressing certainty","making a speculation","giving a command","asking a question"], ans:1},
+  {q:"'I doubt that would work.' – 'I doubt' expresses:", opts:["confidence","agreement","scepticism/disbelief","surprise"], ans:2},
+  {q:"'My gut feeling is that…' is a phrase used for:", opts:["scientific facts","speculation based on instinct","polite refusal","expressing irritation"], ans:1},
+  {q:"'I'm pretty certain that it must affect all sorts of aspects' – this sentence contains how many speculation phrases?", opts:["one","two","three","none"], ans:1},
+  {q:"A 'recurring' dream is one that:", opts:["is very vivid","happens only once","happens repeatedly","is very frightening"], ans:2},
+  {q:"'Vivid dreams' are dreams that are:", opts:["very faint and forgettable","very clear and lifelike","very confusing","very short"], ans:1},
+  {q:"'Broken night's sleep' means:", opts:["sleeping very deeply","sleeping in a damaged bed","sleeping that is frequently interrupted","sleeping for too long"], ans:2},
+  {q:"'Light sleeper' means a person who:", opts:["sleeps during the day only","wakes easily at small sounds","is very lazy","never dreams"], ans:1},
+  {q:"'Deep sleep' is characterised by:", opts:["dreaming vividly","being easy to wake","being very difficult to wake","snoring loudly"], ans:2},
+  {q:"'Graphic description' of a dream means:", opts:["artistic/drawn description","very detailed and explicit description","a short summary","a confused account"], ans:1},
+  {q:"The text says: 'Research has shown us that dreaming is definitely an essential part of our nightly recuperation programme.' Is this a:", opts:["fact","opinion","speculation","command"], ans:0},
+  {q:"According to the text, many people insist they do not dream because:", opts:["they never dream","they dream too much","they have no memory of it","they are too tired"], ans:2},
+  {q:"Commenter A (Issa008) about the documentary:", opts:["was bored and found nothing new","loved it but his wife is reluctant to travel far","disagreed with the experts","thought it was patronising"], ans:1},
+  {q:"Commenter B (Kamal_79) felt the documentary:", opts:["was excellent with no flaws","could have used better examples","was too technical","was patronising"], ans:1},
+  {q:"Commenter C (Samia2532) felt the documentary:", opts:["was brilliant and educational","was informative and exciting","was underwhelming and patronising","raised new questions"], ans:2},
+  {q:"Commenter D (JameelaB2B) found some explanations:", opts:["too simple","far-fetched","convincing","too detailed"], ans:1},
+  {q:"Complete: 'People need to ___ an open mind about further research.'", opts:["make","keep","have","do"], ans:2},
+  {q:"Complete: 'The police are planning to ___ an investigation.'", opts:["make","open","do","raise"], ans:1},
+  {q:"Complete: 'The investigation raised ___ about the authenticity of the reports.'", opts:["discussions","questions","debates","arguments"], ans:1},
+  {q:"Complete: 'Celebrities do a lot of work in raising ___ of world health issues.'", opts:["knowledge","attention","awareness","understanding"], ans:2},
+  {q:"'Raise eyebrows' means:", opts:["look surprised physically","cause surprise/disapproval among people","lift something carefully","ask a difficult question"], ans:1},
+  {q:"In a proposal, 'The ___ of this proposal is to outline…' – the missing word is:", opts:["aim / purpose","reason","cause","point"], ans:0},
+  {q:"'I would ___ you to consider this proposal favourably.' – the correct word is:", opts:["ask","urge","tell","request"], ans:1},
+];
+
+function buildExam(){
+  const container = document.getElementById('examQuestions');
+  questions.forEach((q,i)=>{
+    const div = document.createElement('div');
+    div.className = 'q-card';
+    div.id = 'qcard'+i;
+    let optsHtml = q.opts.map((o,j)=>`
+      <label class="option-label" id="opt${i}_${j}">
+        <input type="radio" name="q${i}" value="${j}" style="margin-right:6px"> ${String.fromCharCode(65+j)}. ${o}
+      </label>`).join('');
+    div.innerHTML = `<div class="q-num">Q${i+1}. </div><div class="mb-2">${q.q}</div>${optsHtml}`;
+    container.appendChild(div);
+  });
+}
+
+function submitExam(){
+  let score = 0;
+  let keyHtml = '<table class="table table-sm table-bordered" style="color:#fff;font-size:.8rem"><thead><tr><th>#</th><th>Your Answer</th><th>Correct</th><th>✓/✗</th></tr></thead><tbody>';
+  questions.forEach((q,i)=>{
+    const sel = document.querySelector(`input[name="q${i}"]:checked`);
+    const chosen = sel ? parseInt(sel.value) : -1;
+    const correct = q.ans;
+    const isRight = chosen === correct;
+    if(isRight) score++;
+    // colour the labels
+    for(let j=0;j<q.opts.length;j++){
+      const lbl = document.getElementById(`opt${i}_${j}`);
+      if(j===correct) lbl.classList.add('correct-ans');
+      else if(j===chosen && !isRight) lbl.classList.add('wrong-ans');
+    }
+    keyHtml += `<tr><td>${i+1}</td><td>${chosen>=0?String.fromCharCode(65+chosen)+'. '+q.opts[chosen]:'—'}</td><td>${String.fromCharCode(65+correct)+'. '+q.opts[correct]}</td><td>${isRight?'✅':'❌'}</td></tr>`;
+  });
+  keyHtml += '</tbody></table>';
+  const pct = Math.round(score/questions.length*100);
+  let msg = pct>=90?'🏆 Excellent! ممتاز':pct>=75?'👍 Good job! جيد':pct>=60?'📚 Keep studying! استمر في الدراسة':'💪 Review the material! راجع المادة';
+  document.getElementById('gradeNum').textContent = score + ' / ' + questions.length + ' (' + pct + '%)';
+  document.getElementById('gradeTxt').textContent = msg;
+  document.getElementById('answerKey').innerHTML = keyHtml;
+  const gb = document.getElementById('gradeBox');
+  gb.style.display = 'block';
+  gb.scrollIntoView({behavior:'smooth'});
+}
+
+buildExam();
+</script>
+</body>
+</html>

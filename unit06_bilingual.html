@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 06 – Feels Good | ورقة دراسة ثنائية اللغة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root {
+    --ivory:        #fdf6e3;
+    --ivory-dark:   #f5e9c9;
+    --blue-light:   #e8f4fd;
+    --blue-mid:     #d0eaf8;
+    --teal:         #0d6e6e;
+    --teal-light:   #1a9090;
+    --gold:         #c8961a;
+    --answer-green: #1a7a3f;
+    --answer-bg:    #d4f0e2;
+    --pink:         #c0356b;
+    --dark:         #1a1a2e;
+    --shadow:       0 4px 20px rgba(0,0,0,0.10);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8f0ea 100%);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* ── HERO HEADER ── */
+  .hero {
+    background: linear-gradient(120deg, #0d6e6e 0%, #1a1a2e 60%, #c0356b 100%);
+    color: #fff;
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '06';
+    position: absolute; left: -10px; top: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14rem; font-weight: 900;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+  }
+  .hero-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-title-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem; font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .hero-title-ar {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    color: #fde68a;
+    margin-top: 0.3rem;
+  }
+  .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 1.4rem; }
+  .hero-badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px; padding: 4px 16px;
+    font-size: 0.78rem; backdrop-filter: blur(4px);
+  }
+
+  /* ── LESSON HEADERS ── */
+  .lesson-header {
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 100%);
+    color: #fff;
+    border-radius: 14px 14px 0 0;
+    padding: 1rem 1.6rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .lesson-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 900;
+    color: var(--gold); line-height: 1;
+  }
+  .lesson-title-en { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .lesson-title-ar { font-family: 'Amiri', serif; font-size: 1.1rem; color: #fde68a; }
+
+  /* ── SECTION CARD ── */
+  .section-card {
+    background: #fff;
+    border-radius: 0 0 14px 14px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+  }
+
+  /* ── TWO-COLUMN EN/AR LAYOUT ── */
+  .bilingual-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .col-en {
+    background: var(--ivory);
+    padding: 1.5rem 1.8rem;
+    border-right: 3px solid var(--ivory-dark);
+    direction: ltr;
+  }
+  .col-ar {
+    background: var(--blue-light);
+    padding: 1.5rem 1.8rem;
+    direction: rtl;
+    font-family: 'Amiri', serif;
+  }
+
+  @media (max-width: 768px) {
+    .bilingual-row { grid-template-columns: 1fr; }
+    .col-en { border-right: none; border-bottom: 3px solid var(--ivory-dark); }
+  }
+
+  /* ── LABELS ── */
+  .lang-label {
+    font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 2px 10px; border-radius: 20px;
+    display: inline-block; margin-bottom: 0.7rem;
+  }
+  .label-en { background: var(--teal); color: #fff; }
+  .label-ar { background: #2563eb; color: #fff; }
+
+  /* ── ANSWERS (green highlight) ── */
+  .answer {
+    background: var(--answer-bg);
+    color: var(--answer-green);
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 1px 7px;
+    border-bottom: 2px solid var(--answer-green);
+    white-space: nowrap;
+  }
+  .answer-block {
+    background: var(--answer-bg);
+    border-left: 4px solid var(--answer-green);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin: 0.4rem 0;
+    direction: ltr;
+  }
+  .answer-block-ar {
+    background: #e0f2f1;
+    border-right: 4px solid var(--answer-green);
+    border-left: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin: 0.4rem 0;
+    direction: rtl;
+    font-family: 'Amiri', serif;
+  }
+
+  /* ── ACTIVE VOCABULARY BOX ── */
+  .vocab-box {
+    background: #fff9e6;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .vocab-box-title {
+    font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--gold); margin-bottom: 0.6rem;
+  }
+
+  /* ── ARTICLE PARAGRAPHS ── */
+  .article-body {
+    background: #fdfcf9;
+    border-radius: 10px;
+    padding: 1.4rem 1.8rem;
+    border: 1px solid #e8e0cc;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    direction: ltr;
+  }
+  .article-body p { margin-bottom: 0.9rem; }
+  .article-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900;
+    color: var(--teal);
+    float: left; margin-right: 8px; line-height: 1;
+  }
+
+  .article-body-ar {
+    background: #f0f8ff;
+    border-radius: 10px;
+    padding: 1.4rem 1.8rem;
+    border: 1px solid #c3e0f5;
+    font-size: 1.05rem;
+    line-height: 2;
+    direction: rtl;
+    font-family: 'Amiri', serif;
+  }
+
+  /* ── EXERCISE TABLES ── */
+  .ex-table { width: 100%; border-collapse: collapse; }
+  .ex-table th {
+    background: var(--teal);
+    color: #fff; padding: 0.6rem 1rem;
+    font-size: 0.85rem; font-weight: 600;
+  }
+  .ex-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #e8e8e8; }
+  .ex-table tr:nth-child(even) td { background: #f9f9f9; }
+  .ex-table tr:hover td { background: #f0f8f4; }
+
+  /* ── VOCAB DICTIONARY TABLE ── */
+  .dict-table { width: 100%; border-collapse: collapse; direction: ltr; }
+  .dict-table th {
+    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    color: #fff; padding: 0.75rem 1rem;
+    font-size: 0.85rem; font-weight: 700;
+    text-align: left;
+  }
+  .dict-table th:last-child { text-align: right; direction: rtl; font-family: 'Amiri', serif; }
+  .dict-table td { padding: 0.65rem 1rem; border-bottom: 1px solid #e0e8e0; vertical-align: top; }
+  .dict-table tr:nth-child(even) td { background: #f5fbf5; }
+  .dict-table .word { font-weight: 700; color: var(--teal); font-size: 1rem; }
+  .dict-table .example { color: #555; font-style: italic; font-size: 0.88rem; }
+  .dict-table .meaning-ar { direction: rtl; font-family: 'Amiri', serif; font-size: 1.05rem; color: #1d4ed8; text-align: right; }
+
+  /* ── EXERCISE ITEMS ── */
+  .ex-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e8e0d0;
+    display: flex; gap: 0.7rem; align-items: flex-start;
+  }
+  .ex-num { font-weight: 700; color: var(--teal); min-width: 1.4rem; }
+
+  /* ── GRAMMAR REFERENCE BOX ── */
+  .grammar-box {
+    background: linear-gradient(135deg, #fff9e6, #fef3c7);
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .grammar-box-title { color: var(--gold); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+
+  /* ── WATCH OUT BOX ── */
+  .watchout-box {
+    background: #fff0f5;
+    border: 2px solid var(--pink);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .watchout-title { color: var(--pink); font-weight: 800; font-size: 0.95rem; }
+
+  /* ── LIFE SKILLS BOX ── */
+  .lifeskills-box {
+    background: linear-gradient(135deg, #e6f0ff, #dbeafe);
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .lifeskills-title { color: #1d4ed8; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+
+  /* ── AR EXPLANATION BOX ── */
+  .ar-explain {
+    background: linear-gradient(135deg, #e0f2fe, #bfdbfe);
+    border-right: 4px solid #2563eb;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    margin: 0.6rem 0;
+    direction: rtl;
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #1e3a8a;
+  }
+  .ar-explain-title { font-weight: 700; font-size: 1.05rem; color: #1d4ed8; display: block; margin-bottom: 0.3rem; }
+
+  /* ── SECTION DIVIDER ── */
+  .sec-divider {
+    text-align: center; padding: 0.5rem 0;
+    color: var(--teal); font-weight: 700;
+    font-size: 0.8rem; text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-top: 1px dashed var(--teal);
+    margin: 1.2rem 0;
+  }
+
+  /* ── BADGES ── */
+  .badge-purpose { background: var(--teal); color: #fff; border-radius: 20px; padding: 2px 10px; font-size: 0.75rem; }
+  .badge-answer { background: var(--answer-green); color: #fff; border-radius: 20px; padding: 2px 10px; font-size: 0.75rem; }
+
+  /* ── WRITING BOX ── */
+  .writing-box {
+    background: #f0fff4;
+    border: 2px solid #22c55e;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+  }
+  .writing-box-title { color: #16a34a; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+
+  /* ── ARTICLE HEADING LABELS ── */
+  .para-label {
+    display: inline-block;
+    background: var(--teal);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900;
+    width: 2.2rem; height: 2.2rem;
+    border-radius: 50%; text-align: center; line-height: 2.2rem;
+    margin-right: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  /* TOC */
+  .toc-card {
+    background: linear-gradient(135deg, var(--teal) 0%, #1a4040 100%);
+    color: #fff; border-radius: 14px;
+    padding: 1.5rem 2rem; margin-bottom: 2rem;
+  }
+  .toc-card a { color: #fde68a; text-decoration: none; }
+  .toc-card a:hover { text-decoration: underline; color: #fff; }
+
+  h5 { font-weight: 700; color: var(--teal); }
+  h6 { font-weight: 700; color: var(--pink); }
+  .fw-bold { font-weight: 700 !important; }
+  .text-teal { color: var(--teal) !important; }
+  .text-pink { color: var(--pink) !important; }
+
+  .container-xl { max-width: 1380px; }
+
+  /* Print */
+  @media print {
+    .hero { break-after: always; }
+    .section-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     HERO HEADER
+════════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-num">06</div>
+  <div class="hero-title-en">Feels Good</div>
+  <div class="hero-title-ar">يبدو جيداً — ورقة دراسة ثنائية اللغة</div>
+  <div class="hero-meta">
+    <span class="hero-badge">📖 VOCABULARY · المفردات</span>
+    <span class="hero-badge">📝 GRAMMAR · القواعد</span>
+    <span class="hero-badge">👁 READING · القراءة</span>
+    <span class="hero-badge">👂 LISTENING · الاستماع</span>
+    <span class="hero-badge">🗣 SPEAKING · التحدث</span>
+    <span class="hero-badge">✍️ WRITING · الكتابة</span>
+    <span class="hero-badge">💪 LIFE SKILLS · مهارات الحياة</span>
+  </div>
+</div>
+
+<div class="container-xl py-4 px-3 px-md-4">
+
+<!-- ═══════ TABLE OF CONTENTS ═══════ -->
+<div class="toc-card">
+  <div class="row">
+    <div class="col-md-6" dir="ltr">
+      <h5 class="text-white mb-2">📋 Contents</h5>
+      <ul class="list-unstyled mb-0" style="font-size:0.9rem;">
+        <li><a href="#lesson1a">Lesson 1A – Vocabulary & Speaking</a></li>
+        <li><a href="#lesson2a">Lesson 2A – Reading & Vocabulary</a></li>
+        <li><a href="#article1">Article: Put on a Brave Face!</a></li>
+        <li><a href="#lesson3a">Lesson 3A – Grammar</a></li>
+        <li><a href="#lesson4a">Lesson 4A – Listening & Vocabulary</a></li>
+        <li><a href="#lesson5a">Lesson 5A – Speaking</a></li>
+        <li><a href="#lesson6a">Lesson 6A – Writing & Vocabulary</a></li>
+        <li><a href="#article2">Article: Forest Bathing</a></li>
+        <li><a href="#lifeskills">Life Skills: Developing Resilience</a></li>
+        <li><a href="#dictionary">📚 Bilingual Vocabulary Dictionary</a></li>
+      </ul>
+    </div>
+    <div class="col-md-6" dir="rtl">
+      <h5 class="text-white mb-2">📋 المحتويات</h5>
+      <ul class="list-unstyled mb-0" style="font-size:0.9rem; font-family:'Amiri',serif; color:#fde68a;">
+        <li>الدرس 1أ — المفردات والتحدث</li>
+        <li>الدرس 2أ — القراءة والمفردات</li>
+        <li>مقالة: ارتدِ وجهاً شجاعاً!</li>
+        <li>الدرس 3أ — القواعد النحوية</li>
+        <li>الدرس 4أ — الاستماع والمفردات</li>
+        <li>الدرس 5أ — التحدث</li>
+        <li>الدرس 6أ — الكتابة والمفردات</li>
+        <li>مقالة: الاستحمام في الغابة</li>
+        <li>مهارات الحياة: تطوير المرونة</li>
+        <li>📚 قاموس المفردات الثنائي</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     LESSON 1A
+════════════════════════════════════════════════ -->
+<div id="lesson1a">
+  <div class="lesson-header">
+    <div class="lesson-num">1A</div>
+    <div>
+      <div class="lesson-title-en">VOCABULARY AND SPEAKING</div>
+      <div class="lesson-title-ar">المفردات والتحدث — لغة الجسد</div>
+    </div>
+  </div>
+  <div class="section-card">
+
+    <!-- Exercise 1 -->
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">English</span>
+        <h5>Exercise 1 – Speaking: Discuss the questions</h5>
+        <div class="ex-item"><span class="ex-num">1</span> What do you first notice when you meet someone new?</div>
+        <div class="ex-item"><span class="ex-num">2</span> What do you think you can learn from a person's body language?</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">عربي</span>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">تمرين 1 — التحدث: ناقش الأسئلة</h5>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 شرح للطالب</span>
+          هذه أسئلة للنقاش الجماعي لتنشيط التفكير حول لغة الجسد (Body Language).
+          لغة الجسد هي الإشارات غير اللفظية التي نعبّر بها عن مشاعرنا.
+        </div>
+        <div class="ex-item" style="font-family:'Amiri',serif; direction:rtl;"><span class="ex-num">1</span> ما أول شيء تلاحظه عند مقابلة شخص جديد؟</div>
+        <div class="ex-item" style="font-family:'Amiri',serif; direction:rtl;"><span class="ex-num">2</span> ما الذي تعتقد أنك تستطيع تعلّمه من لغة جسد الشخص؟</div>
+      </div>
+    </div>
+
+    <!-- Exercise 2+3 - Body Language Survey with ANSWERS -->
+    <div class="bilingual-row" style="border-top: 2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 3 – Completed Survey ✅</span>
+        <h5>Body Language Survey — <em>Do you…?</em></h5>
+        <p class="text-muted" style="font-size:0.85rem;">Match each gesture with the emotion it shows. Answers in <span class="answer">green</span>.</p>
+        <div class="ex-item"><span class="ex-num">1</span> fold your arms when feeling <span class="answer">defensive</span>?</div>
+        <div class="ex-item"><span class="ex-num">2</span> purse your lips when you are <span class="answer">irritated</span>?</div>
+        <div class="ex-item"><span class="ex-num">3</span> furrow your brow when you are <span class="answer">concentrating</span>?</div>
+        <div class="ex-item"><span class="ex-num">4</span> drum your fingers when you are <span class="answer">impatient</span>?</div>
+        <div class="ex-item"><span class="ex-num">5</span> rub your hands together when you are <span class="answer">excited</span>?</div>
+        <div class="ex-item"><span class="ex-num">6</span> tilt your head when you are <span class="answer">attentive</span>?</div>
+        <div class="ex-item"><span class="ex-num">7</span> cross your ankles when you are <span class="answer">nervous</span>?</div>
+        <div class="ex-item"><span class="ex-num">8</span> tent your fingers when you are <span class="answer">in control</span>?</div>
+        <div class="ex-item"><span class="ex-num">9</span> wrinkle your nose when you find something <span class="answer">distasteful</span>?</div>
+        <div class="ex-item"><span class="ex-num">10</span> stroke your chin when you are <span class="answer">indecisive</span>?</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الإجابات مع الترجمة</span>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">استطلاع لغة الجسد — الإجابات الكاملة</h5>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 ملاحظة للطالب</span>
+          في هذا التمرين نربط كل حركة من حركات الجسد بالمشاعر المقابلة لها.
+          تعلّم هذه المصطلحات لأنها مهمة جداً في وصف المشاعر بالإنجليزية.
+        </div>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar"><strong>1. يطوي ذراعيه</strong> — عندما يشعر بـ <span class="answer">التحفّظ / الدفاعية (defensive)</span></div>
+          <div class="answer-block-ar"><strong>2. يضمّ شفتيه</strong> — عندما يكون <span class="answer">متهيّجاً / منزعجاً (irritated)</span></div>
+          <div class="answer-block-ar"><strong>3. يقطّب حاجبيه</strong> — عندما يكون <span class="answer">مركّزاً (concentrating)</span></div>
+          <div class="answer-block-ar"><strong>4. يطرق أصابعه</strong> — عندما يكون <span class="answer">غير صبور (impatient)</span></div>
+          <div class="answer-block-ar"><strong>5. يفرك يديه</strong> — عندما يكون <span class="answer">متحمساً (excited)</span></div>
+          <div class="answer-block-ar"><strong>6. يميل رأسه</strong> — عندما يكون <span class="answer">منتبهاً (attentive)</span></div>
+          <div class="answer-block-ar"><strong>7. يتقاطع كاحلاه</strong> — عندما يكون <span class="answer">متوتراً (nervous)</span></div>
+          <div class="answer-block-ar"><strong>8. يرفع أصابعه كخيمة</strong> — عندما يكون <span class="answer">في موضع السيطرة (in control)</span></div>
+          <div class="answer-block-ar"><strong>9. يجعّد أنفه</strong> — عندما يجد شيئاً <span class="answer">مثيراً للاشمئزاز (distasteful)</span></div>
+          <div class="answer-block-ar"><strong>10. يتحسّس ذقنه</strong> — عندما يكون <span class="answer">مترددًا (indecisive)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Vocabulary: Collocations -->
+    <div class="bilingual-row" style="border-top: 2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <div class="vocab-box">
+          <div class="vocab-box-title">⭐ ACTIVE VOCABULARY | Collocations</div>
+          <p>Collocations are words that naturally go together. A common collocation is <strong>verb + noun</strong>, e.g., <em>tilt your head</em>.</p>
+          <p>• <strong>Strong collocations</strong>: the connection is fixed — e.g., <em>She pursed her lips. He clapped his hands.</em></p>
+          <p>• <strong>Weak collocations</strong>: a word collocates with many others — e.g., <em>tilt</em> collocates with head, chin, but also boat, chair, plane.</p>
+        </div>
+      </div>
+      <div class="col-ar">
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 المتلازمات اللفظية (Collocations)</span>
+          المتلازمات اللفظية هي كلمات تُستخدم معاً بشكل طبيعي في اللغة الإنجليزية.<br>
+          مثال: <strong>tilt your head</strong> = تميل رأسك (لا يمكن استبدال tilt بـ bend)<br><br>
+          <strong>متلازمة قوية</strong>: الكلمة ترتبط بكلمة واحدة فقط — مثل: purse your lips (تضمّ شفتيك)<br>
+          <strong>متلازمة ضعيفة</strong>: الكلمة تُستخدم مع كلمات كثيرة — مثل: tilt مع head أو boat أو chair
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 5 & 6 - Blog + Collocations -->
+    <div class="bilingual-row" style="border-top: 2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 6 – Collocations Completed ✅</span>
+        <h5>Complete the collocations from the blog</h5>
+        <p class="text-muted" style="font-size:0.85rem;">Box: <em>clear  flick  grind  shrug  twirl</em></p>
+        <div class="ex-item"><span class="ex-num">1</span> I usually have to <span class="answer">clear</span> my throat before speaking to an audience.</div>
+        <div class="ex-item"><span class="ex-num">2</span> My mum took my brother to the dentist because he <span class="answer">grinds</span> his teeth when he's asleep.</div>
+        <div class="ex-item"><span class="ex-num">3</span> I asked Imad if he could help me and he simply <span class="answer">shrugged</span> his shoulders.</div>
+        <div class="ex-item"><span class="ex-num">4</span> It's so annoying when my sister <span class="answer">twirls</span> her hair in her fingers while she's talking.</div>
+        <div class="ex-item"><span class="ex-num">5</span> I always know when it's time for a haircut because I start needing to <span class="answer">flick</span> my hair back from my face.</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الإجابات + الشرح</span>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">أكمل المتلازمات اللفظية</h5>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 شرح الأفعال المستخدمة</span>
+          <strong>clear</strong> (يُخلخل — يُنحنح): clear your throat = يتنحنح<br>
+          <strong>grind</strong> (يطحن): grind your teeth = يصرف أسنانه<br>
+          <strong>shrug</strong> (يرفع): shrug your shoulders = يرفع كتفيه بلا مبالاة<br>
+          <strong>twirl</strong> (يلفّ): twirl your hair = يلفّ شعره<br>
+          <strong>flick</strong> (يرمي بخفة): flick your hair back = يرمي شعره للخلف
+        </div>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">1. يتنحنح = <span class="answer">clear</span> his throat</div>
+          <div class="answer-block-ar">2. يصرف أسنانه = <span class="answer">grinds</span> his teeth</div>
+          <div class="answer-block-ar">3. يرفع كتفيه = <span class="answer">shrugged</span> his shoulders</div>
+          <div class="answer-block-ar">4. تلفّ شعرها = <span class="answer">twirls</span> her hair</div>
+          <div class="answer-block-ar">5. يرمي شعره للخلف = <span class="answer">flick</span> my hair back</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /section-card -->
+</div><!-- /lesson1a -->
+
+
+<!-- ═══════════════════════════════════════════════
+     LESSON 2A
+════════════════════════════════════════════════ -->
+<div id="lesson2a">
+  <div class="lesson-header">
+    <div class="lesson-num">2A</div>
+    <div>
+      <div class="lesson-title-en">READING AND VOCABULARY</div>
+      <div class="lesson-title-ar">القراءة والمفردات — المشاعر</div>
+    </div>
+  </div>
+  <div class="section-card">
+
+    <!-- Exercise 1 - Match emotions -->
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 1 – Match Emotions ✅</span>
+        <h5>Match emotions with close synonyms</h5>
+        <table class="ex-table mt-2">
+          <thead><tr><th>Synonym</th><th>Emotion from box</th></tr></thead>
+          <tbody>
+            <tr><td>1 admiration</td><td><span class="answer">awe</span></td></tr>
+            <tr><td>2 fear</td><td><span class="answer">apprehension</span></td></tr>
+            <tr><td>3 calmness</td><td><span class="answer">serenity</span></td></tr>
+            <tr><td>4 disrespect</td><td><span class="answer">contempt</span></td></tr>
+            <tr><td>5 anger</td><td><span class="answer">rage</span></td></tr>
+            <tr><td>6 expectation</td><td><span class="answer">anticipation</span></td></tr>
+            <tr><td>7 hatred</td><td><span class="answer">loathing</span></td></tr>
+            <tr><td>8 regret</td><td><span class="answer">remorse</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الإجابات + المعاني</span>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">أوجه التشابه بين المشاعر</h5>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 مفردات المشاعر الأساسية</span>
+        </div>
+        <table class="ex-table mt-2" dir="rtl" style="font-family:'Amiri',serif;">
+          <thead><tr><th>الكلمة الإنجليزية</th><th>المعنى بالعربية</th></tr></thead>
+          <tbody>
+            <tr><td><span class="answer">awe</span></td><td>الإعجاب / الرهبة</td></tr>
+            <tr><td><span class="answer">apprehension</span></td><td>الخشية / القلق</td></tr>
+            <tr><td><span class="answer">serenity</span></td><td>الهدوء / السكينة</td></tr>
+            <tr><td><span class="answer">contempt</span></td><td>الازدراء / الاحتقار</td></tr>
+            <tr><td><span class="answer">rage</span></td><td>الغضب الشديد</td></tr>
+            <tr><td><span class="answer">anticipation</span></td><td>الترقّب / التوقّع</td></tr>
+            <tr><td><span class="answer">loathing</span></td><td>الكره الشديد / البغض</td></tr>
+            <tr><td><span class="answer">remorse</span></td><td>الندم</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Exercise 2 - Writer's Purpose -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 2 – Writer's Purpose ✅</span>
+        <h5>Tick all sentences showing the writer's purpose</h5>
+        <div class="ex-item"><span class="ex-num">✅ 1</span> to point out how negative emotions can show themselves physically</div>
+        <div class="ex-item"><span class="ex-num">❌ 2</span> to advise on ways to maintain a calm outer appearance</div>
+        <div class="ex-item"><span class="ex-num">❌ 3</span> to name resources which can improve our outlook</div>
+        <div class="ex-item"><span class="ex-num">✅ 4</span> to connect what we feel with the face we show to the world</div>
+        <div class="ex-item"><span class="ex-num">❌ 5</span> to explain how we mentally process negative emotions</div>
+        <div class="ex-item"><span class="ex-num">✅ 6</span> to warn that not being genuine may have a negative impact on us</div>
+        <div class="ex-item"><span class="ex-num">❌ 7</span> to underline dangers of working where customers' emotions are valued</div>
+        <div class="ex-item"><span class="ex-num">✅ 8</span> to urge the reader to improve health by displaying or hiding emotions</div>
+        <div class="vocab-box mt-3">
+          <div class="vocab-box-title">⭐ ACTIVE READING | Understanding Purpose and Function</div>
+          <p>To understand the purpose of a text, think about: <strong>Who will read it? What type of text is it? How does it affect the reader?</strong></p>
+          <p>Look at the title, visuals, style, tone and vocabulary used.</p>
+        </div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الإجابات + الشرح</span>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">فهم الغرض من النص</h5>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 كيف تحدد هدف الكاتب؟</span>
+          لتحديد هدف الكاتب، اسأل نفسك:<br>
+          ✔ من سيقرأ هذا النص؟<br>
+          ✔ ما نوع النص؟ (مقالة، قصة، تقرير...)<br>
+          ✔ كيف يؤثر النص في القارئ؟
+        </div>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">✅ 1 — لتوضيح كيف تظهر المشاعر السلبية جسدياً</div>
+          <div class="answer-block-ar">✅ 4 — لربط مشاعرنا الداخلية بالوجه الذي نُظهره للعالم</div>
+          <div class="answer-block-ar">✅ 6 — للتحذير من أن عدم الصدق قد يؤثر سلباً على صحتنا</div>
+          <div class="answer-block-ar">✅ 8 — لحثّ القارئ على تحسين صحته بالتعبير عن مشاعره أو إخفائها حسب الحاجة</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 3 - Rewrite using highlighted words -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 3 – Rewrite with Highlighted Words ✅</span>
+        <h5>Replace underlined words using words from the article</h5>
+        <div class="ex-item"><span class="ex-num">1</span> he always <u>indulged in self-pity</u> → he always <span class="answer">wallowed</span> in self-pity</div>
+        <div class="ex-item"><span class="ex-num">2</span> <u>flooded with offers</u> → <span class="answer">inundated</span> with offers</div>
+        <div class="ex-item"><span class="ex-num">3</span> <u>hide my excitement</u> → <span class="answer">suppress</span> my excitement</div>
+        <div class="ex-item"><span class="ex-num">4</span> <u>tries hard to consult</u> → <span class="answer">endeavours</span> to engage / concern themselves with</div>
+        <div class="ex-item"><span class="ex-num">5</span> <u>make the problem worse</u> → <span class="answer">exacerbate</span> the problem</div>
+        <div class="ex-item"><span class="ex-num">6</span> <u>believe animals experience emotions</u> → <span class="answer">ascribe</span> emotions to animals / they <span class="answer">manifest</span> emotions through actions</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الشرح العربي</span>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">معاني الكلمات المحوّرية</h5>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 الكلمات المضيئة في المقالة</span>
+          <strong>wallow</strong> = يتمرّغ (في الشفقة على النفس)<br>
+          <strong>inundated</strong> = غارق في / مثقل بـ<br>
+          <strong>suppress</strong> = يكبت / يُخفي (المشاعر)<br>
+          <strong>endeavour</strong> = يسعى / يبذل جهداً<br>
+          <strong>exacerbate</strong> = يُفاقم / يُزيد الأمر سوءاً<br>
+          <strong>ascribe</strong> = يعزو / ينسب شيئاً إلى
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 4 – Verb Forms ✅</span>
+        <h5>Complete questions with correct verb forms</h5>
+        <div class="ex-item"><span class="ex-num">1</span> What do people do when they <span class="answer">wallow</span> in self-pity?</div>
+        <div class="ex-item"><span class="ex-num">2</span> Think of a problem. What <span class="answer">exacerbated</span> it?</div>
+        <div class="ex-item"><span class="ex-num">3</span> What kind of advice do you find yourself <span class="answer">inundated</span> with these days?</div>
+        <div class="ex-item"><span class="ex-num">4</span> When do you think people should endeavour to <span class="answer">suppress</span> their emotions?</div>
+        <div class="ex-item"><span class="ex-num">5</span> What would you <span class="answer">ascribe</span> your present mood to?</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">ترجمة الأسئلة</span>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">1. ماذا يفعل الناس عندما يتمرّغون في الشفقة على أنفسهم؟</div>
+          <div class="answer-block-ar">2. فكّر في مشكلة ازدادت سوءاً. ما الذي فاقمها؟</div>
+          <div class="answer-block-ar">3. بما تشعر أنك غارق من النصائح هذه الأيام؟</div>
+          <div class="answer-block-ar">4. متى تعتقد أن الناس يجب أن يسعوا لكبت مشاعرهم؟</div>
+          <div class="answer-block-ar">5. إلى ماذا تعزو مزاجك الحالي؟</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     ARTICLE: PUT ON A BRAVE FACE
+════════════════════════════════════════════════ -->
+<div id="article1">
+  <div class="lesson-header" style="background: linear-gradient(90deg, #c0356b, #8b1a4a);">
+    <div class="lesson-num" style="color:#fde68a;">📰</div>
+    <div>
+      <div class="lesson-title-en">READING ARTICLE</div>
+      <div class="lesson-title-ar">مقالة القراءة: ارتدِ وجهاً شجاعاً! — أم هل يجب ذلك؟</div>
+    </div>
+  </div>
+  <div class="section-card">
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Original English Article</span>
+        <div class="article-body">
+          <h4 class="fw-bold text-pink mb-3">Put on a Brave Face! <br><em>Or… should we?</em></h4>
+
+          <p><span class="article-num">1</span> While we are all well aware that moving home, starting a new job or receiving bad news, for example, can considerably raise anxiety levels, it's not always as easy to make the connection between other physical health problems that we may experience as a result of stress. It would seem logical to <span class="answer">ascribe</span> a racing heart and raised blood pressure to nervousness and apprehension, but would we automatically link those nerves to an upset stomach or back pain? The truth is that our emotions can trigger a host of physical reactions and that is why we need to concern ourselves with maintaining our emotional health.</p>
+
+          <p><span class="article-num">2</span> "That's easier said than done", you might say, and you would be right. Emotions are not easy to control, particularly negative ones. So, is it actually possible to make ourselves feel less negative? 'How to become a happier you' is a hot topic at the moment and we are <span class="answer">inundated</span> with advice and tips online. There is an abundance of websites with surveys, questionnaires, tips and shared personal experiences available to us. Even schools are running mindfulness classes for their students as part of the curriculum.</p>
+
+          <p><span class="article-num">3</span> A new take on the topic, based on the link between emotion and facial expression, is that rather than frown when we're feeling low or upset, we should try smiling. Studies have shown that facial expressions not only reflect emotions, but influence them. In other words, we may smile because we are happy, but we can also feel happy because we smile!</p>
+
+          <p><span class="article-num">4</span> So, do other facial expressions affect our mood too? Apparently, they do. There are studies that show that if we are experiencing pain, yet <span class="answer">endeavour</span> not to show it on our faces, the degree of pain we experience can be less intense than if we wince and frown. Likewise, if we show that we are frightened when faced with danger, this can actually <span class="answer">exacerbate</span> the fear that we're feeling. According to the experts, this is because the way we experience emotion does not just involve the brain; it is far more complex. However, not all scientists are in complete agreement over the benefit of <span class="answer">suppressing</span> emotions or faking facial expressions to influence our moods. Research suggests that although faking emotions can help in the short term, continually suppressing emotions can have a negative effect on our general health. If the face is not involved in expressing an emotion, that emotion may eventually find another outlet, such as depression, a pessimistic outlook, or even physical illness.</p>
+
+          <p><span class="article-num">5</span> Linked with this latter belief is the concept of <strong>emotional labour</strong>, which was first identified in 1983. A recent interpretation of the term, started by an American journalist in 2017, references the need for people to concern themselves with routine chores that often result in dissatisfaction. However, the term was originally invented to describe the requirement for certain employees, for instance those in the service industries such as flight attendants and shop assistants, to present a happy face to clients, however bad they may be feeling. In other words, it is part of their job to pretend to be happy and hide any negative emotions. This faking of emotion can contribute to emotional exhaustion, leaving the person drained with little emotional energy left.</p>
+
+          <p><span class="article-num">6</span> Whilst <span class="answer">wallowing</span> in negativity is not going to help anyone, there are definitely times when we should allow ourselves to show our true feelings. Balancing when or when not to express emotions is something we need to be aware of for the sake of our health.</p>
+        </div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">ترجمة عربية للمقالة</span>
+        <div class="article-body-ar">
+          <h4 class="fw-bold mb-3" style="color:#c0356b;">ارتدِ وجهاً شجاعاً!<br><em>أم هل يجب ذلك؟</em></h4>
+
+          <p><strong>الفقرة 1:</strong> بينما ندرك جميعاً أن الانتقال إلى منزل جديد أو البدء في وظيفة جديدة أو تلقّي أخبار سيئة قد يرفع مستويات القلق بشكل كبير، فإنه ليس من السهل دائماً ربط مشاكل الصحة الجسدية الأخرى بالتوتر. يبدو منطقياً <span class="answer">نسب</span> سرعة نبضات القلب وارتفاع ضغط الدم إلى التوتر والقلق، لكن هل نربط تلقائياً تلك التوترات بآلام المعدة أو أوجاع الظهر؟ الحقيقة هي أن مشاعرنا يمكنها إطلاق سلسلة من ردود الفعل الجسدية، ولهذا يجب أن نهتم بالحفاظ على صحتنا العاطفية.</p>
+
+          <p><strong>الفقرة 2:</strong> قد تقول "هذا أسهل مما يُقال"، وستكون على حق. المشاعر ليست سهلة التحكم، لا سيما السلبية منها. فهل من الممكن فعلاً أن نجعل أنفسنا نشعر بقدر أقل من السلبية؟ موضوع "كيف تصبح أكثر سعادة" رائج جداً الآن، ونحن <span class="answer">مثقلون</span> بالنصائح والتلميحات عبر الإنترنت.</p>
+
+          <p><strong>الفقرة 3:</strong> نظرة جديدة على الموضوع تقوم على الرابط بين المشاعر وتعابير الوجه؛ بدلاً من التجهّم عندما نشعر بالحزن، يجب أن نحاول الابتسام. أظهرت الدراسات أن تعابير الوجه لا تعكس المشاعر فحسب، بل تؤثر فيها أيضاً!</p>
+
+          <p><strong>الفقرة 4:</strong> إذا كنا نعاني من الألم وحاولنا إخفاءه، فقد يكون الألم أقل حدة مما لو أظهرناه. وبالمثل، إظهار الخوف يمكن أن يُفاقم الخوف ذاته. ليس جميع العلماء متفقين على فائدة <span class="answer">كبت المشاعر</span>؛ فرغم أن تزييف المشاعر قد يساعد على المدى القصير، فإن كبتها باستمرار قد يؤثر سلباً على الصحة العامة.</p>
+
+          <p><strong>الفقرة 5:</strong> مرتبط بهذا مفهوم <strong>العمل العاطفي</strong> الذي تم التعرف عليه أول مرة عام 1983. كان المصطلح في الأصل يصف متطلّبات بعض الموظفين — كمضيفي الطيران وعمال المتاجر — بتقديم وجه سعيد للعملاء مهما كانوا يشعرون. هذا التظاهر بالمشاعر يمكن أن يُسهم في الإرهاق العاطفي.</p>
+
+          <p><strong>الفقرة 6:</strong> بينما لن يفيد <span class="answer">التمرّغ</span> في السلبية أحداً، هناك أوقات يجب فيها السماح لأنفسنا بإظهار مشاعرنا الحقيقية. الموازنة بين التعبير عن المشاعر وإخفائها أمرٌ يجب أن ندركه من أجل صحتنا.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     LESSON 3A – GRAMMAR
+════════════════════════════════════════════════ -->
+<div id="lesson3a">
+  <div class="lesson-header">
+    <div class="lesson-num">3A</div>
+    <div>
+      <div class="lesson-title-en">GRAMMAR – Reporting Verbs & Verb Patterns</div>
+      <div class="lesson-title-ar">القواعد — أفعال الإبلاغ وأنماط الأفعال</div>
+    </div>
+  </div>
+  <div class="section-card">
+
+    <!-- Exercise 3 -->
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 3 – Choose Correct Structures ✅</span>
+        <h5>Reporting Verbs and Verb Patterns</h5>
+        <div class="ex-item"><span class="ex-num">1</span> The interviewer congratulated <span class="answer">Callum on having won</span> a prestigious book award.</div>
+        <div class="ex-item"><span class="ex-num">2</span> The writer regretted <span class="answer">not doing it</span> sooner.</div>
+        <div class="ex-item"><span class="ex-num">3</span> The writer explained <span class="answer">that it was</span> down to a very old response.</div>
+        <div class="ex-item"><span class="ex-num">4</span> The interviewer asked <span class="answer">if laughter was</span> really good for us.</div>
+        <div class="ex-item"><span class="ex-num">5</span> The writer advised <span class="answer">people to surround</span> themselves with those who have a sense of humour.</div>
+        <div class="ex-item"><span class="ex-num">6</span> The interviewer promised <span class="answer">to do</span> that.</div>
+        <div class="ex-item"><span class="ex-num">7</span> The interviewer reminded <span class="answer">listeners that the book was</span> available.</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الشرح النحوي</span>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">أنماط أفعال الإبلاغ</h5>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 قاعدة مهمة: أنماط أفعال الإبلاغ</span>
+          <strong>congratulate sb on + gerund</strong>: هنّأ شخصاً على فعله شيئاً<br>
+          <strong>regret + gerund</strong>: ندم على فعل شيء (في الماضي)<br>
+          <strong>explain + that clause</strong>: أوضح أن...<br>
+          <strong>ask + if/whether</strong>: سأل إذا كان... (غير مباشر)<br>
+          <strong>advise + obj + to infinitive</strong>: نصح شخصاً بأن يفعل<br>
+          <strong>promise + to infinitive</strong>: وعد بأن يفعل<br>
+          <strong>remind + obj + that clause</strong>: ذكّر شخصاً بأن...
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 4 - Verb Patterns Classification -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 4 – Verb Pattern Classification</span>
+        <h5>Which verb(s) are followed by…</h5>
+        <table class="ex-table">
+          <thead><tr><th>Pattern</th><th>Verb Examples</th></tr></thead>
+          <tbody>
+            <tr><td>1 Different word order (indirect question)</td><td><span class="answer">wondered, asked</span></td></tr>
+            <tr><td>2 (that) clause</td><td><span class="answer">claimed, explained</span></td></tr>
+            <tr><td>3 object + (that) clause</td><td><span class="answer">informed, reminded</span></td></tr>
+            <tr><td>4 to infinitive</td><td><span class="answer">promised, offered</span></td></tr>
+            <tr><td>5 object + to infinitive</td><td><span class="answer">convinced, advised</span></td></tr>
+            <tr><td>6 gerund (-ing)</td><td><span class="answer">suggested, regretted</span></td></tr>
+            <tr><td>7 object + preposition + gerund</td><td><span class="answer">congratulated, complimented</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الأنماط النحوية</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 شرح الأنماط السبعة</span>
+          <strong>1 — ترتيب مختلف للكلمات</strong>: في الأسئلة غير المباشرة نستخدم ترتيب الجملة الخبرية<br>
+          مثال: He wondered why laughter was contagious.<br><br>
+          <strong>2 — جملة مع that</strong>: He claimed <u>that</u> laughter was old.<br>
+          <strong>3 — مفعول + that</strong>: She informed <u>the audience</u> that...<br>
+          <strong>4 — to + مصدر</strong>: He promised <u>to do</u> that.<br>
+          <strong>5 — مفعول + to</strong>: It convinced <u>me</u> to buy the book.<br>
+          <strong>6 — فعل مضاف إليه ing</strong>: She suggested <u>watching</u> a film.<br>
+          <strong>7 — مفعول + حرف جر + ing</strong>: He complimented <u>her on having</u> won.
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 5 – Match Verb Patterns ✅</span>
+        <h5>Match sentences a–g with patterns 1–7</h5>
+        <div class="ex-item"><span class="ex-num">a</span> convinced me to go → Pattern <span class="answer">5</span> (object + to infinitive)</div>
+        <div class="ex-item"><span class="ex-num">b</span> complimenting … on having received → Pattern <span class="answer">7</span> (object + prep + gerund)</div>
+        <div class="ex-item"><span class="ex-num">c</span> claimed that → Pattern <span class="answer">2</span> ((that) clause)</div>
+        <div class="ex-item"><span class="ex-num">d</span> suggested watching → Pattern <span class="answer">6</span> (gerund)</div>
+        <div class="ex-item"><span class="ex-num">e</span> wondered why → Pattern <span class="answer">1</span> (different word order)</div>
+        <div class="ex-item"><span class="ex-num">f</span> informed the audience that → Pattern <span class="answer">3</span> (object + that clause)</div>
+        <div class="ex-item"><span class="ex-num">g</span> offered to buy → Pattern <span class="answer">4</span> (to infinitive)</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الإجابات بالعربي</span>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">أ — أقنعني بالذهاب = نمط 5 (مفعول + to + مصدر)</div>
+          <div class="answer-block-ar">ب — أطراه على تلقّيه = نمط 7 (مفعول + حرف جر + ing)</div>
+          <div class="answer-block-ar">ج — ادّعى أن = نمط 2 (جملة مع that)</div>
+          <div class="answer-block-ar">د — اقترح مشاهدة = نمط 6 (صيغة ing)</div>
+          <div class="answer-block-ar">هـ — تساءل لماذا = نمط 1 (ترتيب مختلف)</div>
+          <div class="answer-block-ar">و — أعلم الجمهور أن = نمط 3 (مفعول + that)</div>
+          <div class="answer-block-ar">ز — عرضت أن تشتري = نمط 4 (to + مصدر)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Watch Out + Exercise 6 -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <div class="watchout-box">
+          <div class="watchout-title">⚠️ WATCH OUT!</div>
+          <p>Some verbs follow more than one pattern, sometimes with a change in register:</p>
+          <p>• <em>He suggested watching a film.</em> (less formal – gerund)</p>
+          <p>• <em>He suggested (that) we (should) watch a film.</em> (more formal – that clause)</p>
+        </div>
+        <span class="lang-label label-en mt-2">Exercise 6 – Make More Formal ✅</span>
+        <div class="ex-item"><span class="ex-num">1</span> He suggested putting on a brave face → <span class="answer">He suggested (that) we (should) put on a brave face.</span></div>
+        <div class="ex-item"><span class="ex-num">2</span> She recommended keeping our chins up → <span class="answer">She recommended (that) we (should) keep our chins up.</span></div>
+        <div class="ex-item"><span class="ex-num">3</span> He proposed telling jokes → <span class="answer">He proposed (that) we (should) tell jokes to cheer ourselves up.</span></div>
+        <div class="ex-item"><span class="ex-num">4</span> He requested her to stop → <span class="answer">He requested that she stop grinding her teeth.</span></div>
+      </div>
+      <div class="col-ar">
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 الفرق بين الأسلوب الرسمي وغير الرسمي</span>
+          بعض الأفعال كـ <strong>suggest / recommend / propose</strong> يمكن استخدامها مع:<br>
+          • صيغة ing (أقل رسمية): He suggested watching<br>
+          • جملة that + should (أكثر رسمية): He suggested that we should watch<br><br>
+          <strong>request</strong> أكثر رسمية من <strong>ask</strong> وتستخدم مع:<br>
+          request that + subject + verb (بدون to)
+        </div>
+      </div>
+    </div>
+
+    <!-- Impersonal Reporting Structures -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 8 – Impersonal Structures ✅</span>
+        <h5>Impersonal Reporting Structures</h5>
+        <div class="grammar-box">
+          <div class="grammar-box-title">📐 Grammar Reference</div>
+          <p><strong>It is/was + believed/thought/assumed/said + that…</strong></p>
+          <p><strong>Subject + is/was + believed/thought/assumed + to (have) + verb…</strong></p>
+        </div>
+        <p>Read sentences 1–4 and match with ideas a–d:</p>
+        <div class="ex-item"><span class="ex-num">1</span> "It is now believed that specially trained clowns can help…" → <span class="answer">d</span> present belief about something in the present</div>
+        <div class="ex-item"><span class="ex-num">2</span> "It was thought that hospital clowning first started in the 1970s" → <span class="answer">a</span> past belief about something in the past</div>
+        <div class="ex-item"><span class="ex-num">3</span> "Clowning was originally assumed to help children by distracting them" → <span class="answer">c</span> past belief about something that is always true</div>
+        <div class="ex-item"><span class="ex-num">4</span> "The benefits are now thought not to have been fully understood" → <span class="answer">b</span> present belief about something that happened in the past</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الإبلاغ غير الشخصي</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 قاعدة: تراكيب الإبلاغ غير الشخصية</span>
+          تُستخدم هذه التراكيب لنقل آراء عامة دون نسبها لشخص معين:<br><br>
+          <strong>It is believed that…</strong> = يُعتقد أن...<br>
+          <strong>It was thought that…</strong> = كان يُظن أن...<br>
+          <strong>It is assumed that…</strong> = يُفترض أن...<br>
+          <strong>It is said that…</strong> = يُقال أن...<br><br>
+          <strong>صيغة بديلة:</strong><br>
+          <strong>Clowns are believed to help…</strong> = يُعتقد أن المهرجين يساعدون...<br>
+          <strong>He is said to have won…</strong> = يُقال أنه فاز...
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 9 -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 9 – Sentence Transformation ✅</span>
+        <h5>Complete the second sentence same meaning as first</h5>
+        <div class="ex-item"><span class="ex-num">1</span> Specially trained clowns <span class="answer">are now believed to</span> help reduce the length of children's hospital stays.</div>
+        <div class="ex-item"><span class="ex-num">2</span> Hospital clowning <span class="answer">was thought to have started</span> in the 1970s.</div>
+        <div class="ex-item"><span class="ex-num">3</span> It <span class="answer">was originally assumed that</span> clowning primarily helped children by distracting them.</div>
+        <div class="ex-item"><span class="ex-num">4</span> It <span class="answer">was not thought to have been</span> fully understood at that time.</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الإجابات بالعربي</span>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">1. يُعتقد الآن أن المهرجين المدرّبين يساعدون في تقليل مدة إقامة الأطفال في المستشفى.</div>
+          <div class="answer-block-ar">2. كان يُظن أن مهرجين المستشفيات بدأوا في السبعينيات.</div>
+          <div class="answer-block-ar">3. كان يُفترض في الأصل أن التمثيل بالمهرجين يساعد الأطفال بتشتيت انتباههم.</div>
+          <div class="answer-block-ar">4. لم يُعتقد أن الفوائد فُهمت بالكامل في ذلك الوقت.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     LESSON 4A – LISTENING & VOCABULARY
+════════════════════════════════════════════════ -->
+<div id="lesson4a">
+  <div class="lesson-header">
+    <div class="lesson-num">4A</div>
+    <div>
+      <div class="lesson-title-en">LISTENING AND VOCABULARY</div>
+      <div class="lesson-title-ar">الاستماع والمفردات — البحر الميت</div>
+    </div>
+  </div>
+  <div class="section-card">
+
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 1 – Vocabulary Definitions ✅</span>
+        <h5>Write words next to correct definitions</h5>
+        <div class="ex-item"><span class="ex-num">1</span> naturally present in Earth, important for health → <span class="answer">mineral</span></div>
+        <div class="ex-item"><span class="ex-num">2</span> be healthy, successful or growing → <span class="answer">thrive</span></div>
+        <div class="ex-item"><span class="ex-num">3</span> bacteria or a virus in the body → <span class="answer">infection</span></div>
+        <div class="ex-item"><span class="ex-num">4</span> being enough for a situation → <span class="answer">sufficient</span></div>
+        <div class="ex-item"><span class="ex-num">5</span> no protection from something harmful → <span class="answer">exposure</span></div>
+        <div class="ex-item"><span class="ex-num">6</span> removes harmful elements from air/water → <span class="answer">filter</span></div>
+        <div class="ex-item"><span class="ex-num">7</span> give a plant/human what it needs → <span class="answer">nourish</span></div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">معاني الكلمات</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 مفردات الصحة والطبيعة</span>
+        </div>
+        <table class="ex-table" dir="rtl" style="font-family:'Amiri',serif;">
+          <thead><tr><th>الكلمة</th><th>المعنى العربي</th><th>النوع</th></tr></thead>
+          <tbody>
+            <tr><td><span class="answer">mineral</span></td><td>معدن / مادة معدنية</td><td>اسم</td></tr>
+            <tr><td><span class="answer">thrive</span></td><td>يزدهر / ينمو بصحة</td><td>فعل</td></tr>
+            <tr><td><span class="answer">infection</span></td><td>عدوى / التهاب</td><td>اسم</td></tr>
+            <tr><td><span class="answer">sufficient</span></td><td>كافٍ / مناسب</td><td>صفة</td></tr>
+            <tr><td><span class="answer">exposure</span></td><td>التعرّض</td><td>اسم</td></tr>
+            <tr><td><span class="answer">filter</span></td><td>مرشّح / فلتر</td><td>اسم/فعل</td></tr>
+            <tr><td><span class="answer">nourish</span></td><td>يُغذّي / يُعيل</td><td>فعل</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 3 – Complete Sentences ✅</span>
+        <h5>Complete with correct form of vocabulary words</h5>
+        <div class="ex-item"><span class="ex-num">1</span> My daughters are both really <span class="answer">thriving</span> at university.</div>
+        <div class="ex-item"><span class="ex-num">2</span> Whenever I get throat <span class="answer">infections</span>, I use salt water to heal.</div>
+        <div class="ex-item"><span class="ex-num">3</span> I bought a kettle with a special <span class="answer">filter</span> to make the water cleaner.</div>
+        <div class="ex-item"><span class="ex-num">4</span> A litre of water isn't <span class="answer">sufficient</span> when hiking.</div>
+        <div class="ex-item"><span class="ex-num">5</span> Moisturising lotion <span class="answer">nourishes</span> my skin and stops me looking tired.</div>
+        <div class="ex-item"><span class="ex-num">6</span> The water is full of <span class="answer">minerals</span>, which has health benefits.</div>
+        <div class="ex-item"><span class="ex-num">7</span> A large hat protects from too much <span class="answer">exposure</span> to the sun.</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">الجمل مترجمة</span>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">1. بناتي <span class="answer">يزدهرن</span> في الجامعة — يحببن مواضيعهن.</div>
+          <div class="answer-block-ar">2. كلما أُصبت بـ<span class="answer">التهابات</span> الحلق، أستخدم الملح والماء للشفاء.</div>
+          <div class="answer-block-ar">3. اشتريت غلاية بـ<span class="answer">فلتر</span> خاص لتنقية الماء.</div>
+          <div class="answer-block-ar">4. لتر واحد من الماء ليس <span class="answer">كافياً</span> في رحلات المشي.</div>
+          <div class="answer-block-ar">5. غسول الترطيب <span class="answer">يُغذّي</span> بشرتي ويمنع التعب.</div>
+          <div class="answer-block-ar">6. الماء غني بـ<span class="answer">المعادن</span> ذات الفوائد الصحية.</div>
+          <div class="answer-block-ar">7. القبعة الكبيرة تقي من <span class="answer">التعرّض</span> الزائد للشمس.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dead Sea Listening Exercise 6 -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 6 – Dead Sea Podcast Notes ✅</span>
+        <h5>Complete notes (no more than 3 words)</h5>
+        <div class="ex-item"><span class="ex-num">1</span> Natural life <span class="answer">cannot survive</span> due to the large concentration of salt minerals.</div>
+        <div class="ex-item"><span class="ex-num">2</span> The air benefits because it's not close to any <span class="answer">industrial area / factories</span>.</div>
+        <div class="ex-item"><span class="ex-num">3</span> The Dead Sea is the <span class="answer">lowest</span> place in the world.</div>
+        <div class="ex-item"><span class="ex-num">4</span> You'll still need sun cream or another form of <span class="answer">protection</span>.</div>
+        <div class="ex-item"><span class="ex-num">5</span> When used <span class="answer">diluted / in diluted form</span>, Dead Sea salt can bring great benefits.</div>
+        <div class="ex-item"><span class="ex-num">6</span> The best way to swim in the Dead Sea is <span class="answer">on your back / floating</span>.</div>
+        <div class="ex-item"><span class="ex-num">7</span> After putting mud on your skin, it should feel <span class="answer">soft and smooth</span>.</div>
+        <div class="mt-3 p-2 rounded" style="background:#f0f8f0; border:1px solid #cde;">
+          <strong>Numbers meaning:</strong> 9.6 = salinity ratio / times saltier than sea | 439 = metres below sea level | 10–15 = minutes recommended mud exposure
+        </div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">البحر الميت — معلومات</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 حقائق عن البحر الميت</span>
+          <strong>9.6</strong> = نسبة الملوحة (أكثر ملوحة من البحر بـ9.6 مرات)<br>
+          <strong>439</strong> = أمتار تحت مستوى سطح البحر (أخفض نقطة في الأرض)<br>
+          <strong>10-15</strong> = دقائق مقترحة للاستحمام بالطين
+        </div>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">1. الحياة الطبيعية <span class="answer">لا تستطيع البقاء</span> بسبب تركيز الملح العالي.</div>
+          <div class="answer-block-ar">2. الهواء نقي لأن المنطقة بعيدة عن أي <span class="answer">منطقة صناعية</span>.</div>
+          <div class="answer-block-ar">3. البحر الميت هو <span class="answer">أخفض</span> مكان في العالم.</div>
+          <div class="answer-block-ar">4. ستحتاج لكريم الشمس أو شكل آخر من <span class="answer">الحماية</span>.</div>
+          <div class="answer-block-ar">5. عند استخدام ملح البحر الميت <span class="answer">مخفّفاً</span>، يُحقق فوائد كبيرة.</div>
+          <div class="answer-block-ar">6. أفضل طريقة للسباحة هي <span class="answer">على ظهرك / طافياً</span>.</div>
+          <div class="answer-block-ar">7. بعد وضع الطين ستشعر ببشرة <span class="answer">ناعمة وملساء</span>.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     LESSON 5A – SPEAKING
+════════════════════════════════════════════════ -->
+<div id="lesson5a">
+  <div class="lesson-header">
+    <div class="lesson-num">5A</div>
+    <div>
+      <div class="lesson-title-en">SPEAKING – Evaluating Ideas</div>
+      <div class="lesson-title-ar">التحدث — تقييم الأفكار ومكافحة التوتر</div>
+    </div>
+  </div>
+  <div class="section-card">
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 4 – Speaking Box Completed ✅</span>
+        <h5>Evaluating Ideas Phrases</h5>
+        <div class="grammar-box">
+          <div class="grammar-box-title">🗣 SPEAKING | Evaluating Ideas</div>
+          <div class="ex-item"><span class="ex-num">P</span> There's a lot to be <span class="answer">said</span> for… (positive)</div>
+          <div class="ex-item"><span class="ex-num">N</span> That's all very well, but what if… (negative)</div>
+          <div class="ex-item"><span class="ex-num">N</span> It sounds a pretty half-baked theory to me.</div>
+          <div class="ex-item"><span class="ex-num">P</span> It has a lot <span class="answer">going</span> for it. (positive)</div>
+          <div class="ex-item"><span class="ex-num">N</span> I don't think they've thought this through.</div>
+          <div class="ex-item"><span class="ex-num">P</span> I think this idea has legs.</div>
+          <div class="ex-item"><span class="ex-num">N</span> It doesn't go <span class="answer">far</span> enough.</div>
+          <div class="ex-item"><span class="ex-num">N</span> It sounds good <span class="answer">in</span> theory.</div>
+          <div class="ex-item"><span class="ex-num">N/P</span> It's a perfectly reasonable idea, but…</div>
+          <div class="ex-item"><span class="ex-num">N</span> I take issue with some of the claims, namely…</div>
+        </div>
+        <p class="mt-2 text-muted" style="font-size:0.85rem;"><strong>More formal phrases:</strong> "It's a perfectly reasonable idea, but…" | "I take issue with some of the claims, namely…"</p>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">ترجمة عبارات التقييم</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 عبارات تقييم الأفكار بالعربية</span>
+        </div>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">✅ <strong>There's a lot to be said for…</strong> = هناك الكثير لصالح...</div>
+          <div class="answer-block-ar">❌ <strong>That's all very well, but what if…</strong> = هذا جيد، لكن ماذا لو...</div>
+          <div class="answer-block-ar">❌ <strong>Half-baked theory</strong> = نظرية ناقصة / غير مكتملة</div>
+          <div class="answer-block-ar">✅ <strong>It has a lot going for it</strong> = لديه الكثير من المزايا</div>
+          <div class="answer-block-ar">❌ <strong>They haven't thought this through</strong> = لم يفكّروا فيه بعمق</div>
+          <div class="answer-block-ar">✅ <strong>This idea has legs</strong> = هذه الفكرة قابلة للتطبيق</div>
+          <div class="answer-block-ar">❌ <strong>It doesn't go far enough</strong> = لا يذهب بعيداً بما يكفي</div>
+          <div class="answer-block-ar">❌ <strong>It sounds good in theory</strong> = يبدو جيداً من الناحية النظرية</div>
+          <div class="answer-block-ar">⚖️ <strong>I take issue with some claims</strong> = لديّ تحفّظات على بعض الادعاءات</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     LESSON 6A – WRITING
+════════════════════════════════════════════════ -->
+<div id="lesson6a">
+  <div class="lesson-header">
+    <div class="lesson-num">6A</div>
+    <div>
+      <div class="lesson-title-en">WRITING AND VOCABULARY | An Article</div>
+      <div class="lesson-title-ar">الكتابة والمفردات — كتابة مقالة</div>
+    </div>
+  </div>
+  <div class="section-card">
+
+    <!-- Writing Box -->
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 4 – Writing Box Completed ✅</span>
+        <div class="writing-box">
+          <div class="writing-box-title">✍️ WRITING | An Article</div>
+          <ul class="mt-2">
+            <li>Give your article a/an <span class="answer">intriguing</span> title to interest the reader.</li>
+            <li><span class="answer">Engage</span> the reader immediately with an interesting opening sentence.</li>
+            <li>Speak <span class="answer">directly</span> to the reader to involve him/her.</li>
+            <li>Organise by dividing into clear <span class="answer">paragraphs</span> which connect to each other.</li>
+            <li>Use <span class="answer">complex</span> sentences using a range of structures and linking devices.</li>
+            <li>Use sentences which <span class="answer">vary</span> in length.</li>
+            <li>Conclude with a <span class="answer">memorable</span> ending, such as a question or personal comment.</li>
+            <li>Use an <span class="answer">appropriate</span> style for your audience.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">نصائح كتابة المقالة</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 كيف تكتب مقالة ناجحة؟</span>
+          <strong>intriguing</strong> = مثير للفضول — العنوان يجب أن يستفز القارئ<br>
+          <strong>engage</strong> = يُشرك / يستهوي — ابدأ بجملة لافتة<br>
+          <strong>directly</strong> = مباشرة — خاطب القارئ بـ "you"<br>
+          <strong>paragraphs</strong> = فقرات — كل فكرة في فقرة مستقلة<br>
+          <strong>complex</strong> = معقدة — استخدم أساليب وتراكيب متنوعة<br>
+          <strong>vary</strong> = يتنوّع — لا تكتب جملاً بنفس الطول دائماً<br>
+          <strong>memorable</strong> = لا تُنسى — اختم بسؤال أو تعليق شخصي<br>
+          <strong>appropriate</strong> = مناسب — اعرف جمهورك وتحدّث بأسلوبهم
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 6 - Vocabulary definitions -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 6 – Article Vocabulary Definitions ✅</span>
+        <h5>Write highlighted vocab next to definitions</h5>
+        <div class="ex-item"><span class="ex-num">1</span> completely occupied with an activity → <span class="answer">immersed</span></div>
+        <div class="ex-item"><span class="ex-num">2</span> think deeply about something → <span class="answer">contemplate</span></div>
+        <div class="ex-item"><span class="ex-num">3</span> a period where everything changes → <span class="answer">revolution</span></div>
+        <div class="ex-item"><span class="ex-num">4</span> attitudes and feelings about something → <span class="answer">psyche</span></div>
+        <div class="ex-item"><span class="ex-num">5</span> begin to use something → <span class="answer">tap into</span></div>
+        <div class="ex-item"><span class="ex-num">6</span> a large amount of something → <span class="answer">abundance</span></div>
+        <div class="ex-item"><span class="ex-num">7</span> to produce something such as gas, light or sound → <span class="answer">emit</span></div>
+        <div class="ex-item"><span class="ex-num">8</span> encouragement to develop or be more active → <span class="answer">stimulation</span></div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">معاني المفردات</span>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar"><span class="answer">immersed</span> = مُنغمس / منهمك تماماً في نشاط</div>
+          <div class="answer-block-ar"><span class="answer">contemplate</span> = يتأمّل / يفكّر عميقاً في شيء</div>
+          <div class="answer-block-ar"><span class="answer">revolution</span> = ثورة / حقبة تغيّر فيها كل شيء</div>
+          <div class="answer-block-ar"><span class="answer">psyche</span> = النفس / العقل / التوجّهات الفكرية</div>
+          <div class="answer-block-ar"><span class="answer">tap into</span> = يبدأ باستخدام / يستثمر</div>
+          <div class="answer-block-ar"><span class="answer">abundance</span> = وفرة / كمية كبيرة</div>
+          <div class="answer-block-ar"><span class="answer">emit</span> = يُصدر / يُطلق (غاز أو ضوء أو صوت)</div>
+          <div class="answer-block-ar"><span class="answer">stimulation</span> = تحفيز / تنشيط</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 7 - Word forms -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 7 – Word Forms ✅</span>
+        <h5>Complete with different part of speech</h5>
+        <div class="ex-item"><span class="ex-num">1</span> reduce industrial <span class="answer">emissions</span> (emit → noun)</div>
+        <div class="ex-item"><span class="ex-num">2</span> he was in a <span class="answer">contemplative</span> mood (contemplate → adjective)</div>
+        <div class="ex-item"><span class="ex-num">3</span> works as an educational <span class="answer">psychologist</span> (psyche → noun)</div>
+        <div class="ex-item"><span class="ex-num">4</span> I have another <span class="answer">engagement</span> in about an hour (engage → noun)</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">تصريف الكلمات</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 تصريف الكلمات — أجزاء الكلام</span>
+          <strong>emit → emissions</strong>: الانبعاثات (اسم جمع)<br>
+          <strong>contemplate → contemplative</strong>: تأمّلي (صفة)<br>
+          <strong>psyche → psychologist</strong>: عالم نفس (اسم فاعل)<br>
+          <strong>engage → engagement</strong>: التزام / موعد (اسم)
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     ARTICLE: FOREST BATHING
+════════════════════════════════════════════════ -->
+<div id="article2">
+  <div class="lesson-header" style="background: linear-gradient(90deg, #16a34a, #0f6b30);">
+    <div class="lesson-num" style="color:#fde68a;">🌲</div>
+    <div>
+      <div class="lesson-title-en">WRITING ARTICLE – Forest Bathing</div>
+      <div class="lesson-title-ar">مقالة الكتابة — الاستحمام في الغابة</div>
+    </div>
+  </div>
+  <div class="section-card">
+
+    <!-- Paragraph matching Exercise 3 -->
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 3 – Heading Match ✅</span>
+        <h5>Match headings to paragraphs A–D</h5>
+        <div class="ex-item"><span class="ex-num">A</span> Para A → Heading <span class="answer">3: Not a minute's peace</span></div>
+        <div class="ex-item"><span class="ex-num">B</span> Para B → Heading <span class="answer">5: Eastern origins</span></div>
+        <div class="ex-item"><span class="ex-num">C</span> Para C → Heading <span class="answer">1: Sensory engagement</span></div>
+        <div class="ex-item"><span class="ex-num">D</span> Para D → Heading <span class="answer">2: Blossoming benefits</span></div>
+        <p class="text-muted mt-2" style="font-size:0.85rem;">Extra headings: 4 Environmental protections | 6 Family activities</p>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">مطابقة العناوين</span>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">أ — <span class="answer">لا دقيقة راحة</span>: مقدمة عن ضغوط الحياة الحديثة</div>
+          <div class="answer-block-ar">ب — <span class="answer">الأصول الشرقية</span>: نشأة شينرين-يوكو في اليابان</div>
+          <div class="answer-block-ar">ج — <span class="answer">الانخراط الحسّي</span>: ماذا يفعل من يمارس الاستحمام الغابي</div>
+          <div class="answer-block-ar">د — <span class="answer">فوائد تتفتّح</span>: النتائج والتوصيات</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Article itself -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Full Article Text</span>
+        <div class="article-body">
+          <div class="d-flex align-items-start mb-3">
+            <span class="para-label">A</span>
+            <p>People! Traffic! Texts! Work! Modern life can be so stressful, can't it? Given the relentless pace of life and the ever-present screens that we all rely on for our jobs, studying and entertainment, it can be very difficult to really escape from it all. The situation begs the question: were humans really meant to live with this amount of constant <strong>stimulation</strong>? It's difficult to reasonably conclude that the answer is 'yes'.</p>
+          </div>
+          <div class="d-flex align-items-start mb-3">
+            <span class="para-label">B</span>
+            <p>One increasingly popular response to this constant blur of activity is forest bathing, or as it is known in Japan where it originated: <em>shinrin-yoku</em>. The term was coined by Tomohide Akiyama, Director of the Ministry of Agriculture, Forestry and Fisheries for Japan. He found that compounds and essential oils which trees naturally <strong>emit</strong> had very positive effects on human health. With this in mind, Akiyama got the practice officially recognised, increasing the value of forests within the nation's <strong>psyche</strong>. This happened during the 1980s when much of the world was on the edge of the technological <strong>revolution</strong>.</p>
+          </div>
+          <div class="d-flex align-items-start mb-3">
+            <span class="para-label">C</span>
+            <p>So what exactly do forest bathers do? Firstly, leave your phone and gadgets behind. The aim is to completely <strong>immerse</strong> yourself in natural surroundings. A forest is ideal, but spending time in a park or any place with an <strong>abundance</strong> of nature can also yield great results. Set aside plenty of time — ideally four to six hours. This is so you can <strong>contemplate</strong>, relax and slow your heart rate. Focus on <strong>engaging</strong> your senses: listen to birdsong, inhale the fresh air, watch the creatures you see and touch the plant life along your way.</p>
+          </div>
+          <div class="d-flex align-items-start mb-3">
+            <span class="para-label">D</span>
+            <p>Following forest bathing, practitioners report improved mood and mental health, decreased blood pressure and stress, and an increased ability to fight sickness and disease. So, why not try spending an afternoon quietly walking through a forest? Alternatively, perhaps simply slip off your shoes and walk barefoot on the grass for a while? Either way, your body and mind will thank you for taking a break from screens and reconnecting with nature.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">ترجمة المقالة</span>
+        <div class="article-body-ar">
+          <div class="mb-3">
+            <strong>أ —</strong> الناس! السيارات! الرسائل! العمل! الحياة الحديثة مرهقة جداً، أليس كذلك؟ مع الإيقاع المتواصل للحياة والشاشات الدائمة الحضور، يصعب الهروب من كل هذا. هل كان البشر حقاً مُعدّين للعيش مع هذا القدر من التحفيز المستمر؟ من الصعب القول بـ"نعم".
+          </div>
+          <div class="mb-3">
+            <strong>ب —</strong> أحد الردود المتزايدة الشعبية على هذا التسارع هو "الاستحمام الغابي"، أو كما يُعرف في اليابان: <em>شينرين-يوكو</em>. صاغ هذا المصطلح توموهيدي أكياما، وكشفت الدراسات أن المركّبات والزيوت الأساسية التي تُصدرها الأشجار لها تأثيرات إيجابية جداً على صحة الإنسان. حدث هذا في الثمانينيات عندما كان العالم على أعتاب الثورة التكنولوجية.
+          </div>
+          <div class="mb-3">
+            <strong>ج —</strong> اترك هاتفك وأجهزتك. الهدف هو الانغماس الكامل في الطبيعة. الغابة مثالية، لكن الحديقة تفيد أيضاً. خصّص وقتاً كافياً — من أربع إلى ست ساعات. استخدم حواسك: استمع لزقزقة العصافير، وشمّ الهواء النقي، والمس نباتات الطريق.
+          </div>
+          <div class="mb-3">
+            <strong>د —</strong> يُفيد ممارسو هذا النشاط بتحسّن المزاج والصحة النفسية، وانخفاض ضغط الدم والتوتر. فلماذا لا تجرب قضاء بعض الوقت في التنزّه بهدوء؟ جسدك وعقلك سيشكرانك على الابتعاد عن الشاشات والتواصل مع الطبيعة.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     LIFE SKILLS
+════════════════════════════════════════════════ -->
+<div id="lifeskills">
+  <div class="lesson-header" style="background: linear-gradient(90deg, #7c3aed, #4c1d95);">
+    <div class="lesson-num" style="color:#fde68a;">💪</div>
+    <div>
+      <div class="lesson-title-en">LIFE SKILLS – Developing Resilience</div>
+      <div class="lesson-title-ar">مهارات الحياة — تطوير المرونة</div>
+    </div>
+  </div>
+  <div class="section-card">
+
+    <!-- Exercise 3 - Fill blanks -->
+    <div class="bilingual-row">
+      <div class="col-en">
+        <span class="lang-label label-en">Exercise 3 – Resilience Statements ✅</span>
+        <h5>Complete with 1–3 words</h5>
+        <div class="ex-item"><span class="ex-num">1</span> Following a challenging event, resilient people can choose <span class="answer">how to respond</span>.</div>
+        <div class="ex-item"><span class="ex-num">2</span> Resilient people display <span class="answer">self-awareness</span> and know that even the deepest feelings are only temporary.</div>
+        <div class="ex-item"><span class="ex-num">3</span> Finding solutions gives them a <span class="answer">sense of control</span> and helps them to heal.</div>
+        <div class="ex-item"><span class="ex-num">4</span> Resilient people create a <span class="answer">network / support network</span> of family and friends.</div>
+        <div class="ex-item"><span class="ex-num">5</span> It's important to <span class="answer">look after / take care of</span> ourselves if we want to be resilient.</div>
+        <div class="ex-item"><span class="ex-num">6</span> It's important to have <span class="answer">open communication / honesty</span> about your needs.</div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">صفات الشخص المرن</span>
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 المرونة (Resilience)</span>
+          المرونة هي القدرة على التعافي بعد الصعوبات والتكيّف مع الظروف الصعبة.
+        </div>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">1. <span class="answer">كيف يستجيبون</span> — يختار الشخص المرن ردّ فعله</div>
+          <div class="answer-block-ar">2. <span class="answer">الوعي بالذات</span> — يعلمون أن المشاعر مؤقتة</div>
+          <div class="answer-block-ar">3. <span class="answer">شعور بالسيطرة</span> — إيجاد الحلول يمنح الطاقة للشفاء</div>
+          <div class="answer-block-ar">4. <span class="answer">شبكة دعم</span> — من الأسرة والأصدقاء</div>
+          <div class="answer-block-ar">5. <span class="answer">نعتني بأنفسنا</span> — الرعاية الذاتية أساس المرونة</div>
+          <div class="answer-block-ar">6. <span class="answer">تواصل صريح</span> — الصدق مع الذات والآخرين</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Life Skills Box + Exercise 5 -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <div class="lifeskills-box">
+          <div class="lifeskills-title">💪 LIFE SKILLS | Developing Resilience</div>
+          <ol class="mt-2">
+            <li>Instead of seeing difficulties, see <strong>challenges</strong>.</li>
+            <li>Look for actions you can take to make a <strong>positive difference</strong>.</li>
+            <li>Find people who can help and support you. Help them, too.</li>
+            <li>Focus on things you can control. If you can't change a situation, don't dwell on it.</li>
+            <li>Find healthy ways to deal with stress: exercise, sleep, diary, meditation.</li>
+            <li>Be kind to yourself.</li>
+          </ol>
+        </div>
+
+        <span class="lang-label label-en mt-3">Exercise 5 – T/F/NG ✅</span>
+        <h5>Maha Al-Bargouthi Article</h5>
+        <div class="ex-item"><span class="ex-num">1</span> Maha's paraplegia prevented her from communicating → <span class="answer">F</span> (only affected her legs)</div>
+        <div class="ex-item"><span class="ex-num">2</span> Maha wasn't always treated fairly → <span class="answer">T</span> (she faced discrimination)</div>
+        <div class="ex-item"><span class="ex-num">3</span> Maha's parents always came to watch her games → <span class="answer">NG</span> (not specifically stated)</div>
+        <div class="ex-item"><span class="ex-num">4</span> The first race Maha won was in Berlin 1995 → <span class="answer">F</span> (Berlin was Special Olympics, not first ever race)</div>
+        <div class="ex-item"><span class="ex-num">5</span> No other Jordanian had won a gold at Olympics → <span class="answer">T</span> (first ever gold for Jordan)</div>
+        <div class="ex-item"><span class="ex-num">6</span> Maha felt important to believe in yourself → <span class="answer">T</span> (stated in her advice)</div>
+      </div>
+      <div class="col-ar">
+        <div class="ar-explain">
+          <span class="ar-explain-title">💡 استراتيجيات تطوير المرونة بالعربية</span>
+          1. انظر إلى الصعوبات كتحدّيات لا عقبات<br>
+          2. ابحث عن أفعال إيجابية تستطيع اتخاذها<br>
+          3. ابحث عن داعمين وكن داعماً لهم أيضاً<br>
+          4. ركّز على ما تستطيع التحكم فيه<br>
+          5. اعتنِ بصحتك: رياضة، نوم، تأمّل<br>
+          6. كن لطيفاً مع نفسك
+        </div>
+        <h5 style="font-family:'Amiri',serif; color:#1d4ed8;">قصة مها البرغوثي — صواب أم خطأ</h5>
+        <div style="font-family:'Amiri',serif; font-size:1.05rem;">
+          <div class="answer-block-ar">1. <span class="answer">خطأ</span> — الشلل أثّر على ساقيها فقط، لم يمنع التواصل</div>
+          <div class="answer-block-ar">2. <span class="answer">صحيح</span> — واجهت التمييز ومنشآت رياضية لا تلائم احتياجاتها</div>
+          <div class="answer-block-ar">3. <span class="answer">غير مذكور</span> — لم تُحدد المقالة ذلك</div>
+          <div class="answer-block-ar">4. <span class="answer">خطأ</span> — برلين كانت الألعاب الأولمبية الخاصة، لم تُحدد أنها أول سباق</div>
+          <div class="answer-block-ar">5. <span class="answer">صحيح</span> — كانت أول ميدالية ذهبية للأردن في البارالمبياد</div>
+          <div class="answer-block-ar">6. <span class="answer">صحيح</span> — قالت: "الإيمان بقدراتك مفتاح النجاح"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maha Story -->
+    <div class="bilingual-row" style="border-top:2px solid var(--ivory-dark);">
+      <div class="col-en">
+        <span class="lang-label label-en">Story: Against the Odds</span>
+        <div class="article-body">
+          <h4 class="fw-bold mb-3" style="color:#7c3aed;">Against the Odds</h4>
+          <p>Maha Al-Bargouthi was born in 1962 in Amman. She developed paraplegia due to polio at birth, which affected her legs. Rather than choosing a quiet life, she embraced sport from age 11 — athletics and table tennis. She faced discrimination and inadequate sports facilities, yet saw these obstacles as "rungs on the ladder to her success."</p>
+          <p>Her parents credited with being her biggest fans treated her no differently from her classmates, fuelling her confidence and self-reliance. At the Berlin Special Olympics in 1995, her 200-metre wheelchair run set a world record at 32.26 seconds. Just five years later at Sydney's Paralympics, Maha won Jordan's first ever gold medal in para table tennis singles.</p>
+          <p>She went on to win <strong>eight medals altogether</strong> at the Paralympics, World Championships, Pan Arab Games and Asian Championships. Her advice: <em>"Seek out and try to achieve your dream, no matter how difficult it may be. The keys to success are perseverance, determination, and faith in one's own abilities."</em></p>
+        </div>
+      </div>
+      <div class="col-ar">
+        <span class="lang-label label-ar">قصة مها البرغوثي</span>
+        <div class="article-body-ar">
+          <h4 class="fw-bold mb-3" style="color:#7c3aed;">ضد كل التوقعات</h4>
+          <p>وُلدت مها البرغوثي عام 1962 في عمّان. أصيبت بشلل الأطفال عند الولادة مما أدى إلى إصابتها بالشلل النصفي. بدلاً من الاستسلام، انخرطت في الرياضة منذ سن الحادية عشرة. واجهت التمييز ومنشآت رياضية لا تلائم احتياجاتها، لكنها رأت هذه العقبات كـ"درجات في سلّم نجاحها".</p>
+          <p>كان لوالديها الفضل الأكبر في تنشئتها بثقة ودون التمييز بينها وبين زملائها. في برلين 1995، حطّمت الرقم القياسي العالمي لسباق 200م على الكرسي المتحرك في 32.26 ثانية. وبعد خمس سنوات فقط في سيدني، فازت بأول ميدالية ذهبية أردنية في البارالمبياد.</p>
+          <p>نصيحتها الذهبية: <em>"اسعَ لتحقيق حلمك مهما كان صعباً. الإعاقة الحقيقية هي تعطيل رغبتك في تحقيق أهدافك. مفاتيح النجاح هي: المثابرة، والإصرار، والإيمان بقدراتك."</em></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     BILINGUAL VOCABULARY DICTIONARY
+════════════════════════════════════════════════ -->
+<div id="dictionary">
+  <div class="lesson-header" style="background: linear-gradient(90deg, #1e40af, #1e3a8a);">
+    <div class="lesson-num" style="color:#fde68a;">📚</div>
+    <div>
+      <div class="lesson-title-en">BILINGUAL VOCABULARY DICTIONARY</div>
+      <div class="lesson-title-ar">قاموس المفردات الثنائي — إنجليزي / عربي</div>
+    </div>
+  </div>
+  <div class="section-card" style="border-radius:0 0 14px 14px;">
+    <div class="p-3">
+      <p class="text-muted mb-3" dir="ltr" style="font-size:0.9rem;">All key vocabulary from Unit 06 with example sentences and Arabic meanings</p>
+
+      <div class="table-responsive">
+        <table class="dict-table">
+          <thead>
+            <tr>
+              <th>Word / Collocation</th>
+              <th>Part of Speech</th>
+              <th>Example Sentence</th>
+              <th>المعنى بالعربية</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Body Language -->
+            <tr><td colspan="4" style="background:#e0f2fe; font-weight:700; color:#1d4ed8; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">لغة الجسد — Body Language</td></tr>
+            <tr>
+              <td><span class="word">fold your arms</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She folded her arms and refused to speak.</td>
+              <td class="meaning-ar">يطوي ذراعيه (شعور دفاعي)</td>
+            </tr>
+            <tr>
+              <td><span class="word">purse your lips</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">He pursed his lips when he heard the news.</td>
+              <td class="meaning-ar">يضمّ شفتيه (تعبير عن الانزعاج)</td>
+            </tr>
+            <tr>
+              <td><span class="word">furrow your brow</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She furrowed her brow while reading.</td>
+              <td class="meaning-ar">يقطّب حاجبيه (تركيز أو قلق)</td>
+            </tr>
+            <tr>
+              <td><span class="word">drum your fingers</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">He drummed his fingers on the table impatiently.</td>
+              <td class="meaning-ar">يطرق بأصابعه (علامة عدم الصبر)</td>
+            </tr>
+            <tr>
+              <td><span class="word">rub your hands together</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She rubbed her hands together excitedly.</td>
+              <td class="meaning-ar">يفرك يديه (الحماس أو التوقع)</td>
+            </tr>
+            <tr>
+              <td><span class="word">tilt your head</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">The dog tilted its head when it heard a strange sound.</td>
+              <td class="meaning-ar">يميل رأسه (الاهتمام أو الانتباه)</td>
+            </tr>
+            <tr>
+              <td><span class="word">cross your ankles</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She crossed her ankles nervously under the chair.</td>
+              <td class="meaning-ar">يتقاطع كاحلاه (التوتر الخفي)</td>
+            </tr>
+            <tr>
+              <td><span class="word">tent your fingers</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">The boss tented his fingers and leaned back confidently.</td>
+              <td class="meaning-ar">يضم أصابعه كخيمة (الثقة والسيطرة)</td>
+            </tr>
+            <tr>
+              <td><span class="word">wrinkle your nose</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She wrinkled her nose at the unpleasant smell.</td>
+              <td class="meaning-ar">يجعّد أنفه (الاشمئزاز)</td>
+            </tr>
+            <tr>
+              <td><span class="word">stroke your chin</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">He stroked his chin while considering the options.</td>
+              <td class="meaning-ar">يتحسّس ذقنه (التردد / التفكير)</td>
+            </tr>
+
+            <!-- Collocations -->
+            <tr><td colspan="4" style="background:#fef3c7; font-weight:700; color:#92400e; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">المتلازمات اللفظية — Body Collocations</td></tr>
+            <tr>
+              <td><span class="word">clear your throat</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">He cleared his throat before giving the speech.</td>
+              <td class="meaning-ar">يتنحنح (قبل الكلام أو عند الإحراج)</td>
+            </tr>
+            <tr>
+              <td><span class="word">grind your teeth</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She grinds her teeth when she's under stress.</td>
+              <td class="meaning-ar">يصرّ بأسنانه (التوتر أثناء النوم)</td>
+            </tr>
+            <tr>
+              <td><span class="word">shrug your shoulders</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">He just shrugged his shoulders and walked away.</td>
+              <td class="meaning-ar">يرفع كتفيه (اللامبالاة أو عدم المعرفة)</td>
+            </tr>
+            <tr>
+              <td><span class="word">twirl your hair</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She twirled her hair while thinking.</td>
+              <td class="meaning-ar">يلفّ شعره بأصابعه (عادة لاشعورية)</td>
+            </tr>
+            <tr>
+              <td><span class="word">flick your hair back</span></td>
+              <td><em>verb phrase</em></td>
+              <td class="example">She flicked her hair back and smiled.</td>
+              <td class="meaning-ar">يرمي شعره للخلف</td>
+            </tr>
+
+            <!-- Emotions -->
+            <tr><td colspan="4" style="background:#fce7f3; font-weight:700; color:#9d174d; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">المشاعر — Emotions</td></tr>
+            <tr>
+              <td><span class="word">anticipation</span></td>
+              <td><em>noun</em></td>
+              <td class="example">She waited with great anticipation for her results.</td>
+              <td class="meaning-ar">الترقّب / التوقع بشوق</td>
+            </tr>
+            <tr>
+              <td><span class="word">apprehension</span></td>
+              <td><em>noun</em></td>
+              <td class="example">He felt apprehension before the exam.</td>
+              <td class="meaning-ar">الخشية / القلق من المجهول</td>
+            </tr>
+            <tr>
+              <td><span class="word">awe</span></td>
+              <td><em>noun</em></td>
+              <td class="example">We stood in awe before the Grand Canyon.</td>
+              <td class="meaning-ar">الإعجاب الممزوج بالرهبة</td>
+            </tr>
+            <tr>
+              <td><span class="word">contempt</span></td>
+              <td><em>noun</em></td>
+              <td class="example">He showed contempt for the rules by ignoring them.</td>
+              <td class="meaning-ar">الازدراء / الاحتقار</td>
+            </tr>
+            <tr>
+              <td><span class="word">loathing</span></td>
+              <td><em>noun</em></td>
+              <td class="example">She felt a deep loathing for dishonesty.</td>
+              <td class="meaning-ar">الكره الشديد / البغض</td>
+            </tr>
+            <tr>
+              <td><span class="word">rage</span></td>
+              <td><em>noun</em></td>
+              <td class="example">His face turned red with rage.</td>
+              <td class="meaning-ar">الغضب الشديد / الغيظ</td>
+            </tr>
+            <tr>
+              <td><span class="word">remorse</span></td>
+              <td><em>noun</em></td>
+              <td class="example">He felt deep remorse for his actions.</td>
+              <td class="meaning-ar">الندم العميق</td>
+            </tr>
+            <tr>
+              <td><span class="word">serenity</span></td>
+              <td><em>noun</em></td>
+              <td class="example">The mountain view gave her a sense of serenity.</td>
+              <td class="meaning-ar">الهدوء / السكينة الداخلية</td>
+            </tr>
+
+            <!-- Key Verbs from Article -->
+            <tr><td colspan="4" style="background:#d1fae5; font-weight:700; color:#065f46; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">الأفعال المحورية — Key Verbs</td></tr>
+            <tr>
+              <td><span class="word">ascribe</span></td>
+              <td><em>verb</em></td>
+              <td class="example">He ascribed his success to hard work.</td>
+              <td class="meaning-ar">يعزو / ينسب (شيئاً إلى سبب)</td>
+            </tr>
+            <tr>
+              <td><span class="word">inundated (with)</span></td>
+              <td><em>adj/verb</em></td>
+              <td class="example">She was inundated with emails after the announcement.</td>
+              <td class="meaning-ar">غارق في / مثقل بـ (كمية كبيرة)</td>
+            </tr>
+            <tr>
+              <td><span class="word">suppress</span></td>
+              <td><em>verb</em></td>
+              <td class="example">He tried to suppress his laughter during the meeting.</td>
+              <td class="meaning-ar">يكبت / يُخفي (مشاعر أو ردود أفعال)</td>
+            </tr>
+            <tr>
+              <td><span class="word">endeavour</span></td>
+              <td><em>verb</em></td>
+              <td class="example">She endeavoured to remain calm during the crisis.</td>
+              <td class="meaning-ar">يسعى / يبذل جهداً (رسمي)</td>
+            </tr>
+            <tr>
+              <td><span class="word">exacerbate</span></td>
+              <td><em>verb</em></td>
+              <td class="example">Stress can exacerbate health problems.</td>
+              <td class="meaning-ar">يُفاقم / يُزيد الأمر سوءاً</td>
+            </tr>
+            <tr>
+              <td><span class="word">wallow (in)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">Stop wallowing in self-pity and take action.</td>
+              <td class="meaning-ar">يتمرّغ / يغرق في (مشاعر سلبية)</td>
+            </tr>
+
+            <!-- Health Vocabulary -->
+            <tr><td colspan="4" style="background:#ede9fe; font-weight:700; color:#4c1d95; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">مفردات الصحة — Health Vocabulary</td></tr>
+            <tr>
+              <td><span class="word">mineral</span></td>
+              <td><em>noun</em></td>
+              <td class="example">The Dead Sea water is rich in minerals.</td>
+              <td class="meaning-ar">معدن / عنصر معدني طبيعي</td>
+            </tr>
+            <tr>
+              <td><span class="word">thrive</span></td>
+              <td><em>verb</em></td>
+              <td class="example">Children thrive when they feel loved and secure.</td>
+              <td class="meaning-ar">يزدهر / ينمو بصحة وعافية</td>
+            </tr>
+            <tr>
+              <td><span class="word">infection</span></td>
+              <td><em>noun</em></td>
+              <td class="example">She had a throat infection and couldn't speak.</td>
+              <td class="meaning-ar">عدوى / التهاب (بكتيري أو فيروسي)</td>
+            </tr>
+            <tr>
+              <td><span class="word">sufficient</span></td>
+              <td><em>adjective</em></td>
+              <td class="example">Make sure you get sufficient sleep every night.</td>
+              <td class="meaning-ar">كافٍ / وافٍ بالغرض</td>
+            </tr>
+            <tr>
+              <td><span class="word">exposure (to)</span></td>
+              <td><em>noun</em></td>
+              <td class="example">Limit your exposure to direct sunlight.</td>
+              <td class="meaning-ar">التعرّض لـ (شيء ضار أو مفيد)</td>
+            </tr>
+            <tr>
+              <td><span class="word">filter</span></td>
+              <td><em>noun/verb</em></td>
+              <td class="example">The water filter removes impurities.</td>
+              <td class="meaning-ar">مرشّح / فلتر (يُنقّي)</td>
+            </tr>
+            <tr>
+              <td><span class="word">nourish</span></td>
+              <td><em>verb</em></td>
+              <td class="example">A balanced diet nourishes the body and mind.</td>
+              <td class="meaning-ar">يُغذّي / يُمدّ بما يحتاجه الجسم</td>
+            </tr>
+
+            <!-- Forest Bathing Vocab -->
+            <tr><td colspan="4" style="background:#dcfce7; font-weight:700; color:#14532d; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">مفردات الاستحمام الغابي — Forest Bathing Vocabulary</td></tr>
+            <tr>
+              <td><span class="word">immerse (yourself in)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">Immerse yourself in nature to reduce stress.</td>
+              <td class="meaning-ar">ينغمس / يستغرق كلياً في</td>
+            </tr>
+            <tr>
+              <td><span class="word">contemplate</span></td>
+              <td><em>verb</em></td>
+              <td class="example">Take time to sit quietly and contemplate.</td>
+              <td class="meaning-ar">يتأمّل / يفكّر بعمق وهدوء</td>
+            </tr>
+            <tr>
+              <td><span class="word">abundance</span></td>
+              <td><em>noun</em></td>
+              <td class="example">The park has an abundance of trees and flowers.</td>
+              <td class="meaning-ar">وفرة / كمية كبيرة من شيء</td>
+            </tr>
+            <tr>
+              <td><span class="word">emit</span></td>
+              <td><em>verb</em></td>
+              <td class="example">Trees emit compounds that benefit human health.</td>
+              <td class="meaning-ar">يُصدر / يُطلق (غاز أو مادة)</td>
+            </tr>
+            <tr>
+              <td><span class="word">psyche</span></td>
+              <td><em>noun</em></td>
+              <td class="example">Nature has a positive impact on the human psyche.</td>
+              <td class="meaning-ar">النفس / العقل الباطن / التوجّه الفكري</td>
+            </tr>
+            <tr>
+              <td><span class="word">stimulation</span></td>
+              <td><em>noun</em></td>
+              <td class="example">Too much screen stimulation can cause stress.</td>
+              <td class="meaning-ar">التحفيز / الإثارة الحسّية</td>
+            </tr>
+            <tr>
+              <td><span class="word">revolution</span></td>
+              <td><em>noun</em></td>
+              <td class="example">The industrial revolution changed the world forever.</td>
+              <td class="meaning-ar">ثورة / تحوّل جذري كبير</td>
+            </tr>
+
+            <!-- Reporting Verbs -->
+            <tr><td colspan="4" style="background:#fef9c3; font-weight:700; color:#78350f; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">أفعال الإبلاغ — Reporting Verbs</td></tr>
+            <tr>
+              <td><span class="word">claim (that)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">He claimed that he had never met her before.</td>
+              <td class="meaning-ar">يدّعي / يزعم أن</td>
+            </tr>
+            <tr>
+              <td><span class="word">suggest (+ gerund / that)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">She suggested taking a break / that we should rest.</td>
+              <td class="meaning-ar">يقترح (فعل + ing أو that + should)</td>
+            </tr>
+            <tr>
+              <td><span class="word">advise (sb to do)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">The doctor advised him to rest for a week.</td>
+              <td class="meaning-ar">ينصح شخصاً بأن يفعل</td>
+            </tr>
+            <tr>
+              <td><span class="word">congratulate (sb on)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">I congratulated her on passing her exams.</td>
+              <td class="meaning-ar">يهنّئ شخصاً على إنجاز</td>
+            </tr>
+            <tr>
+              <td><span class="word">convince (sb to do)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">He convinced me to apply for the job.</td>
+              <td class="meaning-ar">يقنع شخصاً بأن يفعل</td>
+            </tr>
+            <tr>
+              <td><span class="word">remind (sb that)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">Please remind me that the meeting is at 3.</td>
+              <td class="meaning-ar">يُذكّر شخصاً بأن</td>
+            </tr>
+            <tr>
+              <td><span class="word">regret (+ gerund)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">She regretted not studying harder.</td>
+              <td class="meaning-ar">يندم على فعل شيء (في الماضي)</td>
+            </tr>
+            <tr>
+              <td><span class="word">wonder (if/why)</span></td>
+              <td><em>verb</em></td>
+              <td class="example">He wondered why nobody had come.</td>
+              <td class="meaning-ar">يتساءل / يتعجّب (سؤال غير مباشر)</td>
+            </tr>
+
+            <!-- Resilience -->
+            <tr><td colspan="4" style="background:#ede9fe; font-weight:700; color:#4c1d95; font-family:'Amiri',serif; direction:rtl; text-align:right; padding:0.5rem 1rem;">مفردات المرونة — Resilience Vocabulary</td></tr>
+            <tr>
+              <td><span class="word">resilience</span></td>
+              <td><em>noun</em></td>
+              <td class="example">She showed great resilience after losing her job.</td>
+              <td class="meaning-ar">المرونة / القدرة على التعافي</td>
+            </tr>
+            <tr>
+              <td><span class="word">perseverance</span></td>
+              <td><em>noun</em></td>
+              <td class="example">Success requires perseverance and hard work.</td>
+              <td class="meaning-ar">المثابرة / المواظبة رغم الصعوبات</td>
+            </tr>
+            <tr>
+              <td><span class="word">self-reliance</span></td>
+              <td><em>noun</em></td>
+              <td class="example">Her parents raised her with a spirit of self-reliance.</td>
+              <td class="meaning-ar">الاعتماد على النفس</td>
+            </tr>
+            <tr>
+              <td><span class="word">discrimination</span></td>
+              <td><em>noun</em></td>
+              <td class="example">She faced discrimination because of her disability.</td>
+              <td class="meaning-ar">التمييز / المعاملة غير العادلة</td>
+            </tr>
+            <tr>
+              <td><span class="word">determination</span></td>
+              <td><em>noun</em></td>
+              <td class="example">Her determination helped her overcome every obstacle.</td>
+              <td class="meaning-ar">الإصرار / العزيمة القوية</td>
+            </tr>
+            <tr>
+              <td><span class="word">paraplegia</span></td>
+              <td><em>noun</em></td>
+              <td class="example">Paraplegia affects the use of the legs.</td>
+              <td class="meaning-ar">الشلل النصفي (يؤثر على الساقين)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="text-center py-4 mt-3" style="color:#777; font-size:0.82rem; border-top:1px solid #e0e0e0;">
+  <div style="font-family:'Amiri',serif; font-size:1rem; color:var(--teal);">وحدة 06 — يبدو جيداً | ورقة دراسة ثنائية اللغة</div>
+  Unit 06 – Feels Good | Complete Bilingual Study Sheet · Bootstrap 5 · Arabic &amp; English
+</footer>
+
+</div><!-- /container -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth scroll for TOC
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const el = document.querySelector(this.getAttribute('href'));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>

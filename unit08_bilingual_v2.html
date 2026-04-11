@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 08 – Follow the Crowd? | ورقة دراسية ثنائية اللغة</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════ VARIABLES ═══════════════ */
+:root{
+  --en-bg:#fffdf5; --ar-bg:#f0f7ff;
+  --en-border:#e8a020; --ar-border:#0d7377;
+  --green:#1a7a4a; --green-light:#e8f7ef;
+  --gold:#c8860a; --pink:#c2185b; --navy:#0d2a4e; --teal:#0d7377;
+  --purple:#6a1b9a; --orange:#e65100;
+  --card-radius:16px; --shadow:0 6px 24px rgba(13,42,78,.12);
+  --scroll-track:#e2eaf5; --scroll-thumb:#0d7377;
+}
+/* ═══════════════ BASE ═══════════════ */
+*{box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:#eef2f7;color:#1a1a2e;margin:0;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.en-text{font-family:'Crimson Pro',serif;direction:ltr;text-align:left;}
+p.en-text,li.en-text,td.en-text,span.en-text{font-size:1rem;line-height:1.7;}
+
+/* ═══════════════ NAV ═══════════════ */
+.top-nav{background:linear-gradient(135deg,#0d2a4e 0%,#0d7377 50%,#1a7a4a 100%);
+  position:sticky;top:0;z-index:9999;padding:.5rem 1rem;
+  display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+.top-nav a{color:rgba(255,255,255,.85)!important;font-size:.78rem;padding:.3rem .75rem;
+  border-radius:20px;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.15);white-space:nowrap;}
+.top-nav a:hover{background:rgba(255,255,255,.25);color:#fff!important;border-color:rgba(255,255,255,.4);}
+.top-nav .unit-label{color:#fff;font-weight:900;font-size:1rem;margin-left:1rem;letter-spacing:.05em;}
+
+/* ═══════════════ HERO ═══════════════ */
+.hero{background:linear-gradient(135deg,#0d2a4e 0%,#0d7377 55%,#1a7a4a 100%);
+  color:#fff;padding:3.5rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.06) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 20%,rgba(200,134,10,.12) 0%,transparent 50%);}
+.hero-badge{background:var(--gold);color:#fff;padding:.35rem 1.4rem;border-radius:30px;
+  font-size:.82rem;font-weight:700;display:inline-block;margin-bottom:1rem;
+  box-shadow:0 4px 12px rgba(200,134,10,.4);}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);margin-bottom:.5rem;position:relative;}
+.hero p{font-size:clamp(.95rem,2.5vw,1.2rem);opacity:.9;position:relative;}
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1.2rem;position:relative;}
+.hero-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  color:#fff;padding:.3rem 1rem;border-radius:20px;font-size:.8rem;}
+
+/* ═══════════════ SECTION WRAPPER ═══════════════ */
+.lesson-section{margin-bottom:2rem;}
+.lesson-header{background:linear-gradient(90deg,var(--navy) 0%,var(--teal) 100%);
+  color:#fff;padding:1rem 1.5rem;border-radius:var(--card-radius) var(--card-radius) 0 0;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.lesson-header h4{margin:0;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;}
+.lesson-badge{background:var(--pink);color:#fff;padding:.2rem .9rem;border-radius:20px;font-size:.75rem;font-weight:700;white-space:nowrap;}
+
+/* ═══════════════ SCROLL PANEL WRAPPER ═══════════════ */
+.scroll-wrapper{display:flex;background:#fff;border-radius:0 0 var(--card-radius) var(--card-radius);
+  box-shadow:var(--shadow);overflow:hidden;border:1px solid #dde3ee;border-top:none;}
+.scroll-panel{flex:0 0 50%;max-width:50%;overflow-x:auto;overflow-y:visible;
+  -webkit-overflow-scrolling:touch;scrollbar-width:thin;
+  scrollbar-color:var(--scroll-thumb) var(--scroll-track);}
+.scroll-panel::-webkit-scrollbar{height:6px;}
+.scroll-panel::-webkit-scrollbar-track{background:var(--scroll-track);}
+.scroll-panel::-webkit-scrollbar-thumb{background:var(--scroll-thumb);border-radius:3px;}
+.scroll-panel.en-panel{background:var(--en-bg);border-right:3px solid var(--en-border);}
+.scroll-panel.ar-panel{background:var(--ar-bg);border-left:3px solid var(--ar-border);}
+.scroll-panel-inner{min-width:480px;padding:1.2rem 1.4rem;}
+/* panel label strip */
+.panel-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:.25rem .8rem;display:inline-block;border-radius:0 0 8px 8px;margin-bottom:.7rem;}
+.en-panel .panel-label{background:var(--en-border);color:#fff;}
+.ar-panel .panel-label{background:var(--ar-border);color:#fff;}
+
+/* sub-section inside panel */
+.sub-head{font-size:.82rem;font-weight:700;color:var(--pink);border-bottom:2px solid var(--pink);
+  padding-bottom:.3rem;margin:1rem 0 .6rem;text-transform:uppercase;letter-spacing:.05em;}
+
+/* ═══════════════ TABLES ═══════════════ */
+.bi-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.88rem;
+  border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.bi-table thead th{background:var(--navy);color:#fff;padding:.6rem .9rem;
+  white-space:nowrap;font-family:'Cairo',sans-serif;font-weight:700;}
+.bi-table tbody tr:nth-child(even){background:rgba(13,115,119,.05);}
+.bi-table tbody tr:hover{background:rgba(200,134,10,.08);}
+.bi-table td{padding:.55rem .9rem;vertical-align:middle;border-bottom:1px solid #e8edf5;}
+.bi-table td.en-text{font-size:.9rem;}
+
+/* answer badge */
+.ans{background:var(--green-light);color:var(--green);font-weight:700;
+  padding:.1rem .55rem;border-radius:6px;border:1.5px solid var(--green);
+  font-size:.83rem;white-space:nowrap;display:inline-block;}
+.ans-row{background:var(--green-light)!important;}
+
+/* article prose */
+.article-prose{font-size:.9rem;line-height:1.9;color:#2a2a3a;}
+.article-prose p{margin-bottom:.8rem;}
+.article-prose strong{color:var(--navy);}
+.article-prose .highlight{background:#fff3cd;padding:.05rem .3rem;border-radius:3px;}
+
+/* translation prose */
+.trans-prose{font-size:.9rem;line-height:1.9;color:#1a2a3a;direction:rtl;text-align:right;}
+.trans-prose p{margin-bottom:.8rem;}
+.trans-prose strong{color:var(--teal);}
+
+/* vocab table */
+.vocab-table th{background:var(--navy);color:#fff;white-space:nowrap;font-size:.8rem;}
+.vocab-table td{font-size:.82rem;vertical-align:middle;}
+.vocab-table tr:hover{background:#f0faff;}
+.syn-cell{color:var(--teal);font-weight:600;}
+.ant-cell{color:#c62828;font-weight:600;}
+#vocabSearch{border-radius:30px;padding:.65rem 1.4rem;border:2px solid var(--teal);
+  width:100%;font-size:.95rem;outline:none;background:#fff;direction:auto;}
+#vocabSearch:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(13,115,119,.15);}
+
+/* exam */
+.exam-card{background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);
+  padding:1.3rem 1.4rem;margin-bottom:.9rem;border-right:4px solid var(--teal);
+  transition:box-shadow .2s;}
+.exam-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.13);}
+.q-num{background:var(--navy);color:#fff;border-radius:50%;width:34px;height:34px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:.82rem;
+  font-weight:900;flex-shrink:0;}
+.exam-option label{cursor:pointer;padding:.45rem .9rem;border-radius:8px;
+  transition:background .15s;display:block;font-size:.9rem;}
+.exam-option label:hover{background:#eef5fb;}
+.exam-option input[type=radio]{display:none;}
+.exam-option input[type=radio]:checked + label{background:rgba(13,115,119,.15);color:var(--teal);font-weight:600;}
+.grade-box{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;
+  border-radius:var(--card-radius);padding:2.5rem;text-align:center;}
+.grade-number{font-size:5rem;font-weight:900;font-family:'Playfair Display',serif;line-height:1;}
+
+/* footer */
+.footer-bar{background:var(--navy);color:rgba(255,255,255,.55);text-align:center;
+  padding:1.2rem;font-size:.8rem;margin-top:3rem;}
+
+/* scrollbar on mobile — make panels stack */
+@media(max-width:700px){
+  .scroll-panel{flex:0 0 100%;max-width:100%;}
+  .scroll-wrapper{flex-direction:column;}
+  .scroll-panel.en-panel{border-right:none;border-bottom:3px solid var(--en-border);}
+  .scroll-panel.ar-panel{border-left:none;border-top:3px solid var(--ar-border);}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ TOP NAV ════════ -->
+<nav class="top-nav">
+  <span class="unit-label">📚 Unit 08</span>
+  <a href="#intro">المقدمة</a>
+  <a href="#lesson1">1A · المفردات</a>
+  <a href="#lesson2">2A · الاستماع</a>
+  <a href="#lesson3">3A · التحدث</a>
+  <a href="#lesson4">4A · القراءة</a>
+  <a href="#lesson5">5A · القواعد</a>
+  <a href="#lesson6">6A · الكتابة</a>
+  <a href="#lifeskills">Life Skills</a>
+  <a href="#vocab">المعجم</a>
+  <a href="#exam">الامتحان</a>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<div class="hero">
+  <div class="hero-badge">الوحدة الثامنة · Unit 08</div>
+  <h1>Follow the Crowd? 🌍</h1>
+  <p>هل تتبع القطيع؟ — ورقة دراسية ثنائية اللغة شاملة مع ترجمة كاملة</p>
+  <div class="hero-pills">
+    <span class="hero-pill">📖 قواعد · Articles</span>
+    <span class="hero-pill">🗣️ مفردات · Phrasal Verbs</span>
+    <span class="hero-pill">✍️ مقالة رأي · Opinion Essay</span>
+    <span class="hero-pill">🎧 استماع · Listening</span>
+    <span class="hero-pill">💬 مبالغة وتهوين · Hyperbole</span>
+    <span class="hero-pill">📝 امتحان 50 سؤالاً</span>
+  </div>
+</div>
+
+<div class="container-fluid px-2 px-md-4 mt-4">
+
+<!-- ══════════════════════════════════════════════════════
+     INTRO — PIONEERS (Pages 26–27)
+══════════════════════════════════════════════════════ -->
+<section id="intro" class="lesson-section">
+  <div class="lesson-header">
+    <h4>📜 Introduction — Pioneers &nbsp;|&nbsp; الرواد</h4>
+    <span class="lesson-badge">Pages 26–27</span>
+  </div>
+  <div class="scroll-wrapper">
+    <!-- ENGLISH PANEL -->
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English — Original Text</span>
+
+        <div class="sub-head">Main Article</div>
+        <div class="article-prose en-text">
+          <p><strong>History is full of pioneers with great ideas. People who think for themselves can achieve great success as a result.</strong></p>
+          <p>For example, mathematician Muhammad ibn Musa al-Khwarizmi is not only <span class="highlight">credited</span> with being the father of algebra, but also produced works on astronomy which helped to <span class="highlight">form</span> our understanding of the stars. The English term <em>algorithm</em>, which today you commonly hear in association with computers and social media, <span class="highlight">originated</span> with his name. Imagine your work being so important that it's still used well over a millennium after you lived!</p>
+          <p>Polish scientist Marie Curie discovered Polonium, an element 400 times more radioactive than uranium. Polonium was added to the Periodic Table in 1898 and was named after Curie's birth country, Poland. As a result of her work, Marie later won the Nobel Prize which she shared with her colleague and husband, Pierre Curie. The couple <span class="highlight">continued to work</span> with radium and soon <span class="highlight">determined</span> that it had the power to kill cancer cells. This would go on to help millions of people with various cancer treatments all over the world.</p>
+          <p>In more modern times, we have pioneers such as computer programmer Grace Hopper (1906–1992), who helped <span class="highlight">construct</span> programming languages for computers. Grace believed that computer programming should be user-friendly and simpler for people to understand. To do this, she <span class="highlight">converted</span> English terms and expressions into machine code that could be understood by computers. This resulted in COBOL, a computer language for data processors that is still in use today.</p>
+        </div>
+
+        <div class="sub-head">Key Vocabulary — Influence, Creation & Development</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Word / Phrase</th><th>Used in Context</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>credited with</strong></td><td class="en-text">is credited with being the father of algebra</td></tr>
+            <tr><td>2</td><td><strong>form</strong></td><td class="en-text">helped to form our understanding</td></tr>
+            <tr><td>3</td><td><strong>originated</strong></td><td class="en-text">originated with his name</td></tr>
+            <tr><td>4</td><td><strong>produced</strong></td><td class="en-text">produced works on astronomy</td></tr>
+            <tr><td>5</td><td><strong>construct</strong></td><td class="en-text">helped construct programming languages</td></tr>
+            <tr><td>6</td><td><strong>converted</strong></td><td class="en-text">converted English into machine code</td></tr>
+            <tr><td>7</td><td><strong>determined</strong></td><td class="en-text">determined that radium kills cancer cells</td></tr>
+            <tr><td>8</td><td><strong>resulted in</strong></td><td class="en-text">This resulted in COBOL</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /en-panel -->
+
+    <!-- ARABIC PANEL -->
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية — الترجمة الكاملة</span>
+
+        <div class="sub-head">المقال الرئيسي — مترجم</div>
+        <div class="trans-prose">
+          <p><strong>التاريخ مليء بالرواد أصحاب الأفكار العظيمة. الأشخاص الذين يفكرون باستقلالية يمكنهم تحقيق نجاح باهر نتيجةً لذلك.</strong></p>
+          <p>على سبيل المثال، عالم الرياضيات محمد بن موسى الخوارزمي لا يُنسب إليه كونه أبا علم الجبر فحسب، بل أنتج أيضاً أعمالاً في علم الفلك ساعدت في تشكيل فهمنا للنجوم. المصطلح الإنجليزي <em>algorithm</em> (خوارزمية)، الذي تسمعه اليوم كثيراً في سياق الحواسيب ووسائل التواصل الاجتماعي، <strong>نشأ من اسمه</strong>. تخيّل أن يكون عملك بالغ الأهمية لدرجة أنه لا يزال مستخدماً بعد أكثر من ألف عام من رحيلك!</p>
+          <p>اكتشفت العالمة البولندية ماري كوري عنصر البولونيوم، وهو عنصر أكثر إشعاعية من اليورانيوم بـ400 مرة. أُضيف البولونيوم إلى الجدول الدوري عام 1898 وسُمّي على اسم بلد ميلاد كوري، بولندا. نتيجةً لعملها، فازت ماري لاحقاً بجائزة نوبل التي تقاسمتها مع زميلها وزوجها بيير كوري. واصل الزوجان العمل مع الراديوم وسرعان ما تبيّن لهما أنه قادر على قتل خلايا السرطان. وسيُسهم ذلك في مساعدة ملايين الأشخاص في علاجات السرطان المختلفة حول العالم.</p>
+          <p>في العصر الحديث، لدينا رواد من أمثال مبرمجة الحاسوب غريس هوبر (1906–1992)، التي أسهمت في بناء لغات البرمجة للحواسيب. آمنت غريس بأن البرمجة ينبغي أن تكون سهلة الاستخدام وأبسط فهماً للناس. لتحقيق ذلك، <strong>حوّلت</strong> المصطلحات والعبارات الإنجليزية إلى رمز آلي يمكن للحواسيب فهمه. وأسفر ذلك عن لغة COBOL، وهي لغة حاسوبية لمعالجات البيانات لا تزال مستخدمة حتى اليوم.</p>
+        </div>
+
+        <div class="sub-head">الكلمات الدالة — شرح عربي</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>الكلمة</th><th>المعنى بالعربية</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>credited with</strong></td><td>يُنسب إليه الفضل في</td></tr>
+            <tr><td>2</td><td><strong>form</strong></td><td>يُشكّل / يُساهم في تكوين</td></tr>
+            <tr><td>3</td><td><strong>originated</strong></td><td>نشأ من / اشتُقّ من</td></tr>
+            <tr><td>4</td><td><strong>produced</strong></td><td>أنتج / أصدر</td></tr>
+            <tr><td>5</td><td><strong>construct</strong></td><td>يبني / يُنشئ</td></tr>
+            <tr><td>6</td><td><strong>converted</strong></td><td>حوّل / بدّل</td></tr>
+            <tr><td>7</td><td><strong>determined</strong></td><td>تبيّن / أثبت / قرّر</td></tr>
+            <tr><td>8</td><td><strong>resulted in</strong></td><td>أسفر عن / أدّى إلى</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /ar-panel -->
+  </div><!-- /scroll-wrapper -->
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LESSON 1A — VOCABULARY & SPEAKING (Page 27)
+══════════════════════════════════════════════════════ -->
+<section id="lesson1" class="lesson-section">
+  <div class="lesson-header">
+    <h4>🔤 Lesson 1A — Vocabulary & Speaking &nbsp;|&nbsp; المفردات والتحدث</h4>
+    <span class="lesson-badge">Page 27</span>
+  </div>
+  <div class="scroll-wrapper">
+    <!-- ENGLISH -->
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English</span>
+
+        <div class="sub-head">Active Vocabulary — Phrasal Verbs (come · hold · set · take)</div>
+        <div class="article-prose en-text" style="font-size:.85rem;">
+          <ul>
+            <li><strong>come</strong>: <em>come down hard on</em> somebody · <em>come across</em> something · <em>come up with</em> something</li>
+            <li><strong>hold</strong>: <em>hold (somebody) back</em> from doing something · <em>hold onto</em> doing something · <em>hold off on</em> doing something</li>
+            <li><strong>set</strong>: <em>set about</em> doing a task · <em>set out</em> to do something · <em>set out</em> a plan · <em>set up</em> something</li>
+            <li><strong>take</strong>: <em>take to</em> doing something · <em>take something in</em></li>
+          </ul>
+        </div>
+
+        <div class="sub-head">Exercise 4 — Fill in the correct particles</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Sentence</th><th>✅ Answer</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>1</td><td class="en-text">I'm going to hold <span class="ans">off</span> making a decision until I've read all the information.</td><td><span class="ans">off</span></td></tr>
+            <tr class="ans-row"><td>2</td><td class="en-text">Her parents were furious and came <span class="ans">down</span> hard on her.</td><td><span class="ans">down</span></td></tr>
+            <tr class="ans-row"><td>3</td><td class="en-text">It was so complicated. I tried to understand, but I just couldn't take it <span class="ans">in</span>.</td><td><span class="ans">in</span></td></tr>
+            <tr class="ans-row"><td>4</td><td class="en-text">It was hard work, but I held <span class="ans">on</span> to pursuing my dream.</td><td><span class="ans">on</span></td></tr>
+            <tr class="ans-row"><td>5</td><td class="en-text">She set <span class="ans">out</span> her proposal and the committee listened carefully.</td><td><span class="ans">out</span></td></tr>
+            <tr class="ans-row"><td>6</td><td class="en-text">I don't think this is the best way to set <span class="ans">about</span> trying to change his mind.</td><td><span class="ans">about</span></td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">Exercise 5 — News Report (8.1) — Correct verb forms</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Sentence from Report</th><th>✅ Answer</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>1</td><td class="en-text">Laos doesn't have a formal system for collecting waste, so most people have <span class="ans">taken</span> to burning it.</td><td><span class="ans">taken</span></td></tr>
+            <tr class="ans-row"><td>2</td><td class="en-text">Somchai didn't know exactly what to do, but this didn't <span class="ans">hold</span> him back from taking some action.</td><td><span class="ans">hold</span></td></tr>
+            <tr class="ans-row"><td>3</td><td class="en-text">Somchai and his mother <span class="ans">set about</span> collecting the rubbish.</td><td><span class="ans">set about</span></td></tr>
+            <tr class="ans-row"><td>4</td><td class="en-text">To begin with, people who <span class="ans">came</span> across this mother and her son were confused.</td><td><span class="ans">came</span></td></tr>
+            <tr class="ans-row"><td>5</td><td class="en-text">Somchai's father <span class="ans">came</span> up with the idea of asking his company to donate high-visibility vests.</td><td><span class="ans">came</span></td></tr>
+            <tr class="ans-row"><td>6</td><td class="en-text">Somchai <span class="ans">set</span> out a plan to have large bins with targets on them.</td><td><span class="ans">set</span></td></tr>
+            <tr class="ans-row"><td>7</td><td class="en-text">A businessman contacted Somchai about <span class="ans">setting</span> up recycling plants around the country.</td><td><span class="ans">setting</span></td></tr>
+            <tr class="ans-row"><td>8</td><td class="en-text">Somchai's mother says it's difficult to <span class="ans">take</span> in just how successful her son has been.</td><td><span class="ans">take</span></td></tr>
+            <tr class="ans-row"><td>9</td><td class="en-text">He's now <span class="ans">set</span> out to clean up the rivers and waterways.</td><td><span class="ans">set</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ARABIC -->
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية</span>
+
+        <div class="sub-head">الأفعال المركبة — Phrasal Verbs — شرح كامل</div>
+        <table class="bi-table">
+          <thead><tr><th>الفعل المركب</th><th>المعنى بالعربية</th><th>ملاحظة</th></tr></thead>
+          <tbody>
+            <tr><td><strong>come down (hard) on</strong></td><td>ينتقد بشدة / يعاقب</td><td>يُستخدم مع الأشخاص</td></tr>
+            <tr><td><strong>come across</strong></td><td>يصادف / يلتقي بالصدفة</td><td>لا يُخطَّط له مسبقاً</td></tr>
+            <tr><td><strong>come up with</strong></td><td>يتوصل إلى فكرة / يبتكر</td><td>يتعلق بالأفكار والحلول</td></tr>
+            <tr><td><strong>hold back</strong></td><td>يمنع / يُعيق</td><td>hold sb back from doing sth</td></tr>
+            <tr><td><strong>hold on (to)</strong></td><td>يتمسك بـ / يستمر في</td><td>hold on to + اسم/فعل</td></tr>
+            <tr><td><strong>hold off (on)</strong></td><td>يتأخر / يُرجئ</td><td>hold off + فعل مضاف إليه -ing</td></tr>
+            <tr><td><strong>set about</strong></td><td>يشرع في / يبدأ بجدية</td><td>set about + فعل بـ -ing</td></tr>
+            <tr><td><strong>set out (to)</strong></td><td>يعزم على / يعرض</td><td>set out to + مصدر / set out a plan</td></tr>
+            <tr><td><strong>set up</strong></td><td>يُؤسس / يُنشئ</td><td>set up a business/plant</td></tr>
+            <tr><td><strong>take to</strong></td><td>يعتاد على / ينصرف إلى</td><td>take to + فعل بـ -ing</td></tr>
+            <tr><td><strong>take in</strong></td><td>يستوعب / يفهم</td><td>take sth in = absorb/understand</td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">تمرين 4 — ترجمة الجمل مع الشرح</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>الترجمة العربية</th><th>الجسيمة</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>سأتريّث في اتخاذ القرار حتى أقرأ كل المعلومات.</td><td><span class="ans">off</span></td></tr>
+            <tr><td>2</td><td>غضب والداها وانتقداها بشدة.</td><td><span class="ans">down</span></td></tr>
+            <tr><td>3</td><td>كان الأمر معقداً جداً؛ حاولت الفهم لكنني لم أستطع استيعابه.</td><td><span class="ans">in</span></td></tr>
+            <tr><td>4</td><td>كان العمل شاقاً، لكنني تمسكت بمتابعة حلمي.</td><td><span class="ans">on</span></td></tr>
+            <tr><td>5</td><td>قدّمت اقتراحها وأنصت إليها أعضاء اللجنة بعناية.</td><td><span class="ans">out</span></td></tr>
+            <tr><td>6</td><td>لا أظن هذه هي الطريقة المثلى للشروع في محاولة تغيير رأيه.</td><td><span class="ans">about</span></td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">تمرين 5 — ترجمة التقرير الإخباري</div>
+        <div class="trans-prose" style="font-size:.85rem;">
+          <p>لا يملك لاوس نظاماً رسمياً لجمع النفايات، لذا اعتاد معظم الناس على حرقها. لم يكن سومتشاي يعرف بالضبط ما يجب فعله، لكن هذا لم يمنعه من اتخاذ بعض الإجراءات. شرع سومتشاي ووالدته في جمع القمامة. في البداية، كان يصطدم عشوائياً بأشخاص محتارين من أمر هذه الأم وابنها العاملين بجد دون مكافأة ظاهرة.</p>
+          <p>توصّل والد سومتشاي، الذي يعمل في قطاع البناء، إلى فكرة مطالبة شركته بالتبرع بسترات عاكسة للضوء للجميع. وضع سومتشاي خطة لوضع صناديق كبيرة في أماكن يميل السائقون إلى التباطؤ عندها. اتصل رجل أعمال ناجح بسومتشاي بشأن تأسيس مصانع لإعادة التدوير في أنحاء البلاد.</p>
+        </div>
+
+        <div class="alert" style="background:#fff8e1;border:1px solid #f59f00;border-radius:8px;padding:.8rem 1rem;font-size:.85rem;margin-top:.8rem;">
+          💡 <strong>نصيحة للحفظ:</strong> الأفعال المركبة تُحفظ في جُمَل كاملة، ليس كمفردات منعزلة. ربطها بقصة سومتشاي يساعدك على تذكّرها.
+        </div>
+      </div>
+    </div>
+  </div><!-- /scroll-wrapper -->
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LESSON 2A — LISTENING & VOCABULARY (Pages 28–29)
+══════════════════════════════════════════════════════ -->
+<section id="lesson2" class="lesson-section">
+  <div class="lesson-header">
+    <h4>👗 Lesson 2A — Listening & Vocabulary &nbsp;|&nbsp; الاستماع والمفردات</h4>
+    <span class="lesson-badge">Pages 28–29</span>
+  </div>
+  <div class="scroll-wrapper">
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English</span>
+
+        <div class="sub-head">Exercise 3 — Radio Programme 8.2 — Complete the notes</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Note</th><th>✅ Answer</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>1</td><td class="en-text">Clothes were a form of protection against the ___</td><td><span class="ans">elements</span></td></tr>
+            <tr class="ans-row"><td>2</td><td class="en-text">A person's sense of fashion can embody ___ and wealth</td><td><span class="ans">status</span></td></tr>
+            <tr class="ans-row"><td>3</td><td class="en-text">They kept us safe from dangerous and ___ materials</td><td><span class="ans">toxic / harmful</span></td></tr>
+            <tr class="ans-row"><td>4</td><td class="en-text">Clothes are a way of ___ yourself</td><td><span class="ans">expressing</span></td></tr>
+            <tr class="ans-row"><td>5</td><td class="en-text">In ___ red is the colour of happiness</td><td><span class="ans">China</span></td></tr>
+            <tr class="ans-row"><td>6</td><td class="en-text">Colours have different meanings throughout the ___</td><td><span class="ans">world</span></td></tr>
+            <tr class="ans-row"><td>7</td><td class="en-text">Glove ___ later became common</td><td><span class="ans">boxing</span></td></tr>
+            <tr class="ans-row"><td>8</td><td class="en-text">If a young man wanted to avoid catching a ___ they would wear a necktie</td><td><span class="ans">cold / disease</span></td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">Exercise 4 — Adjective-Noun Collocations</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Noun</th><th>✅ Possible Adjectives</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>1</td><td class="en-text"><strong>industry</strong></td><td><span class="ans">lucrative</span> / <span class="ans">fast</span> / <span class="ans">high-end</span></td></tr>
+            <tr class="ans-row"><td>2</td><td class="en-text"><strong>essentials</strong></td><td><span class="ans">bare</span> / <span class="ans">absolute</span></td></tr>
+            <tr class="ans-row"><td>3</td><td class="en-text"><strong>pain</strong></td><td><span class="ans">absolute</span> / <span class="ans">excruciating</span></td></tr>
+            <tr class="ans-row"><td>4</td><td class="en-text"><strong>clothes</strong></td><td><span class="ans">practical</span> / <span class="ans">durable</span> / <span class="ans">cultural</span></td></tr>
+            <tr class="ans-row"><td>5</td><td class="en-text"><strong>style</strong></td><td><span class="ans">fast</span> / <span class="ans">latest</span> / <span class="ans">high-end</span> / <span class="ans">global</span></td></tr>
+            <tr class="ans-row"><td>6</td><td class="en-text"><strong>tradition</strong></td><td><span class="ans">proud</span> / <span class="ans">cultural</span></td></tr>
+            <tr class="ans-row"><td>7</td><td class="en-text"><strong>significance</strong></td><td><span class="ans">global</span> / <span class="ans">great</span></td></tr>
+            <tr class="ans-row"><td>8</td><td class="en-text"><strong>quality</strong></td><td><span class="ans">great</span> / <span class="ans">high</span></td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">Exercise 5 — "Be Prepared" — Article with gaps filled</div>
+        <div class="article-prose en-text">
+          <p>In 1912, the famous British explorer Captain Scott failed in his race to Antarctica partly because he wore heavy leather clothing. His rival, Roald Amundsen, succeeded partly because he wore lighter-weight fur animal skins. Why am I telling you this? Well, for next week's expedition to the mountains, I want you to remember the saying: 'There is no such thing as bad weather, only bad clothes'.</p>
+          <p>Our company has a <span class="ans">¹ proud</span> tradition of taking young people to some amazing places, but we want all of you to be safe and comfortable by taking the right clothes. Adventure sports clothing is a <span class="ans">² lucrative</span> industry, but you do not have to spend a lot of money to have <span class="ans">³ high</span> quality, durable and <span class="ans">⁴ practical</span> clothes. Good walking boots and a waterproof jacket are the <span class="ans">⁵ bare</span> essentials.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية</span>
+
+        <div class="sub-head">تمرين 3 — ترجمة ملاحظات البرنامج الإذاعي</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>الملاحظة مترجمة</th><th>الإجابة</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>كانت الملابس وسيلة حماية من <strong>العوامل الطبيعية (البرد والحر...)</strong></td><td><span class="ans">the elements</span></td></tr>
+            <tr><td>2</td><td>يمكن أن تُعبّر أزياء الشخص عن <strong>مكانته الاجتماعية</strong> وثروته</td><td><span class="ans">status</span></td></tr>
+            <tr><td>3</td><td>حمتنا من المواد الخطرة و<strong>السامة</strong></td><td><span class="ans">toxic</span></td></tr>
+            <tr><td>4</td><td>الملابس وسيلة <strong>للتعبير</strong> عن الذات</td><td><span class="ans">expressing</span></td></tr>
+            <tr><td>5</td><td>في <strong>الصين</strong> اللون الأحمر هو لون السعادة</td><td><span class="ans">China</span></td></tr>
+            <tr><td>6</td><td>للألوان معانٍ مختلفة في أنحاء <strong>العالم</strong></td><td><span class="ans">the world</span></td></tr>
+            <tr><td>7</td><td>قفازات <strong>الملاكمة</strong> أصبحت شائعة لاحقاً</td><td><span class="ans">boxing</span></td></tr>
+            <tr><td>8</td><td>كان الشباب يرتدون ربطات العنق لتجنب الإصابة <strong>بالبرد / بمرض</strong></td><td><span class="ans">cold</span></td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">التركيبات الاسمية — شرح عربي</div>
+        <table class="bi-table">
+          <thead><tr><th>التركيب</th><th>المعنى</th><th>ملاحظة</th></tr></thead>
+          <tbody>
+            <tr><td><strong>lucrative industry</strong></td><td>صناعة مربحة جداً</td><td>lucrative = تدر ربحاً وفيراً</td></tr>
+            <tr><td><strong>bare essentials</strong></td><td>الحد الأدنى الضروري فقط</td><td>bare = لا شيء زائد عن الضرورة</td></tr>
+            <tr><td><strong>excruciating pain</strong></td><td>ألم شديد لا يُحتمل</td><td>أشد من severe pain</td></tr>
+            <tr><td><strong>durable clothes</strong></td><td>ملابس متينة تدوم طويلاً</td><td>ضد fragile/delicate</td></tr>
+            <tr><td><strong>fast / latest style</strong></td><td>الموضة السريعة / الأحدث</td><td>fast fashion = موضة سريعة الزوال</td></tr>
+            <tr><td><strong>proud tradition</strong></td><td>تقليد يُفخر به</td><td>وصف إيجابي للتقاليد</td></tr>
+            <tr><td><strong>global significance</strong></td><td>أهمية عالمية</td><td>على مستوى العالم أجمع</td></tr>
+            <tr><td><strong>high quality</strong></td><td>جودة عالية</td><td>مرادف: top-quality, premium</td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">ترجمة مقال "كن مستعداً"</div>
+        <div class="trans-prose">
+          <p>في عام 1912، فشل المستكشف البريطاني الشهير الكابتن سكوت في سباقه نحو القطب الجنوبي جزئياً بسبب ارتدائه ملابس جلدية ثقيلة. أما منافسه رولد أموندسن فقد نجح جزئياً لارتدائه أجلاد حيوانات فراوية أخف وزناً.</p>
+          <p>شركتنا لديها تقليد <strong>مفخور به (proud)</strong> في اصطحاب الشباب إلى أماكن مذهلة. صناعة ملابس المغامرات صناعة <strong>مربحة (lucrative)</strong>، لكنك لست بحاجة لإنفاق الكثير للحصول على ملابس ذات جودة <strong>عالية (high)</strong>، متينة و<strong>عملية (practical)</strong>. الأحذية الجيدة والسترة المضادة للمطر هي الحد الأدنى الضروري <strong>(bare essentials)</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LESSON 3A — SPEAKING: HYPERBOLE & UNDERSTATEMENT
+══════════════════════════════════════════════════════ -->
+<section id="lesson3" class="lesson-section">
+  <div class="lesson-header">
+    <h4>🗣️ Lesson 3A — Speaking: Hyperbole & Understatement &nbsp;|&nbsp; المبالغة والتهوين</h4>
+    <span class="lesson-badge">Page 29</span>
+  </div>
+  <div class="scroll-wrapper">
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English</span>
+
+        <div class="sub-head">Speaking Box — Hyperbole & Understatement</div>
+        <div class="article-prose en-text" style="font-size:.85rem;">
+          <p><strong>HYPERBOLE — Using extreme numbers/amounts:</strong><br>
+          • I've spent about <em>a million years</em> wearing school uniform.<br>
+          • This thick jacket <em>weighs a ton!</em><br>
+          • I've been there <em>tons of times!</em><br>
+          • It cost my parents <em>a small fortune.</em></p>
+          <p><strong>Using extreme adjectives:</strong> gigantic · ancient · ravenous · soaked · incinerated</p>
+          <p><strong>Using superlatives:</strong> <em>the tiniest diamond you've ever seen</em></p>
+          <p><strong>Using 'literally' (when something isn't true):</strong><br>
+          • It's <em>literally</em> the most ridiculous thing I've ever heard!</p>
+          <p><strong>UNDERSTATEMENT — Using 'softeners':</strong><br>
+          a bit / slightly / kind of / rather …<br>
+          <strong>Using phrases with not/no:</strong><br>
+          not exactly / not terribly / not entirely · not the most / not the …-est · no big deal</p>
+        </div>
+
+        <div class="sub-head">Exercise 4 — Rewrite as Hyperbole & Understatement</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Original</th><th>🔥 Hyperbole</th><th>😌 Understatement</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>1</td><td class="en-text">It's hot today.</td><td><span class="ans">It must be the hottest day in history!</span></td><td><span class="ans">It's not exactly cold today, is it?</span></td></tr>
+            <tr class="ans-row"><td>2</td><td class="en-text">The lake is deep.</td><td><span class="ans">The lake is bottomlessly deep!</span></td><td><span class="ans">The lake isn't exactly shallow.</span></td></tr>
+            <tr class="ans-row"><td>3</td><td class="en-text">It was a bad idea.</td><td><span class="ans">It was the worst idea in human history!</span></td><td><span class="ans">It wasn't the most brilliant idea.</span></td></tr>
+            <tr class="ans-row"><td>4</td><td class="en-text">He knows a lot about science.</td><td><span class="ans">He knows absolutely everything about science!</span></td><td><span class="ans">He knows a thing or two about science.</span></td></tr>
+            <tr class="ans-row"><td>5</td><td class="en-text">The food is burnt.</td><td><span class="ans">The food is completely incinerated!</span></td><td><span class="ans">The food is a bit overdone.</span></td></tr>
+            <tr class="ans-row"><td>6</td><td class="en-text">I live a long way away.</td><td><span class="ans">I live a million miles away!</span></td><td><span class="ans">I don't exactly live around the corner.</span></td></tr>
+            <tr class="ans-row"><td>7</td><td class="en-text">She has a lot of friends.</td><td><span class="ans">She knows literally millions of people!</span></td><td><span class="ans">She's not short of friends.</span></td></tr>
+            <tr class="ans-row"><td>8</td><td class="en-text">You shouldn't eat cake for breakfast.</td><td><span class="ans">Eating cake for breakfast is the most outrageous thing imaginable!</span></td><td><span class="ans">Cake for breakfast isn't exactly the healthiest option.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية</span>
+
+        <div class="sub-head">الفرق بين المبالغة والتهوين</div>
+        <table class="bi-table">
+          <thead><tr><th>المبالغة (Hyperbole)</th><th>التهوين (Understatement)</th></tr></thead>
+          <tbody>
+            <tr><td>تضخيم الأمر أكثر من الحقيقة</td><td>تقليل الأمر عن حقيقته</td></tr>
+            <tr><td>أرقام مبالغ فيها: <em>a million years</em></td><td>مُخفِّفات: <em>a bit, slightly, kind of</em></td></tr>
+            <tr><td>صفات قوية جداً: <em>ravenous, gigantic</em></td><td>نفي الصفة: <em>not exactly hot</em></td></tr>
+            <tr><td>أفضليات: <em>the worst ever, the hottest day</em></td><td>نفي المفضل: <em>not the best idea</em></td></tr>
+            <tr><td>استخدام literally بمعنى غير حرفي</td><td>no big deal, not a disaster</td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">ترجمة تمرين 4</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>الأصل</th><th>🔥 مبالغة</th><th>😌 تهوين</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>الجو حار اليوم</td><td>لا بد أن هذا أشد يوم حراً في التاريخ!</td><td>الجو ليس بارداً بالضبط، أليس كذلك؟</td></tr>
+            <tr><td>2</td><td>البحيرة عميقة</td><td>البحيرة ذات عمق لا نهائي!</td><td>البحيرة ليست ضحلة بالضبط</td></tr>
+            <tr><td>3</td><td>كانت فكرة سيئة</td><td>كانت أسوأ فكرة في التاريخ البشري!</td><td>لم تكن أبلغ فكرة على الإطلاق</td></tr>
+            <tr><td>4</td><td>يعرف الكثير عن العلوم</td><td>يعرف كل شيء عن العلوم!</td><td>يعرف شيئاً أو اثنين عن العلوم</td></tr>
+            <tr><td>5</td><td>الطعام محترق</td><td>الطعام تحوّل إلى رماد تماماً!</td><td>الطعام مطهو أكثر من اللازم قليلاً</td></tr>
+            <tr><td>6</td><td>أسكن بعيداً</td><td>أسكن على بُعد مليون ميل!</td><td>لا أسكن قريباً بالضبط</td></tr>
+            <tr><td>7</td><td>لديها أصدقاء كثيرون</td><td>تعرف حرفياً ملايين الأشخاص!</td><td>لا تعاني من قلة الأصدقاء</td></tr>
+            <tr><td>8</td><td>لا ينبغي أكل الكعك في الفطور</td><td>هذا أكثر شيء صادم يمكن تخيّله!</td><td>الكعك ليس الخيار الأصح للفطور بالضبط</td></tr>
+          </tbody>
+        </table>
+
+        <div class="alert" style="background:#e8f5e9;border:1px solid #43a047;border-radius:8px;padding:.8rem;font-size:.85rem;margin-top:.8rem;">
+          💬 <strong>ثقافياً:</strong> التهوين شائع جداً في الثقافة البريطانية — يستخدمونه لوصف الأشياء السلبية بطريقة مهذبة وخفيفة الدم. المبالغة شائعة في لغة الشباب لإضفاء الحيوية والتعبير.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LESSON 4A — READING & VOCABULARY (Pages 30–31)
+══════════════════════════════════════════════════════ -->
+<section id="lesson4" class="lesson-section">
+  <div class="lesson-header">
+    <h4>📖 Lesson 4A — Reading & Vocabulary: Friendships &nbsp;|&nbsp; القراءة والمفردات</h4>
+    <span class="lesson-badge">Pages 30–31</span>
+  </div>
+  <div class="scroll-wrapper">
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English</span>
+
+        <div class="sub-head">Full Article 1 — Is there such a thing as having too many friends? (8.7)</div>
+        <div class="article-prose en-text">
+          <p>Time and time again we are told that having friends brings positivity to a person's life and that the more we have, the happier we will be. But is there such a thing as having too many friends?</p>
+          <p>A person can have many different types of friends. You can have really good friends who are honest, caring and great at giving advice. Then there are friends that are classmates or colleagues who you only really see in school or at work. You also have the people you see at the gym or in the local coffee shop: acquaintances. Do we really need all of these people in our lives?</p>
+          <p>Well, I would say yes. Humans are social beings, and having many friends can put a smile on our faces when we need cheering up. Many of us spend too much time looking at computer or phone screens. Having a real person to look at and talk to can make all our worries disappear.</p>
+          <p>Socialising is also a great thing, especially after a long and difficult week, or if you're just feeling a little bit lonely on a random Tuesday evening. I'm not saying you need to be out with friends every day, but being sociable and gregarious is definitely advantageous for our minds and bodies.</p>
+          <p>Socialising can boost our mood and reduce stress. In fact, research suggests that the endorphins released during positive interactions can imitate a physical response similar to exercising. No, not the sweating profusely part, the relaxed and less anxious part. Socialising is also said to improve a person's quality of life and well-being due to the happiness and contentment that you feel when you're with your friends. So, there you have it, having friends is the best thing in the world, or is it?</p>
+          <p>Well, maybe there isn't such a thing as having too many friends after all? But as we all know, there are two sides to every coin and enjoying your own company can have its benefits …</p>
+        </div>
+
+        <div class="sub-head">Full Article 2 — What's wrong with being a loner?</div>
+        <div class="article-prose en-text">
+          <p>I like nothing better than curling up with a book and not having to make the effort to engage in small talk. It's not that I'm antisocial, I do get a kick out of seeing friends, but I'd be just fine stranded on a desert island.</p>
+          <p>Sociability is very highly prized in our society and sometimes it seems as if everyone wants to be seen as outgoing and gregarious. Think about all those group photos that get posted online. But research shows that being an extrovert may actually be overrated. Apparently, one of the key personality features of highly artistic people is a lack of interest in socialising. Who knew, right? It may be that artists need the time alone to reflect introspectively on their experiences, and to learn about their inner world, before transforming this into art.</p>
+          <p>Another study found that managers who were more introverted were actually highly effective when managing more vivacious employees because they were more likely to listen to what their employees were telling them. So, loners can be good team players, just not in the way you might have been expecting.</p>
+          <p>There is also plenty of evidence from the natural world that you don't have to enjoy going round in a pack to thrive, or even survive. Take the Laysan albatross, for example. When these birds fly for the first time, they head off out to sea alone where they will stay for the next three to five years. They're not completely stand-offish though. Eventually, something tells them that it's time to find a partner for life, even if they only actually meet up once a year. In human terms, introverts may spend a lot of time alone, but their relationships tend to be much more deep-rooted, and more enduring.</p>
+          <p>Of course, choosing to be a bit of a loner isn't the same thing at all as being lonely. We need connections with others, even if we also like our own space. Research in the UK found that loneliness and prolonged solitude can exacerbate the risk of developing serious health issues. Being with others can also improve our immune system. The world needs all different kinds of people.</p>
+        </div>
+
+        <div class="sub-head">Exercise 4 — Complete text summaries</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Gap</th><th>✅ Answer</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>T1·1</td><td class="en-text">those with a large social circle are ___ than those alone</td><td><span class="ans">happier / better off</span></td></tr>
+            <tr class="ans-row"><td>T1·2</td><td class="en-text">relationships: ___, work or classmates, and casual acquaintances</td><td><span class="ans">close friends</span></td></tr>
+            <tr class="ans-row"><td>T1·3</td><td class="en-text">are all these relationships something we ___?</td><td><span class="ans">choose / need</span></td></tr>
+            <tr class="ans-row"><td>T1·4</td><td class="en-text">those who say we are ___ and need others</td><td><span class="ans">social beings</span></td></tr>
+            <tr class="ans-row"><td>T1·5</td><td class="en-text">good for people's ___</td><td><span class="ans">health / well-being</span></td></tr>
+            <tr class="ans-row"><td>T1·6</td><td class="en-text">positive physical benefits ___</td><td><span class="ans">too / as well</span></td></tr>
+            <tr class="ans-row"><td>T1·7</td><td class="en-text">doesn't add to our ___</td><td><span class="ans">happiness / well-being</span></td></tr>
+            <tr class="ans-row"><td>T2·8</td><td class="en-text">I wouldn't say that I'm ___</td><td><span class="ans">antisocial / a loner</span></td></tr>
+            <tr class="ans-row"><td>T2·9</td><td class="en-text">everyone wants to appear to be ___</td><td><span class="ans">outgoing / gregarious</span></td></tr>
+            <tr class="ans-row"><td>T2·10</td><td class="en-text">introversion is common in ___</td><td><span class="ans">business / the workplace</span></td></tr>
+            <tr class="ans-row"><td>T2·11</td><td class="en-text">better able to ___ feedback</td><td><span class="ans">process / handle</span></td></tr>
+            <tr class="ans-row"><td>T2·12</td><td class="en-text">connections tend to be quite ___</td><td><span class="ans">deep / enduring</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية</span>
+
+        <div class="sub-head">ترجمة كاملة — هل يوجد شيء اسمه أصدقاء كثيرون؟</div>
+        <div class="trans-prose">
+          <p>مراراً وتكراراً يُقال لنا إن امتلاك الأصدقاء يُضفي إيجابية على حياة الإنسان، وأنه كلما ازداد عددهم كلما كنا أكثر سعادة. لكن هل يوجد شيء اسمه امتلاك أصدقاء كثيرين جداً؟</p>
+          <p>يمكن للشخص أن يمتلك أنواعاً متعددة من الأصدقاء: أصدقاء حقيقيون صادقون مهتمون يجيدون تقديم النصح، وزملاء دراسة أو عمل لا تلتقي بهم إلا في المدرسة أو العمل، ومعارف عابرون تراهم في النادي أو المقهى المحلي.</p>
+          <p>أعتقد أننا نحتاج إلى جميع هؤلاء؛ فالبشر كائنات اجتماعية، وامتلاك الأصدقاء الكثيرين قادر على إسعادنا حين نحتاج التشجيع. كثير منا يمضي وقتاً طويلاً أمام الشاشات، فوجود شخص حقيقي للحديث معه يجعل كل همومنا تتبخر.</p>
+          <p>الاجتماعية أيضاً أمر رائع، خاصة بعد أسبوع طويل مرهق. لست أقول إنك بحاجة للخروج مع الأصدقاء كل يوم، لكن كونك اجتماعياً ومتواصلاً مع الآخرين مفيد بلا شك لعقلك وجسمك.</p>
+          <p>الاجتماعية تحسّن المزاج وتقلل التوتر. يقترح البحث العلمي أن الإندورفينات التي تُطلَق خلال التفاعلات الإيجابية يمكنها محاكاة استجابة جسدية مشابهة لممارسة الرياضة — ليس الجزء الذي تتعرق فيه بغزارة، بل الجزء المسترخي والأقل قلقاً!</p>
+          <p>ربما لا يوجد شيء اسمه أصدقاء كثيرون جداً بعد كل هذا؟ لكن كما نعلم جميعاً، لكل عملة وجهان، والاستمتاع بصحبة النفس له فوائده أيضاً...</p>
+        </div>
+
+        <div class="sub-head">ترجمة كاملة — ما الخطأ في كونك انعزالياً؟</div>
+        <div class="trans-prose">
+          <p>لا شيء يُسعدني أكثر من التكوّر مع كتاب ودون الحاجة لبذل جهد في الأحاديث الاجتماعية السطحية. لست منعزلاً بالمعنى الحرفي، أجد متعة في رؤية الأصدقاء، لكنني سأكون بخير تماماً لو وجدت نفسي وحيداً على جزيرة نائية.</p>
+          <p>تحظى الاجتماعية بتقدير بالغ في مجتمعنا، وكأن الجميع يريد أن يُرى منفتحاً وودوداً. لكن الأبحاث تُظهر أن كون المرء انبساطياً قد يكون مبالغاً في تقديره. من السمات الشخصية الرئيسية للأشخاص الفنانين الموهوبين عدم الاهتمام بالاجتماعيات — ربما يحتاج الفنانون للتأمل الذاتي والتعمق في عالمهم الداخلي قبل تحويله إلى فن.</p>
+          <p>وجدت دراسة أخرى أن المديرين الانطوائيين كانوا أكثر فعالية في قيادة الموظفين النشيطين، لأنهم كانوا أميل إلى الإصغاء لما يقوله موظفوهم. إذن، قد يكون المنعزلون لاعبين ممتازين في الفريق، لكن ليس بالطريقة التي توقعتها!</p>
+          <p>ثمة أدلة وافرة من عالم الطبيعة تُثبت أنك لست مضطراً للتحرك في قطيع لتزدهر. خذ طائر الألباتروس الليساني مثلاً: حين يطير هذا الطائر للمرة الأولى، يتوجه إلى البحر وحيداً حيث يمكث ثلاث إلى خمس سنوات. غير أنه ليس متحفظاً تماماً؛ في نهاية المطاف يجد شريك الحياة. وفي المصطلح الإنساني، قد يمضي الانطوائيون وقتاً طويلاً وحدهم، لكن علاقاتهم تميل إلى أن تكون أعمق جذوراً وأكثر ديمومة.</p>
+          <p>بالطبع، اختيار أن تكون منعزلاً نسبياً ليس الشيء ذاته كالشعور بالوحدة. نحتاج إلى الروابط مع الآخرين حتى لو أحببنا مساحتنا الخاصة. العالم يحتاج لجميع أنواع الشخصيات.</p>
+        </div>
+
+        <div class="sub-head">مفردات — اجتماعي أم انعزالي؟</div>
+        <table class="bi-table">
+          <thead><tr><th>الكلمة</th><th>A = اجتماعي</th><th>B = انعزالي</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr><td>a social butterfly</td><td>✅</td><td></td><td>شخص اجتماعي جداً يتنقل بين المجموعات</td></tr>
+            <tr><td>a team player</td><td>✅</td><td></td><td>شخص يعمل جيداً ضمن الفريق</td></tr>
+            <tr><td>extrovert</td><td>✅</td><td></td><td>انبساطي / منفتح</td></tr>
+            <tr><td>gregarious</td><td>✅</td><td></td><td>يحب الاختلاط بالناس</td></tr>
+            <tr><td>outgoing</td><td>✅</td><td></td><td>منفتح / لديه مبادرة اجتماعية</td></tr>
+            <tr><td>a loner</td><td></td><td>✅</td><td>يفضل الوحدة</td></tr>
+            <tr><td>antisocial</td><td></td><td>✅</td><td>لا يحب التواصل الاجتماعي</td></tr>
+            <tr><td>introspective</td><td></td><td>✅</td><td>يميل للتأمل الداخلي</td></tr>
+            <tr><td>reserved</td><td></td><td>✅</td><td>متحفظ / لا يُبدي مشاعره بسهولة</td></tr>
+            <tr><td>self-sufficient</td><td></td><td>✅</td><td>مكتفٍ بذاته</td></tr>
+            <tr><td>stand-offish</td><td></td><td>✅</td><td>بارد ومتحفظ في التعامل</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LESSON 5A — GRAMMAR: ARTICLES (Pages 32–33)
+══════════════════════════════════════════════════════ -->
+<section id="lesson5" class="lesson-section">
+  <div class="lesson-header">
+    <h4>📐 Lesson 5A — Grammar: Articles (a/an · the · ∅) &nbsp;|&nbsp; أدوات التعريف</h4>
+    <span class="lesson-badge">Pages 32–33</span>
+  </div>
+  <div class="scroll-wrapper">
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English</span>
+
+        <div class="sub-head">Rules for the Definite Article "the"</div>
+        <div class="article-prose en-text" style="font-size:.85rem;">
+          <p>The definite article is used when the topic is known. It can be known because:</p>
+          <p><strong>a.</strong> It has been mentioned before. &nbsp;|&nbsp; <strong>b.</strong> It is unique. &nbsp;|&nbsp; <strong>c.</strong> It is a superlative (which makes it unique). &nbsp;|&nbsp; <strong>d.</strong> It's talking about one of a pair of comparatives. &nbsp;|&nbsp; <strong>e.</strong> It is a geographical name for certain countries, bodies of water or mountains. &nbsp;|&nbsp; <strong>f.</strong> We are talking about a group, class or species. &nbsp;|&nbsp; <strong>g.</strong> It is an ordinal number (first, second, etc.). &nbsp;|&nbsp; <strong>h.</strong> It's a period of time, such as decades or seasons.</p>
+        </div>
+
+        <div class="sub-head">Exercise 2 — Complete with 'the' or ∅</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Sentence</th><th>✅ Articles</th><th>Rule</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>1</td><td class="en-text">Maha was ___ first Jordanian to win ___ gold medal at ___ Paralympics, born in ___ Amman.</td><td><span class="ans">the</span> / <span class="ans">a</span> / <span class="ans">the</span> / <span class="ans">∅</span></td><td>g / new / b / city</td></tr>
+            <tr class="ans-row"><td>2</td><td class="en-text">___ Burj Khalifa, currently ___ tallest building in ___ world, was built in ___ 2000s.</td><td><span class="ans">The</span> / <span class="ans">the</span> / <span class="ans">the</span> / <span class="ans">the</span></td><td>b / c / b / h</td></tr>
+            <tr class="ans-row"><td>3</td><td class="en-text">___ best time to visit ___ Al Ain in ___ UAE is during ___ winter months.</td><td><span class="ans">The</span> / <span class="ans">∅</span> / <span class="ans">the</span> / <span class="ans">the</span></td><td>c / city / e / h</td></tr>
+            <tr class="ans-row"><td>4</td><td class="en-text">I was looking at photos of my ___ trip to ___ Jordan. ___ most interesting part was visiting ___ Dead Sea.</td><td><span class="ans">∅</span> / <span class="ans">∅</span> / <span class="ans">The</span> / <span class="ans">the</span></td><td>— / country / c / e</td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">Exercise 4 — Explain differences (sentences a vs b)</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Sentence A</th><th>Sentence B</th><th>Difference</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td class="en-text"><u>The orang-utan</u> is the most solitary of the great apes.</td><td class="en-text"><u>An orang-utan</u> had been killed by poachers.</td><td class="en-text">A = the whole species · B = one individual</td></tr>
+            <tr><td>2</td><td class="en-text">Unlike most deer, <u>the moose</u> does not form a herd.</td><td class="en-text"><u>The herd</u> of deer at Belton Park has been there 300+ years.</td><td class="en-text">A = species · B = specific known herd</td></tr>
+            <tr><td>3</td><td class="en-text">I'd never seen <u>a sand cat</u> before.</td><td class="en-text"><u>The sand cat</u> came close to me.</td><td class="en-text">A = any one, new intro · B = the specific one mentioned</td></tr>
+            <tr><td>4</td><td class="en-text"><u>Wolves</u> are highly social animals.</td><td class="en-text"><u>The alpha wolves</u> decide when to travel.</td><td class="en-text">A = ∅ for general species · B = specific known wolves</td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">Exercise 5 — "Why do we follow the crowd?" — Fill all gaps</div>
+        <div class="article-prose en-text">
+          <p><span class="ans">¹ ∅</span> Human beings are social creatures. On average, we spend around 75 percent of our waking time in direct communication with other people, and very often we are indeed influenced by what <span class="ans">² ∅</span> others think, especially by what those around us think.</p>
+          <p>If we already hold <span class="ans">³ ∅</span> strong opinions, listening to others who think differently may make no difference. But <span class="ans">⁴ ∅</span> research does show that when we are surrounded by people who think <span class="ans">⁵ the</span> same as us, but more strongly, our own views will become more forceful, and we may feel more entitled to act on them. This is how <span class="ans">⁶ ∅</span> crowds can have their emotions manipulated.</p>
+          <p>We may also feel that what others do gives us 'permission' to do the same. In one experiment, <span class="ans">⁷ a</span> psychologist compared people's behaviour in <span class="ans">⁸ a</span> national park in <span class="ans">⁹ the</span> USA, on two different trails. On one trail, there was <span class="ans">¹⁰ a</span> sign asking people not to take pieces of ancient petrified wood home, explaining that 14 tonnes were taken each year by walkers. On the other trail there was no such sign. People on <span class="ans">¹² the</span> trail which had <span class="ans">¹³ the</span> sign took <span class="ans">¹⁴ the</span> largest amount because they reasoned that it couldn't be that bad if lots of other people were doing it too.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية</span>
+
+        <div class="sub-head">قواعد أداة التعريف "the" — جدول شامل</div>
+        <table class="bi-table">
+          <thead><tr><th>السبب</th><th>مثال</th><th>الحرف</th></tr></thead>
+          <tbody>
+            <tr><td>سبق ذكره / معروف للمتحدثين</td><td>I saw a dog. <strong>The</strong> dog was brown.</td><td>a</td></tr>
+            <tr><td>فريد من نوعه في العالم</td><td><strong>the</strong> sun / <strong>the</strong> moon / <strong>the</strong> Burj Khalifa</td><td>b</td></tr>
+            <tr><td>صيغة التفضيل (تجعله فريداً)</td><td><strong>the</strong> best time / <strong>the</strong> tallest building</td><td>c</td></tr>
+            <tr><td>مقارنة زوجية the...the</td><td><strong>The</strong> more, <strong>the</strong> better</td><td>d</td></tr>
+            <tr><td>أسماء جغرافية (بحار، مجاري مائية، سلاسل جبال، دول مركبة)</td><td><strong>the</strong> Dead Sea / <strong>the</strong> UAE / <strong>the</strong> Nile</td><td>e</td></tr>
+            <tr><td>نوع أو فصيلة بأكملها</td><td><strong>The</strong> orang-utan is a great ape.</td><td>f</td></tr>
+            <tr><td>أرقام ترتيبية</td><td><strong>the</strong> first / <strong>the</strong> second Jordanian</td><td>g</td></tr>
+            <tr><td>حقب زمنية، فصول، عقود</td><td><strong>the</strong> 2000s / <strong>the</strong> winter months</td><td>h</td></tr>
+          </tbody>
+        </table>
+
+        <div class="alert" style="background:#fff3e0;border:1px solid #fb8c00;border-radius:8px;padding:.8rem;font-size:.85rem;margin:.8rem 0;">
+          ⚠️ <strong>لا نستخدم "the" مع:</strong><br>
+          • أسماء الأشخاص: Marie Curie (لا the Marie Curie)<br>
+          • أسماء المدن: Amman, Dubai, Paris<br>
+          • أسماء الدول (المفردة): Jordan, France, China — إلا إذا كانت مركبة مثل: the UAE, the USA<br>
+          • اللغات: English, Arabic<br>
+          • الوجبات العامة: breakfast, lunch, dinner
+        </div>
+
+        <div class="sub-head">ترجمة مقال "لماذا نتبع القطيع؟"</div>
+        <div class="trans-prose">
+          <p>البشر كائنات اجتماعية. نمضي في المتوسط نحو 75% من وقت صحونا في التواصل المباشر مع الآخرين، وكثيراً ما نتأثر بآراء من حولنا، لا سيما من يعيشون بيننا.</p>
+          <p>إذا كانت لدينا آراء راسخة بالفعل، فربما لا يؤثر فينا استماعنا لمن يفكرون بشكل مختلف. لكن الأبحاث تُثبت أننا حين نُحاط بأشخاص يتشاركون آراءنا لكن بقناعة أشد، تتعزز قناعاتنا هي الأخرى وقد نشعر بأننا أكثر أحقية في التصرف وفقها. هذه هي الطريقة التي تُلاعَب بها مشاعر الحشود.</p>
+          <p>في تجربة شهيرة، قارن عالم نفس سلوك الناس في منتزه وطني أمريكي على مسارين مختلفين. على أحد المسارين كانت هناك لافتة تطلب من الناس عدم أخذ قطع الخشب الحجري الأثري معهم، موضحةً أن 14 طناً تُؤخذ سنوياً. والمفاجأة أن الناس في المسار الذي وُضعت فيه اللافتة أخذوا أكبر كمية، لأنهم رأوا أنه لا يمكن أن يكون أمراً سيئاً إذا كان الجميع يفعله!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LESSON 6A — WRITING: OPINION ESSAY (Pages 34–35)
+══════════════════════════════════════════════════════ -->
+<section id="lesson6" class="lesson-section">
+  <div class="lesson-header">
+    <h4>✍️ Lesson 6A — Writing: Opinion Essay &nbsp;|&nbsp; كتابة مقالة الرأي</h4>
+    <span class="lesson-badge">Pages 34–35</span>
+  </div>
+  <div class="scroll-wrapper">
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English</span>
+
+        <div class="sub-head">Full Essay — Are Traditional Values Helpful in Navigating Modern Life?</div>
+        <div class="article-prose en-text">
+          <p>Without doubt, the world is changing very rapidly, and, as society changes, we may ask ourselves just how relevant traditional values are in our modern world.</p>
+          <p>For example, many older people would say that you should always put your family first, and prioritise their needs over anything else. However, in some places in Europe, it is no longer common for people to live with their extended family. In fact, around a third of households in Europe contain just one person, meaning that people have had to become more self-sufficient. People also often have to move some distance from their family in order to get work or progress their careers. This makes it inevitable that they will not be in a position to give the care and support that might be possible if they were all living together, in a more traditional way.</p>
+          <p>Similarly, many people in Europe do not know their neighbours in the way they used to. Whereas in the past people might stay in the same village all their lives, and their families would know each other well, nowadays people move around more. In addition, most people are out at work all day, with the result that there is less opportunity to be neighbourly, and people therefore tend to be more reserved with each other.</p>
+          <p>Having said all this, traditional values remain extremely important in countries like Jordan. It is still important that we do whatever we can to help our fellow humans. And some traditional values remain as important as they ever were. For example, working hard is no less necessary in the modern world, even if we may work different hours or online rather than in an office. In fact, those who work at home may be more available to help out with the care of very young or old family members, for example.</p>
+          <p>In conclusion, while our circumstances may change, our basic moral code should not. Caring for others and having values that we endeavour to live by should never be regarded as old-fashioned.</p>
+        </div>
+
+        <div class="sub-head">Active Writing — Formal Register: Informal → Formal</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Informal</th><th>✅ Formal Equivalent</th></tr></thead>
+          <tbody>
+            <tr class="ans-row"><td>1</td><td class="en-text">However, it's no longer common for people ...</td><td><span class="ans">However, it is no longer common for people to live with their extended family.</span></td></tr>
+            <tr class="ans-row"><td>2</td><td class="en-text">Their families would live in each other's pockets.</td><td><span class="ans">Their families would live in very close proximity to one another.</span></td></tr>
+            <tr class="ans-row"><td>3</td><td class="en-text">I think traditional values are important in Jordan.</td><td><span class="ans">Traditional values are considered to be of great importance in Jordan.</span></td></tr>
+            <tr class="ans-row"><td>4</td><td class="en-text">Obviously, the world is changing very fast.</td><td><span class="ans">Evidently, the world is undergoing rapid and considerable change.</span></td></tr>
+            <tr class="ans-row"><td>5</td><td class="en-text">Working hard is important in the modern world, but we may work different hours or online.</td><td><span class="ans">Working hard remains essential in the modern world, although working patterns and environments may vary considerably.</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية</span>
+
+        <div class="sub-head">ترجمة كاملة للمقالة — هل القيم التقليدية مفيدة في الحياة الحديثة؟</div>
+        <div class="trans-prose">
+          <p>لا شك أن العالم يتغير بسرعة بالغة، ومع تحول المجتمع، قد نتساءل عن مدى صلة القيم التقليدية بعالمنا الحديث.</p>
+          <p>على سبيل المثال، كثير من كبار السن يقولون إنه ينبغي دائماً إيلاء الأسرة الأولوية وتقديم احتياجاتها على كل شيء آخر. غير أنه في بعض مناطق أوروبا، لم يعد من الشائع أن يعيش الناس مع أسرتهم الممتدة. في الواقع، يضم نحو ثلث الأسر الأوروبية شخصاً واحداً فقط، مما يعني أن الناس اضطروا إلى أن يصبحوا أكثر اعتماداً على أنفسهم. كثيرون مضطرون إلى الانتقال بعيداً عن أسرهم من أجل العمل أو تطوير مسيرتهم المهنية، مما يجعل من الحتمي أنهم لن يكونوا في موضع يمكّنهم من تقديم الرعاية والدعم.</p>
+          <p>على نحو مماثل، كثير من الأوروبيين لا يعرفون جيرانهم كما كان الحال في السابق. كان الناس في الماضي يمكثون في القرية نفسها طوال حياتهم وتعرف أسرهم بعضها بعضاً جيداً. أما اليوم، فالناس أكثر تنقلاً، ومعظمهم في العمل طوال النهار، فلا تتاح الفرصة للتواصل الجواري.</p>
+          <p>ومع كل ما سبق، تظل القيم التقليدية بالغة الأهمية في دول مثل الأردن. لا يزال من المهم فعل كل ما في وسعنا لمساعدة بني البشر. وبعض القيم التقليدية لا تقل أهمية عما كانت عليه. فالعمل الجاد لا يقل ضرورة في العالم الحديث، وإن اختلفت ساعات العمل أو أصبح عبر الإنترنت.</p>
+          <p>خلاصة القول، وإن تغيرت ظروفنا، فلا ينبغي أن يتغير ميثاقنا الأخلاقي الأساسي. رعاية الآخرين والتحلي بقيم نسعى للتمسك بها لا ينبغي أبداً أن يُعدّ من الأمور القديمة البالية.</p>
+        </div>
+
+        <div class="sub-head">قواعد الكتابة الرسمية في المقالات</div>
+        <table class="bi-table">
+          <thead><tr><th>القاعدة</th><th>غير رسمي</th><th>رسمي</th></tr></thead>
+          <tbody>
+            <tr><td>لا اختصارات</td><td>it's / don't / can't</td><td>it is / do not / cannot</td></tr>
+            <tr><td>لا عامية</td><td>live in each other's pockets</td><td>live in close proximity</td></tr>
+            <tr><td>كن موضوعياً</td><td>I think / I believe</td><td>It is considered / Research suggests</td></tr>
+            <tr><td>مفردات أكاديمية</td><td>obviously / clearly</td><td>evidently / undoubtedly</td></tr>
+            <tr><td>جمل مركبة</td><td>...but we may work online</td><td>...although working patterns may vary</td></tr>
+          </tbody>
+        </table>
+
+        <div class="sub-head">روابط أساسية للمقالات</div>
+        <table class="bi-table">
+          <thead><tr><th>الوظيفة</th><th>الروابط</th></tr></thead>
+          <tbody>
+            <tr><td>الإضافة</td><td>Furthermore · Moreover · In addition · Additionally</td></tr>
+            <tr><td>التناقض</td><td>However · Nevertheless · In contrast · Having said that</td></tr>
+            <tr><td>النتيجة</td><td>As a result · Therefore · Consequently</td></tr>
+            <tr><td>الختام</td><td>In conclusion · To conclude · In summary</td></tr>
+            <tr><td>المثال</td><td>For example · For instance · Such as</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     LIFE SKILLS (Pages 36–37)
+══════════════════════════════════════════════════════ -->
+<section id="lifeskills" class="lesson-section">
+  <div class="lesson-header">
+    <h4>🤝 Life Skills — How to be a Good Team Member &nbsp;|&nbsp; كيف تكون عضواً جيداً في الفريق</h4>
+    <span class="lesson-badge">Pages 36–37</span>
+  </div>
+  <div class="scroll-wrapper">
+    <div class="scroll-panel en-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇬🇧 English</span>
+
+        <div class="sub-head">Article A — Food for Thought</div>
+        <div class="article-prose en-text">
+          <p>My class decided pretty quickly to do something for Ramadan to help less fortunate people in Irbid, and we had the idea that we wanted to create a place where people could eat desserts for free. I wanted to make knafeh, but everyone had different ideas, and we were all trying to persuade everyone else of how good we each were at cooking different desserts. To be honest, we wasted a lot of time arguing about it so no wonder no one could hear what Noura was trying to say. When I took in what it was, I got everyone else to listen.</p>
+          <p>The point she was making was that if we really wanted to help people who needed food, it would be better to make pilaf because it's a rice dish, so it's much more filling. Knafeh and baklava are delicious, but you can only eat a little as they're very sweet. With pilaf, we would be able to make a huge pan of it and keep adding to it as more people came. We all instantly recognised that it was a much better idea, and so that's what we did. And now, we've got other people involved and we've set up three other places around the city to give out food. So far, we've served over 1,000 people. It's amazing to know that our social action project had such an impact!</p>
+        </div>
+
+        <div class="sub-head">Article B — Art for Charity</div>
+        <div class="article-prose en-text">
+          <p>We really wanted to do something a bit different and perhaps more creative. We already knew that quite a few of us were artistic, so I suggested that perhaps we could make some artwork about our YES experience and have an exhibition where we would sell our work for charity. Everyone was really enthusiastic about the idea, but we did have some issues trying to sort out who should do what. Several people wanted to be in charge of putting the exhibition together, although no one actually knew much about the process of doing this.</p>
+          <p>Eventually, we managed to agree on everyone's roles, and I volunteered and was put in charge. I figured it could be a useful skill to put on my CV. I found someone from the local art college to help me, and they let us use their art studio for free. It wasn't the easiest project to work on, but when we had finally completed it, there was an enormous sense of satisfaction. It wasn't the best art ever made, but we did manage to sell almost everything and raised quite a lot of money for a children's charity.</p>
+        </div>
+
+        <div class="sub-head">Life Skills Tips — How to be a Good Team Member</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>Tip</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td class="en-text">Always listen to what others have to say and respect their viewpoints.</td></tr>
+            <tr><td>2</td><td class="en-text">Make sure you are clear about your role, and that this is suited to your skills and experience.</td></tr>
+            <tr><td>3</td><td class="en-text">Be reliable and take responsibility for your part in the team effort.</td></tr>
+            <tr><td>4</td><td class="en-text">Communicate with other team members, and make sure everyone is on the same page.</td></tr>
+            <tr><td>5</td><td class="en-text">Be flexible and willing to try something new.</td></tr>
+            <tr><td>6</td><td class="en-text">Remember that good teamwork is about the success of the team.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="scroll-panel ar-panel">
+      <div class="scroll-panel-inner">
+        <span class="panel-label">🇸🇦 العربية</span>
+
+        <div class="sub-head">ترجمة المقال أ — طعام للتفكير</div>
+        <div class="trans-prose">
+          <p>قررت فصيلتي سريعاً فعل شيء في رمضان لمساعدة المحتاجين في إربد، وخطرت لنا فكرة إنشاء مكان يتناول فيه الناس الحلويات مجاناً. أردتُ صنع الكنافة، لكن لكل شخص فكرة مختلفة وكل منا يحاول إقناع الآخرين بمهارته في الطهي. بصراحة، أضعنا وقتاً طويلاً في الجدال حتى لم يكد أحد يسمع ما كانت نورة تحاول قوله. حين استوعبتُ ما تقوله، أقنعتُ الجميع بالإنصات.</p>
+          <p>كانت وجهتها أنه لو أردنا فعلاً مساعدة المحتاجين للطعام، فالأفضل صنع البلاف (الأرز)، لأنه طبق أرز يُشبع أكثر. الكنافة والبقلاوة لذيذتان لكن لا يمكن تناول الكثير منهما لحلاوتهما الشديدة. أما البلاف فيمكننا صنع وعاء ضخم منه ومواصلة الإضافة مع قدوم الناس. أدركنا جميعاً في الحال أنها فكرة أفضل بكثير، وهذا ما فعلناه. والآن أصبح لدينا ثلاثة أماكن أخرى في المدينة لتوزيع الطعام وقدّمنا أكثر من 1000 شخص!</p>
+        </div>
+
+        <div class="sub-head">ترجمة المقال ب — فن من أجل الخير</div>
+        <div class="trans-prose">
+          <p>أردنا فعل شيء مختلف وأكثر إبداعاً. عرفنا أن كثيراً منا موهوبون فنياً، فاقترحتُ أن نُنتج أعمالاً فنية عن تجربتنا في YES ونُقيم معرضاً نبيع فيه أعمالنا لصالح الجمعيات الخيرية. حماس الجميع كان كبيراً، لكننا واجهنا صعوبة في تحديد أدوار كل شخص؛ كثيرون أرادوا الإشراف على المعرض دون أن يعرف أيٌّ منهم كيفية إعداده.</p>
+          <p>في نهاية المطاف تمكنّا من الاتفاق على الأدوار وتطوعتُ للإشراف. وجدتُ شخصاً من كلية الفنون المحلية وأتاح لنا استخدام الأستوديو مجاناً. لم يكن المشروع الأسهل، لكن حين أتممناه شعرنا بارتياح هائل. لم نبع كل شيء تقريباً فحسب بل جمعنا مبلغاً كبيراً لصالح مؤسسة خيرية للأطفال.</p>
+        </div>
+
+        <div class="sub-head">مهارات الحياة — كيف تكون عضواً جيداً في الفريق</div>
+        <table class="bi-table">
+          <thead><tr><th>#</th><th>النصيحة بالعربية</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>استمع دائماً لما يقوله الآخرون واحترم وجهات نظرهم.</td></tr>
+            <tr><td>2</td><td>تأكد من وضوح دورك وأنه يتناسب مع مهاراتك وخبراتك.</td></tr>
+            <tr><td>3</td><td>كن موثوقاً وتحمّل مسؤوليتك في جهود الفريق.</td></tr>
+            <tr><td>4</td><td>تواصل مع أعضاء الفريق وتأكد أن الجميع على دراية بما يجري.</td></tr>
+            <tr><td>5</td><td>كن مرناً ومستعداً لتجربة أشياء جديدة.</td></tr>
+            <tr><td>6</td><td>تذكر أن العمل الجماعي الجيد يقاس بنجاح الفريق ككل.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     VOCABULARY DICTIONARY
+══════════════════════════════════════════════════════ -->
+<section id="vocab" class="lesson-section">
+  <div class="lesson-header">
+    <h4>📚 Bilingual Vocabulary Dictionary &nbsp;|&nbsp; معجم المفردات الثنائي</h4>
+    <span class="lesson-badge">Unit 08 — All Lessons</span>
+  </div>
+  <div style="background:#fff;border-radius:0 0 var(--card-radius) var(--card-radius);box-shadow:var(--shadow);padding:1.4rem;border:1px solid #dde3ee;border-top:none;">
+    <div class="mb-3">
+      <input type="text" id="vocabSearch" placeholder="🔍 Search English or Arabic... ابحث بالإنجليزية أو العربية" oninput="filterVocab()" dir="auto">
+    </div>
+    <div class="table-responsive" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <table class="table table-bordered table-hover vocab-table text-center align-middle" id="vocabTable" style="min-width:900px;">
+      <thead>
+        <tr style="background:var(--navy);">
+          <th style="background:var(--navy);color:#fff;">Word</th>
+          <th style="background:var(--navy);color:#fff;">Example Sentence</th>
+          <th style="background:var(--navy);color:#fff;">المعنى العربي</th>
+          <th style="background:var(--navy);color:#fff;">English Meaning</th>
+          <th style="background:var(--teal);color:#fff;">SYN.</th>
+          <th style="background:#b71c1c;color:#fff;">ANT.</th>
+        </tr>
+      </thead>
+      <tbody id="vocabBody">
+      </tbody>
+    </table>
+    </div>
+    <div class="text-muted small mt-2 text-center" id="vocabCount"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     EXAM — 50 QUESTIONS
+══════════════════════════════════════════════════════ -->
+<section id="exam" class="lesson-section">
+  <div class="lesson-header">
+    <h4>🎓 Unit 08 Exam — اختبار الوحدة الثامنة</h4>
+    <span class="lesson-badge">50 Multiple Choice Questions</span>
+  </div>
+  <div style="background:#fff;border-radius:0 0 var(--card-radius) var(--card-radius);
+    box-shadow:var(--shadow);padding:1.5rem;border:1px solid #dde3ee;border-top:none;">
+    <div class="alert" style="background:#e8f0fe;border:1px solid #3f51b5;border-radius:8px;padding:.9rem 1.2rem;font-size:.9rem;margin-bottom:1.5rem;">
+      📋 اختر الإجابة الصحيحة لكل سؤال، ثم اضغط زر التحقق في النهاية للحصول على نتيجتك الكاملة مع شرح كل إجابة.
+    </div>
+    <div id="examContainer"></div>
+    <div class="text-center mt-3 d-flex flex-wrap justify-content-center gap-2">
+      <button class="btn btn-lg px-5" style="background:linear-gradient(135deg,var(--teal),var(--navy));color:#fff;border-radius:30px;border:none;" onclick="submitExam()">
+        ✅ تحقق من الإجابات — Check Answers
+      </button>
+      <button class="btn btn-lg px-4" style="background:var(--pink);color:#fff;border-radius:30px;border:none;" onclick="resetExam()">
+        🔄 إعادة الاختبار — Reset
+      </button>
+    </div>
+  </div>
+  <div id="gradeContainer" class="mt-4" style="display:none;"></div>
+</section>
+
+</div><!-- /container -->
+
+<div class="footer-bar">
+  Unit 08 — Follow the Crowd? &nbsp;|&nbsp; Bilingual Study Sheet &nbsp;|&nbsp; Arabic ↔ English &nbsp;|&nbsp; © 2026
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ─── VOCABULARY DATA ─── */
+const vocabData = [
+  {w:"pioneer",ex:"She was a pioneer in computer programming.",ar:"رائد / مبتكر",en:"One of the first to develop a new area of activity",syn:"trailblazer, innovator, groundbreaker",ant:"follower, imitator, conformist"},
+  {w:"credited with",ex:"He is credited with inventing algebra.",ar:"يُنسب إليه الفضل في",en:"Acknowledged as having achieved or done something",syn:"attributed to, acknowledged for",ant:"discredited, blamed"},
+  {w:"algorithm",ex:"The search algorithm sorts data automatically.",ar:"خوارزمية",en:"A set of rules or steps used for solving a problem",syn:"procedure, formula, method",ant:"—"},
+  {w:"originate",ex:"The term originated from his name.",ar:"ينشأ من / يصدر / يُشتق",en:"To come from or begin in a particular place",syn:"stem from, derive, arise, emerge",ant:"end, terminate, cease"},
+  {w:"radioactive",ex:"Uranium is highly radioactive material.",ar:"مُشِعّ / مُصدر للإشعاع",en:"Emitting harmful radiation from unstable atoms",syn:"nuclear, toxic, irradiated",ant:"stable, inert, safe"},
+  {w:"determine",ex:"They determined that radium could kill cancer cells.",ar:"يحدد / يُثبت / يكتشف",en:"To find out or decide something definitely",syn:"establish, conclude, ascertain, resolve",ant:"ignore, overlook, neglect"},
+  {w:"construct",ex:"She helped construct programming languages.",ar:"يبني / يُنشئ / يُؤسس",en:"To build or create something systematically",syn:"build, develop, create, fabricate",ant:"demolish, destroy, dismantle"},
+  {w:"convert",ex:"She converted English terms into machine code.",ar:"يُحوِّل / يُبدِّل",en:"To change something from one form or use to another",syn:"transform, change, translate, adapt",ant:"maintain, keep, preserve"},
+  {w:"hold off",ex:"I held off making a decision until I had more info.",ar:"يتأخر / يُرجئ / يتريّث",en:"To delay or postpone something",syn:"postpone, delay, defer, put off",ant:"proceed, act immediately, rush"},
+  {w:"come down on",ex:"Her parents came down hard on her.",ar:"ينتقد بشدة / يعاقب",en:"To criticise or punish someone severely",syn:"reprimand, punish, rebuke, scold",ant:"praise, reward, commend"},
+  {w:"take in",ex:"I couldn't take in all the information at once.",ar:"يستوعب / يفهم / يدرك",en:"To absorb and understand information",syn:"absorb, understand, comprehend, grasp",ant:"ignore, misunderstand, overlook"},
+  {w:"come across",ex:"People who came across this mother were confused.",ar:"يصادف / يلتقي بالصدفة",en:"To meet or find something/someone by chance",syn:"encounter, stumble upon, bump into",ant:"seek out, plan, arrange"},
+  {w:"come up with",ex:"He came up with a brilliant idea in the meeting.",ar:"يتوصل إلى فكرة / يبتكر",en:"To think of or produce an idea or solution",syn:"devise, produce, generate, invent",ant:"discard, drop, reject"},
+  {w:"set out",ex:"She set out a detailed plan for the committee.",ar:"يعرض / يضع خطة / يشرع",en:"To present or describe / to begin a journey with a purpose",syn:"present, lay out, begin, launch",ant:"conclude, wrap up, abandon"},
+  {w:"set about",ex:"They set about collecting rubbish from the streets.",ar:"يشرع في / يبدأ بجدية",en:"To start doing something with energy and effort",syn:"begin, undertake, tackle, embark on",ant:"give up, abandon, quit"},
+  {w:"set up",ex:"He set up three recycling plants around the country.",ar:"يُؤسس / يُنشئ / يُقيم",en:"To establish, create or start an organisation/system",syn:"establish, found, create, launch",ant:"close, shut down, dismantle"},
+  {w:"take to",ex:"Most people have taken to burning their rubbish.",ar:"يعتاد على / ينصرف إلى",en:"To develop a habit or liking for something",syn:"get used to, adopt, develop a habit of",ant:"give up, stop, abandon"},
+  {w:"lucrative",ex:"Adventure clothing is a lucrative industry.",ar:"مُربح / ذو عائد مادي وفير",en:"Producing a great deal of profit",syn:"profitable, high-paying, rewarding, remunerative",ant:"unprofitable, loss-making, unrewarding"},
+  {w:"durable",ex:"Buy durable clothes for the mountain expedition.",ar:"متين / قوي / يدوم طويلاً",en:"Able to withstand wear and last a long time",syn:"sturdy, long-lasting, robust, resilient",ant:"fragile, flimsy, delicate, disposable"},
+  {w:"excruciating",ex:"If you don't wear good boots, your feet will be in excruciating pain.",ar:"مُؤلم جداً / لا يُحتمل",en:"Intensely painful; extremely difficult to endure",syn:"agonising, unbearable, severe, torturous",ant:"mild, slight, bearable, tolerable"},
+  {w:"bare essentials",ex:"A waterproof jacket and good boots are the bare essentials.",ar:"الحد الأدنى الضروري / الأساسيات فقط",en:"The minimum things that are absolutely necessary",syn:"basics, necessities, fundamentals",ant:"luxuries, extras, indulgences"},
+  {w:"hyperbole",ex:"Saying 'I've told you a million times' is hyperbole.",ar:"مبالغة",en:"Exaggerated statements not meant to be taken literally",syn:"exaggeration, overstatement, amplification",ant:"understatement, litotes, minimisation"},
+  {w:"understatement",ex:"Calling a disaster 'not ideal' is an understatement.",ar:"تهوين / تقليل",en:"A statement that describes something as less than it is",syn:"minimisation, litotes, downplaying",ant:"hyperbole, exaggeration, overstatement"},
+  {w:"gregarious",ex:"She is very gregarious and loves big social gatherings.",ar:"اجتماعي / يُحب الاختلاط",en:"Fond of company; very sociable",syn:"sociable, outgoing, extroverted, convivial",ant:"antisocial, introverted, solitary, reclusive"},
+  {w:"extrovert",ex:"An extrovert gains energy from social interaction.",ar:"انبساطي / منفتح اجتماعياً",en:"An outgoing person who enjoys social activities",syn:"outgoing, sociable, gregarious",ant:"introvert, loner, recluse"},
+  {w:"introvert",ex:"As an introvert, she prefers quiet evenings at home.",ar:"انطوائي / يُفضّل الوحدة",en:"A shy or reticent person who prefers solitary activities",syn:"loner, reserved person, solitary individual",ant:"extrovert, socialite, people-person"},
+  {w:"stand-offish",ex:"She seemed stand-offish at first but was actually shy.",ar:"متحفظ / بارد في التعامل",en:"Unfriendly and cold or distant in manner",syn:"aloof, distant, reserved, cold",ant:"warm, friendly, approachable, welcoming"},
+  {w:"endure",ex:"Their friendship has endured for over three decades.",ar:"يدوم / يستمر / يثبت",en:"To last or continue for a long time",syn:"last, persist, continue, survive",ant:"fade, end, dissolve, collapse"},
+  {w:"loneliness",ex:"Research shows that loneliness can cause serious health problems.",ar:"الشعور بالوحدة / العزلة",en:"The unhappy state of being alone without company",syn:"isolation, solitude, seclusion",ant:"companionship, togetherness, company"},
+  {w:"inevitable",ex:"Change is inevitable in modern society.",ar:"حتمي / لا مفر منه",en:"Certain to happen; unavoidable",syn:"unavoidable, certain, inescapable, inexorable",ant:"avoidable, unlikely, preventable, escapable"},
+  {w:"manipulate",ex:"Crowds can have their emotions manipulated.",ar:"يتلاعب بـ / يتحكم في",en:"To control or influence someone cleverly or unfairly",syn:"control, influence, exploit, engineer",ant:"liberate, free, respect, empower"},
+  {w:"self-sufficient",ex:"Living alone, people have had to become more self-sufficient.",ar:"مكتفٍ بذاته / معتمد على نفسه",en:"Needing no outside help to provide for one's needs",syn:"independent, autonomous, self-reliant",ant:"dependent, reliant, needy"},
+  {w:"prioritise",ex:"Many older people say you should prioritise your family.",ar:"يُعطي الأولوية لـ / يُقدِّم",en:"To treat something as more important than other things",syn:"rank first, place first, give precedence to",ant:"neglect, deprioritise, overlook"},
+  {w:"endeavour",ex:"Our basic moral code should never be regarded as old-fashioned; we must endeavour to live by it.",ar:"يسعى بجد / يُحاول",en:"To try hard to do or achieve something",syn:"strive, attempt, try, aspire",ant:"give up, neglect, abandon"},
+  {w:"vivacious",ex:"Introverted managers were more effective with vivacious employees.",ar:"نشيط / مفعم بالحيوية",en:"Attractively lively and animated",syn:"lively, energetic, spirited, animated",ant:"dull, listless, lethargic, subdued"},
+  {w:"introspective",ex:"Artists need time alone to be introspective about their experiences.",ar:"تأملي / يميل للتفكير الداخلي",en:"Examining one's own thoughts and feelings",syn:"reflective, thoughtful, inward-looking, contemplative",ant:"extroverted, outward-looking, unreflective"},
+  {w:"well-being",ex:"Socialising improves a person's quality of life and well-being.",ar:"الرفاهية / الصحة النفسية والجسدية",en:"The state of being comfortable, healthy, and happy",syn:"welfare, health, happiness, contentment",ant:"misery, suffering, ill-health, distress"},
+  {w:"endorphins",ex:"Positive social interactions release endorphins that reduce stress.",ar:"إندورفين (مواد تُحسّن المزاج)",en:"Chemicals released in the brain during pleasure/exercise",syn:"feel-good chemicals, neurotransmitters",ant:"—"},
+  {w:"solitude",ex:"Prolonged solitude can exacerbate the risk of serious health issues.",ar:"العزلة / الوحدة الاختيارية",en:"The state of being alone, especially in a pleasant way",syn:"aloneness, isolation, seclusion, privacy",ant:"companionship, company, sociability"},
+  {w:"conformity",ex:"School uniforms create a sense of conformity.",ar:"الامتثال / المطابقة للمعايير",en:"Behaviour that follows the norms and rules of a group",syn:"compliance, obedience, uniformity, adherence",ant:"rebellion, defiance, individuality, nonconformity"},
+];
+
+/* ─── RENDER VOCAB TABLE ─── */
+function renderVocab(filter=''){
+  const body = document.getElementById('vocabBody');
+  const count = document.getElementById('vocabCount');
+  const q = filter.toLowerCase();
+  let rows='', n=0;
+  vocabData.forEach(v=>{
+    const text = `${v.w} ${v.ex} ${v.ar} ${v.en} ${v.syn} ${v.ant}`.toLowerCase();
+    if(!q || text.includes(q)){
+      n++;
+      rows += `<tr>
+        <td><strong>${v.w}</strong></td>
+        <td style="text-align:left;font-family:'Crimson Pro',serif;font-size:.9rem;">${v.ex}</td>
+        <td style="direction:rtl;font-weight:600;color:var(--teal);">${v.ar}</td>
+        <td style="text-align:left;font-size:.85rem;">${v.en}</td>
+        <td class="syn-cell" style="font-size:.8rem;">${v.syn}</td>
+        <td class="ant-cell" style="font-size:.8rem;">${v.ant}</td>
+      </tr>`;
+    }
+  });
+  body.innerHTML = rows || '<tr><td colspan="6" class="text-center text-muted">لا توجد نتائج</td></tr>';
+  count.textContent = `عرض ${n} من ${vocabData.length} كلمة`;
+}
+function filterVocab(){ renderVocab(document.getElementById('vocabSearch').value); }
+renderVocab();
+
+/* ─── EXAM DATA (50 Q) ─── */
+const questions=[
+  // Phrasal Verbs
+  {q:"What does 'hold off' mean?",o:["To support strongly","To delay or postpone","To criticise harshly","To begin immediately"],a:1,ar:"ما معنى 'hold off'؟"},
+  {q:"'She ___ a brilliant idea during the meeting.' Which phrasal verb fits?",o:["came across","came up with","came down on","came about"],a:1,ar:"أكمل الجملة بالفعل المركب الصحيح"},
+  {q:"'Take in' most closely means:",o:["To take something outside","To understand or absorb information","To ignore","To deliver something"],a:1,ar:"'Take in' تعني بشكل رئيسي:"},
+  {q:"'Her parents were furious and ___ hard on her.' Which word completes this?",o:["went","came","set","held"],a:1,ar:"أكمل الجملة بالكلمة الصحيحة"},
+  {q:"'Set about' means:",o:["To finish a task","To arrange furniture","To begin doing something energetically","To plan a journey"],a:2,ar:"'Set about' تعني:"},
+  {q:"Which sentence uses 'hold on' correctly?",o:["Hold on the rubbish","She held on to her dream despite everything","He held on the plan","They held on from him"],a:1,ar:"أي جملة تستخدم 'hold on' بشكل صحيح؟"},
+  {q:"'Set out a plan' means:",o:["To destroy a plan","To present or lay out a plan","To copy someone else's plan","To follow a plan exactly"],a:1,ar:"'Set out a plan' تعني:"},
+  {q:"Somchai's father ___ the idea of donating high-visibility vests.",o:["came across","came up with","came down on","came about"],a:1,ar:"أكمل الجملة بالفعل المركب الصحيح"},
+  {q:"'Most people have ___ burning their rubbish.' Which is correct?",o:["taken to","taken off","taken in","taken up"],a:0,ar:"أي صيغة صحيحة؟"},
+  {q:"'I held ___ pursuing my dream.' Which particle completes this?",o:["off","back","on","out"],a:2,ar:"أكمل بالجسيمة الصحيحة"},
+  // Vocabulary
+  {q:"Which word means 'producing a great deal of profit'?",o:["durable","lucrative","practical","cultural"],a:1,ar:"أي كلمة تعني 'مربح جداً'؟"},
+  {q:"What does 'excruciating' mean?",o:["Slightly uncomfortable","Intensely painful","Moderately difficult","Very expensive"],a:1,ar:"ما معنى 'excruciating'؟"},
+  {q:"A 'pioneer' is best described as:",o:["Someone who follows trends","One of the first to develop a new area","A professional athlete","A traditional craftsperson"],a:1,ar:"'Pioneer' تعني بشكل أدق:"},
+  {q:"The word 'algorithm' originated from:",o:["Marie Curie","Grace Hopper","Muhammad ibn Musa al-Khwarizmi","Isaac Newton"],a:2,ar:"كلمة 'algorithm' اشتُقت من اسم:"},
+  {q:"'Durable' most closely means:",o:["fashionable","long-lasting and strong","very expensive","light and flexible"],a:1,ar:"'Durable' تعني بشكل أدق:"},
+  {q:"An 'extrovert' is someone who:",o:["prefers to be alone","gains energy from socialising with others","is shy and reserved","loves reading quietly"],a:1,ar:"'Extrovert' هو شخص:"},
+  {q:"'Stand-offish' describes someone who is:",o:["warm and welcoming","cold and distant in manner","extremely funny","very hardworking"],a:1,ar:"'Stand-offish' تصف شخصاً:"},
+  {q:"What does 'gregarious' mean?",o:["Aggressive and rude","Fond of company; very sociable","Extremely intelligent","Hard-working and reliable"],a:1,ar:"ما معنى 'gregarious'؟"},
+  {q:"The word 'endure' means:",o:["to suffer briefly","to last for a long time","to enjoy greatly","to avoid something unpleasant"],a:1,ar:"كلمة 'endure' تعني:"},
+  {q:"'Well-being' refers to:",o:["financial wealth only","the state of being healthy and happy","professional success","academic achievement"],a:1,ar:"'Well-being' تشير إلى:"},
+  {q:"Which adjective collocates BEST with 'essentials'?",o:["excruciating","lucrative","bare","proud"],a:2,ar:"أي صفة تتلازم أفضل مع 'essentials'؟"},
+  {q:"'Manipulate' means:",o:["to celebrate someone","to control or influence someone unfairly","to teach patiently","to record carefully"],a:1,ar:"'Manipulate' تعني:"},
+  // Grammar — Articles
+  {q:"'___ Burj Khalifa is the tallest building in ___ world.' Which articles are correct?",o:["A / a","The / the","The / a","A / the"],a:1,ar:"أكمل الجملة بأداة التعريف الصحيحة"},
+  {q:"We use 'the' with the Dead Sea because:",o:["it has been mentioned before","it is a unique geographical water body","it is a superlative","it is a person's name"],a:1,ar:"نستخدم 'the' مع البحر الميت لأن:"},
+  {q:"'She was ___ first Jordanian to win at ___ Paralympics.' Correct articles:",o:["a / the","the / the","a / a","the / a"],a:1,ar:"أكمل بأداة التعريف الصحيحة"},
+  {q:"Which sentence uses articles CORRECTLY?",o:["She lives in the Amman.","The Jordan is a beautiful country.","He was born in the 1990s.","She visited a Dead Sea."],a:2,ar:"أي جملة تستخدم أدوات التعريف بشكل صحيح؟"},
+  {q:"'___ orang-utan is the most solitary of the great apes.' We use 'the' because:",o:["It was mentioned before","We are talking about the species as a whole","It is unique","It's a superlative"],a:1,ar:"لماذا نستخدم 'the' في هذه الجملة؟"},
+  {q:"'In one experiment, ___ psychologist compared behaviours in ___ national park.' Correct?",o:["an / a","the / the","a / the","an / the"],a:0,ar:"اختر الخيار الصحيح"},
+  {q:"'Working hard is important in ___ modern world.' Which is correct?",o:["a modern world","the modern world","an modern world","∅ modern world"],a:1,ar:"أي أداة تعريف صحيحة؟"},
+  {q:"We do NOT normally use 'the' with which of the following?",o:["The Dead Sea","The 2000s","The UAE","Jordan (the country alone)"],a:3,ar:"مع أيٍّ من التالي لا نستخدم 'the' عادةً؟"},
+  // Reading Comprehension
+  {q:"Marie Curie discovered an element that was how many times more radioactive than uranium?",o:["100 times","200 times","400 times","1000 times"],a:2,ar:"كم مرة كان البولونيوم أكثر إشعاعاً من اليورانيوم؟"},
+  {q:"What programming language did Grace Hopper help create?",o:["Java","Python","COBOL","HTML"],a:2,ar:"ما لغة البرمجة التي ساعدت غريس هوبر في إنشائها؟"},
+  {q:"Why did the trail WITH the warning sign have MORE wood taken?",o:["People couldn't read the sign","People thought: if everyone does it, it can't be that bad","The sign was placed incorrectly","People wanted to keep the sign as a souvenir"],a:1,ar:"لماذا أُخذت كمية أكبر من الخشب من المسار الذي كانت فيه العلامة؟"},
+  {q:"According to 'What's wrong with being a loner?', introverted managers are:",o:["Less effective than extroverts","Better at listening to employees","More popular with staff","Always antisocial and unhelpful"],a:1,ar:"وفقاً للنص، المديرون الانطوائيون:"},
+  {q:"According to the radio programme, in which country is red the colour of happiness?",o:["Japan","India","China","Brazil"],a:2,ar:"في أي بلد يُعبّر اللون الأحمر عن السعادة؟"},
+  {q:"Captain Scott's rival Roald Amundsen succeeded partly because:",o:["he had more team members","he wore lighter-weight fur animal skins","he started the race earlier","he had better equipment"],a:1,ar:"لماذا نجح منافس الكابتن سكوت رولد أموندسن؟"},
+  {q:"According to the text, we spend around ___ of our waking time in direct communication.",o:["25%","50%","75%","90%"],a:2,ar:"كم من وقت صحونا نمضيه في التواصل المباشر؟"},
+  {q:"The Laysan albatross is mentioned to illustrate:",o:["That birds are social animals","That some creatures can thrive alone without being completely solitary","The dangers of isolation","How animals form lasting friendships"],a:1,ar:"ذُكر طائر الألباتروس الليساني لتوضيح:"},
+  // Hyperbole & Understatement
+  {q:"Which is an example of HYPERBOLE?",o:["It's not exactly warm today.","I've been there tons of times!","The food is a bit overdone.","He knows a thing or two about science."],a:1,ar:"أي من هذه أمثلة على المبالغة؟"},
+  {q:"'It's not exactly cold today, is it?' is an example of:",o:["Hyperbole","Metaphor","Understatement","Simile"],a:2,ar:"هذه الجملة مثال على:"},
+  {q:"Which adjective is a hyperbolic alternative to 'very hungry'?",o:["soaked","ravenous","incinerated","gigantic"],a:1,ar:"أي صفة هي بديل مبالغ لـ 'جائع جداً'؟"},
+  {q:"'No big deal' is an example of:",o:["Hyperbole","Sarcasm","Understatement","Irony"],a:2,ar:"'No big deal' مثال على:"},
+  {q:"To describe extremely burnt food using HYPERBOLE, you would say:",o:["a bit overdone","slightly crispy","completely incinerated","not perfectly cooked"],a:2,ar:"لوصف طعام محترق بالمبالغة، تقول:"},
+  // Essay Writing
+  {q:"Which is a FORMAL way to write 'I think traditional values are important'?",o:["I personally feel that traditional values matter a lot.","Traditional values are considered to be of great importance.","Obviously traditional values are very important!","Everyone knows traditional values are useful."],a:1,ar:"أي من هذه صياغة رسمية لـ 'أعتقد أن القيم التقليدية مهمة'؟"},
+  {q:"In formal essay writing, you SHOULD:",o:["Use contractions like it's and don't","Write in first person using 'I think'","Avoid colloquialisms and use complex sentences","Keep all sentences short and simple for clarity"],a:2,ar:"في كتابة المقالات الرسمية يجب عليك:"},
+  {q:"What is the formal equivalent of 'Obviously, the world is changing very fast'?",o:["Clearly, everything's changing fast!","Evidently, the world is undergoing rapid and considerable change.","It's obvious the world is changing a lot.","The world is definitely changing very fast now."],a:1,ar:"ما الصيغة الرسمية لـ 'من الواضح أن العالم يتغير بسرعة'؟"},
+  {q:"According to the essay, around what fraction of European households contains just ONE person?",o:["One half","One third","One quarter","Two thirds"],a:1,ar:"ما الكسر الذي تمثله الأسر الأوروبية ذات الفرد الواحد؟"},
+  // Life Skills & General
+  {q:"According to the Life Skills box, being a good team member includes:",o:["Always leading the group","Making sure you are clear about your role","Doing all the work yourself","Completing only your own assigned tasks"],a:1,ar:"وفقاً لـ Life Skills، كونك عضواً جيداً في الفريق يشمل:"},
+  {q:"In the 'Food for Thought' project, what food was eventually chosen?",o:["Knafeh","Baklava","Pilaf (a rice dish)","A selection of desserts"],a:2,ar:"في مشروع 'Food for Thought'، ما الطعام الذي تم اختياره في النهاية؟"},
+  {q:"What does COBOL represent?",o:["A type of computer virus","A computer language for data processors created by Grace Hopper","A programming algorithm named after al-Khwarizmi","An internet communication protocol"],a:1,ar:"ما الذي يمثله اختصار COBOL؟"},
+  {q:"Which best describes the MAIN MESSAGE of Unit 08?",o:["Everyone should follow the crowd for safety","Pioneers who think independently achieve great things, but social connections also matter","Traditional values are always better than modern ones","Clothing is the most important form of self-expression"],a:1,ar:"ما الرسالة الرئيسية للوحدة الثامنة؟"},
+];
+
+/* ─── BUILD EXAM ─── */
+function buildExam(){
+  const c=document.getElementById('examContainer');
+  c.innerHTML=questions.map((q,i)=>`
+    <div class="exam-card" id="qcard${i}">
+      <div class="d-flex align-items-start gap-3 mb-2">
+        <span class="q-num">${i+1}</span>
+        <div style="flex:1;">
+          <p class="mb-1 fw-bold" style="font-family:'Crimson Pro',serif;font-size:1rem;direction:ltr;text-align:left;">${q.q}</p>
+          <p class="mb-0 text-muted" style="font-size:.82rem;">${q.ar}</p>
+        </div>
+      </div>
+      <div class="row g-1">
+        ${q.o.map((opt,j)=>`
+          <div class="col-md-6 exam-option">
+            <input type="radio" name="q${i}" id="q${i}o${j}" value="${j}">
+            <label for="q${i}o${j}" style="direction:ltr;text-align:left;font-family:'Crimson Pro',serif;">${'ABCD'[j]}. ${opt}</label>
+          </div>`).join('')}
+      </div>
+      <div id="fb${i}" style="display:none;margin-top:.5rem;font-size:.85rem;"></div>
+    </div>`).join('');
+}
+
+function submitExam(){
+  let score=0,unanswered=0;
+  questions.forEach((q,i)=>{
+    const sel=document.querySelector(`[name="q${i}"]:checked`);
+    const card=document.getElementById(`qcard${i}`);
+    const fb=document.getElementById(`fb${i}`);
+    if(!sel){
+      unanswered++;
+      card.style.borderRightColor='#ffc107';
+      fb.innerHTML=`<span style="color:#e65100;">⚠️ لم تُجب — Not answered</span>`;
+      fb.style.display='block';
+      return;
+    }
+    const chosen=parseInt(sel.value), correct=q.a;
+    for(let j=0;j<q.o.length;j++){
+      const lbl=document.getElementById(`q${i}o${j}`).nextElementSibling;
+      if(j===correct) lbl.style.cssText='background:#d4edda;color:#155724;font-weight:700;border:2px solid #28a745;border-radius:8px;display:block;padding:.45rem .9rem;';
+      else if(j===chosen&&chosen!==correct) lbl.style.cssText='background:#f8d7da;color:#721c24;border:2px solid #dc3545;border-radius:8px;display:block;padding:.45rem .9rem;';
+      else lbl.style.cssText='background:#f8f9fa;border-radius:8px;display:block;padding:.45rem .9rem;color:#555;';
+    }
+    if(chosen===correct){score++;card.style.borderRightColor='#28a745';fb.innerHTML=`<span style="color:#155724;font-weight:700;">✅ صحيح! Correct!</span>`;}
+    else{card.style.borderRightColor='#dc3545';fb.innerHTML=`<span style="color:#721c24;font-weight:700;">❌ الصواب: ${'ABCD'[correct]}. ${q.o[correct]}</span>`;}
+    fb.style.display='block';
+  });
+  const pct=Math.round(score/questions.length*100);
+  let gr='',col='',msg='';
+  if(pct>=90){gr='ممتاز A+';col='#1a7a4a';msg='🌟 أداء استثنائي رائع!';}
+  else if(pct>=80){gr='جيد جداً B+';col='#0d7377';msg='👏 أحسنت! استمر في هذا المستوى!';}
+  else if(pct>=70){gr='جيد C+';col='#c8860a';msg='📖 جيد! راجع بعض النقاط.';}
+  else if(pct>=60){gr='مقبول D';col='#e65100';msg='💪 تحتاج مزيداً من المراجعة.';}
+  else{gr='راجع الدرس F';col='#c62828';msg='📚 لا تستسلم! راجع الوحدة مرة أخرى.';}
+  document.getElementById('gradeContainer').innerHTML=`
+  <div class="grade-box">
+    <div class="grade-number">${pct}%</div>
+    <div style="font-size:1.8rem;font-weight:700;margin:.5rem 0;">${gr}</div>
+    <div style="font-size:1.1rem;opacity:.9;">${msg}</div>
+    <div style="margin-top:1rem;font-size:1rem;opacity:.85;">
+      إجابات صحيحة: <strong>${score}</strong> من <strong>${questions.length}</strong>
+      ${unanswered>0?`<br>لم تُجب: <strong>${unanswered}</strong> سؤالاً`:''}
+    </div>
+  </div>`;
+  document.getElementById('gradeContainer').style.display='block';
+  document.getElementById('gradeContainer').scrollIntoView({behavior:'smooth'});
+}
+
+function resetExam(){
+  buildExam();
+  document.getElementById('gradeContainer').style.display='none';
+  window.scrollTo({top:document.getElementById('exam').offsetTop-70,behavior:'smooth'});
+}
+
+buildExam();
+</script>
+</body>
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 07 – The Creative Urge | ورقة دراسة ثنائية اللغة</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+:root{
+  --en-bg:#fdf8f0;--ar-bg:#eef4fb;--en-accent:#c0392b;--ar-accent:#1a5276;
+  --answer:#1e8449;--answer-bg:#d5f5e3;--header-bg:#1c1c2e;
+  --card-shadow:0 4px 18px rgba(0,0,0,.10);--lesson-bar:#2c3e50;
+  --vocab-bg:#fefefe;--search-border:#3498db;
+  --note-bg:#fff9db;--note-border:#f0b429;
+}
+*{box-sizing:border-box}
+body{font-family:'Source Serif 4',Georgia,serif;background:#f0ece4;color:#222;margin:0}
+.ar{font-family:'Noto Naskh Arabic',serif;direction:rtl;text-align:right}
+h1,h2,h3,.display-font{font-family:'Playfair Display',serif}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#1c1c2e 0%,#2d3561 50%,#c0392b 100%);
+  color:#fff;padding:3rem 1.5rem 2rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero h1{font-size:clamp(1.8rem,5vw,3.2rem);letter-spacing:-1px;margin:0}
+.hero .unit-no{font-size:5rem;font-weight:900;opacity:.15;position:absolute;top:-10px;right:20px;line-height:1}
+.hero .subtitle{font-family:'Noto Naskh Arabic',serif;font-size:1.3rem;opacity:.85;margin-top:.4rem}
+
+/* ── LESSON HEADER ── */
+.lesson-header{background:var(--lesson-bar);color:#fff;padding:.7rem 1.2rem;
+  border-radius:10px 10px 0 0;display:flex;align-items:center;gap:.7rem;margin-top:2rem}
+.lesson-header .badge-lesson{background:var(--en-accent);font-size:.75rem;
+  padding:.3rem .7rem;border-radius:20px;font-weight:700;letter-spacing:.5px}
+.lesson-header h3{margin:0;font-size:1rem;font-family:'Source Serif 4',serif}
+
+/* ── BI-COLUMN CARD ── */
+.bi-card{background:#fff;border-radius:0 0 12px 12px;box-shadow:var(--card-shadow);
+  margin-bottom:2rem;overflow:hidden}
+.bi-row{display:grid;grid-template-columns:1fr 1fr;min-height:auto}
+.bi-row.reverse{direction:rtl}
+.col-en{background:var(--en-bg);padding:1.2rem 1.4rem;border-right:3px solid #e8ddd0}
+.col-ar{background:var(--ar-bg);padding:1.2rem 1.4rem}
+.col-en-header{background:#f5ede0;padding:.5rem 1.4rem;
+  font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--en-accent);border-bottom:2px solid #e0cdb8;border-right:3px solid #e8ddd0}
+.col-ar-header{background:#ddeaf7;padding:.5rem 1.4rem;
+  font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--ar-accent);border-bottom:2px solid #b8d0e8;font-family:'Noto Naskh Arabic',serif;
+  text-align:right}
+.section-title{font-family:'Playfair Display',serif;font-size:1.15rem;
+  color:var(--en-accent);border-bottom:2px solid var(--en-accent);
+  padding-bottom:.3rem;margin-bottom:.8rem}
+.ar .section-title{color:var(--ar-accent);border-color:var(--ar-accent)}
+
+/* ── ANSWERS ── */
+.ans{color:var(--answer);font-weight:700;background:var(--answer-bg);
+  padding:.1rem .45rem;border-radius:4px;display:inline;white-space:nowrap}
+.blank{border-bottom:2px solid #aaa;min-width:70px;display:inline-block;
+  margin:0 3px;text-align:center}
+
+/* ── EXERCISE BLOCKS ── */
+.ex-block{background:#fff;border-left:4px solid var(--en-accent);
+  padding:.8rem 1rem;border-radius:0 8px 8px 0;margin:.7rem 0;font-size:.9rem}
+.ex-block.ar-ex{border-left:none;border-right:4px solid var(--ar-accent);
+  direction:rtl;text-align:right}
+.ex-num{font-weight:700;color:var(--en-accent);margin-right:.3rem}
+.q-item{margin:.4rem 0;font-size:.88rem;line-height:1.6}
+
+/* ── NOTES ── */
+.note-box{background:var(--note-bg);border-left:4px solid var(--note-border);
+  padding:.8rem 1rem;border-radius:0 8px 8px 0;margin:.6rem 0;font-size:.87rem}
+.note-box.ar-note{border-left:none;border-right:4px solid #f0b429;direction:rtl;text-align:right}
+.note-box .note-title{font-weight:700;color:#7d6008;font-size:.85rem;margin-bottom:.3rem}
+
+/* ── VOCAB TABLE ── */
+#vocab-section{background:#fff;border-radius:12px;box-shadow:var(--card-shadow);
+  padding:1.5rem;margin:2rem 0}
+#vocab-section h2{font-family:'Playfair Display',serif;color:var(--lesson-bar)}
+#vocab-search{border:2px solid var(--search-border);border-radius:8px;
+  padding:.5rem 1rem;width:100%;font-size:.95rem;margin-bottom:1rem;outline:none}
+#vocab-search:focus{border-color:var(--en-accent);box-shadow:0 0 0 3px rgba(192,57,43,.15)}
+.vocab-table thead th{background:var(--lesson-bar);color:#fff;
+  font-family:'Source Serif 4',serif;font-size:.82rem;padding:.55rem .7rem;
+  white-space:nowrap}
+.vocab-table tbody tr:hover{background:#f0f7ff}
+.vocab-table td{font-size:.82rem;padding:.45rem .6rem;vertical-align:middle;border-color:#e0e0e0}
+.v-word{font-weight:700;color:var(--en-accent)}
+.v-ar{font-family:'Noto Naskh Arabic',serif;font-size:.95rem;color:var(--ar-accent);
+  direction:rtl;text-align:right}
+.v-syn{color:#16a085;font-size:.78rem}
+.v-ant{color:#c0392b;font-size:.78rem}
+.v-example{font-style:italic;color:#555;font-size:.8rem}
+.badge-pos{font-size:.68rem;padding:.2rem .5rem;border-radius:10px}
+
+/* ── POEM ── */
+.poem-box{background:linear-gradient(135deg,#fdf6ff,#f0e8fb);
+  border:2px solid #c39bd3;border-radius:12px;padding:1.5rem;
+  font-style:italic;line-height:2;color:#4a235a;font-size:.95rem}
+
+/* ── TABLE STYLES ── */
+.styled-table{width:100%;font-size:.83rem;border-collapse:collapse}
+.styled-table th{background:#2c3e50;color:#fff;padding:.5rem .7rem;text-align:center}
+.styled-table td{padding:.45rem .7rem;border:1px solid #ddd;text-align:center}
+.styled-table tr:nth-child(even){background:#f8f9fa}
+
+/* ── TOC ── */
+.toc-pill{display:inline-block;background:var(--en-accent);color:#fff;
+  padding:.25rem .8rem;border-radius:20px;font-size:.78rem;margin:.2rem;
+  text-decoration:none;transition:.2s}
+.toc-pill:hover{background:#a93226;color:#fff}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .bi-row{grid-template-columns:1fr}
+  .col-en{border-right:none;border-bottom:3px solid #e8ddd0}
+  .hero .unit-no{font-size:3rem}
+}
+.highlight-grammar{background:#fff3cd;border-left:3px solid #ffc107;
+  padding:.6rem .9rem;border-radius:0 6px 6px 0;font-size:.88rem;margin:.5rem 0}
+.sticky-nav{position:sticky;top:0;z-index:100;background:rgba(28,28,46,.96);
+  backdrop-filter:blur(8px);padding:.5rem 1rem;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.sticky-nav a{color:#ddd;font-size:.78rem;margin:0 .4rem;text-decoration:none}
+.sticky-nav a:hover{color:#e74c3c}
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<div class="sticky-nav d-flex flex-wrap align-items-center gap-1">
+  <span style="color:#e74c3c;font-weight:700;font-size:.85rem;margin-right:.5rem">Unit 07</span>
+  <a href="#lesson1a">Lesson 1A</a>
+  <a href="#lesson2a">Lesson 2A</a>
+  <a href="#lesson3a">Lesson 3A</a>
+  <a href="#lesson4a">Lesson 4A</a>
+  <a href="#lesson5a">Lesson 5A</a>
+  <a href="#lesson6a">Lesson 6A</a>
+  <a href="#vocab-section">📖 Dictionary</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="unit-no">07</div>
+  <h1 class="display-font">The Creative Urge</h1>
+  <p style="opacity:.7;font-size:.9rem;margin:.2rem 0">Advanced English · Unit 07</p>
+  <p class="subtitle ar">الدافع الإبداعي · ورقة دراسة ثنائية اللغة</p>
+  <div class="mt-3 d-flex flex-wrap justify-content-center gap-2" style="font-size:.78rem">
+    <span class="badge bg-warning text-dark">Vocabulary</span>
+    <span class="badge bg-info text-dark">Grammar</span>
+    <span class="badge bg-success">Reading</span>
+    <span class="badge bg-danger">Speaking</span>
+    <span class="badge bg-primary">Writing</span>
+    <span class="badge bg-secondary">Listening</span>
+  </div>
+  <div class="mt-3" style="font-size:.8rem;opacity:.7">
+    <span class="ar">المفردات • القواعد • القراءة • التحدث • الكتابة • الاستماع</span>
+  </div>
+</div>
+
+<div class="container-fluid px-3 px-md-4" style="max-width:1400px;margin:0 auto">
+
+<!-- ════════════════════════════════════════════════════ LESSON 1A -->
+<div id="lesson1a">
+<div class="lesson-header">
+  <span class="badge-lesson">LESSON 1A</span>
+  <h3>Vocabulary &amp; Speaking · <span class="ar" style="font-size:.9rem">المفردات والتحدث</span></h3>
+</div>
+<div class="bi-card">
+  <div class="d-flex">
+    <div class="col-en-header" style="flex:1">English Content</div>
+    <div class="col-ar-header" style="flex:1">الشرح بالعربي</div>
+  </div>
+
+  <!-- SPEAKING Ex 1 -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 1 – Speaking Discussion</div>
+      <div class="q-item"><span class="ex-num">1.</span> Do you prefer to <strong>make</strong> your clothes, buy <strong>second-hand</strong> clothes or buy <strong>brand new</strong> clothes? Why?</div>
+      <div class="q-item"><span class="ex-num">2.</span> What kinds of clothes do you enjoy wearing the <strong>most</strong> and the <strong>least</strong>? Why?</div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">التمرين ١ – نقاش شفهي</div>
+      <div class="note-box ar-note">
+        <div class="note-title">ملاحظة للطالب</div>
+        <div>هذا سؤال مفتوح للنقاش. استخدم الصفات التي ستتعلمها في هذا الدرس لتوصف ملابسك المفضلة. <br><strong>second-hand</strong> = مستعمل (ملابس مستعملة) | <strong>brand new</strong> = جديد تماماً</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listening Ex 2 -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 2 – Listening 7.1 ✅ (Answers filled)</div>
+      <div class="q-item"><span class="ex-num">1.</span> Speaker <span class="ans">C</span> makes their own clothes.</div>
+      <div class="q-item"><span class="ex-num">2.</span> Speaker <span class="ans">B</span> buys new clothes.</div>
+      <div class="q-item"><span class="ex-num">3.</span> Speaker <span class="ans">A</span> buys second-hand clothes.</div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">التمرين ٢ – الاستماع</div>
+      <div class="note-box ar-note">
+        <div class="note-title">الإجابات الصحيحة</div>
+        <div>١. المتحدث <span class="ans">C</span> يصنع ملابسه بنفسه.</div>
+        <div>٢. المتحدث <span class="ans">B</span> يشتري ملابس جديدة.</div>
+        <div>٣. المتحدث <span class="ans">A</span> يشتري ملابس مستعملة.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clothes Adjectives Table Ex 3 & 4 -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 4 – Clothes Adjectives Table ✅</div>
+      <div style="overflow-x:auto">
+      <table class="styled-table">
+        <thead><tr><th>Opinion</th><th>Size</th><th>Shape</th><th>Colour</th><th>Pattern</th><th>Material</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="ans">elegant<br>flamboyant<br>garish<br>sparkly</span></td>
+            <td><span class="ans">gigantic<br>oversized</span></td>
+            <td><span class="ans">flared<br>pleated<br>polo neck<br>wide-leg</span></td>
+            <td><span class="ans">burgundy<br>navy<br>neon<br>pastel<br>scarlet</span></td>
+            <td><span class="ans">clashing<br>plaid</span></td>
+            <td><span class="ans">cashmere<br>corduroy<br>knitted<br>metallic<br>satin<br>suede<br>velvet</span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">التمرين ٤ – جدول صفات الملابس</div>
+      <table class="styled-table" style="font-family:'Noto Naskh Arabic',serif;font-size:.82rem">
+        <thead><tr><th>رأي</th><th>حجم</th><th>شكل</th><th>لون</th><th>نمط</th><th>خامة</th></tr></thead>
+        <tbody><tr>
+          <td>أنيق / مبهرج / صارخ / لامع</td>
+          <td>ضخم / كبير جداً</td>
+          <td>مفلّر / مكسّر / ياقة بولو / واسع الساق</td>
+          <td>أحمر غامق / كحلي / فلوري / باستل / قرمزي</td>
+          <td>متضارب / مربعات</td>
+          <td>كشمير / كوردروي / محبوك / معدني / ساتان / شمواه / مخمل</td>
+        </tr></tbody>
+      </table>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">نصيحة للحفظ السريع</div>
+        <div>صِنَّف الصفات حسب هذا الترتيب عند وصف الملابس: <strong>رأي → حجم → شكل → لون → نمط → خامة</strong><br>مثال: <em>an elegant oversized plaid wool jacket</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vague Language Ex 5 -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 5 – Vague Language (Fill in blanks) ✅</div>
+      <div class="ex-block">
+        <div class="q-item"><strong>Amber:</strong> What is she wearing?</div>
+        <div class="q-item"><strong>Brooke:</strong> Oh, it's <sup>1</sup><span class="ans">sort of</span> like a jumpsuit, I think, but with wide trousers.</div>
+        <div class="q-item"><strong>Amber:</strong> And what's that <sup>2</sup><span class="ans">thingy</span> round her waist?</div>
+        <div class="q-item"><strong>Brooke:</strong> I'm not really sure… Is it a belt? It looks like it's made of <sup>3</sup><span class="ans">greenish</span> metal.</div>
+        <div class="q-item"><strong>Amber:</strong> And she's got sparkly <sup>4</sup><span class="ans">stuff</span> on her shoes!</div>
+        <div class="q-item"><strong>Amber:</strong> Does she usually wear garish colours and <sup>5</sup><span class="ans">stuff like that</span>?</div>
+        <div class="q-item"><strong>Brooke:</strong> Yes, she's quite flamboyant.</div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">التمرين ٥ – لغة الغموض المقصود</div>
+      <div class="note-box ar-note">
+        <div class="note-title">شرح اللغة الغامضة (Vague Language)</div>
+        <div>نستخدم لغة غامضة في الحديث العفوي عندما:</div>
+        <div>• نكون غير متأكدين من الكلمة الدقيقة: <strong>thingy</strong> (شيء ما – للمعدود) | <strong>stuff</strong> (أشياء – للمجموع)</div>
+        <div>• نعطي مثالاً: <strong>stuff like that / and so on</strong> = وما إلى ذلك</div>
+        <div>• نُقدِّر تقريباً: <strong>sort of / kind of / -ish</strong> = نوعاً ما / تقريباً</div>
+        <div>• <strong>sort of</strong> = نوعاً ما | <strong>greenish</strong> = مخضر نوعاً ما | <strong>thingy</strong> = الشيء ذاك</div>
+      </div>
+    </div>
+  </div>
+</div><!-- /bi-card -->
+</div><!-- /lesson1a -->
+
+<!-- ════════════════════════════════════════════════════ LESSON 2A -->
+<div id="lesson2a">
+<div class="lesson-header">
+  <span class="badge-lesson">LESSON 2A</span>
+  <h3>Grammar – Relative Clauses · <span class="ar" style="font-size:.9rem">الجمل الوصفية</span></h3>
+</div>
+<div class="bi-card">
+  <div class="d-flex">
+    <div class="col-en-header" style="flex:1">English Content</div>
+    <div class="col-ar-header" style="flex:1">الشرح بالعربي</div>
+  </div>
+
+  <!-- Ex 2 Think Back -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 2 – Think Back: Relative Clauses ✅</div>
+      <div class="ex-block">
+        <div class="q-item"><span class="ex-num">1.</span> A <strong>defining</strong> relative clause gives us <span class="ans">essential</span> information. A <strong>non-defining</strong> gives us <span class="ans">extra</span> information. Commas are used in <span class="ans">non-defining</span> relative clauses.</div>
+        <div class="q-item"><span class="ex-num">2.</span> The pronoun <em>which</em> in extract b could be replaced by <span class="ans">that</span>.</div>
+        <div class="q-item"><span class="ex-num">3.</span> The pronoun <em>which</em> in extract a could <span class="ans">not</span> be omitted.</div>
+        <div class="q-item"><span class="ex-num">4.</span> The pronoun <em>which</em> in extract b <span class="ans">could</span> be omitted.</div>
+        <div class="q-item"><span class="ex-num">5.</span> The pronoun <em>which</em> in extract b refers to the <span class="ans">object</span> of the sentence.</div>
+        <div class="q-item"><span class="ex-num">6.</span> In extracts c and d, a full relative clause is replaced by a <span class="ans">past</span> participle.</div>
+        <div class="q-item"><span class="ex-num">7.</span> The pronouns <em>where, why</em> can be used <span class="ans">in both defining and non-defining</span> clauses.</div>
+        <div class="q-item"><span class="ex-num">8.</span> Placing the preposition at the beginning would make the sentence <span class="ans">more</span> formal.</div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">الجمل الوصفية – شرح سريع</div>
+      <div class="note-box ar-note">
+        <div class="note-title">الجملة الوصفية التعريفية (Defining)</div>
+        <div>تُعطي معلومات <strong>ضرورية</strong> لتحديد الاسم. <strong>لا توجد فواصل</strong>.<br>مثال: <em>The lane <u>which</u> he was travelling on curves…</em><br>يمكن استبدال <strong>which</strong> بـ <strong>that</strong> ويمكن حذف الضمير إذا كان مفعولاً به.</div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">الجملة الوصفية غير التعريفية (Non-defining)</div>
+        <div>تُعطي معلومات <strong>إضافية</strong> غير ضرورية. <strong>توجد فواصل</strong>.<br>مثال: <em>The Cornfield, <u>which</u> is one of Constable's most celebrated works…</em><br>لا يمكن حذف الضمير ولا استبداله بـ that.</div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">اختصار الجمل الوصفية</div>
+        <div>يمكن اختصار الجملة الوصفية باستخدام اسم المفعول (Past Participle):<br>بدلاً من: <em>This road, which was known locally as Fen Lane</em><br>نكتب: <em>This road, <strong>known</strong> locally as Fen Lane</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ex 3 Prepositional Relative Phrases -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 3 – Prepositional Relative Phrases ✅</div>
+      <div class="highlight-grammar">
+        <strong>Model:</strong> <em>…many of <u>whom</u> would have interpreted it as signalling peace…</em>
+      </div>
+      <div class="ex-block">
+        <div class="q-item"><span class="ex-num">1.</span> …until 1799, <span class="ans">at which</span> point he began his career as a full-time artist.</div>
+        <div class="q-item"><span class="ex-num">2.</span> …numerous paintings, many <span class="ans">of which</span> can be seen in galleries…</div>
+        <div class="q-item"><span class="ex-num">3.</span> …until 1819, <span class="ans">at which</span> time he had sold his first important painting.</div>
+        <div class="q-item"><span class="ex-num">4.</span> …next to Maria Elizabeth Bicknell, <span class="ans">to whom</span> he was married for 12 years.</div>
+        <div class="q-item"><span class="ex-num">5.</span> …Charles Robert Leslie <span class="ans">with whom</span> he enjoyed a close friendship.</div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">تمرين ٣ – العبارات الوصفية الحرفية</div>
+      <div class="note-box ar-note">
+        <div class="note-title">القاعدة</div>
+        <div>عندما تنتهي الجملة الوصفية بحرف جر، يمكن وضعه في البداية مع <strong>whom/which</strong>:</div>
+        <div>• <strong>at which point</strong> = عند هذه النقطة (للوقت أو المرحلة)</div>
+        <div>• <strong>at which time</strong> = في ذلك الوقت</div>
+        <div>• <strong>many of which</strong> = كثير منها</div>
+        <div>• <strong>to whom</strong> = الذي / التي تزوج منه/ها</div>
+        <div>• <strong>with whom</strong> = الذي / التي معه</div>
+        <div style="margin-top:.5rem">📌 هذا الأسلوب أكثر رسمية من وضع حرف الجر في النهاية.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ex 4 Nominal Relative Clauses -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 4 – Nominal Relative Clauses ✅</div>
+      <div class="ex-block">
+        <div class="q-item"><span class="ex-num">1.</span> <span class="ans">Whoever</span> painted that is a genius.</div>
+        <div class="q-item"><span class="ex-num">2.</span> You can visit the gallery <span class="ans">whenever</span> you like.</div>
+        <div class="q-item"><span class="ex-num">3.</span> <span class="ans">Wherever</span> I go, I always bring my drawing chalks with me.</div>
+        <div class="q-item"><span class="ex-num">4.</span> <span class="ans">Whatever</span> I say, you'll disagree.</div>
+        <div class="q-item"><span class="ex-num">5.</span> Sit in <span class="ans">whichever</span> chair you like.</div>
+        <div class="q-item"><span class="ex-num">6.</span> Stop <span class="ans">whatever</span> you're doing!</div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">تمرين ٤ – الجمل الاسمية الوصفية</div>
+      <div class="note-box ar-note">
+        <div class="note-title">الجمل الاسمية الوصفية</div>
+        <div>تعمل كاسم (فاعل / مفعول به) في الجملة:</div>
+        <div>• <strong>whoever</strong> = أياً كان (للأشخاص المجهولين)</div>
+        <div>• <strong>whatever</strong> = مهما / أياً كان (للأشياء)</div>
+        <div>• <strong>whenever</strong> = متى ما / في أي وقت</div>
+        <div>• <strong>wherever</strong> = أينما / في أي مكان</div>
+        <div>• <strong>whichever</strong> = أيهما (للاختيار من بين خيارات محددة)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ex 5 Mohanna Durra -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 5 – Mohanna Durra Article ✅</div>
+      <div class="ex-block" style="font-size:.87rem;line-height:1.9">
+        <p>Mohanna Durra, <sup>1</sup><span class="ans">who</span> was born in Amman in 1938, is seen as a pioneer of the Jordanian Arts movement. He was raised by his parents in a villa <sup>2</sup><span class="ans">which</span> was just a short distance from Amman's popular tourist attraction: the Roman amphitheatre, the history <sup>3</sup><span class="ans">of which</span> fascinated him as a child.</p>
+        <p>As a young man, Durra had an attraction to drawing and would do so <sup>4</sup><span class="ans">whenever</span> he had the opportunity. It was perhaps due to this that his father sent him to study art with George Aleef <sup>5</sup><span class="ans">from whom</span> he learnt the fundamentals of creating pictures with both pencils and paintbrushes.</p>
+        <p>Following this, Durra met and befriended William Hollowin, a Dutch painter <sup>6</sup><span class="ans">whose</span> influence led Durra to studying Dutch artists and gave him a deep interest in the way <sup>7</sup><span class="ans">in which</span> light was depicted in art.</p>
+        <p>In 1954, Durra attended the Academy of Fine Arts in Rome <sup>8</sup><span class="ans">where</span> he became the first Jordanian to be formally taught the arts.</p>
+        <p>Such was Durra's success that he met King Hussein in 1970 <sup>9</sup><span class="ans">in which</span> he received the Kawkab Decoration. Durra attracted many students to his studio, many <sup>10</sup><span class="ans">of whom</span> became notable artists in their own right.</p>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">تمرين ٥ – مقال محنا درّة</div>
+      <div class="note-box ar-note">
+        <div class="note-title">مفتاح الإجابات مع الشرح</div>
+        <div>١. <strong>who</strong> – للأشخاص في الجمل الوصفية</div>
+        <div>٢. <strong>which</strong> – للأشياء (الفيلا)</div>
+        <div>٣. <strong>of which</strong> – "تاريخها" = the history of which</div>
+        <div>٤. <strong>whenever</strong> – كلما أتيحت له الفرصة</div>
+        <div>٥. <strong>from whom</strong> – "تعلّم منه" = from whom he learned</div>
+        <div>٦. <strong>whose</strong> – للملكية (تأثيره = whose influence)</div>
+        <div>٧. <strong>in which</strong> – الطريقة التي = the way in which</div>
+        <div>٨. <strong>where</strong> – للمكان</div>
+        <div>٩. <strong>in which</strong> – السنة التي = the year in which</div>
+        <div>١٠. <strong>of whom</strong> – كثير منهم = many of whom</div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">عن محنا درّة</div>
+        <div>محنا درّة (١٩٣٨–) رائد في حركة الفنون الأردنية، وُلد في عمّان ودرس في أكاديمية روما للفنون الجميلة عام ١٩٥٤. أسّس معهد الأردن للفنون الجميلة وحصل على وسام الكوكب من الملك الحسين عام ١٩٧٠.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /lesson2a -->
+
+<!-- ════════════════════════════════════════════════════ LESSON 3A -->
+<div id="lesson3a">
+<div class="lesson-header">
+  <span class="badge-lesson">LESSON 3A</span>
+  <h3>Reading &amp; Vocabulary · <span class="ar" style="font-size:.9rem">القراءة والمفردات</span></h3>
+</div>
+<div class="bi-card">
+  <div class="d-flex">
+    <div class="col-en-header" style="flex:1">English Content</div>
+    <div class="col-ar-header" style="flex:1">الشرح بالعربي</div>
+  </div>
+
+  <!-- Ex 3 Adjectives -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 3 – Sensory Adjectives (Match) ✅</div>
+      <div class="ex-block">
+        <div class="q-item"><span class="ex-num">1.</span> Soft, smooth and shiny → <span class="ans">silken</span></div>
+        <div class="q-item"><span class="ex-num">2.</span> Marked with spots of colour → <span class="ans">dappled</span></div>
+        <div class="q-item"><span class="ex-num">3.</span> Able to shine in the dark → <span class="ans">luminous</span></div>
+        <div class="q-item"><span class="ex-num">4.</span> Quiet and easy to control → <span class="ans">docile</span></div>
+        <div class="q-item"><span class="ex-num">5.</span> Soft and delicate to the touch → <span class="ans">downy</span></div>
+        <div class="q-item"><span class="ex-num">6.</span> Reflects light and changes colour → <span class="ans">opalescent</span></div>
+        <div class="q-item"><span class="ex-num">7.</span> Covered with a thin layer of gold → <span class="ans">gilded</span></div>
+        <div class="q-item"><span class="ex-num">8.</span> Gentle and kind → <span class="ans">tender</span></div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">تمرين ٣ – الصفات الحسية</div>
+      <div class="note-box ar-note">
+        <div class="note-title">الصفات الحسية ومعانيها</div>
+        <div>١. <strong>silken</strong> = ناعم وسلس ولامع كالحرير</div>
+        <div>٢. <strong>dappled</strong> = مرقط / مبقع بألوان</div>
+        <div>٣. <strong>luminous</strong> = متوهج / يضيء في الظلام</div>
+        <div>٤. <strong>docile</strong> = هادئ وطيّع وسهل التحكم</div>
+        <div>٥. <strong>downy</strong> = ناعم كالزغب / خفيف كالريش</div>
+        <div>٦. <strong>opalescent</strong> = يعكس الضوء ويغير لونه كاللؤلؤ</div>
+        <div>٧. <strong>gilded</strong> = مُذهَّب / مُغطى بطبقة ذهبية</div>
+        <div>٨. <strong>tender</strong> = رقيق / حنون / لطيف</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Poem -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Poem – "Pretty Words" by Elinor Morton Wylie</div>
+      <div class="poem-box">
+        Poets make pets of pretty, docile words:<br>
+        I love smooth words, like gold-enamelled fish<br>
+        Which circle slowly with a silken swish,<br>
+        And tender ones, like downy-feathered birds:<br>
+        Words shy and dappled, deep-eyed deer in herds,<br>
+        Come to my hand, and playful if I wish,<br>
+        Or purring softly at a silver dish,<br>
+        Blue Persian kittens fed on cream and curds.<br><br>
+        I love bright words, words up and singing early;<br>
+        Words that are luminous in the dark, and sing;<br>
+        Warm lazy words, white cattle under trees;<br>
+        I love words opalescent, cool, and pearly,<br>
+        Like midsummer moths, and honeyed words like bees,<br>
+        Gilded and sticky, with a little sting.
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">قصيدة "كلمات جميلة"</div>
+      <div class="note-box ar-note">
+        <div class="note-title">تحليل القصيدة</div>
+        <div><strong>الفكرة الرئيسية:</strong> تُشبّه الشاعرة الكلمات بالحيوانات الأليفة وتُعبّر عن حبها للكلمات الجميلة.</div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">الأجهزة الشعرية في القصيدة</div>
+        <div><strong>التشبيه (Simile):</strong> <em>like gold-enamelled fish</em> (كالأسماك المُذهَّبة)</div>
+        <div><strong>التشخيص (Personification):</strong> الكلمات تأتي إلى يد الشاعرة، تُغرّد، تتمسح</div>
+        <div><strong>الجناس الأول (Alliteration):</strong> <em>dappled, deep-eyed deer</em></div>
+        <div><strong>المصوتات (Sibilance):</strong> <em>circle slowly with a silken swish</em></div>
+        <div><strong>المحاكاة الصوتية (Onomatopoeia):</strong> <em>swish, purring</em></div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">عن الشاعرة</div>
+        <div>إيلينور مورتون وايلي (١٨٨٥-١٩٢٨) شاعرة وروائية أمريكية من عشرينيات وثلاثينيات القرن الماضي، نشرت أربعة دواوين شعرية وأربع روايات.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metaphor Active Reading -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Active Reading – Understanding Metaphors</div>
+      <div class="note-box">
+        <div class="note-title">Types of Figurative Language</div>
+        <div>• <strong>Metaphor:</strong> compares two things directly — <em>"All the world's a stage"</em></div>
+        <div>• <strong>Simile:</strong> uses "like" or "as" — <em>"Life is like a box of chocolates"</em></div>
+        <div>• <strong>Personification:</strong> gives human qualities to objects — <em>"daffodils… dancing in the breeze"</em></div>
+        <div>• <strong>Alliteration:</strong> repeated initial sounds — <em>dappled, deep-eyed deer</em></div>
+        <div>• <strong>Sibilance:</strong> repeated s/sh sounds — <em>silken swish</em></div>
+        <div>• <strong>Onomatopoeia:</strong> sound imitation — <em>swish, purring, sting</em></div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">القراءة النشطة – فهم الاستعارة</div>
+      <div class="note-box ar-note">
+        <div class="note-title">الأساليب البلاغية</div>
+        <div>• <strong>الاستعارة (Metaphor):</strong> تشبيه مباشر بدون "مثل" أو "كأن"</div>
+        <div>• <strong>التشبيه (Simile):</strong> يستخدم "like / as" للمقارنة</div>
+        <div>• <strong>التشخيص (Personification):</strong> إعطاء الجماد صفات إنسانية</div>
+        <div>• <strong>الجناس الأول (Alliteration):</strong> تكرار الصوت الأول للكلمات</div>
+        <div>• <strong>المصوتات (Sibilance):</strong> تكرار أصوات س/ش</div>
+        <div>• <strong>المحاكاة الصوتية (Onomatopoeia):</strong> كلمات تُحاكي الأصوات</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /lesson3a -->
+
+<!-- ════════════════════════════════════════════════════ LESSON 4A -->
+<div id="lesson4a">
+<div class="lesson-header">
+  <span class="badge-lesson">LESSON 4A</span>
+  <h3>Listening &amp; Vocabulary · <span class="ar" style="font-size:.9rem">الاستماع والمفردات</span></h3>
+</div>
+<div class="bi-card">
+  <div class="d-flex">
+    <div class="col-en-header" style="flex:1">English Content</div>
+    <div class="col-ar-header" style="flex:1">الشرح بالعربي</div>
+  </div>
+
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 3 – Vocabulary Definitions ✅</div>
+      <div class="ex-block">
+        <div class="q-item"><span class="ex-num">1.</span> modern ideas or new methods → <span class="ans">avant-garde</span></div>
+        <div class="q-item"><span class="ex-num">2.</span> not intended to be serious → <span class="ans">tongue-in-cheek</span></div>
+        <div class="q-item"><span class="ex-num">3.</span> so good or large that it is surprising → <span class="ans">jaw-dropping</span></div>
+        <div class="q-item"><span class="ex-num">4.</span> doing something unusual to attract attention → <span class="ans">gimmicky</span></div>
+        <div class="q-item"><span class="ex-num">5.</span> making you feel calmer and more relaxed → <span class="ans">soothing</span></div>
+        <div class="q-item"><span class="ex-num">6.</span> considered to be better than it really is → <span class="ans">overrated</span></div>
+        <div class="q-item"><span class="ex-num">7.</span> being very attractive or of interest → <span class="ans">appealing</span></div>
+        <div class="q-item"><span class="ex-num">8.</span> being of a very average standard → <span class="ans">mediocre</span></div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">تمرين ٣ – مفردات وصف الفن</div>
+      <div class="note-box ar-note">
+        <div class="note-title">المعاني بالعربية</div>
+        <div>١. <strong>avant-garde</strong> = طليعي / أفكار وأساليب حديثة جداً</div>
+        <div>٢. <strong>tongue-in-cheek</strong> = غير جدي / ساخر بطريقة مرحة</div>
+        <div>٣. <strong>jaw-dropping</strong> = مبهر / يُسقط الفكّ من الدهشة</div>
+        <div>٤. <strong>gimmicky</strong> = شعوذة / حيلة لجذب الانتباه فقط</div>
+        <div>٥. <strong>soothing</strong> = مُريح / يبعث على الهدوء</div>
+        <div>٦. <strong>overrated</strong> = مبالغ في تقديره / أشهر مما يستحق</div>
+        <div>٧. <strong>appealing</strong> = جذاب / يشدّ الانتباه</div>
+        <div>٨. <strong>mediocre</strong> = متوسط / غير متميز</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 4 – Complete the Sentences ✅</div>
+      <div class="ex-block">
+        <div class="q-item"><span class="ex-num">1.</span> When you see the King Hussein Bin Talal Mosque in Amman for the first time, it's absolutely <span class="ans">jaw-dropping</span>.</div>
+        <div class="q-item"><span class="ex-num">2.</span> After a busy, stressful day, I find reading a book for half an hour to be really <span class="ans">soothing</span>.</div>
+        <div class="q-item"><span class="ex-num">3.</span> Most people agreed that his last book was quite <span class="ans">mediocre</span> and not his best work at all.</div>
+        <div class="q-item"><span class="ex-num">4.</span> At the time, the building's design was seen as quite <span class="ans">avant-garde</span> and unlike anything seen before.</div>
+        <div class="q-item"><span class="ex-num">5.</span> He wasn't really criticising your painting, it was just a <span class="ans">tongue-in-cheek</span> comment.</div>
+        <div class="q-item"><span class="ex-num">6.</span> Everyone was talking about how good her poems were, but I thought they were a bit <span class="ans">overrated</span>.</div>
+        <div class="q-item"><span class="ex-num">7.</span> I find the way the tree catches the light of the sun to be incredibly <span class="ans">appealing</span> every time I see it.</div>
+        <div class="q-item"><span class="ex-num">8.</span> I'm sorry, but in my opinion, coloured squares aren't abstract art. It's just <span class="ans">gimmicky</span> and doesn't say anything useful.</div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">تمرين ٤ – أكمل الجمل</div>
+      <div class="note-box ar-note">
+        <div class="note-title">نصيحة للاستخدام الصحيح</div>
+        <div>• استخدم <strong>jaw-dropping</strong> للأشياء المُبهرة بصرياً أو بحجمها.</div>
+        <div>• استخدم <strong>soothing</strong> للأصوات والألوان الهادئة أو للأنشطة المريحة.</div>
+        <div>• <strong>overrated</strong> يُستخدم عند انتقاد شيء مشهور لكنه لا يستحق الشهرة.</div>
+        <div>• <strong>gimmicky</strong> يُشير إلى أن الشيء يبدو جذاباً فقط سطحياً لجذب الانتباه.</div>
+        <div>• <strong>tongue-in-cheek</strong> تعبير اصطلاحي يعني "قاله بطريقة غير جدية / مازحاً".</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /lesson4a -->
+
+<!-- ════════════════════════════════════════════════════ LESSON 5A -->
+<div id="lesson5a">
+<div class="lesson-header">
+  <span class="badge-lesson">LESSON 5A</span>
+  <h3>Speaking &amp; Vocabulary – Film Genres · <span class="ar" style="font-size:.9rem">التحدث عن الأفلام</span></h3>
+</div>
+<div class="bi-card">
+  <div class="d-flex">
+    <div class="col-en-header" style="flex:1">English Content</div>
+    <div class="col-ar-header" style="flex:1">الشرح بالعربي</div>
+  </div>
+
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Film Genres Vocabulary</div>
+      <div class="d-flex flex-wrap gap-1 mb-2">
+        <span class="badge bg-dark">action</span><span class="badge bg-secondary">adventure</span>
+        <span class="badge bg-primary">biopic</span><span class="badge bg-info text-dark">courtroom drama</span>
+        <span class="badge bg-danger">disaster movie</span><span class="badge bg-warning text-dark">mystery</span>
+        <span class="badge bg-success">musical</span><span class="badge bg-dark">period drama</span>
+        <span class="badge bg-secondary">post-apocalyptic</span><span class="badge bg-primary">3D/CGI animation</span>
+        <span class="badge bg-info text-dark">traditional animation</span>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">أنواع الأفلام</div>
+      <div class="note-box ar-note">
+        <div>• <strong>action</strong> = أكشن | <strong>adventure</strong> = مغامرة</div>
+        <div>• <strong>biopic</strong> = فيلم سيرة ذاتية</div>
+        <div>• <strong>courtroom drama</strong> = دراما قضائية</div>
+        <div>• <strong>disaster movie</strong> = فيلم كوارث</div>
+        <div>• <strong>mystery</strong> = غموض/تشويق | <strong>musical</strong> = موسيقي</div>
+        <div>• <strong>period drama</strong> = دراما تاريخية</div>
+        <div>• <strong>post-apocalyptic</strong> = ما بعد نهاية العالم</div>
+        <div>• <strong>3D/CGI animation</strong> = رسوم متحركة ثلاثية الأبعاد</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Speaking Box – Describing a Film ✅</div>
+      <div class="ex-block">
+        <div class="note-title mb-1" style="font-weight:700">Exercise 4 – Replace underlined phrases:</div>
+        <div class="q-item"><span class="ex-num">1.</span> "It wasn't as good as his earlier films" → <span class="ans">It wasn't on a par with his earlier films.</span></div>
+        <div class="q-item"><span class="ex-num">2.</span> "The basic plotline is quite unoriginal" → <span class="ans">It tells the superficially mundane story of…</span></div>
+        <div class="q-item"><span class="ex-num">3.</span> "He is shocked to discover…" → <span class="ans">To his horror, he discovers…</span></div>
+        <div class="q-item"><span class="ex-num">4.</span> "I didn't think I was very keen on animation" → <span class="ans">I wasn't sure that I was really a fan of animation…</span></div>
+        <div class="q-item"><span class="ex-num">5.</span> "I thought it would be bad, and it was" → <span class="ans">My expectations were low, and they were met.</span></div>
+        <div class="q-item"><span class="ex-num">6.</span> "I'm glad I didn't leave halfway through" → <span class="ans">It was worth staying until the end.</span></div>
+        <div class="q-item"><span class="ex-num">7.</span> "We might have expected that this would become a popular film" → <span class="ans">It's no great surprise that this…</span></div>
+        <div class="q-item"><span class="ex-num">8.</span> "The plot is incredibly complicated. However, it had me captivated" → <span class="ans">It's impossible to sum up this story… it had me captivated from the very start.</span></div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">صندوق التحدث – وصف فيلم</div>
+      <div class="note-box ar-note">
+        <div class="note-title">عبارات تلخيص الحبكة</div>
+        <div>• <strong>It tells the superficially mundane story of…</strong> = تحكي قصة تبدو عادية في ظاهرها…</div>
+        <div>• <strong>It's impossible to sum up this story</strong> = يصعب تلخيص هذه القصة</div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">عبارات إعطاء الرأي</div>
+        <div>• <strong>It wasn't on a par with…</strong> = لم يكن بمستوى…</div>
+        <div>• <strong>My expectations were low, and they were met</strong> = توقعاتي كانت منخفضة وتحققت (= خيّب ظني)</div>
+        <div>• <strong>It had me captivated from the very start</strong> = شدّني من البداية</div>
+        <div>• <strong>It was worth staying until the end</strong> = يستحق المشاهدة حتى النهاية</div>
+        <div>• <strong>To his/her horror</strong> = وبدهشته/ها وفزعه/ها</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /lesson5a -->
+
+<!-- ════════════════════════════════════════════════════ LESSON 6A -->
+<div id="lesson6a">
+<div class="lesson-header">
+  <span class="badge-lesson">LESSON 6A</span>
+  <h3>Writing – A Letter to the Editor · <span class="ar" style="font-size:.9rem">كتابة رسالة للمحرر</span></h3>
+</div>
+<div class="bi-card">
+  <div class="d-flex">
+    <div class="col-en-header" style="flex:1">English Content</div>
+    <div class="col-ar-header" style="flex:1">الشرح بالعربي</div>
+  </div>
+
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Writing Box – Gaps 1–16 ✅</div>
+      <div class="ex-block">
+        <div style="font-weight:700;margin-bottom:.4rem">Organisation:</div>
+        <div class="q-item"><span class="ex-num">1.</span> Salutation: <span class="ans">Dear Editor,</span></div>
+        <div class="q-item"><span class="ex-num">2.</span> Begin by explaining <span class="ans">the topic / the article referred to</span></div>
+        <div class="q-item"><span class="ex-num">3.</span> Explain to what extent you <span class="ans">agree</span></div>
+        <div class="q-item"><span class="ex-num">4.</span> And any <span class="ans">reasons / evidence</span> why you disagree</div>
+        <div class="q-item"><span class="ex-num">5.</span> Conclude by reiterating and <span class="ans">summarising / strengthening</span> your point of view</div>
+        <div class="q-item"><span class="ex-num">6.</span> Sign off: <span class="ans">Yours faithfully,</span></div>
+      </div>
+      <div class="ex-block mt-2">
+        <div style="font-weight:700;margin-bottom:.4rem">Language Gaps 7–16:</div>
+        <div class="q-item"><span class="ex-num">7.</span> The author puts <span class="ans">forward</span> the opinion that…</div>
+        <div class="q-item"><span class="ex-num">8.</span> Despite an <span class="ans">outwardly</span> persuasive argument…</div>
+        <div class="q-item"><span class="ex-num">9.</span> While I would not <span class="ans">dispute</span>…</div>
+        <div class="q-item"><span class="ex-num">10.</span> I would also take <span class="ans">issue</span> with the notion that…</div>
+        <div class="q-item"><span class="ex-num">11.</span> <span class="ans">Nor</span> can it be argued that…</div>
+        <div class="q-item"><span class="ex-num">12.</span> On the <span class="ans">contrary</span>…</div>
+        <div class="q-item"><span class="ex-num">13.</span> In <span class="ans">point</span> of fact…</div>
+        <div class="q-item"><span class="ex-num">14.</span> It is <span class="ans">far</span> from…</div>
+        <div class="q-item"><span class="ex-num">15.</span> a <span class="ans">vital</span> role</div>
+        <div class="q-item"><span class="ex-num">16.</span> a <span class="ans">crucial</span> component</div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">هيكل رسالة المحرر</div>
+      <div class="note-box ar-note">
+        <div class="note-title">تنظيم الرسالة</div>
+        <div>١. <strong>الافتتاح:</strong> Dear Editor,</div>
+        <div>٢. <strong>التقديم:</strong> وضّح سبب كتابتك والمقال الذي تردّ عليه</div>
+        <div>٣. <strong>النقاش:</strong> خذ كل نقطة وناقشها: وافق جزئياً ثم اعترض</div>
+        <div>٤. <strong>الخاتمة:</strong> لخّص موقفك وأكّده</div>
+        <div>٥. <strong>الإغلاق:</strong> Yours faithfully,</div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">عبارات الاعتراض الرسمي</div>
+        <div>• <strong>puts forward the opinion</strong> = يطرح رأياً</div>
+        <div>• <strong>outwardly persuasive</strong> = مقنع في ظاهره</div>
+        <div>• <strong>dispute</strong> = أختلف مع / أعترض على</div>
+        <div>• <strong>take issue with</strong> = أعترض على / أختلف مع</div>
+        <div>• <strong>Nor can it be argued</strong> = ولا يمكن القول بأن</div>
+        <div>• <strong>On the contrary</strong> = على النقيض / بل على العكس</div>
+        <div>• <strong>In point of fact</strong> = في الواقع / حقيقةً</div>
+        <div>• <strong>vital role / crucial component</strong> = دور حيوي / عنصر أساسي</div>
+      </div>
+      <div class="note-box ar-note mt-2">
+        <div class="note-title">التلطيف في الكتابة الأكاديمية (Hedging)</div>
+        <div>التلطيف هو تخفيف حدة التصريحات في الكتابة الرسمية:</div>
+        <div>• أفعال: <em>believe, suggest, assume</em></div>
+        <div>• أفعال مساعدة: <em>might, could, would</em></div>
+        <div>• ظروف: <em>perhaps, probably, possibly</em></div>
+        <div>• صفات تلطيفية: <em>somewhat, to some extent</em></div>
+        <div>مثال: بدلاً من "This is wrong" → <em>"This might perhaps be somewhat misleading"</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hedging Exercise 7 -->
+  <div class="bi-row">
+    <div class="col-en">
+      <div class="section-title">Exercise 7 – Rewrite with Hedging ✅</div>
+      <div class="ex-block">
+        <div class="q-item"><span class="ex-num">1.</span> "Once again I disagree." → <span class="ans">I would once again perhaps tend to disagree.</span></div>
+        <div class="q-item"><span class="ex-num">2.</span> "This is wrong." → <span class="ans">This would appear to be somewhat misleading.</span></div>
+        <div class="q-item"><span class="ex-num">3.</span> "They have made a mistake." → <span class="ans">It seems possible that a mistake might have been made.</span></div>
+        <div class="q-item"><span class="ex-num">4.</span> "This is not an insoluble problem." → <span class="ans">This would not appear to be an entirely insoluble problem.</span></div>
+        <div class="q-item"><span class="ex-num">5.</span> "The author is misinformed." → <span class="ans">The author could perhaps be somewhat misinformed.</span></div>
+      </div>
+    </div>
+    <div class="col-ar ar">
+      <div class="section-title">تمرين ٧ – إعادة الصياغة بالتلطيف</div>
+      <div class="note-box ar-note">
+        <div class="note-title">كيف نُطلّف الجمل؟</div>
+        <div>لاحظ كيف تتغير الجملة بإضافة كلمات التلطيف:</div>
+        <div>× <em>"This is wrong."</em> (مباشر وقاسٍ)</div>
+        <div>✓ <em>"This would appear to be somewhat misleading."</em> (رسمي ومؤدب)</div>
+        <div style="margin-top:.5rem">هذا الأسلوب ضروري في الكتابة الأكاديمية والرسالة الرسمية لأنه يُظهر تواضعاً فكرياً واحترافاً.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /lesson6a -->
+
+<!-- ════════════════════════════════════════════════════ VOCABULARY DICTIONARY -->
+<div id="vocab-section">
+  <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+    <h2 class="mb-0" style="font-size:1.5rem">📖 Bilingual Vocabulary Dictionary</h2>
+    <span class="ar" style="font-family:'Noto Naskh Arabic',serif;color:#1a5276;font-size:1.1rem">قاموس مفردات ثنائي اللغة</span>
+  </div>
+  <input type="text" id="vocab-search" placeholder="🔍  Search in English or Arabic... / ابحث بالعربي أو الإنجليزي" oninput="filterVocab(this.value)">
+  <div style="overflow-x:auto">
+  <table class="table table-bordered vocab-table" id="vocab-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Word</th>
+        <th>Part of Speech</th>
+        <th>English Definition</th>
+        <th>Example Sentence</th>
+        <th>Arabic المعنى</th>
+        <th>SYN.</th>
+        <th>ANT.</th>
+      </tr>
+    </thead>
+    <tbody id="vocab-body">
+    </tbody>
+  </table>
+  </div>
+  <p id="no-results" style="display:none;color:#999;text-align:center;padding:1rem">No results found. / لا توجد نتائج.</p>
+</div>
+
+</div><!-- /container -->
+
+<footer style="background:#1c1c2e;color:#aaa;text-align:center;padding:1.2rem;font-size:.78rem;margin-top:2rem">
+  Unit 07 – The Creative Urge | Bilingual Study Sheet | All answers verified
+  <span class="ar" style="font-family:'Noto Naskh Arabic',serif;display:block;margin-top:.2rem">ورقة دراسة ثنائية اللغة – الوحدة السابعة</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+const vocabData = [
+  // CLOTHES ADJECTIVES
+  {word:"burgundy",pos:"adj",def:"A dark red-purple colour, like red wine",ex:"She wore a burgundy velvet dress to the gala.",ar:"أحمر داكن / كستنائي",syn:"crimson, wine-red",ant:"pastel, pale"},
+  {word:"cashmere",pos:"n/adj",def:"A very soft, fine wool from Kashmir goats",ex:"He bought a cashmere sweater for winter.",ar:"كشمير (صوف ناعم فاخر)",syn:"fine wool, merino",ant:"polyester, synthetic"},
+  {word:"clashing",pos:"adj",def:"Colours or patterns that look bad together",ex:"Her clashing outfit of red stripes and orange plaid drew stares.",ar:"ألوان/أنماط متضاربة غير متناسقة",syn:"mismatched, discordant",ant:"coordinated, harmonious"},
+  {word:"corduroy",pos:"n/adj",def:"A thick cotton fabric with raised parallel ridges",ex:"He wore corduroy trousers to the art exhibition.",ar:"قماش كوردروي / مخمل مضلّع",syn:"ribbed fabric",ant:"smooth fabric"},
+  {word:"elegant",pos:"adj",def:"Stylish and graceful in appearance",ex:"She looked elegant in her floor-length gown.",ar:"أنيق / راقي / ذو ذوق رفيع",syn:"refined, graceful, chic",ant:"scruffy, shabby, gaudy"},
+  {word:"flamboyant",pos:"adj",def:"Tending to attract attention through bold and colourful appearance",ex:"He was a flamboyant dresser known for his neon suits.",ar:"مبهرج / لافت / يحب الظهور",syn:"ostentatious, showy, extravagant",ant:"modest, understated, plain"},
+  {word:"flared",pos:"adj",def:"Widening gradually toward the bottom (of trousers/skirts)",ex:"She paired flared jeans with platform shoes.",ar:"مفلّر / واسع من الأسفل",syn:"wide-bottomed, bell-bottom",ant:"tapered, slim-fit"},
+  {word:"garish",pos:"adj",def:"Unpleasantly bright and showy; too loud in colour",ex:"The garish neon signs hurt my eyes.",ar:"صارخ / قبيح الألوان / يُوجع العين",syn:"gaudy, loud, flashy",ant:"subtle, tasteful, muted"},
+  {word:"gigantic",pos:"adj",def:"Extremely large in size",ex:"She wore a gigantic hat that blocked everyone's view.",ar:"ضخم جداً / عملاق",syn:"enormous, massive, colossal",ant:"tiny, miniature, minute"},
+  {word:"knitted",pos:"adj",def:"Made by knitting yarn into fabric",ex:"She wore a cosy knitted jumper on cold days.",ar:"محبوك / مُنسوج بالإبر",syn:"crocheted, woven",ant:"woven, tailored"},
+  {word:"metallic",pos:"adj",def:"Having the appearance or sheen of metal",ex:"Her metallic skirt caught every beam of light on the dance floor.",ar:"معدني / يلمع كالمعدن",syn:"shimmery, lustrous, gleaming",ant:"matte, dull"},
+  {word:"navy",pos:"adj/n",def:"A very dark blue colour",ex:"He wore a navy blue suit to the interview.",ar:"كحلي / أزرق داكن جداً",syn:"dark blue, midnight blue",ant:"pale blue, light blue"},
+  {word:"neon",pos:"adj",def:"Extremely bright, vivid colour",ex:"She wore neon yellow trainers that glowed in the dark.",ar:"فلوري / لون مُضيء وصارخ",syn:"fluorescent, vivid, bright",ant:"muted, pastel, subtle"},
+  {word:"oversized",pos:"adj",def:"Much larger than the normal size",ex:"Oversized hoodies became a major fashion trend.",ar:"كبير جداً / أكبر من المقاس الطبيعي",syn:"baggy, loose-fitting",ant:"fitted, tapered, slim"},
+  {word:"pastel",pos:"adj/n",def:"A pale, soft, delicate shade of colour",ex:"The baby shower décor featured pastel pinks and blues.",ar:"ألوان باستيل / ألوان فاتحة وناعمة",syn:"pale, soft, delicate",ant:"vivid, bold, neon"},
+  {word:"plaid",pos:"n/adj",def:"A pattern of crossed horizontal and vertical bands",ex:"The Scottish plaid pattern is used in traditional kilts.",ex:"",ar:"نمط مربعات متقاطعة (تارتان / قوباء)",syn:"tartan, checked",ant:"plain, solid"},
+  {word:"pleated",pos:"adj",def:"Having folds sewn or pressed into fabric",ex:"She wore a pleated skirt that swished as she walked.",ar:"مكسّر / به طيات مضغوطة",syn:"folded, tucked",ant:"smooth, flat"},
+  {word:"polo neck",pos:"n",def:"A high close-fitting collar that folds over",ex:"Steve Jobs famously wore a black polo neck every day.",ar:"ياقة بولو / رقبة عالية تُطوى",syn:"turtleneck, roll neck",ant:"V-neck, round neck"},
+  {word:"satin",pos:"n/adj",def:"A smooth, glossy fabric with a shiny surface",ex:"The bride wore a floor-length satin gown.",ar:"ساتان / قماش ناعم ولامع",syn:"silk, glossy fabric",ant:"matte fabric, rough textile"},
+  {word:"scarlet",pos:"adj/n",def:"A bright red colour",ex:"She blushed scarlet when the teacher called her name.",ar:"قرمزي / أحمر مُشرق",syn:"crimson, bright red, ruby",ant:"pale, pastel, navy"},
+  {word:"sparkly",pos:"adj",def:"Shining with many small points of light",ex:"She wore sparkly earrings that caught the light.",ar:"لامع / مُبرق / يتلألأ",syn:"glittery, shimmering, glistening",ant:"dull, matte, plain"},
+  {word:"suede",pos:"n/adj",def:"Soft leather with a velvety surface",ex:"He bought a pair of suede Chelsea boots.",ar:"شمواه / جلد ناعم مخملي",syn:"nubuck, soft leather",ant:"patent leather, smooth leather"},
+  {word:"velvet",pos:"n/adj",def:"A soft fabric with a thick, short pile",ex:"She draped a velvet curtain across the stage.",ar:"مخمل / قماش ناعم كثيف",syn:"plush, velvety",ant:"rough, coarse fabric"},
+  {word:"wide-leg",pos:"adj",def:"Trousers or pants with a very wide lower section",ex:"Wide-leg trousers were popular in the 1970s.",ar:"واسع الساق / بنطلون واسع",syn:"flared, palazzo",ant:"skinny, slim-cut"},
+  // VAGUE LANGUAGE
+  {word:"stuff",pos:"n (informal)",def:"Things or items of various kinds (uncountable/vague)",ex:"I love jewellery and stuff like that.",ar:"أشياء / حاجات (للإشارة المبهمة)",syn:"things, items, whatnot",ant:"—"},
+  {word:"thingy",pos:"n (informal)",def:"Used to refer to something whose name you've forgotten (countable)",ex:"Pass me that thingy on the shelf.",ar:"الشيء ذاك / اللّي هناك (للمعدود المنسي اسمه)",syn:"whatsit, doohickey, thingamajig",ant:"—"},
+  {word:"sort of",pos:"adv (informal)",def:"Used to approximate a quality or description",ex:"It was sort of greenish, not quite blue.",ar:"نوعاً ما / تقريباً",syn:"kind of, somewhat, rather",ant:"exactly, precisely"},
+  {word:"stuff like that",pos:"phrase",def:"Used to indicate similar things of the same category",ex:"She wore jewellery and stuff like that.",ar:"وما إلى ذلك / وأشياء مشابهة",syn:"and so on, et cetera, and everything",ant:"—"},
+  // SENSORY ADJECTIVES
+  {word:"dappled",pos:"adj",def:"Marked with spots or patches of colour or light",ex:"Dappled sunlight filtered through the forest leaves.",ar:"مرقط / مبقع بضوء أو لون",syn:"spotted, flecked, mottled",ant:"uniform, plain, solid"},
+  {word:"docile",pos:"adj",def:"Ready to accept control; quiet and easy to manage",ex:"The docile horse stood still while the child patted it.",ar:"وديع / هادئ / طيّع",syn:"obedient, tame, gentle",ant:"unruly, fierce, stubborn"},
+  {word:"downy",pos:"adj",def:"Covered with soft, fine feathers or hair",ex:"The downy blanket felt like floating on a cloud.",ar:"ناعم كالزغب / خفيف كالريش",syn:"fluffy, soft, feathery",ant:"rough, coarse, prickly"},
+  {word:"gilded",pos:"adj",def:"Covered thinly with gold; having a wealthy appearance",ex:"The gilded frame gave the painting a royal feel.",ar:"مُذهَّب / مغطى بطبقة ذهبية",syn:"gold-plated, aureate",ant:"plain, unadorned, matte"},
+  {word:"luminous",pos:"adj",def:"Emitting or reflecting bright light; glowing",ex:"The luminous stars were breathtaking in the desert night.",ar:"مُضيء / متوهج / ساطع",syn:"glowing, radiant, bright",ant:"dim, dark, dull"},
+  {word:"opalescent",pos:"adj",def:"Showing many small points of shifting colour like an opal",ex:"The soap bubble had an opalescent shimmer.",ar:"متلوّن كاللؤلؤة / يعكس ألوان قوس قزح",syn:"iridescent, pearlescent, shimmering",ant:"opaque, dull, matte"},
+  {word:"silken",pos:"adj",def:"Soft, smooth, and glossy, like silk",ex:"Her silken hair flowed down her back.",ar:"حريري / ناعم وسلس كالحرير",syn:"satiny, smooth, glossy",ant:"rough, coarse, matted"},
+  {word:"tender",pos:"adj",def:"Gentle and kind; showing care and affection",ex:"She gave the child a tender smile.",ar:"رقيق / حنون / لطيف",syn:"gentle, caring, affectionate",ant:"harsh, cold, cruel"},
+  // ART / LISTENING VOCABULARY
+  {word:"avant-garde",pos:"adj",def:"New and experimental ideas, especially in art",ex:"Her avant-garde sculptures challenged conventional aesthetics.",ar:"طليعي / تجريبي / مستحدث",syn:"innovative, experimental, cutting-edge",ant:"traditional, conventional, classical"},
+  {word:"tongue-in-cheek",pos:"adj/adv",def:"Said or done without being serious; ironic",ex:"His tongue-in-cheek critique made everyone laugh.",ar:"غير جدي / ساخر بطريقة مرحة",syn:"ironic, facetious, wry",ant:"sincere, serious, earnest"},
+  {word:"jaw-dropping",pos:"adj",def:"So impressive or surprising it leaves you speechless",ex:"The jaw-dropping finale had the audience on their feet.",ar:"مذهل / مُبهر / يُسقط الفك دهشةً",syn:"stunning, breathtaking, awe-inspiring",ant:"unremarkable, mundane, ordinary"},
+  {word:"gimmicky",pos:"adj",def:"Relying on a trick or device to attract attention rather than quality",ex:"The film's gimmicky 3D effects couldn't disguise the weak plot.",ar:"شعوذة / حيلة للفت الأنظار دون جوهر",syn:"flashy, cheap, superficial",ant:"genuine, substantive, authentic"},
+  {word:"soothing",pos:"adj",def:"Having a calming or relaxing effect",ex:"The soothing music helped me fall asleep.",ar:"مُريح / يُهدئ الأعصاب",syn:"calming, relaxing, tranquillising",ant:"agitating, irritating, disturbing"},
+  {word:"overrated",pos:"adj",def:"Rated or valued more highly than deserved",ex:"That restaurant was overrated – the food was just average.",ar:"مُبالغ في تقديره / أشهر مما يستحق",syn:"overhyped, overvalued",ant:"underrated, undervalued, overlooked"},
+  {word:"appealing",pos:"adj",def:"Attractive or interesting; making you want it",ex:"The appealing aroma of fresh coffee filled the gallery.",ar:"جذاب / مُغري / يشدّ الانتباه",syn:"attractive, enticing, engaging",ant:"unappealing, repellent, off-putting"},
+  {word:"mediocre",pos:"adj",def:"Of only a middling standard; not very good",ex:"The exhibition received mediocre reviews from critics.",ar:"متوسط / عادي جداً / دون المستوى",syn:"average, ordinary, run-of-the-mill",ant:"excellent, outstanding, exceptional"},
+  // WRITING
+  {word:"disingenuous",pos:"adj",def:"Not straightforward; giving a false impression of being honest",ex:"Using only selected statistics is, at the very least, disingenuous.",ar:"غير صريح / يُوهم بالأمانة وهو ليس كذلك",syn:"insincere, misleading, deceptive",ant:"genuine, sincere, straightforward"},
+  {word:"patronage",pos:"n",def:"Financial support given to an artist, cause, or institution",ex:"Without royal patronage, many Renaissance artists would have starved.",ar:"الرعاية / دعم الفنون مالياً",syn:"sponsorship, backing, support",ant:"neglect, withdrawal"},
+  {word:"vital",pos:"adj",def:"Absolutely necessary; essential",ex:"Arts education plays a vital role in a well-rounded curriculum.",ar:"حيوي / ضروري جداً / لا غنى عنه",syn:"essential, crucial, indispensable",ant:"unnecessary, trivial, inessential"},
+  {word:"crucial",pos:"adj",def:"Decisive; extremely important",ex:"Creative industries are a crucial component of the modern economy.",ar:"بالغ الأهمية / حاسم / جوهري",syn:"pivotal, critical, vital",ant:"minor, trivial, unimportant"},
+  {word:"hedging",pos:"n",def:"Using cautious language to soften claims in formal writing",ex:"Academic writing relies heavily on hedging to avoid overstatement.",ar:"التلطيف / استخدام لغة حذرة في الكتابة الرسمية",syn:"qualification, moderation, caveat",ant:"assertion, overstatement, bluntness"},
+  // GRAMMAR VOCABULARY
+  {word:"defining relative clause",pos:"grammar term",def:"A clause that gives essential information to identify the noun",ex:"The man who called yesterday is my uncle.",ar:"الجملة الوصفية التعريفية (معلومات ضرورية، بلا فاصلة)",syn:"restrictive clause",ant:"non-defining clause"},
+  {word:"non-defining relative clause",pos:"grammar term",def:"A clause adding extra, non-essential information (uses commas)",ex:"My sister, who lives in Paris, is a designer.",ar:"الجملة الوصفية غير التعريفية (معلومات إضافية، مع فاصلة)",syn:"non-restrictive clause",ant:"defining clause"},
+  {word:"nominal relative clause",pos:"grammar term",def:"A relative clause that functions as a noun in the sentence",ex:"Whoever wins will receive a scholarship.",ar:"الجملة الوصفية الاسمية (تعمل كاسم في الجملة)",syn:"free relative clause",ant:"adjectival relative clause"},
+  {word:"prepositional relative phrase",pos:"grammar term",def:"A relative phrase beginning with a preposition + which/whom",ex:"The artist with whom he studied became famous.",ar:"العبارة الوصفية الحرفية (حرف جر + which/whom)",syn:"formal relative construction",ant:"informal relative clause"},
+  // FILM
+  {word:"biopic",pos:"n",def:"A film that dramatises the life of a real person",ex:"The biopic about Freddie Mercury was hugely successful.",ar:"فيلم السيرة الذاتية",syn:"biographical film, docudrama",ant:"fiction, fantasy"},
+  {word:"post-apocalyptic",pos:"adj",def:"Set in a world after a catastrophic civilisation-ending event",ex:"The post-apocalyptic thriller imagined Earth after nuclear war.",ar:"ما بعد نهاية الحضارة / بعد الكارثة الكبرى",syn:"dystopian, end-of-world",ant:"utopian, contemporary"},
+  {word:"mundane",pos:"adj",def:"Lacking interest or excitement; ordinary",ex:"The film's superficially mundane plot hides deeper themes.",ar:"عادي / ممل / دون أي إثارة",syn:"banal, prosaic, humdrum",ant:"exciting, extraordinary, thrilling"},
+  {word:"captivated",pos:"adj/v",def:"Fascinated and held completely; unable to look away",ex:"I was captivated by the film from the very first scene.",ar:"مفتون / مشدود / مأسور الانتباه تماماً",syn:"enthralled, spellbound, mesmerised",ant:"bored, indifferent, unimpressed"},
+  // POETRY DEVICES
+  {word:"alliteration",pos:"n",def:"Repetition of the same initial consonant sound in nearby words",ex:"She sells sea shells on the seashore.",ar:"الجناس الأول / تكرار الصوت الأول في كلمات متقاربة",syn:"consonance",ant:"assonance"},
+  {word:"sibilance",pos:"n",def:"Repetition of s, sh or ch sounds for a hissing effect",ex:"The snake slid silently through the grass.",ar:"تكرار أصوات السين/الشين لإعطاء تأثير صوتي",syn:"sound symbolism",ant:"—"},
+  {word:"onomatopoeia",pos:"n",def:"A word that sounds like the noise it describes",ex:"The bees buzzed; the snake hissed.",ar:"المحاكاة الصوتية / كلمة تُحاكي الصوت الذي تصفه",syn:"sound imitation",ant:"—"},
+  {word:"personification",pos:"n",def:"Giving human qualities to non-human things",ex:"The wind whispered secrets through the trees.",ar:"التشخيص / منح الجماد صفات إنسانية",syn:"anthropomorphism",ant:"—"},
+  {word:"simile",pos:"n",def:"A comparison using 'like' or 'as'",ex:"Her smile was like sunshine on a cloudy day.",ar:"التشبيه الصريح / المقارنة باستخدام مثل أو كأن",syn:"comparison, analogy",ant:"metaphor (direct)"},
+  {word:"metaphor",pos:"n",def:"A direct comparison without using 'like' or 'as'",ex:"Life is a journey with no map.",ar:"الاستعارة / تشبيه مباشر بدون أداة تشبيه",syn:"figurative language",ant:"literal language"}
+];
+
+function renderTable(data){
+  const tbody = document.getElementById('vocab-body');
+  tbody.innerHTML = '';
+  data.forEach((v,i)=>{
+    const posColors={'adj':'bg-primary','n':'bg-success','v':'bg-warning text-dark','adv':'bg-info text-dark','phrase':'bg-secondary','grammar term':'bg-dark'};
+    const posClass = Object.keys(posColors).find(k=>v.pos.startsWith(k)) || 'bg-light text-dark';
+    tbody.innerHTML += `<tr>
+      <td style="color:#999;font-size:.75rem">${i+1}</td>
+      <td><span class="v-word">${v.word}</span></td>
+      <td><span class="badge badge-pos ${posColors[posClass]||'bg-secondary'}">${v.pos}</span></td>
+      <td style="font-size:.8rem">${v.def}</td>
+      <td class="v-example">${v.ex}</td>
+      <td class="v-ar">${v.ar}</td>
+      <td class="v-syn">${v.syn}</td>
+      <td class="v-ant">${v.ant}</td>
+    </tr>`;
+  });
+  document.getElementById('no-results').style.display = data.length===0?'block':'none';
+}
+
+function filterVocab(q){
+  q=q.toLowerCase().trim();
+  if(!q){renderTable(vocabData);return;}
+  const filtered=vocabData.filter(v=>
+    v.word.toLowerCase().includes(q)||
+    v.def.toLowerCase().includes(q)||
+    v.ar.includes(q)||
+    v.syn.toLowerCase().includes(q)||
+    v.ex.toLowerCase().includes(q)
+  );
+  renderTable(filtered);
+}
+
+renderTable(vocabData);
+</script>
+</body>
+</html>
