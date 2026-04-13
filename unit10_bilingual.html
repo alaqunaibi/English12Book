@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 10 – Up the Ladder | الوحدة 10 – نحو القمة</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --en-bg: #fdf6ec;
+  --ar-bg: #eaf4fb;
+  --accent: #c0392b;
+  --gold: #d4a017;
+  --teal: #1a6b72;
+  --dark: #1c2833;
+  --answer: #1e8449;
+  --answer-bg: #eafaf1;
+  --border: #d5d8dc;
+}
+* { box-sizing: border-box; }
+body { font-family: 'Tajawal', sans-serif; background: #f0f3f4; color: var(--dark); }
+h1,h2,h3 { font-family: 'Playfair Display', 'Tajawal', serif; }
+.en-text { font-family: 'Source Sans 3', sans-serif; direction: ltr; text-align: left; }
+.ar-text { font-family: 'Tajawal', sans-serif; direction: rtl; text-align: right; }
+/* HEADER */
+.hero { background: linear-gradient(135deg, #1c2833 0%, #1a6b72 60%, #c0392b 100%); color: #fff; padding: 3rem 1rem 2rem; text-align: center; }
+.hero h1 { font-size: 2.8rem; letter-spacing: 2px; color: #fff; text-shadow: 2px 2px 8px #000a; }
+.hero .sub { font-size: 1.3rem; color: #f0f3f4; margin-top: .5rem; }
+/* NAV TABS */
+.nav-tabs .nav-link { font-family: 'Tajawal', sans-serif; font-weight: 700; font-size: .95rem; border-radius: 8px 8px 0 0; }
+.nav-tabs .nav-link.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+/* CARDS */
+.lesson-card { border: none; border-radius: 14px; box-shadow: 0 2px 18px #0001; margin-bottom: 1.5rem; overflow: hidden; }
+.lesson-card .card-header { font-size: 1.1rem; font-weight: 700; padding: .75rem 1.2rem; }
+.en-card .card-header { background: #b7950b22; border-bottom: 3px solid var(--gold); }
+.ar-card .card-header { background: #1a6b7222; border-bottom: 3px solid var(--teal); }
+/* BI-COLUMN */
+.bi-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+@media(max-width:768px){ .bi-col { grid-template-columns: 1fr; } }
+.en-panel { background: var(--en-bg); border-radius: 12px; padding: 1.2rem; border-left: 5px solid var(--gold); }
+.ar-panel { background: var(--ar-bg); border-radius: 12px; padding: 1.2rem; border-right: 5px solid var(--teal); }
+/* ANSWERS */
+.answer { color: var(--answer); font-weight: 700; background: var(--answer-bg); border-radius: 5px; padding: 1px 8px; border-bottom: 2px solid var(--answer); }
+.blank { display: inline-block; min-width: 110px; border-bottom: 2px dashed #999; margin: 0 4px; }
+/* VOCAB TABLE */
+.vocab-table th { background: var(--teal); color: #fff; font-family: 'Tajawal', sans-serif; }
+.vocab-table tr:nth-child(even) { background: #f0f9fa; }
+.vocab-table td { vertical-align: middle; font-size: .9rem; }
+/* EXAM */
+.exam-q { background: #fff; border-radius: 10px; padding: 1rem 1.3rem; margin-bottom: 1rem; box-shadow: 0 1px 8px #0001; }
+.exam-q .q-num { font-weight: 900; color: var(--accent); font-size: 1.1rem; }
+.exam-option label { cursor: pointer; padding: 4px 8px; border-radius: 6px; display: block; }
+.exam-option input:checked + label { background: #d5eef9; font-weight: 700; }
+.correct-ans { background: #d4edda !important; border: 1px solid #28a745; }
+.wrong-ans { background: #f8d7da !important; border: 1px solid #dc3545; }
+.show-correct { color: var(--answer); font-weight: 700; font-size: .85rem; }
+/* GRADE */
+#grade-box { font-size: 2rem; font-weight: 900; padding: 2rem; border-radius: 16px; text-align: center; }
+/* SEARCH */
+.search-box { position: relative; }
+.search-box input { padding-left: 2.5rem; }
+.search-icon { position: absolute; left: .75rem; top: 50%; transform: translateY(-50%); color: #888; }
+/* PREFIX TABLE */
+.prefix-table th { background: var(--accent); color: #fff; }
+.prefix-table tr:nth-child(even) { background: #fef9f9; }
+/* SECTION TITLE */
+.section-title { background: var(--dark); color: #fff; border-radius: 10px; padding: .6rem 1.2rem; font-weight: 700; font-size: 1.1rem; margin: 1.5rem 0 1rem; display: flex; align-items: center; gap: .5rem; }
+.section-title .badge-num { background: var(--gold); color: #000; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 900; flex-shrink: 0; }
+/* IDIOM PILL */
+.idiom-pill { display: inline-block; background: #fff3cd; border: 1px solid #f0c040; border-radius: 20px; padding: 3px 12px; font-size: .85rem; margin: 3px; font-family: 'Source Sans 3', sans-serif; }
+/* GRAMMAR BOX */
+.grammar-box { background: #fff8f0; border: 2px solid var(--gold); border-radius: 10px; padding: 1rem; margin: 1rem 0; }
+.grammar-box h6 { color: var(--gold); font-weight: 700; font-family: 'Playfair Display', serif; }
+/* ARABIC EXPLAIN */
+.ar-explain { background: #e8f4fd; border-right: 4px solid var(--teal); padding: .7rem 1rem; border-radius: 0 8px 8px 0; margin: .5rem 0; font-size: .95rem; }
+/* PROGRESS */
+#exam-progress { height: 10px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<!-- HERO -->
+<div class="hero">
+  <h1>📚 Unit 10 — <em>Up the Ladder</em></h1>
+  <div class="sub">الوحدة العاشرة — نحو القمة | ورقة دراسية شاملة ثنائية اللغة</div>
+  <div class="mt-3 en-text" style="opacity:.85;font-size:.95rem;">Grades 11–12 · English Textbook · Bilingual Study Sheet with Answers, Vocabulary & Exam</div>
+</div>
+
+<div class="container-fluid py-3 px-2 px-md-4">
+
+<!-- TABS -->
+<ul class="nav nav-tabs flex-wrap mb-3" id="mainTab" role="tablist">
+  <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-lessons">📖 الدروس</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-vocab">📘 المعجم</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-prefix">🔤 البادئات واللواحق</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-exam">✏️ الاختبار (50 سؤال)</button></li>
+</ul>
+
+<div class="tab-content">
+<!-- ============================= TAB 1: LESSONS ============================= -->
+<div class="tab-pane fade show active" id="tab-lessons">
+
+<!-- ---- LESSON 1A ---- -->
+<div class="section-title"><span class="badge-num">1</span> الدرس 1أ — المفردات والتحدث | Lesson 1A – Vocabulary & Speaking (pp. 48–49)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h5 style="color:var(--gold)">📋 Internship Advertisement</h5>
+    <p><strong>Looking for a challenge?</strong><br>
+    Our international division in <u>Irbid</u> is looking for a <u>content marketing intern</u>. Full training provided, no previous experience required.</p>
+    <p><strong>Responsibilities:</strong> supporting the Marketing Assistant · writing content for website &amp; social media · co-operating with the sales team · responding to customers' queries</p>
+    <p><strong>What we offer:</strong> training in online marketing tools · remuneration: 400 dinars/month</p>
+    <hr>
+    <h6 style="color:var(--teal)">Work-life Balance Collocations</h6>
+    <ol>
+      <li><strong>constant connectivity</strong> — always being connected to work/internet</li>
+      <li><strong>draw a line</strong> — set a limit between work and personal life</li>
+      <li><strong>juggle the unremitting demands</strong> — manage non-stop pressures</li>
+      <li><strong>strike the right balance</strong> — find the correct equilibrium</li>
+      <li><strong>maintain a healthy work/life balance</strong> — keep a good ratio</li>
+      <li><strong>strive for something</strong> — work hard towards a goal</li>
+      <li><strong>grasp the significance</strong> — understand the importance</li>
+      <li><strong>pay dividends</strong> — produce good results / prove worthwhile</li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h5 style="color:var(--teal)">📋 إعلان تدريب وظيفي</h5>
+    <p><strong>هل تبحث عن تحدٍّ؟</strong><br>
+    يبحث قسمنا الدولي في <u>إربد</u> عن <u>متدرب في تسويق المحتوى</u>. تُقدَّم تدريبات كاملة، ولا تُشترط خبرة سابقة.</p>
+    <p><strong>المهام:</strong> دعم مساعد التسويق · كتابة محتوى للموقع ووسائل التواصل الاجتماعي · التعاون مع فريق المبيعات · الرد على استفسارات العملاء</p>
+    <p><strong>ما نقدمه:</strong> تدريب على أدوات التسويق الإلكتروني · المكافأة: 400 دينار شهريًا</p>
+    <hr>
+    <h6 style="color:var(--gold)">تلازمات لفظية: التوازن بين العمل والحياة</h6>
+    <ol>
+      <li><strong>constant connectivity</strong> — الاتصال المستمر بالعمل/الإنترنت</li>
+      <li><strong>draw a line</strong> — رسم حدٍّ بين العمل والحياة الشخصية</li>
+      <li><strong>juggle the unremitting demands</strong> — التعامل مع الضغوط المتواصلة</li>
+      <li><strong>strike the right balance</strong> — إيجاد التوازن الصحيح</li>
+      <li><strong>maintain a healthy work/life balance</strong> — الحفاظ على توازن صحي</li>
+      <li><strong>strive for something</strong> — السعي الجاد نحو هدف</li>
+      <li><strong>grasp the significance</strong> — إدراك الأهمية</li>
+      <li><strong>pay dividends</strong> — يؤتي ثماره / يحقق نتائج جيدة</li>
+    </ol>
+  </div>
+</div>
+
+<!-- Exercise 6 Answers -->
+<div class="section-title"><span class="badge-num">✓</span> تمرين 6 — مصطلحات التوازن: الإجابات الكاملة | Ex. 6 Answers</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h6>Work-life Balance Idioms — Fill in the Blanks (Ex.6)</h6>
+    <ol>
+      <li>I got to <span class="answer">learn</span> the ropes…</li>
+      <li>It really wasn't what I'd <span class="answer">signed</span> up for.</li>
+      <li>Sometimes I just felt like <span class="answer">calling</span> it a day.</li>
+      <li>It was the way it <span class="answer">intruded</span> on my personal life that was the problem.</li>
+      <li>I know everyone is under considerable pressure to <span class="answer">meet</span> targets at work.</li>
+      <li>There were permanent staff there <span class="answer">working</span> their socks off trying to <span class="answer">meet</span> their work demands.</li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h6>شرح المصطلحات</h6>
+    <ol>
+      <li><strong>learn the ropes</strong> — تعلُّم أساسيات العمل (الحبال = أسرار المهنة)</li>
+      <li><strong>sign up for</strong> — التسجيل لشيء / الاشتراك فيه</li>
+      <li><strong>call it a day</strong> — إيقاف العمل والتوقف لهذا اليوم</li>
+      <li><strong>intrude on</strong> — التطفل على / التدخل في حياته</li>
+      <li><strong>meet targets</strong> — تحقيق الأهداف المطلوبة</li>
+      <li><strong>work one's socks off</strong> — العمل بجهد شديد / الكد والتعب</li>
+    </ol>
+    <div class="ar-explain">💡 <strong>نصيحة للطلاب:</strong> هذه التعابير الاصطلاحية (Idioms) لا تُترجم حرفيًا. احفظ معناها الكامل كوحدة واحدة.</div>
+  </div>
+</div>
+
+<!-- Exercise 7 Register -->
+<div class="section-title"><span class="badge-num">✓</span> تمرين 7 — مستوى اللغة | Ex. 7 Register Answers</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h6>Register: Formal (F) / Neutral (N) / Informal (I)</h6>
+    <ol>
+      <li>"Give me a call." → <span class="answer">I</span> (Informal)</li>
+      <li>"Online marketing knowledge is not required." → <span class="answer">N</span> (Neutral)</li>
+      <li>"Should you decide to continue in our employment…" → <span class="answer">F</span> (Formal)</li>
+      <li>"My dad subscribes to the theory that employees should always talk about what's bothering them." → <span class="answer">I</span> (Informal)</li>
+      <li>"It was the way it intruded on my personal life that was the problem." → <span class="answer">N</span> (Neutral)</li>
+      <li>"I got to learn the ropes and it gave me a real taste for the job." → <span class="answer">I</span> (Informal)</li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h6>مستويات اللغة — شرح</h6>
+    <div class="ar-explain">
+      <strong>Register (مستوى اللغة)</strong> هو درجة الرسمية في الكلام أو الكتابة.<br><br>
+      🔴 <strong>Informal (غير رسمي)</strong>: يُستخدم مع الأصدقاء والعائلة — مثل "يابا" أو "كيفك".<br>
+      🟡 <strong>Neutral (محايد)</strong>: يصلح للاستخدام العام — لا رسمي جدًا ولا عامي.<br>
+      🟢 <strong>Formal (رسمي)</strong>: يُستخدم في الأعمال والرسائل الرسمية — مثل "يُرجى التكرم بالحضور".
+    </div>
+    <p class="mt-2">⚠️ <strong>Should you decide…</strong> = لو قررتَ… ← هذا تركيب رسمي جدًا (حذف if).</p>
+  </div>
+</div>
+
+<!-- ---- LESSON 2A ---- -->
+<div class="section-title"><span class="badge-num">2</span> الدرس 2أ — قواعد: الجيرند والمصدر | Lesson 2A – Grammar: Gerunds & Infinitives (pp. 50–51)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h5 style="color:var(--gold)">📖 Fadia's Footwear — Reading Text</h5>
+    <p style="font-size:.9rem">Since a local enterprise competition <u>encouraged</u> her to create a product, 18-year-old Fadia from Basira hasn't looked back. The 150 JOD that was given to her <u>enabled</u> her to produce sandals made from recycled materials. Her father <u>let</u> her use his workshop to <u>try</u> out different designs…</p>
+    <p style="font-size:.9rem">Most entrepreneurs <u>tend</u> to succeed because they follow their instinct… they <u>risk</u> losing everything… they <u>fail</u> to be deterred… they <u>continue</u> to follow their conviction. Fadia has never <u>stopped</u> believing… She <u>envisaged</u> producing affordable sandals… she has <u>managed</u> to do that. She <u>decided against</u> going to university… She <u>had difficulty</u> believing… I <u>can't help</u> admiring her creativity. She will <u>get used to</u> being a successful businesswoman. Students <u>need</u> encouraging.</p>
+    <div class="grammar-box">
+      <h6>Grammar: Gerund vs. Infinitive Patterns</h6>
+      <table class="table table-sm">
+        <tr><th>Pattern</th><th>Examples from text</th></tr>
+        <tr><td>Verb + <strong>gerund</strong></td><td>risk, stop, envisage, can't help, get used to, decide against, have difficulty</td></tr>
+        <tr><td>Verb + <strong>infinitive with to</strong></td><td>encourage, enable, choose, tend, fail, continue, manage</td></tr>
+        <tr><td>Verb + obj + <strong>infinitive with to</strong></td><td>encourage her to, enable her to, force, help</td></tr>
+        <tr><td>Verb + obj + <strong>bare infinitive</strong></td><td>let her use, make her follow, notice</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="ar-panel ar-text">
+    <h5 style="color:var(--teal)">قصة فاديا — شرح القواعد</h5>
+    <div class="ar-explain">
+      <strong>الجيرند (Gerund)</strong>: هو الفعل المضاف إليه <strong>-ing</strong> ليعمل كاسم.<br>
+      مثال: <em>I enjoy <strong>swimming</strong>.</em> (أستمتع بالسباحة)
+    </div>
+    <div class="ar-explain mt-2">
+      <strong>المصدر (Infinitive)</strong>: هو الفعل في صيغته الأساسية مع أو بدون <strong>to</strong>.<br>
+      مثال: <em>She wants <strong>to succeed</strong>.</em> / <em>She let him <strong>use</strong> her tools.</em>
+    </div>
+    <h6 class="mt-3">قاعدة مهمة:</h6>
+    <ul style="font-size:.9rem">
+      <li>بعض الأفعال تأتي معها الجيرند فقط: <em>enjoy, risk, stop, avoid, mind, admit</em></li>
+      <li>بعض الأفعال تأتي معها المصدر فقط: <em>want, hope, decide, manage, fail</em></li>
+      <li>بعض الأفعال تأتي مع كليهما لكن بمعنى مختلف: <em>remember, regret, stop, go on</em></li>
+    </ul>
+    <div class="ar-explain">💡 <strong>فاديا</strong> فتاة من باسيرا، الأردن، أسست مشروعًا لصنع صنادل من مواد معاد تدويرها. قصتها تُلهم الشباب على الريادة والإبداع.</div>
+  </div>
+</div>
+
+<!-- Exercise 5 Grammar Answers -->
+<div class="section-title"><span class="badge-num">✓</span> تمرين 5 — الجيرند والمصدر: الإجابات | Ex. 5 Gerund/Infinitive Answers</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <ol>
+      <li>I was lucky <span class="answer">to have been given</span> a reasonable amount of money. <small>(passive infinitive perfect)</small></li>
+      <li>Despite <span class="answer">having worked</span> on the film for ages… <small>(perfect gerund)</small></li>
+      <li>It was wonderful <span class="answer">to work / working</span> on something I loved. <small>(infinitive or gerund)</small></li>
+      <li>I needed <span class="answer">to maintain</span> it. <small>(infinitive)</small></li>
+      <li>I remembered <span class="answer">being told</span> once about an author… <small>(passive gerund)</small></li>
+      <li>…will admit <span class="answer">to having experienced</span> self-doubt… <small>(perfect gerund)</small></li>
+      <li>…to avoid <span class="answer">taking</span> risks… <small>(gerund)</small></li>
+      <li>Everyone would prefer <span class="answer">to turn out</span> success after success. <small>(infinitive)</small></li>
+      <li>Success needs <span class="answer">to be put / putting</span> into perspective. <small>(passive infinitive / gerund)</small></li>
+      <li>…you risk <span class="answer">being remembered</span> for one thing only. <small>(passive gerund)</small></li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h6>شرح كل صيغة</h6>
+    <ol style="font-size:.9rem">
+      <li><strong>to have been given</strong> ← مصدر سلبي كامل (passive perfect infinitive): الحدث سابق في الماضي</li>
+      <li><strong>having worked</strong> ← جيرند كامل (perfect gerund): الفعل قبل فعل آخر في الماضي</li>
+      <li><strong>to work / working</strong> ← كلاهما صحيح بعد <em>wonderful</em></li>
+      <li><strong>to maintain</strong> ← مصدر عادي بعد <em>need</em></li>
+      <li><strong>being told</strong> ← جيرند مبني للمجهول (passive gerund)</li>
+      <li><strong>having experienced</strong> ← جيرند كامل بعد <em>admit to</em></li>
+      <li><strong>taking</strong> ← جيرند بعد <em>avoid</em> (دائمًا جيرند)</li>
+      <li><strong>to turn out</strong> ← مصدر بعد <em>prefer</em></li>
+      <li><strong>to be put</strong> ← مصدر سلبي بعد <em>needs</em></li>
+      <li><strong>being remembered</strong> ← جيرند مبني للمجهول بعد <em>risk</em></li>
+    </ol>
+  </div>
+</div>
+
+<!-- Exercise 7 Same meaning -->
+<div class="section-title"><span class="badge-num">✓</span> تمرين 7 — نفس المعنى أم لا؟ | Ex. 7: Same Meaning?</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <ol>
+      <li><strong>a</strong> "I regret <em>to say</em>…" = announcing bad news now (formal) <span class="answer">≠ DIFFERENT</span><br><strong>b</strong> "I regret <em>saying</em>…" = I'm sorry about something I already said</li>
+      <li><strong>a</strong> "went on <em>to tell</em>" = then (afterwards) told us <span class="answer">≠ DIFFERENT</span><br><strong>b</strong> "went on <em>telling</em>" = continued telling us without stopping</li>
+      <li><strong>a &amp; b</strong> Starting / To start a new job means getting up early <span class="answer">= SAME</span></li>
+      <li><strong>a &amp; b</strong> I propose to discuss / discussing <span class="answer">= SAME</span></li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h6>شرح الفروقات الدقيقة</h6>
+    <div class="ar-explain">
+      <strong>regret + to-inf</strong> = آسف لإخبارك بـ… (المستقبل/الحاضر)<br>
+      <strong>regret + gerund</strong> = أندم على قولي… (الماضي)<br><br>
+      <strong>go on + to-inf</strong> = انتقل بعدها إلى فعل آخر<br>
+      <strong>go on + gerund</strong> = استمر في نفس الفعل<br><br>
+      <strong>mean + gerund</strong> = يعني / نتيجته<br>
+      <strong>mean + to-inf</strong> = ينوي أن يفعل
+    </div>
+  </div>
+</div>
+
+<!-- ---- LESSON 3A ---- -->
+<div class="section-title"><span class="badge-num">3</span> الدرس 3أ — قراءة: الأحلام تصنع مستقبلك | Lesson 3A – Reading: "Dreams Shape Your Future" (pp. 52–53)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h5 style="color:var(--gold)">Article Summary</h5>
+    <p style="font-size:.9rem">Career aspirations change at different life stages:</p>
+    <ul style="font-size:.9rem">
+      <li><strong>Preschool (1–3):</strong> Copy parents (teacher, truck driver) or storybook characters (princess, ballerina)</li>
+      <li><strong>Primary (4–11):</strong> Actors, athletes, astronauts — money &amp; success are prime motivators — <em>incredibly slim</em> chances of achieving</li>
+      <li><strong>Secondary (12–17):</strong> Dreams become less glamorous, informed by personality traits, interests &amp; talents — science, engineering, teaching. Online gaming &amp; vloggers are new aspirations.</li>
+      <li><strong>New trend:</strong> Racing car driver — still mostly a pipe dream</li>
+    </ul>
+    <div class="grammar-box">
+      <h6>Key Chart Data</h6>
+      <table class="table table-sm table-bordered">
+        <tr><th>Age</th><th>Top Job</th><th>%</th></tr>
+        <tr><td>1–3</td><td>Ballerina</td><td>18.6%</td></tr>
+        <tr><td>4–7</td><td>Astronaut / Vet</td><td>9.8%</td></tr>
+        <tr><td>8–11</td><td>Scientist</td><td>13.7%</td></tr>
+        <tr><td>12–14</td><td>Doctor / Engineer</td><td>10.6%</td></tr>
+        <tr><td>15–17</td><td>Engineer</td><td>12.5%</td></tr>
+        <tr><td>18+</td><td>Teacher</td><td>12.4%</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="ar-panel ar-text">
+    <h5 style="color:var(--teal)">ملخص المقال بالعربية</h5>
+    <p style="font-size:.9rem">تتغير الطموحات المهنية عبر مراحل الحياة:</p>
+    <ul style="font-size:.9rem">
+      <li><strong>ما قبل المدرسة:</strong> يُقلّد الأطفال والديهم أو شخصيات القصص الخيالية</li>
+      <li><strong>المرحلة الابتدائية:</strong> ممثلون، رياضيون، رواد فضاء — الفرص <em>ضئيلة جدًا</em></li>
+      <li><strong>المرحلة الثانوية:</strong> أحلام أكثر واقعية مبنية على الشخصية والمواهب — العلوم والهندسة والتعليم. ظهور مؤثرو الإنترنت كهدف مهني.</li>
+      <li><strong>اتجاه جديد:</strong> سائق سيارات سباق — لكنه يبقى حلمًا بعيد المنال للأغلبية</li>
+    </ul>
+    <div class="ar-explain">💡 الكلمة <strong>pipe dream</strong> تعني حلمًا مستحيل التحقيق. أصلها من تدخين الأفيون وما يخلقه من أوهام!</div>
+  </div>
+</div>
+
+<!-- Exercise 3 answers -->
+<div class="section-title"><span class="badge-num">✓</span> تمرين 3 — أكمل الجمل | Ex. 3 Answers</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <ol>
+      <li>…ambitions for their <span class="answer">future careers</span>.</li>
+      <li>Characters in <span class="answer">storybooks</span> sometimes provide role models…</li>
+      <li>…success and <span class="answer">money</span> play a more significant role…</li>
+      <li>…the likelihood of them becoming an actor or astronaut being <span class="answer">incredibly slim</span>.</li>
+      <li>…individual's characteristics playing more of a role in their choices together with their <span class="answer">interests and talents</span>.</li>
+      <li>…teens have been much more likely to view making money from the internet as increasingly <span class="answer">viable / feasible</span>.</li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h6>ترجمة الجمل</h6>
+    <ol style="font-size:.9rem">
+      <li>طموحاتهم في <strong>حياتهم المهنية المستقبلية</strong></li>
+      <li>الشخصيات في <strong>قصص الأطفال</strong> أحيانًا تكون نماذج يُحتذى بها</li>
+      <li>النجاح <strong>والمال</strong> يلعبان دورًا محوريًا</li>
+      <li>احتمالية أن يصبحوا ممثلًا أو رائد فضاء <strong>ضئيلة جدًا</strong></li>
+      <li>مواهبهم واهتماماتهم تشكّل مسار خياراتهم</li>
+      <li>يرون تحقيق الدخل عبر الإنترنت أمرًا <strong>ممكنًا بشكل متزايد</strong></li>
+    </ol>
+  </div>
+</div>
+
+<!-- Exercise 5 Prepositions -->
+<div class="section-title"><span class="badge-num">✓</span> تمرين 5 — حروف الجر | Ex. 5 Prepositions</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <ol>
+      <li>I'm apt <span class="answer">to</span> forget people's names…</li>
+      <li>You can succeed <span class="answer">at</span> something difficult if you really set your mind <span class="answer">to</span> it.</li>
+      <li>…rolling <span class="answer">back</span> the years for me!</li>
+      <li>…jobs destined <span class="answer">to</span> disappear…</li>
+      <li>…supportive <span class="answer">of</span> my promotion.</li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h6>معاني التراكيب</h6>
+    <ul style="font-size:.9rem">
+      <li><strong>apt to</strong> = عرضة لـ / من عادته أن</li>
+      <li><strong>succeed at</strong> = ينجح في</li>
+      <li><strong>set your mind to</strong> = يصمم على / يعزم على</li>
+      <li><strong>rolling back the years</strong> = يعود بالذاكرة إلى الماضي</li>
+      <li><strong>destined to</strong> = مقدَّر له أن / محكوم عليه بـ</li>
+      <li><strong>supportive of</strong> = داعم لـ / مساند لـ</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ---- LESSON 4A ---- -->
+<div class="section-title"><span class="badge-num">4</span> الدرس 4أ — استماع: صفات القائد | Lesson 4A – Listening: Leadership Qualities (p. 54)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h5 style="color:var(--gold)">Leadership Qualities</h5>
+    <div class="d-flex flex-wrap gap-1 mb-3">
+      <span class="idiom-pill">committed</span><span class="idiom-pill">confident</span>
+      <span class="idiom-pill">decisive</span><span class="idiom-pill">emphatic</span>
+      <span class="idiom-pill">optimistic</span><span class="idiom-pill">problem solver</span>
+      <span class="idiom-pill">self-aware</span><span class="idiom-pill">upfront</span>
+    </div>
+    <h6>Ex. 3 — True/False Answers (Lewis, the manager)</h6>
+    <ol style="font-size:.9rem">
+      <li>Lewis always wanted to be in senior management. → <span class="answer">FALSE</span></li>
+      <li>He enjoyed having the respect of others while growing up. → <span class="answer">TRUE</span></li>
+      <li>He is proud of his behaviour as a young man. → <span class="answer">FALSE</span></li>
+      <li>He got his current job without much effort. → <span class="answer">FALSE</span></li>
+      <li>His experience as a waiter is essential in helping him now. → <span class="answer">TRUE</span></li>
+      <li>He is able to understand others' point of view. → <span class="answer">TRUE</span></li>
+      <li>Good communication skills are the ONLY important part of management. → <span class="answer">FALSE</span></li>
+      <li>Guiding employees to the right decision is what makes a good manager. → <span class="answer">TRUE</span></li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h5 style="color:var(--teal)">صفات القائد بالعربية</h5>
+    <ul style="font-size:.9rem">
+      <li><strong>committed</strong> — ملتزم</li>
+      <li><strong>confident</strong> — واثق من نفسه</li>
+      <li><strong>decisive</strong> — حاسم / قادر على اتخاذ القرار</li>
+      <li><strong>emphatic</strong> — مُؤكِّد / قاطع</li>
+      <li><strong>optimistic</strong> — متفائل</li>
+      <li><strong>problem solver</strong> — يحل المشكلات</li>
+      <li><strong>self-aware</strong> — واعٍ بنقاط قوته وضعفه</li>
+      <li><strong>upfront</strong> — صريح وشفاف</li>
+    </ul>
+    <div class="ar-explain">📻 <strong>لويس</strong> مدير ناجح. بدأ حياته كنادل، وعمل بجد وصعد الرتب. يؤمن أن التواصل الجيد وفهم الموظفين هما سر النجاح في القيادة.</div>
+  </div>
+</div>
+
+<!-- Exercise 4 Idioms -->
+<div class="section-title"><span class="badge-num">✓</span> تمرين 4 — مصطلحات الاستماع | Ex. 4 Idioms (Lesson 4A)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <ol>
+      <li>take a back <span class="answer">seat</span> — let others lead</li>
+      <li>held me in good <span class="answer">stead</span> — proved useful to me</li>
+      <li>land in my <span class="answer">lap</span> — given to me without effort</li>
+      <li><span class="answer">cut</span> out to be a leader — naturally suited</li>
+      <li>The <span class="answer">buck</span> stops with you — you have final responsibility</li>
+      <li>blown a <span class="answer">fuse</span> — become very angry</li>
+      <li>worked my <span class="answer">way</span> up — progressed step by step</li>
+      <li>stuck in a <span class="answer">rut</span> — trapped in a boring routine</li>
+      <li>in my <span class="answer">book</span> — in my opinion</li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h6>معاني المصطلحات</h6>
+    <ol style="font-size:.9rem">
+      <li><strong>take a back seat</strong> — يترك الآخرين يقودون / يكون في الصف الثاني</li>
+      <li><strong>hold in good stead</strong> — يفيد في وقت لاحق</li>
+      <li><strong>land in my lap</strong> — وقع في حضني / جاء دون جهد</li>
+      <li><strong>cut out to be</strong> — مُهيَّأ لـ / موهوب طبيعيًا لـ</li>
+      <li><strong>the buck stops with you</strong> — أنت المسؤول الأخير</li>
+      <li><strong>blow a fuse</strong> — يثور / يغضب غضبًا شديدًا</li>
+      <li><strong>work one's way up</strong> — يتقدم تدريجيًا في السلم الوظيفي</li>
+      <li><strong>stuck in a rut</strong> — عالق في الروتين الممل</li>
+      <li><strong>in my book</strong> — في رأيي / من وجهة نظري</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ---- LESSON 5A ---- -->
+<div class="section-title"><span class="badge-num">5</span> الدرس 5أ — التحدث: تلطيف اللغة | Lesson 5A – Speaking: Toning Language Down (p. 55)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h5 style="color:var(--gold)">Toning Language Down — Speaking Box Answers</h5>
+    <p style="font-size:.9rem">Complete these phrases (Ex. 4):</p>
+    <ul style="font-size:.9rem">
+      <li>I wouldn't say that. I think it's more a <span class="answer">case / matter</span> of them taking time to evaluate your work.</li>
+      <li>I'd be more <span class="answer">inclined</span> to say that it's a challenge.</li>
+      <li>That's one way of <span class="answer">putting / looking at</span> it.</li>
+      <li>Surely that's an <span class="answer">exaggeration</span>. He's just getting up to speed.</li>
+      <li>I don't think that's <span class="answer">particularly / entirely</span> helpful. It might be better…</li>
+      <li>That's a bit <span class="answer">harsh / strong</span>, don't you think?</li>
+      <li>It might be a little <span class="answer">challenging / demanding</span> at times, but generally…</li>
+      <li>I <span class="answer">know / admit</span> it seems rather complex, but…</li>
+    </ul>
+    <hr>
+    <h6>Personality Adjective Replacements (Ex. 3)</h6>
+    <ol style="font-size:.9rem">
+      <li>controlling → <span class="answer">confident</span></li>
+      <li>loudmouthed → <span class="answer">vocal / opinionated</span></li>
+      <li>gullible → <span class="answer">trusting</span></li>
+      <li>abrasive → <span class="answer">assertive / straightforward</span></li>
+      <li>adamant / confrontational → <span class="answer">resolute / decisive</span></li>
+      <li>aloof → <span class="answer">unapproachable / shy</span></li>
+    </ol>
+  </div>
+  <div class="ar-panel ar-text">
+    <h5 style="color:var(--teal)">تلطيف اللغة — شرح</h5>
+    <div class="ar-explain">
+      <strong>Toning language down</strong> = تخفيف حدة الكلام أو انتقاء تعبيرات أقل قسوة.<br>
+      مثال: بدلًا من "الطعام كان مقرفًا" → "لم يكن الطعام في أفضل حالاته"
+    </div>
+    <h6 class="mt-3">صفات الشخصية — إيجابي وسلبي</h6>
+    <table class="table table-sm" style="font-size:.85rem">
+      <tr><th>سلبي</th><th>إيجابي</th><th>المعنى</th></tr>
+      <tr><td>controlling</td><td>confident</td><td>مسيطر / واثق</td></tr>
+      <tr><td>loudmouthed</td><td>vocal</td><td>فاحش الكلام / جريء في رأيه</td></tr>
+      <tr><td>gullible</td><td>trusting</td><td>سهل الانخداع / يثق بالناس</td></tr>
+      <tr><td>abrasive</td><td>assertive</td><td>جارح / حازم</td></tr>
+      <tr><td>adamant</td><td>resolute</td><td>عنيد / ثابت على موقفه</td></tr>
+      <tr><td>aloof</td><td>reserved</td><td>متبعد / محافظ على خصوصيته</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ---- LESSON 6A ---- -->
+<div class="section-title"><span class="badge-num">6</span> الدرس 6أ — الكتابة: تقرير | Lesson 6A – Writing: A Report (pp. 56–57)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h5 style="color:var(--gold)">Report Structure — Writing Box</h5>
+    <p style="font-size:.9rem"><strong>Problems with the informal report (Ex. 3):</strong> The student did NOT:</p>
+    <ul style="font-size:.9rem">
+      <li>❌ Clearly state the topic in an introduction</li>
+      <li>❌ Outline what will be included</li>
+      <li>❌ Use formal and objective language</li>
+      <li>❌ Give headings to sections</li>
+      <li>❌ Describe events succinctly</li>
+      <li>❌ Avoid repetition</li>
+      <li>❌ Make clear recommendations</li>
+      <li>❌ Link the conclusion to the rest</li>
+    </ul>
+    <div class="grammar-box">
+      <h6>Model Report Structure (p. 57)</h6>
+      <ol style="font-size:.9rem">
+        <li><strong>INTRODUCTION</strong> — Purpose of the report</li>
+        <li><strong>WHAT THE PLACEMENT INCLUDED</strong> — Duties &amp; routine</li>
+        <li><strong>BENEFITS</strong> — What was learned</li>
+        <li><strong>RECOMMENDATIONS</strong> — How to improve</li>
+        <li><strong>CONCLUSION</strong> — Overall evaluation</li>
+      </ol>
+    </div>
+  </div>
+  <div class="ar-panel ar-text">
+    <h5 style="color:var(--teal)">كيفية كتابة التقرير</h5>
+    <div class="ar-explain">
+      <strong>التقرير الجيد</strong> يجب أن يكون:
+      <ul style="font-size:.9rem; margin-top:.5rem">
+        <li>✅ رسميًا وموضوعيًا (ليس شخصيًا)</li>
+        <li>✅ منظمًا بعناوين واضحة</li>
+        <li>✅ مختصرًا ودقيقًا</li>
+        <li>✅ يتضمن توصيات محددة مع مبررات</li>
+        <li>✅ الخاتمة ترتبط بالمحتوى السابق</li>
+      </ul>
+    </div>
+    <h6 class="mt-3">عبارات مفيدة للتقرير</h6>
+    <ul style="font-size:.85rem">
+      <li><strong>الافتتاح:</strong> "The purpose of this report is to…" / "This report sets out to…"</li>
+      <li><strong>الخاتمة:</strong> "Overall, this experience…" / "If these recommendations are implemented…"</li>
+    </ul>
+  </div>
+</div>
+
+<!-- LIFE SKILLS -->
+<div class="section-title"><span class="badge-num">★</span> مهارات الحياة: تطوير القيادة | Life Skills: How to Develop Leadership Skills (pp. 58–59)</div>
+<div class="bi-col">
+  <div class="en-panel en-text">
+    <h5 style="color:var(--gold)">Life Skills Box — Answers (Ex. 4)</h5>
+    <ol>
+      <li>Even if you don't think you have a <span class="answer">calling</span> to be a leader…</li>
+      <li>…or you can't <span class="answer">envisage</span> yourself in that role…</li>
+      <li>…study which of their <span class="answer">attributes</span> made them good leaders.</li>
+      <li>…how they are able to <span class="answer">win</span> people over…</li>
+      <li>Learn about different leadership <span class="answer">styles</span>…</li>
+      <li>…an opportunity to <span class="answer">step</span> up and lead…</li>
+      <li>…don't <span class="answer">shy</span> away from it…</li>
+    </ol>
+    <p style="font-size:.85rem; color:#666"><em>Extra word: failures</em></p>
+    <hr>
+    <p><strong>Lily's signs:</strong> 1, 3, 5 | <strong>Dylan's signs:</strong> 1, 3, 5</p>
+  </div>
+  <div class="ar-panel ar-text">
+    <h5 style="color:var(--teal)">شرح قصتي ليلى ودايلن</h5>
+    <div class="ar-explain">
+      <strong>ليلى</strong>: فتاة خجولة أصبحت قائدة عرضيًا لأنها تتحدث الألمانية في رحلة مدرسية. النتيجة: بنت ثقتها بنفسها.
+    </div>
+    <div class="ar-explain mt-2">
+      <strong>دايلن</strong>: لم يرَ نفسه قائدًا، لكن اقتراحه لتطبيق خيري جعل مديره يكلفه بتنفيذه. أصبح الآن مديرًا إقليميًا.
+    </div>
+    <h6 class="mt-2">الكلمات الدلالية</h6>
+    <ul style="font-size:.85rem">
+      <li><strong>calling</strong> — نداء داخلي / شعور بأن هذا دورك</li>
+      <li><strong>envisage</strong> — يتخيل / يرى نفسه في موقف ما</li>
+      <li><strong>attributes</strong> — صفات / خصائص شخصية</li>
+      <li><strong>win people over</strong> — يكسب تأييد الناس ومحبتهم</li>
+      <li><strong>shy away from</strong> — يتهرب من / يخشى الإقدام على</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- end tab-lessons -->
+
+<!-- ============================= TAB 2: VOCABULARY ============================= -->
+<div class="tab-pane fade" id="tab-vocab">
+<div class="section-title"><span class="badge-num">📘</span> المعجم الثنائي الكامل | Bilingual Vocabulary Dictionary</div>
+<div class="mb-3 search-box">
+  <span class="search-icon">🔍</span>
+  <input type="text" id="vocabSearch" class="form-control" placeholder="ابحث بالإنجليزية أو العربية… Search in English or Arabic…" style="padding-right:1rem;padding-left:2.5rem;direction:ltr">
+</div>
+<div class="table-responsive">
+<table class="table table-bordered vocab-table" id="vocabTable">
+<thead>
+<tr>
+  <th>#</th>
+  <th>English Word</th>
+  <th>Example Sentence</th>
+  <th>Arabic المعنى</th>
+  <th>English Meaning</th>
+  <th>SYN.</th>
+  <th>ANT.</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>internship</td><td>She got an <em>internship</em> at a marketing firm.</td><td>تدريب مهني (فترة تدريب)</td><td>A period of work experience for a student or trainee</td><td>placement, apprenticeship</td><td>permanent position</td></tr>
+<tr><td>2</td><td>remuneration</td><td>The <em>remuneration</em> for the role is 400 dinars.</td><td>أجر، مكافأة مالية</td><td>Money paid for work or services</td><td>pay, salary, compensation</td><td>unpaid work, volunteer work</td></tr>
+<tr><td>3</td><td>vocational</td><td>He enrolled in a <em>vocational</em> training programme.</td><td>مهني، حرفي</td><td>Relating to the skills needed for a particular job</td><td>occupational, professional</td><td>academic, theoretical</td></tr>
+<tr><td>4</td><td>constant connectivity</td><td><em>Constant connectivity</em> means being always reachable.</td><td>الاتصال الدائم بالعمل/الإنترنت</td><td>Always being online or available for work</td><td>perpetual access, 24/7 contact</td><td>digital detox, disconnection</td></tr>
+<tr><td>5</td><td>juggle</td><td>She had to <em>juggle</em> work and family life.</td><td>يوازن بين عدة أشياء في آنٍ واحد</td><td>To manage several activities at once</td><td>balance, manage, handle</td><td>neglect, abandon</td></tr>
+<tr><td>6</td><td>unremitting</td><td>The <em>unremitting</em> demands of the job exhausted him.</td><td>متواصل، لا يهدأ، لا ينقطع</td><td>Never stopping or relaxing</td><td>relentless, constant, incessant</td><td>occasional, intermittent</td></tr>
+<tr><td>7</td><td>strive</td><td>She <em>strives</em> for excellence in everything she does.</td><td>يسعى جاهدًا، يجتهد</td><td>To make great effort to achieve something</td><td>endeavour, aspire, work hard</td><td>give up, abandon, idle</td></tr>
+<tr><td>8</td><td>pay dividends</td><td>Her hard work <em>paid dividends</em> in the end.</td><td>يؤتي ثماره، يعطي نتائج جيدة</td><td>To produce a good result or benefit</td><td>prove worthwhile, bear fruit</td><td>prove fruitless, waste effort</td></tr>
+<tr><td>9</td><td>intrude</td><td>Work should not <em>intrude</em> on your personal life.</td><td>يتطفل على، يتدخل في</td><td>To go where you are not welcome; to disturb</td><td>interfere, encroach, impose</td><td>respect, stay away</td></tr>
+<tr><td>10</td><td>envisage</td><td>Can you <em>envisage</em> yourself running a business?</td><td>يتصور، يتخيل في ذهنه</td><td>To imagine or picture in the mind</td><td>visualise, conceive, picture</td><td>ignore, overlook</td></tr>
+<tr><td>11</td><td>entrepreneur</td><td>Fadia is a young <em>entrepreneur</em> from Jordan.</td><td>رائد أعمال</td><td>A person who starts a new business</td><td>founder, businessperson</td><td>employee, worker</td></tr>
+<tr><td>12</td><td>conviction</td><td>She followed her <em>conviction</em> and succeeded.</td><td>قناعة راسخة، إيمان قوي</td><td>A strong belief or opinion</td><td>belief, certainty, determination</td><td>doubt, uncertainty</td></tr>
+<tr><td>13</td><td>tenacity</td><td>His <em>tenacity</em> helped him overcome every obstacle.</td><td>مثابرة، عزيمة لا تكسر</td><td>Determination to keep doing something</td><td>persistence, perseverance, resilience</td><td>weakness, surrender, giving up</td></tr>
+<tr><td>14</td><td>deter</td><td>Failure did not <em>deter</em> her from trying again.</td><td>يُثبّط، يردع، يحول دون</td><td>To discourage someone from doing something</td><td>discourage, put off, prevent</td><td>encourage, motivate, inspire</td></tr>
+<tr><td>15</td><td>fulfilment</td><td>She found real <em>fulfilment</em> in her teaching career.</td><td>تحقيق الذات، الرضا الداخلي</td><td>Satisfaction from achieving one's potential</td><td>satisfaction, contentment, achievement</td><td>dissatisfaction, emptiness</td></tr>
+<tr><td>16</td><td>aspiration</td><td>His <em>aspiration</em> is to become an engineer.</td><td>طموح، تطلع نحو المستقبل</td><td>A hope or ambition of achieving something</td><td>ambition, goal, dream</td><td>apathy, lack of ambition</td></tr>
+<tr><td>17</td><td>covet</td><td>Children often <em>covet</em> glamorous jobs like acting.</td><td>يتوق إليه، يطمع في امتلاكه</td><td>To want something very much, especially what others have</td><td>desire, crave, yearn for</td><td>disdain, reject, despise</td></tr>
+<tr><td>18</td><td>slim (chances)</td><td>The chances of becoming an astronaut are <em>incredibly slim</em>.</td><td>ضئيل، نادر (فرص)</td><td>Very small (possibility or chance)</td><td>tiny, negligible, remote</td><td>high, strong, great</td></tr>
+<tr><td>19</td><td>plummet</td><td>Career dreams often <em>plummet</em> at secondary school.</td><td>يهوي، ينخفض بشدة وسرعة</td><td>To fall very fast and suddenly</td><td>plunge, drop, nosedive</td><td>soar, rise, skyrocket</td></tr>
+<tr><td>20</td><td>glamorous</td><td>Being an actor seems <em>glamorous</em> to young children.</td><td>رائع وجذاب، يبدو فاتنًا</td><td>Attractively exciting and impressive</td><td>dazzling, alluring, exciting</td><td>dull, mundane, unglamorous</td></tr>
+<tr><td>21</td><td>decisive</td><td>A good leader must be <em>decisive</em> under pressure.</td><td>حاسم، قادر على اتخاذ قرارات سريعة</td><td>Able to make decisions quickly and confidently</td><td>resolute, firm, determined</td><td>indecisive, hesitant, wavering</td></tr>
+<tr><td>22</td><td>upfront</td><td>He was <em>upfront</em> about the challenges of the job.</td><td>صريح وشفاف من البداية</td><td>Honest and direct from the start</td><td>frank, candid, straightforward</td><td>secretive, evasive, deceptive</td></tr>
+<tr><td>23</td><td>assertive</td><td>Leaders need to be <em>assertive</em> when communicating.</td><td>حازم، يعبر بثقة عن آرائه وحقوقه</td><td>Confidently expressing your views and needs</td><td>confident, self-assured, bold</td><td>submissive, timid, passive</td></tr>
+<tr><td>24</td><td>tactful</td><td>She was <em>tactful</em> when giving critical feedback.</td><td>لبق، دبلوماسي في التعامل</td><td>Careful not to upset people when dealing with them</td><td>diplomatic, sensitive, discreet</td><td>blunt, tactless, insensitive</td></tr>
+<tr><td>25</td><td>gullible</td><td>He's so <em>gullible</em> — he believed every word!</td><td>سهل الانخداع، ساذج</td><td>Easily deceived or tricked</td><td>naive, credulous, trusting</td><td>sceptical, shrewd, suspicious</td></tr>
+<tr><td>26</td><td>abrasive</td><td>His <em>abrasive</em> manner upset everyone in the office.</td><td>جارح، خشن في التعامل</td><td>Rude and unkind in manner; likely to upset people</td><td>harsh, blunt, aggressive</td><td>gentle, polite, considerate</td></tr>
+<tr><td>27</td><td>aloof</td><td>She seemed <em>aloof</em> and never talked to colleagues.</td><td>متعالٍ، بعيد عن الآخرين اجتماعيًا</td><td>Not friendly or interested; distant</td><td>distant, cold, unapproachable</td><td>warm, sociable, approachable</td></tr>
+<tr><td>28</td><td>reluctant</td><td>He was <em>reluctant</em> to take on a leadership role.</td><td>مُتردد، كاره لشيء ما</td><td>Unwilling or hesitant</td><td>unwilling, hesitant, disinclined</td><td>eager, willing, enthusiastic</td></tr>
+<tr><td>29</td><td>delegate</td><td>A good manager knows how to <em>delegate</em> tasks.</td><td>يفوّض صلاحيات لشخص آخر</td><td>To give responsibility or work to another person</td><td>assign, entrust, hand over</td><td>retain, micromanage, withhold</td></tr>
+<tr><td>30</td><td>boisterous</td><td>The classroom was full of <em>boisterous</em> six-year-olds.</td><td>صاخب، مشاغب، مليء بالحيوية</td><td>Noisy and lively, often referring to children</td><td>rowdy, lively, exuberant</td><td>quiet, calm, subdued</td></tr>
+<tr><td>31</td><td>pipe dream</td><td>Becoming a racing car driver is a <em>pipe dream</em> for most.</td><td>حلم مستحيل التحقيق</td><td>Something hoped for but almost impossible to achieve</td><td>fantasy, illusion, daydream</td><td>realistic goal, achievable aim</td></tr>
+<tr><td>32</td><td>calling</td><td>Teaching is her <em>calling</em> — she was born for it.</td><td>نداء داخلي، رسالة حياتية</td><td>A strong inner feeling that a particular career is right for you</td><td>vocation, purpose, passion</td><td>obligation, forced duty</td></tr>
+<tr><td>33</td><td>instinct</td><td>Entrepreneurs follow their <em>instinct</em> even without data.</td><td>غريزة، حدس</td><td>A natural ability to behave in a certain way without thinking</td><td>intuition, gut feeling, impulse</td><td>reason, logic, calculation</td></tr>
+<tr><td>34</td><td>self-aware</td><td>Great leaders are <em>self-aware</em> about their weaknesses.</td><td>واعٍ بذاته، يعرف نقاط قوته وضعفه</td><td>Having knowledge of your own character and feelings</td><td>introspective, reflective, perceptive</td><td>oblivious, unaware, blind to self</td></tr>
+<tr><td>35</td><td>empathetic</td><td>An <em>empathetic</em> manager understands employees' feelings.</td><td>متعاطف، قادر على فهم مشاعر الآخرين</td><td>Able to understand and share others' feelings</td><td>compassionate, understanding, sensitive</td><td>indifferent, cold, unsympathetic</td></tr>
+<tr><td>36</td><td>connotation</td><td>The word "slim" has a positive <em>connotation</em>.</td><td>دلالة إيحائية (إيجابية أو سلبية)</td><td>A feeling or idea that a word suggests beyond its literal meaning</td><td>implication, overtone, association</td><td>denotation, literal meaning</td></tr>
+<tr><td>37</td><td>succinctly</td><td>Please describe the event <em>succinctly</em> in one paragraph.</td><td>بإيجاز وتركيز، دون ثرثرة</td><td>In a brief, clear, and precise way</td><td>briefly, concisely, precisely</td><td>wordily, verbosely, at length</td></tr>
+<tr><td>38</td><td>implementation</td><td>The <em>implementation</em> of the new app took six months.</td><td>تنفيذ، تطبيق عملي</td><td>The process of putting a plan into action</td><td>execution, application, realisation</td><td>planning, conception, proposal</td></tr>
+<tr><td>39</td><td>proactive</td><td>Good employees are <em>proactive</em> rather than reactive.</td><td>استباقي، يأخذ المبادرة</td><td>Taking action in advance rather than reacting</td><td>initiative, forward-thinking, dynamic</td><td>reactive, passive, inactive</td></tr>
+<tr><td>40</td><td>destined</td><td>She felt <em>destined</em> to become a teacher.</td><td>مقدَّر له أن، محكوم عليه بـ</td><td>Having a fate that seems certain</td><td>fated, predestined, meant to be</td><td>free, undetermined, open-ended</td></tr>
+</tbody>
+</table>
+</div>
+</div><!-- end tab-vocab -->
+
+<!-- ============================= TAB 3: PREFIX/SUFFIX ============================= -->
+<div class="tab-pane fade" id="tab-prefix">
+<div class="section-title"><span class="badge-num">🔤</span> البادئات واللواحق | Prefixes & Suffixes from All Texts</div>
+<div class="mb-3 search-box">
+  <span class="search-icon">🔍</span>
+  <input type="text" id="affixSearch" class="form-control" placeholder="ابحث… Search…" style="direction:ltr;padding-left:2.5rem">
+</div>
+<div class="row">
+<div class="col-md-6">
+<h5 class="text-center mb-3" style="color:var(--accent)">🔴 Prefixes — البادئات</h5>
+<div class="table-responsive">
+<table class="table table-bordered prefix-table" id="prefixTable">
+<thead><tr><th>Prefix</th><th>Meaning</th><th>معنى</th><th>Example from Text</th></tr></thead>
+<tbody>
+<tr><td><strong>re-</strong></td><td>again / back</td><td>مرة أخرى / للخلف</td><td>recycle, reuse, respond, remuneration*</td></tr>
+<tr><td><strong>co-</strong></td><td>together / with</td><td>معًا / مشترك</td><td>co-operating, co-ordinate</td></tr>
+<tr><td><strong>dis-</strong></td><td>opposite / not</td><td>عكس / نفي</td><td>discarded, disappointed, disconnected</td></tr>
+<tr><td><strong>un-</strong></td><td>not / reverse</td><td>لا / غير / عكس</td><td>unremitting, unexpected, unsurprisingly</td></tr>
+<tr><td><strong>en-</strong></td><td>make / cause</td><td>يجعل / يُسبب</td><td>enabled, encouraged, envisage</td></tr>
+<tr><td><strong>inter-</strong></td><td>between / among</td><td>بين</td><td>international, internship</td></tr>
+<tr><td><strong>multi-</strong></td><td>many</td><td>متعدد</td><td>multi-tasking</td></tr>
+<tr><td><strong>over-</strong></td><td>too much / above</td><td>فوق / زيادة</td><td>overestimate</td></tr>
+<tr><td><strong>pre-</strong></td><td>before</td><td>قبل</td><td>preschooler, previously</td></tr>
+<tr><td><strong>self-</strong></td><td>of oneself</td><td>الذات</td><td>self-aware, self-doubt</td></tr>
+<tr><td><strong>entre-</strong></td><td>between (French origin)</td><td>أصل فرنسي: بين</td><td>entrepreneur</td></tr>
+<tr><td><strong>pro-</strong></td><td>forward / in favour of</td><td>للأمام / مؤيد</td><td>proactive</td></tr>
+<tr><td><strong>up-</strong></td><td>to a higher level</td><td>إلى مستوى أعلى</td><td>upfront, upgrade</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="col-md-6">
+<h5 class="text-center mb-3" style="color:var(--teal)">🟢 Suffixes — اللواحق</h5>
+<div class="table-responsive">
+<table class="table table-bordered prefix-table" id="suffixTable">
+<thead><tr><th>Suffix</th><th>Meaning</th><th>معنى</th><th>Example from Text</th></tr></thead>
+<tbody>
+<tr><td><strong>-tion / -sion</strong></td><td>action / state</td><td>حدث / حالة</td><td>aspiration, conviction, education, connectivity</td></tr>
+<tr><td><strong>-ment</strong></td><td>action / result</td><td>نتيجة / عملية</td><td>employment, management, placement, achievement</td></tr>
+<tr><td><strong>-ity / -ty</strong></td><td>quality / state</td><td>صفة / حالة</td><td>creativity, flexibility, responsibility, personality</td></tr>
+<tr><td><strong>-ness</strong></td><td>state / quality</td><td>حالة / صفة</td><td>awareness, happiness, shyness</td></tr>
+<tr><td><strong>-ful</strong></td><td>full of</td><td>مليء بـ</td><td>fulfilment, successful, meaningful</td></tr>
+<tr><td><strong>-less</strong></td><td>without</td><td>بدون</td><td>regardless, relentless</td></tr>
+<tr><td><strong>-er / -or</strong></td><td>person who does</td><td>الشخص الذي يفعل</td><td>entrepreneur, teacher, manager, leader</td></tr>
+<tr><td><strong>-ing</strong></td><td>action (gerund/adj)</td><td>اسم فعل / وصف</td><td>multi-tasking, working, encouraging</td></tr>
+<tr><td><strong>-ive</strong></td><td>having quality of</td><td>يمتلك صفة</td><td>decisive, assertive, proactive</td></tr>
+<tr><td><strong>-al</strong></td><td>relating to</td><td>متعلق بـ</td><td>vocational, educational, professional</td></tr>
+<tr><td><strong>-ous / -ious</strong></td><td>full of / having</td><td>ممتلئ بـ</td><td>glamorous, boisterous, ambitious</td></tr>
+<tr><td><strong>-ance / -ence</strong></td><td>state / quality</td><td>حالة / صفة</td><td>significance, experience, confidence</td></tr>
+<tr><td><strong>-ship</strong></td><td>state / condition</td><td>حالة / علاقة</td><td>internship, leadership, relationship</td></tr>
+<tr><td><strong>-eur</strong></td><td>person (French)</td><td>شخص (أصل فرنسي)</td><td>entrepreneur</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div><!-- end tab-prefix -->
+
+<!-- ============================= TAB 4: EXAM ============================= -->
+<div class="tab-pane fade" id="tab-exam">
+<div class="section-title"><span class="badge-num">✏️</span> الاختبار النهائي | Final Exam — 50 Multiple Choice Questions</div>
+<div class="alert alert-info en-text">
+  <strong>Instructions:</strong> Choose the best answer for each question. There are 50 questions — 25 intermediate + 25 advanced. Click <strong>Submit Exam</strong> when finished to see your grade and all correct answers.
+</div>
+<div class="alert alert-warning ar-text">
+  <strong>تعليمات:</strong> اختر الإجابة الصحيحة لكل سؤال. يحتوي الاختبار على 50 سؤالًا (25 متوسطًا + 25 متقدمًا). اضغط <strong>"تسليم الاختبار"</strong> عند الانتهاء لمعرفة درجتك وجميع الإجابات الصحيحة.
+</div>
+
+<div class="mb-3">
+  <label class="fw-bold">التقدم | Progress</label>
+  <div class="progress"><div id="exam-progress" class="progress-bar bg-success" style="width:0%"></div></div>
+  <small id="progress-text" class="text-muted">0 / 50 answered</small>
+</div>
+
+<form id="examForm">
+
+<h5 class="mt-3 mb-2" style="color:var(--teal)">🟡 Intermediate Level (Questions 1–25)</h5>
+
+<!-- Q1 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q1.</p>
+  <p class="en-text">What does the idiom "learn the ropes" mean?</p>
+  <div class="exam-option"><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">A. To climb a ladder</label></div>
+  <div class="exam-option"><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">B. To learn how to do a job or task</label></div>
+  <div class="exam-option"><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">C. To retire from work</label></div>
+  <div class="exam-option"><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">D. To start a new business</label></div>
+</div>
+
+<!-- Q2 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q2.</p>
+  <p class="en-text">Choose the correct completion: "I know everyone is under considerable pressure to _____ targets at work."</p>
+  <div class="exam-option"><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">A. hit</label></div>
+  <div class="exam-option"><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">B. catch</label></div>
+  <div class="exam-option"><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">C. meet</label></div>
+  <div class="exam-option"><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">D. make</label></div>
+</div>
+
+<!-- Q3 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q3.</p>
+  <p class="en-text">What register is this sentence? "Should you decide to continue in our employment, we may offer you a long-term position."</p>
+  <div class="exam-option"><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">A. Formal</label></div>
+  <div class="exam-option"><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">B. Neutral</label></div>
+  <div class="exam-option"><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">C. Informal</label></div>
+  <div class="exam-option"><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">D. Academic</label></div>
+</div>
+
+<!-- Q4 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q4.</p>
+  <p class="en-text">According to the article "Dreams Shape Your Future", what motivates primary school children MOST?</p>
+  <div class="exam-option"><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">A. Teaching and helping others</label></div>
+  <div class="exam-option"><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">B. Job security</label></div>
+  <div class="exam-option"><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">C. Academic achievement</label></div>
+  <div class="exam-option"><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">D. Money and success</label></div>
+</div>
+
+<!-- Q5 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q5.</p>
+  <p class="en-text">What does "pay dividends" mean?</p>
+  <div class="exam-option"><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">A. To pay a bill</label></div>
+  <div class="exam-option"><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">B. To produce a good result or benefit</label></div>
+  <div class="exam-option"><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">C. To share money with others</label></div>
+  <div class="exam-option"><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">D. To invest money in stocks</label></div>
+</div>
+
+<!-- Q6 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q6.</p>
+  <p class="en-text">Which verb is followed by the GERUND? Choose the correct sentence.</p>
+  <div class="exam-option"><input type="radio" name="q6" value="a" id="q6a"><label for="q6a">A. She managed <em>to finish</em> on time.</label></div>
+  <div class="exam-option"><input type="radio" name="q6" value="b" id="q6b"><label for="q6b">B. He decided <em>to apply</em> for the job.</label></div>
+  <div class="exam-option"><input type="radio" name="q6" value="c" id="q6c"><label for="q6c">C. She couldn't help <em>admiring</em> his work.</label></div>
+  <div class="exam-option"><input type="radio" name="q6" value="d" id="q6d"><label for="q6d">D. They chose <em>to leave</em> early.</label></div>
+</div>
+
+<!-- Q7 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q7.</p>
+  <p class="en-text">What does "the buck stops with you" mean?</p>
+  <div class="exam-option"><input type="radio" name="q7" value="a" id="q7a"><label for="q7a">A. You have the final responsibility</label></div>
+  <div class="exam-option"><input type="radio" name="q7" value="b" id="q7b"><label for="q7b">B. You received a lot of money</label></div>
+  <div class="exam-option"><input type="radio" name="q7" value="c" id="q7c"><label for="q7c">C. You should pass the problem to someone else</label></div>
+  <div class="exam-option"><input type="radio" name="q7" value="d" id="q7d"><label for="q7d">D. You stopped working for the day</label></div>
+</div>
+
+<!-- Q8 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q8.</p>
+  <p class="en-text">Which quality describes someone who makes decisions quickly and confidently?</p>
+  <div class="exam-option"><input type="radio" name="q8" value="a" id="q8a"><label for="q8a">A. Gullible</label></div>
+  <div class="exam-option"><input type="radio" name="q8" value="b" id="q8b"><label for="q8b">B. Decisive</label></div>
+  <div class="exam-option"><input type="radio" name="q8" value="c" id="q8c"><label for="q8c">C. Aloof</label></div>
+  <div class="exam-option"><input type="radio" name="q8" value="d" id="q8d"><label for="q8d">D. Abrasive</label></div>
+</div>
+
+<!-- Q9 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q9.</p>
+  <p class="en-text">In the article, what happens to career dreams at secondary school?</p>
+  <div class="exam-option"><input type="radio" name="q9" value="a" id="q9a"><label for="q9a">A. They become even more unrealistic</label></div>
+  <div class="exam-option"><input type="radio" name="q9" value="b" id="q9b"><label for="q9b">B. They stay the same</label></div>
+  <div class="exam-option"><input type="radio" name="q9" value="c" id="q9c"><label for="q9c">C. They are abandoned completely</label></div>
+  <div class="exam-option"><input type="radio" name="q9" value="d" id="q9d"><label for="q9d">D. They become more realistic and personality-based</label></div>
+</div>
+
+<!-- Q10 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q10.</p>
+  <p class="en-text">A "pipe dream" refers to:</p>
+  <div class="exam-option"><input type="radio" name="q10" value="a" id="q10a"><label for="q10a">A. A very practical career goal</label></div>
+  <div class="exam-option"><input type="radio" name="q10" value="b" id="q10b"><label for="q10b">B. A job that involves working outdoors</label></div>
+  <div class="exam-option"><input type="radio" name="q10" value="c" id="q10c"><label for="q10c">C. A hope or goal that is impossible to achieve</label></div>
+  <div class="exam-option"><input type="radio" name="q10" value="d" id="q10d"><label for="q10d">D. A dream about travelling abroad</label></div>
+</div>
+
+<!-- Q11 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q11.</p>
+  <p class="en-text">Complete: "It really wasn't what I'd _____ up for."</p>
+  <div class="exam-option"><input type="radio" name="q11" value="a" id="q11a"><label for="q11a">A. set</label></div>
+  <div class="exam-option"><input type="radio" name="q11" value="b" id="q11b"><label for="q11b">B. signed</label></div>
+  <div class="exam-option"><input type="radio" name="q11" value="c" id="q11c"><label for="q11c">C. given</label></div>
+  <div class="exam-option"><input type="radio" name="q11" value="d" id="q11d"><label for="q11d">D. looked</label></div>
+</div>
+
+<!-- Q12 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q12.</p>
+  <p class="en-text">What does "remuneration" mean?</p>
+  <div class="exam-option"><input type="radio" name="q12" value="a" id="q12a"><label for="q12a">A. Money paid for work</label></div>
+  <div class="exam-option"><input type="radio" name="q12" value="b" id="q12b"><label for="q12b">B. Benefits from a sport</label></div>
+  <div class="exam-option"><input type="radio" name="q12" value="c" id="q12c"><label for="q12c">C. Requirements for a job</label></div>
+  <div class="exam-option"><input type="radio" name="q12" value="d" id="q12d"><label for="q12d">D. A type of training programme</label></div>
+</div>
+
+<!-- Q13 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q13.</p>
+  <p class="en-text">Which sentence uses "toning language down" correctly?</p>
+  <div class="exam-option"><input type="radio" name="q13" value="a" id="q13a"><label for="q13a">A. "The food was absolutely disgusting!"</label></div>
+  <div class="exam-option"><input type="radio" name="q13" value="b" id="q13b"><label for="q13b">B. "He is a completely useless employee!"</label></div>
+  <div class="exam-option"><input type="radio" name="q13" value="c" id="q13c"><label for="q13c">C. "The food could have been better."</label></div>
+  <div class="exam-option"><input type="radio" name="q13" value="d" id="q13d"><label for="q13d">D. "The project was a total disaster!"</label></div>
+</div>
+
+<!-- Q14 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q14.</p>
+  <p class="en-text">Fadia's first prize money in the competition was:</p>
+  <div class="exam-option"><input type="radio" name="q14" value="a" id="q14a"><label for="q14a">A. 100 JOD</label></div>
+  <div class="exam-option"><input type="radio" name="q14" value="b" id="q14b"><label for="q14b">B. 150 JOD</label></div>
+  <div class="exam-option"><input type="radio" name="q14" value="c" id="q14c"><label for="q14c">C. 400 JOD</label></div>
+  <div class="exam-option"><input type="radio" name="q14" value="d" id="q14d"><label for="q14d">D. 250 JOD</label></div>
+</div>
+
+<!-- Q15 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q15.</p>
+  <p class="en-text">Which is a correct feature of a formal report?</p>
+  <div class="exam-option"><input type="radio" name="q15" value="a" id="q15a"><label for="q15a">A. Using slang and casual language</label></div>
+  <div class="exam-option"><input type="radio" name="q15" value="b" id="q15b"><label for="q15b">B. Writing in a stream of consciousness style</label></div>
+  <div class="exam-option"><input type="radio" name="q15" value="c" id="q15c"><label for="q15c">C. Addressing the reader personally</label></div>
+  <div class="exam-option"><input type="radio" name="q15" value="d" id="q15d"><label for="q15d">D. Using headings and formal, objective language</label></div>
+</div>
+
+<!-- Q16 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q16.</p>
+  <p class="en-text">What does "stuck in a rut" mean?</p>
+  <div class="exam-option"><input type="radio" name="q16" value="a" id="q16a"><label for="q16a">A. To be very busy with work</label></div>
+  <div class="exam-option"><input type="radio" name="q16" value="b" id="q16b"><label for="q16b">B. To lose your job suddenly</label></div>
+  <div class="exam-option"><input type="radio" name="q16" value="c" id="q16c"><label for="q16c">C. To be trapped in a boring, unchanging routine</label></div>
+  <div class="exam-option"><input type="radio" name="q16" value="d" id="q16d"><label for="q16d">D. To get promoted quickly</label></div>
+</div>
+
+<!-- Q17 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q17.</p>
+  <p class="en-text">Which prefix means "not" or "the opposite of"?</p>
+  <div class="exam-option"><input type="radio" name="q17" value="a" id="q17a"><label for="q17a">A. un- (as in "unremitting")</label></div>
+  <div class="exam-option"><input type="radio" name="q17" value="b" id="q17b"><label for="q17b">B. en- (as in "enabled")</label></div>
+  <div class="exam-option"><input type="radio" name="q17" value="c" id="q17c"><label for="q17c">C. inter- (as in "international")</label></div>
+  <div class="exam-option"><input type="radio" name="q17" value="d" id="q17d"><label for="q17d">D. pre- (as in "preschool")</label></div>
+</div>
+
+<!-- Q18 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q18.</p>
+  <p class="en-text">The suffix "-ity" (as in "creativity") means:</p>
+  <div class="exam-option"><input type="radio" name="q18" value="a" id="q18a"><label for="q18a">A. A person who does something</label></div>
+  <div class="exam-option"><input type="radio" name="q18" value="b" id="q18b"><label for="q18b">B. A quality or state</label></div>
+  <div class="exam-option"><input type="radio" name="q18" value="c" id="q18c"><label for="q18c">C. Relating to something</label></div>
+  <div class="exam-option"><input type="radio" name="q18" value="d" id="q18d"><label for="q18d">D. Full of something</label></div>
+</div>
+
+<!-- Q19 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q19.</p>
+  <p class="en-text">"Gullible" can be positively rephrased as:</p>
+  <div class="exam-option"><input type="radio" name="q19" value="a" id="q19a"><label for="q19a">A. Abrasive</label></div>
+  <div class="exam-option"><input type="radio" name="q19" value="b" id="q19b"><label for="q19b">B. Assertive</label></div>
+  <div class="exam-option"><input type="radio" name="q19" value="c" id="q19c"><label for="q19c">C. Aloof</label></div>
+  <div class="exam-option"><input type="radio" name="q19" value="d" id="q19d"><label for="q19d">D. Trusting</label></div>
+</div>
+
+<!-- Q20 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q20.</p>
+  <p class="en-text">In the Life Skills section, what did Dylan contribute to his charity?</p>
+  <div class="exam-option"><input type="radio" name="q20" value="a" id="q20a"><label for="q20a">A. A fundraising event</label></div>
+  <div class="exam-option"><input type="radio" name="q20" value="b" id="q20b"><label for="q20b">B. A new office building</label></div>
+  <div class="exam-option"><input type="radio" name="q20" value="c" id="q20c"><label for="q20c">C. An app idea to connect volunteers with elderly people</label></div>
+  <div class="exam-option"><input type="radio" name="q20" value="d" id="q20d"><label for="q20d">D. A social media campaign</label></div>
+</div>
+
+<!-- Q21 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q21.</p>
+  <p class="en-text">Which sentence is CORRECT? Choose the right gerund/infinitive form.</p>
+  <div class="exam-option"><input type="radio" name="q21" value="a" id="q21a"><label for="q21a">A. She decided against going to university.</label></div>
+  <div class="exam-option"><input type="radio" name="q21" value="b" id="q21b"><label for="q21b">B. She decided against to go to university.</label></div>
+  <div class="exam-option"><input type="radio" name="q21" value="c" id="q21c"><label for="q21c">C. She decided against go to university.</label></div>
+  <div class="exam-option"><input type="radio" name="q21" value="d" id="q21d"><label for="q21d">D. She decided against gone to university.</label></div>
+</div>
+
+<!-- Q22 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q22.</p>
+  <p class="en-text">What does "constant connectivity" mean in the context of work-life balance?</p>
+  <div class="exam-option"><input type="radio" name="q22" value="a" id="q22a"><label for="q22a">A. Having a stable internet connection at home</label></div>
+  <div class="exam-option"><input type="radio" name="q22" value="b" id="q22b"><label for="q22b">B. Being always available and online for work</label></div>
+  <div class="exam-option"><input type="radio" name="q22" value="c" id="q22c"><label for="q22c">C. Connecting with friends on social media</label></div>
+  <div class="exam-option"><input type="radio" name="q22" value="d" id="q22d"><label for="q22d">D. Working from different locations</label></div>
+</div>
+
+<!-- Q23 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q23.</p>
+  <p class="en-text">According to Lesson 4A (True/False), which statement about Lewis is TRUE?</p>
+  <div class="exam-option"><input type="radio" name="q23" value="a" id="q23a"><label for="q23a">A. He always dreamed of being a senior manager</label></div>
+  <div class="exam-option"><input type="radio" name="q23" value="b" id="q23b"><label for="q23b">B. He is proud of his behaviour as a young man</label></div>
+  <div class="exam-option"><input type="radio" name="q23" value="c" id="q23c"><label for="q23c">C. He got his current job without much effort</label></div>
+  <div class="exam-option"><input type="radio" name="q23" value="d" id="q23d"><label for="q23d">D. His experience as a waiter is essential in helping him now</label></div>
+</div>
+
+<!-- Q24 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q24.</p>
+  <p class="en-text">The phrase "blow a fuse" means:</p>
+  <div class="exam-option"><input type="radio" name="q24" value="a" id="q24a"><label for="q24a">A. To give up and quit your job</label></div>
+  <div class="exam-option"><input type="radio" name="q24" value="b" id="q24b"><label for="q24b">B. To take a break from a task</label></div>
+  <div class="exam-option"><input type="radio" name="q24" value="c" id="q24c"><label for="q24c">C. To become very angry</label></div>
+  <div class="exam-option"><input type="radio" name="q24" value="d" id="q24d"><label for="q24d">D. To solve an electrical problem</label></div>
+</div>
+
+<!-- Q25 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q25.</p>
+  <p class="en-text">Fadia's sandals were made from:</p>
+  <div class="exam-option"><input type="radio" name="q25" value="a" id="q25a"><label for="q25a">A. Expensive leather</label></div>
+  <div class="exam-option"><input type="radio" name="q25" value="b" id="q25b"><label for="q25b">B. Recycled materials</label></div>
+  <div class="exam-option"><input type="radio" name="q25" value="c" id="q25c"><label for="q25c">C. Imported fabrics</label></div>
+  <div class="exam-option"><input type="radio" name="q25" value="d" id="q25d"><label for="q25d">D. Natural rubber</label></div>
+</div>
+
+<h5 class="mt-4 mb-2" style="color:var(--accent)">🔴 Advanced Level (Questions 26–50)</h5>
+
+<!-- Q26 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q26.</p>
+  <p class="en-text">Which sentence uses the PERFECT GERUND correctly?</p>
+  <div class="exam-option"><input type="radio" name="q26" value="a" id="q26a"><label for="q26a">A. Despite working on the film, I was rewarded.</label></div>
+  <div class="exam-option"><input type="radio" name="q26" value="b" id="q26b"><label for="q26b">B. Despite to have worked on the film, I was rewarded.</label></div>
+  <div class="exam-option"><input type="radio" name="q26" value="c" id="q26c"><label for="q26c">C. Despite having worked on the film for ages, I hadn't expected to be rewarded.</label></div>
+  <div class="exam-option"><input type="radio" name="q26" value="d" id="q26d"><label for="q26d">D. Despite to work on the film, I hadn't expected to be rewarded.</label></div>
+</div>
+
+<!-- Q27 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q27.</p>
+  <p class="en-text">What is the difference between "I regret to say" and "I regret saying"?</p>
+  <div class="exam-option"><input type="radio" name="q27" value="a" id="q27a"><label for="q27a">A. "To say" = announcing bad news now; "saying" = regretting something already said</label></div>
+  <div class="exam-option"><input type="radio" name="q27" value="b" id="q27b"><label for="q27b">B. They have exactly the same meaning</label></div>
+  <div class="exam-option"><input type="radio" name="q27" value="c" id="q27c"><label for="q27c">C. "Saying" = future action; "to say" = past action</label></div>
+  <div class="exam-option"><input type="radio" name="q27" value="d" id="q27d"><label for="q27d">D. "To say" is informal; "saying" is formal</label></div>
+</div>
+
+<!-- Q28 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q28.</p>
+  <p class="en-text">Which phrase means "to work extremely hard"?</p>
+  <div class="exam-option"><input type="radio" name="q28" value="a" id="q28a"><label for="q28a">A. take a back seat</label></div>
+  <div class="exam-option"><input type="radio" name="q28" value="b" id="q28b"><label for="q28b">B. land in your lap</label></div>
+  <div class="exam-option"><input type="radio" name="q28" value="c" id="q28c"><label for="q28c">C. blow a fuse</label></div>
+  <div class="exam-option"><input type="radio" name="q28" value="d" id="q28d"><label for="q28d">D. work your socks off</label></div>
+</div>
+
+<!-- Q29 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q29.</p>
+  <p class="en-text">Which of these is a PASSIVE GERUND used correctly?</p>
+  <div class="exam-option"><input type="radio" name="q29" value="a" id="q29a"><label for="q29a">A. She remembered to tell him the news.</label></div>
+  <div class="exam-option"><input type="radio" name="q29" value="b" id="q29b"><label for="q29b">B. I remembered being told once about an author.</label></div>
+  <div class="exam-option"><input type="radio" name="q29" value="c" id="q29c"><label for="q29c">C. She has been told to remember.</label></div>
+  <div class="exam-option"><input type="radio" name="q29" value="d" id="q29d"><label for="q29d">D. He was told remembering is important.</label></div>
+</div>
+
+<!-- Q30 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q30.</p>
+  <p class="en-text">"Tenacity" most closely means:</p>
+  <div class="exam-option"><input type="radio" name="q30" value="a" id="q30a"><label for="q30a">A. Financial intelligence</label></div>
+  <div class="exam-option"><input type="radio" name="q30" value="b" id="q30b"><label for="q30b">B. Social awareness</label></div>
+  <div class="exam-option"><input type="radio" name="q30" value="c" id="q30c"><label for="q30c">C. Determined persistence in the face of difficulties</label></div>
+  <div class="exam-option"><input type="radio" name="q30" value="d" id="q30d"><label for="q30d">D. Creative thinking ability</label></div>
+</div>
+
+<!-- Q31 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q31.</p>
+  <p class="en-text">Which connective phrase would BEST conclude a formal report?</p>
+  <div class="exam-option"><input type="radio" name="q31" value="a" id="q31a"><label for="q31a">A. "If these recommendations are implemented, future placements will greatly improve."</label></div>
+  <div class="exam-option"><input type="radio" name="q31" value="b" id="q31b"><label for="q31b">B. "The end! Hope you liked reading this."</label></div>
+  <div class="exam-option"><input type="radio" name="q31" value="c" id="q31c"><label for="q31c">C. "Anyway, that's everything I think about it."</label></div>
+  <div class="exam-option"><input type="radio" name="q31" value="d" id="q31d"><label for="q31d">D. "PS — I loved this experience!"</label></div>
+</div>
+
+<!-- Q32 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q32.</p>
+  <p class="en-text">The prefix "co-" in "co-operating" means:</p>
+  <div class="exam-option"><input type="radio" name="q32" value="a" id="q32a"><label for="q32a">A. Against</label></div>
+  <div class="exam-option"><input type="radio" name="q32" value="b" id="q32b"><label for="q32b">B. Before</label></div>
+  <div class="exam-option"><input type="radio" name="q32" value="c" id="q32c"><label for="q32c">C. Again</label></div>
+  <div class="exam-option"><input type="radio" name="q32" value="d" id="q32d"><label for="q32d">D. Together / with</label></div>
+</div>
+
+<!-- Q33 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q33.</p>
+  <p class="en-text">In the article, what new career aspiration has appeared on the top list (despite being mostly a pipe dream)?</p>
+  <div class="exam-option"><input type="radio" name="q33" value="a" id="q33a"><label for="q33a">A. Social media influencer</label></div>
+  <div class="exam-option"><input type="radio" name="q33" value="b" id="q33b"><label for="q33b">B. Racing car driver</label></div>
+  <div class="exam-option"><input type="radio" name="q33" value="c" id="q33c"><label for="q33c">C. Astronaut</label></div>
+  <div class="exam-option"><input type="radio" name="q33" value="d" id="q33d"><label for="q33d">D. Olympic athlete</label></div>
+</div>
+
+<!-- Q34 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q34.</p>
+  <p class="en-text">Which sentence uses "went on + infinitive" correctly?</p>
+  <div class="exam-option"><input type="radio" name="q34" value="a" id="q34a"><label for="q34a">A. The teacher went on telling us for hours about the same topic. (= continued)</label></div>
+  <div class="exam-option"><input type="radio" name="q34" value="b" id="q34b"><label for="q34b">B. She went on working all night without a break.</label></div>
+  <div class="exam-option"><input type="radio" name="q34" value="c" id="q34c"><label for="q34c">C. The teacher went on to tell us about a completely new project. (= then moved on)</label></div>
+  <div class="exam-option"><input type="radio" name="q34" value="d" id="q34d"><label for="q34d">D. He went on to sleeping after the meeting.</label></div>
+</div>
+
+<!-- Q35 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q35.</p>
+  <p class="en-text">Which of these is the correct connotation analysis?</p>
+  <div class="exam-option"><input type="radio" name="q35" value="a" id="q35a"><label for="q35a">A. "Controlling" is negative; "confident" is a positive alternative</label></div>
+  <div class="exam-option"><input type="radio" name="q35" value="b" id="q35b"><label for="q35b">B. "Trusting" and "gullible" have the same positive connotation</label></div>
+  <div class="exam-option"><input type="radio" name="q35" value="c" id="q35c"><label for="q35c">C. "Resolute" and "adamant" both carry negative connotations</label></div>
+  <div class="exam-option"><input type="radio" name="q35" value="d" id="q35d"><label for="q35d">D. "Aloof" is always a positive quality in a leader</label></div>
+</div>
+
+<!-- Q36 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q36.</p>
+  <p class="en-text">What does "apt to" mean in "These dreams are apt to change at various stages of life"?</p>
+  <div class="exam-option"><input type="radio" name="q36" value="a" id="q36a"><label for="q36a">A. Forced to</label></div>
+  <div class="exam-option"><input type="radio" name="q36" value="b" id="q36b"><label for="q36b">B. Unlikely to</label></div>
+  <div class="exam-option"><input type="radio" name="q36" value="c" id="q36c"><label for="q36c">C. Forbidden to</label></div>
+  <div class="exam-option"><input type="radio" name="q36" value="d" id="q36d"><label for="q36d">D. Likely to / inclined to</label></div>
+</div>
+
+<!-- Q37 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q37.</p>
+  <p class="en-text">In a formal report, the phrase "The purpose of this report is to…" signals:</p>
+  <div class="exam-option"><input type="radio" name="q37" value="a" id="q37a"><label for="q37a">A. The conclusion of the report</label></div>
+  <div class="exam-option"><input type="radio" name="q37" value="b" id="q37b"><label for="q37b">B. The introduction and the writer's intent</label></div>
+  <div class="exam-option"><input type="radio" name="q37" value="c" id="q37c"><label for="q37c">C. A personal opinion</label></div>
+  <div class="exam-option"><input type="radio" name="q37" value="d" id="q37d"><label for="q37d">D. A recommendation</label></div>
+</div>
+
+<!-- Q38 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q38.</p>
+  <p class="en-text">What does "strike the right balance" mean?</p>
+  <div class="exam-option"><input type="radio" name="q38" value="a" id="q38a"><label for="q38a">A. To hit someone correctly</label></div>
+  <div class="exam-option"><input type="radio" name="q38" value="b" id="q38b"><label for="q38b">B. To overwork yourself</label></div>
+  <div class="exam-option"><input type="radio" name="q38" value="c" id="q38c"><label for="q38c">C. To find the right equilibrium between two things</label></div>
+  <div class="exam-option"><input type="radio" name="q38" value="d" id="q38d"><label for="q38d">D. To start a new career</label></div>
+</div>
+
+<!-- Q39 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q39.</p>
+  <p class="en-text">Which of these is correctly formed as a PASSIVE INFINITIVE?</p>
+  <div class="exam-option"><input type="radio" name="q39" value="a" id="q39a"><label for="q39a">A. I was lucky to have been given a prize.</label></div>
+  <div class="exam-option"><input type="radio" name="q39" value="b" id="q39b"><label for="q39b">B. I was lucky having given a prize.</label></div>
+  <div class="exam-option"><input type="radio" name="q39" value="c" id="q39c"><label for="q39c">C. I was lucky to give being a prize.</label></div>
+  <div class="exam-option"><input type="radio" name="q39" value="d" id="q39d"><label for="q39d">D. I was lucky been given a prize.</label></div>
+</div>
+
+<!-- Q40 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q40.</p>
+  <p class="en-text">What is the main difference between "formal" and "informal" register?</p>
+  <div class="exam-option"><input type="radio" name="q40" value="a" id="q40a"><label for="q40a">A. Formal is shorter; informal is longer</label></div>
+  <div class="exam-option"><input type="radio" name="q40" value="b" id="q40b"><label for="q40b">B. Formal uses slang; informal uses technical vocabulary</label></div>
+  <div class="exam-option"><input type="radio" name="q40" value="c" id="q40c"><label for="q40c">C. They are the same thing</label></div>
+  <div class="exam-option"><input type="radio" name="q40" value="d" id="q40d"><label for="q40d">D. Formal is used in professional/official contexts; informal with friends/family</label></div>
+</div>
+
+<!-- Q41 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q41.</p>
+  <p class="en-text">What does Lily's story in Life Skills illustrate?</p>
+  <div class="exam-option"><input type="radio" name="q41" value="a" id="q41a"><label for="q41a">A. That only confident people can lead</label></div>
+  <div class="exam-option"><input type="radio" name="q41" value="b" id="q41b"><label for="q41b">B. That shy people can become effective leaders when given the opportunity</label></div>
+  <div class="exam-option"><input type="radio" name="q41" value="c" id="q41c"><label for="q41c">C. That language skills are unimportant in leadership</label></div>
+  <div class="exam-option"><input type="radio" name="q41" value="d" id="q41d"><label for="q41d">D. That school trips are always dangerous</label></div>
+</div>
+
+<!-- Q42 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q42.</p>
+  <p class="en-text">Which sentence contains a PERFECT GERUND expressing an action before another past action?</p>
+  <div class="exam-option"><input type="radio" name="q42" value="a" id="q42a"><label for="q42a">A. She enjoys working late.</label></div>
+  <div class="exam-option"><input type="radio" name="q42" value="b" id="q42b"><label for="q42b">B. He avoided making mistakes.</label></div>
+  <div class="exam-option"><input type="radio" name="q42" value="c" id="q42c"><label for="q42c">C. She was ashamed of having lied to her manager.</label></div>
+  <div class="exam-option"><input type="radio" name="q42" value="d" id="q42d"><label for="q42d">D. They risk losing the contract.</label></div>
+</div>
+
+<!-- Q43 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q43.</p>
+  <p class="en-text">What does "draw a line between work and personal life" mean in context?</p>
+  <div class="exam-option"><input type="radio" name="q43" value="a" id="q43a"><label for="q43a">A. To set a clear limit so work doesn't invade personal time</label></div>
+  <div class="exam-option"><input type="radio" name="q43" value="b" id="q43b"><label for="q43b">B. To draw a diagram comparing jobs</label></div>
+  <div class="exam-option"><input type="radio" name="q43" value="c" id="q43c"><label for="q43c">C. To quit your job</label></div>
+  <div class="exam-option"><input type="radio" name="q43" value="d" id="q43d"><label for="q43d">D. To compare work and home environments</label></div>
+</div>
+
+<!-- Q44 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q44.</p>
+  <p class="en-text">The suffix "-ment" (as in "achievement") forms:</p>
+  <div class="exam-option"><input type="radio" name="q44" value="a" id="q44a"><label for="q44a">A. Adjectives from nouns</label></div>
+  <div class="exam-option"><input type="radio" name="q44" value="b" id="q44b"><label for="q44b">B. Adverbs from adjectives</label></div>
+  <div class="exam-option"><input type="radio" name="q44" value="c" id="q44c"><label for="q44c">C. Verbs from nouns</label></div>
+  <div class="exam-option"><input type="radio" name="q44" value="d" id="q44d"><label for="q44d">D. Nouns from verbs, showing the result or process of an action</label></div>
+</div>
+
+<!-- Q45 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q45.</p>
+  <p class="en-text">In the report model (p.57), which section explains the positive and negative sides of the experience?</p>
+  <div class="exam-option"><input type="radio" name="q45" value="a" id="q45a"><label for="q45a">A. Introduction</label></div>
+  <div class="exam-option"><input type="radio" name="q45" value="b" id="q45b"><label for="q45b">B. Benefits</label></div>
+  <div class="exam-option"><input type="radio" name="q45" value="c" id="q45c"><label for="q45c">C. Conclusion</label></div>
+  <div class="exam-option"><input type="radio" name="q45" value="d" id="q45d"><label for="q45d">D. Recommendations</label></div>
+</div>
+
+<!-- Q46 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q46.</p>
+  <p class="en-text">Which verb CANNOT be followed by a gerund?</p>
+  <div class="exam-option"><input type="radio" name="q46" value="a" id="q46a"><label for="q46a">A. risk</label></div>
+  <div class="exam-option"><input type="radio" name="q46" value="b" id="q46b"><label for="q46b">B. avoid</label></div>
+  <div class="exam-option"><input type="radio" name="q46" value="c" id="q46c"><label for="q46c">C. hope</label></div>
+  <div class="exam-option"><input type="radio" name="q46" value="d" id="q46d"><label for="q46d">D. envisage</label></div>
+</div>
+
+<!-- Q47 -->
+<div class="exam-q" data-correct="a">
+  <p class="q-num">Q47.</p>
+  <p class="en-text">Which of these idioms means "to understand something important"?</p>
+  <div class="exam-option"><input type="radio" name="q47" value="a" id="q47a"><label for="q47a">A. grasp the significance</label></div>
+  <div class="exam-option"><input type="radio" name="q47" value="b" id="q47b"><label for="q47b">B. call it a day</label></div>
+  <div class="exam-option"><input type="radio" name="q47" value="c" id="q47c"><label for="q47c">C. blow a fuse</label></div>
+  <div class="exam-option"><input type="radio" name="q47" value="d" id="q47d"><label for="q47d">D. work one's way up</label></div>
+</div>
+
+<!-- Q48 -->
+<div class="exam-q" data-correct="d">
+  <p class="q-num">Q48.</p>
+  <p class="en-text">Which combination shows CORRECT use of vocabulary from Unit 10?</p>
+  <div class="exam-option"><input type="radio" name="q48" value="a" id="q48a"><label for="q48a">A. She strived for success but it didn't pay dividends — so she called it a week.</label></div>
+  <div class="exam-option"><input type="radio" name="q48" value="b" id="q48b"><label for="q48b">B. He blew a rut when stuck in a fuse at work.</label></div>
+  <div class="exam-option"><input type="radio" name="q48" value="c" id="q48c"><label for="q48c">C. She juggled the balance and struck the socks off every demand.</label></div>
+  <div class="exam-option"><input type="radio" name="q48" value="d" id="q48d"><label for="q48d">D. She strived to maintain a healthy work-life balance, working her socks off to meet her targets.</td></tr></div>
+</div>
+
+<!-- Q49 -->
+<div class="exam-q" data-correct="b">
+  <p class="q-num">Q49.</p>
+  <p class="en-text">What is meant by "cutting out to be a leader"?</p>
+  <div class="exam-option"><input type="radio" name="q49" value="a" id="q49a"><label for="q49a">A. Physically cutting something in a leadership role</label></div>
+  <div class="exam-option"><input type="radio" name="q49" value="b" id="q49b"><label for="q49b">B. Being naturally suited or having the right qualities to lead</label></div>
+  <div class="exam-option"><input type="radio" name="q49" value="c" id="q49c"><label for="q49c">C. Deciding to stop being a leader</label></div>
+  <div class="exam-option"><input type="radio" name="q49" value="d" id="q49d"><label for="q49d">D. Removing someone from a leadership position</label></div>
+</div>
+
+<!-- Q50 -->
+<div class="exam-q" data-correct="c">
+  <p class="q-num">Q50.</p>
+  <p class="en-text">Which sentence demonstrates advanced understanding of the PASSIVE PERFECT INFINITIVE?</p>
+  <div class="exam-option"><input type="radio" name="q50" value="a" id="q50a"><label for="q50a">A. She was lucky having given the award.</label></div>
+  <div class="exam-option"><input type="radio" name="q50" value="b" id="q50b"><label for="q50b">B. She expected being rewarded for her efforts.</label></div>
+  <div class="exam-option"><input type="radio" name="q50" value="c" id="q50c"><label for="q50c">C. She was lucky to have been given such a unique opportunity early in her career.</label></div>
+  <div class="exam-option"><input type="radio" name="q50" value="d" id="q50d"><label for="q50d">D. She was rewarded to having been lucky with her career.</label></div>
+</div>
+
+<div class="text-center my-4">
+  <button type="button" class="btn btn-lg px-5 text-white" style="background:var(--accent);border-radius:50px;font-size:1.2rem;font-family:'Tajawal',sans-serif" onclick="submitExam()">
+    ✅ تسليم الاختبار | Submit Exam
+  </button>
+</div>
+</form>
+
+<!-- GRADE BOX -->
+<div id="grade-box" class="d-none mt-4"></div>
+
+</div><!-- end tab-exam -->
+</div><!-- end tab-content -->
+</div><!-- end container -->
+
+<footer class="text-center py-4 mt-4" style="background:var(--dark);color:#aaa;font-size:.85rem">
+  <p>Unit 10 — Up the Ladder | الوحدة 10 — نحو القمة | ورقة دراسية ثنائية اللغة</p>
+  <p style="font-size:.75rem">للاستخدام التعليمي — For Educational Use Only</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ---- VOCAB SEARCH ----
+document.getElementById('vocabSearch').addEventListener('input', function(){
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('#vocabTable tbody tr').forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+});
+
+// ---- AFFIX SEARCH ----
+document.getElementById('affixSearch').addEventListener('input', function(){
+  const q = this.value.toLowerCase();
+  ['prefixTable','suffixTable'].forEach(id => {
+    document.querySelectorAll('#'+id+' tbody tr').forEach(row => {
+      row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+});
+
+// ---- EXAM PROGRESS ----
+document.querySelectorAll('#examForm input[type=radio]').forEach(r => {
+  r.addEventListener('change', updateProgress);
+});
+function updateProgress(){
+  const total = 50;
+  const answered = new Set([...document.querySelectorAll('#examForm input[type=radio]:checked')].map(r=>r.name)).size;
+  const pct = Math.round(answered/total*100);
+  document.getElementById('exam-progress').style.width = pct+'%';
+  document.getElementById('progress-text').textContent = answered+' / '+total+' answered';
+}
+
+// ---- SUBMIT EXAM ----
+function submitExam(){
+  const questions = document.querySelectorAll('.exam-q');
+  let score = 0;
+  questions.forEach(q => {
+    const correct = q.dataset.correct;
+    const name = q.querySelector('input[type=radio]').name;
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    // highlight options
+    q.querySelectorAll('.exam-option').forEach(opt => {
+      const inp = opt.querySelector('input');
+      const lbl = opt.querySelector('label');
+      if(inp.value === correct){
+        lbl.classList.add('correct-ans');
+        lbl.innerHTML += ' ✅';
+      }
+      if(selected && inp.value === selected.value && inp.value !== correct){
+        lbl.classList.add('wrong-ans');
+        lbl.innerHTML += ' ❌';
+      }
+      inp.disabled = true;
+    });
+    if(selected && selected.value === correct) score++;
+    // add correct answer note
+    if(!selected || selected.value !== correct){
+      const note = document.createElement('div');
+      note.className = 'show-correct mt-1';
+      note.innerHTML = `✅ الإجابة الصحيحة: ${correct.toUpperCase()}`;
+      q.appendChild(note);
+    }
+  });
+  // grade
+  const pct = Math.round(score/50*100);
+  let grade='', color='', ar='';
+  if(pct>=90){grade='A+';color='#1e8449';ar='ممتاز! 🌟';}
+  else if(pct>=80){grade='A';color='#1a6b72';ar='جيد جدًا 👏';}
+  else if(pct>=70){grade='B';color='#d4a017';ar='جيد 👍';}
+  else if(pct>=60){grade='C';color='#c0392b';ar='مقبول — راجع دروسك';}
+  else{grade='D';color='#7f8c8d';ar='يحتاج إلى مراجعة شاملة';}
+  const box = document.getElementById('grade-box');
+  box.className = 'mt-4 p-4 rounded-3 text-center shadow';
+  box.style.background = color+'22';
+  box.style.border = '3px solid '+color;
+  box.innerHTML = `
+    <div style="font-size:4rem;color:${color}">${grade}</div>
+    <div style="font-size:1.8rem;color:${color};font-weight:900">${score} / 50 — ${pct}%</div>
+    <div style="font-size:1.2rem;margin-top:.5rem">${ar}</div>
+    <div class="en-text mt-2" style="font-size:.95rem;color:#555">Scroll up to review all answers — correct answers are highlighted in green</div>
+    <button onclick="location.reload()" class="btn btn-outline-secondary mt-3">🔄 إعادة الاختبار | Retry</button>
+  `;
+  box.classList.remove('d-none');
+  box.scrollIntoView({behavior:'smooth'});
+  document.querySelector('[data-bs-target="#tab-exam"]').click();
+}
+</script>
+</body>
+</html>
