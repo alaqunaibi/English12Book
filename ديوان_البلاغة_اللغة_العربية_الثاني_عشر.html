@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>ديوان البلاغة | مرشدك إلى اللغة العربية - الثاني عشر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.rtl.min.css">
+<style>
+/* ============================================================
+   نظام التصميم | ديوان البلاغة
+   ============================================================ */
+:root{
+  --ink:#211811;
+  --ink-soft:#4a3d30;
+  --teal-deep:#0e5259;
+  --teal-deeper:#073638;
+  --teal-mist:#e4f0ee;
+  --burgundy:#8c2144;
+  --burgundy-deep:#5c1530;
+  --gold:#b8863a;
+  --gold-light:#d4af6a;
+  --gold-pale:#f0dfb8;
+  --parchment:#fbf5e9;
+  --parchment-card:#f6eede;
+  --parchment-deep:#efe2c4;
+  --cream-line:#e2d2ab;
+  --ok:#2f7d5f;
+  --bad:#a13333;
+  --shadow-soft:0 4px 18px rgba(33,24,17,.08);
+  --shadow-lift:0 12px 32px rgba(14,82,89,.16);
+  --radius:14px;
+  --serif-display:'Aref Ruqaa','Traditional Arabic','Segoe UI',Tahoma,serif;
+  --serif-poetry:'Amiri','Traditional Arabic',Tahoma,serif;
+  --sans:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans);
+  background:var(--parchment);
+  color:var(--ink);
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(184,134,58,.05) 0, transparent 40%),
+    radial-gradient(circle at 92% 85%, rgba(14,82,89,.05) 0, transparent 40%);
+  pointer-events:none;
+  z-index:0;
+}
+h1,h2,h3,h4,.font-display{font-family:var(--serif-display);}
+.font-poetry{font-family:var(--serif-poetry);}
+a{color:var(--teal-deep); text-decoration:none;}
+::selection{background:var(--gold-pale); color:var(--teal-deeper);}
+
+/* ---------- شمسة زخرفية (توقيع التصميم) ---------- */
+.rosette{display:inline-block; width:1em; height:1em; vertical-align:-.15em;}
+.divider-orn{
+  display:flex; align-items:center; gap:14px; margin:10px 0 26px;
+  color:var(--gold);
+}
+.divider-orn::before,.divider-orn::after{
+  content:""; flex:1; height:1px;
+  background:linear-gradient(90deg, transparent, var(--cream-line) 20%, var(--cream-line) 80%, transparent);
+}
+
+/* ---------- شريط علوي ---------- */
+.top-bar{
+  background:linear-gradient(135deg, var(--teal-deeper), var(--teal-deep) 60%);
+  color:#fdf8ec;
+  position:sticky; top:0; z-index:1000;
+  box-shadow:0 2px 18px rgba(0,0,0,.18);
+}
+.top-bar-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:11px 18px;
+  max-width:1320px; margin:0 auto;
+}
+.brand{display:flex; align-items:center; gap:12px;}
+.brand-mark{
+  width:42px; height:42px; flex:none;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.25));
+}
+.brand-text{display:flex; flex-direction:column; line-height:1.15;}
+.brand-text b{font-family:var(--serif-display); font-size:1.32rem; letter-spacing:.5px;}
+.brand-text span{font-size:.68rem; color:var(--gold-light); font-weight:500; letter-spacing:.3px;}
+.top-actions{display:flex; align-items:center; gap:8px;}
+.top-actions .btn{
+  --bs-btn-padding-y:.4rem; --bs-btn-padding-x:.85rem; font-size:.85rem;
+  border-radius:30px; font-weight:600;
+}
+.btn-gold{
+  background:linear-gradient(135deg, var(--gold-light), var(--gold));
+  border:none; color:#2a1c05;
+}
+.btn-gold:hover{background:linear-gradient(135deg, var(--gold), var(--gold-light)); color:#2a1c05;}
+.btn-outline-parchment{
+  border:1.5px solid rgba(251,245,233,.5); color:#fdf8ec; background:transparent;
+}
+.btn-outline-parchment:hover{background:rgba(251,245,233,.14); color:#fff; border-color:#fff;}
+
+/* ---------- شريط التبويبات القابل للتمرير الأفقي ---------- */
+.tabs-scroll-wrap{
+  background:var(--parchment-card);
+  border-bottom:1px solid var(--cream-line);
+  position:sticky; top:64px; z-index:990;
+  box-shadow:0 3px 10px rgba(33,24,17,.05);
+}
+.tabs-scroll{
+  display:flex; gap:8px; overflow-x:auto; scroll-behavior:smooth;
+  padding:10px 18px; max-width:1320px; margin:0 auto;
+  scrollbar-width:thin; scrollbar-color:var(--gold) transparent;
+}
+.tabs-scroll::-webkit-scrollbar{height:6px;}
+.tabs-scroll::-webkit-scrollbar-thumb{background:var(--cream-line); border-radius:10px;}
+.tabs-scroll::-webkit-scrollbar-thumb:hover{background:var(--gold);}
+#unitTabsInject{display:contents;} /* حتى لا يكسر الحاوية المرنة أثناء إدراج تبويبات الوحدات */
+.tab-pill{
+  flex:none; white-space:nowrap;
+  display:flex; align-items:center; gap:7px;
+  padding:8px 16px; border-radius:30px;
+  font-size:.86rem; font-weight:600; color:var(--ink-soft);
+  background:#fff; border:1px solid var(--cream-line);
+  cursor:pointer; transition:.18s ease; user-select:none;
+}
+.tab-pill .num{
+  width:20px; height:20px; border-radius:50%;
+  background:var(--teal-mist); color:var(--teal-deep);
+  display:flex; align-items:center; justify-content:center;
+  font-size:.68rem; font-weight:800; flex:none;
+}
+.tab-pill:hover{border-color:var(--gold); transform:translateY(-1px); box-shadow:var(--shadow-soft);}
+.tab-pill.active{
+  background:linear-gradient(135deg, var(--teal-deep), var(--teal-deeper));
+  color:#fff; border-color:transparent; box-shadow:var(--shadow-lift);
+}
+.tab-pill.active .num{background:rgba(255,255,255,.22); color:#fff;}
+.tab-pill.special{border-color:var(--burgundy); color:var(--burgundy);}
+.tab-pill.special.active{background:linear-gradient(135deg, var(--burgundy), var(--burgundy-deep)); color:#fff;}
+.scroll-hint{
+  flex:none; display:flex; align-items:center; color:var(--gold); opacity:.7; font-size:.75rem; padding:0 4px;
+}
+
+/* ---------- محتوى عام ---------- */
+.page-wrap{max-width:1180px; margin:0 auto; padding:28px 18px 90px; position:relative; z-index:1;}
+.view{display:none; animation:fadeUp .45s ease;}
+.view.active{display:block;}
+@keyframes fadeUp{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+/* ---------- بطاقة قسم ---------- */
+.section-card{
+  background:#fffdf8; border:1px solid var(--cream-line); border-radius:var(--radius);
+  padding:26px 28px; margin-bottom:22px; box-shadow:var(--shadow-soft); position:relative;
+}
+.section-card.tinted{background:var(--teal-mist); border-color:#cfe4e1;}
+.section-tag{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--teal-deep); color:#fff; font-weight:700; font-size:.82rem;
+  padding:6px 16px; border-radius:30px; margin-bottom:16px;
+}
+.section-tag.tag-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#2a1c05;}
+.section-tag.tag-burgundy{background:var(--burgundy);}
+.section-tag.tag-outline{background:transparent; border:1.5px solid var(--teal-deep); color:var(--teal-deep);}
+
+/* ---------- ترويسة الوحدة ---------- */
+.unit-hero{
+  border-radius:20px; padding:38px 34px; margin-bottom:26px; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, var(--teal-deeper), var(--teal-deep) 65%, #147078);
+  color:#fdf8ec;
+}
+.unit-hero::after{
+  content:""; position:absolute; inset:0;
+  background-image:radial-gradient(circle at 88% -10%, rgba(212,175,106,.25), transparent 45%);
+}
+.unit-hero .eyebrow{
+  display:flex; align-items:center; gap:10px; color:var(--gold-light); font-weight:700;
+  font-size:.85rem; margin-bottom:10px; position:relative;
+}
+.unit-hero h1{font-size:2.5rem; margin:0 0 8px; position:relative;}
+.unit-hero .desc{opacity:.92; max-width:640px; position:relative; font-size:1.02rem;}
+.unit-hero .meta-chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; position:relative;}
+.meta-chip{
+  background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22);
+  padding:6px 14px; border-radius:30px; font-size:.8rem; font-weight:600;
+  display:flex; align-items:center; gap:6px;
+}
+.unit-hero .rosette-deco{position:absolute; left:20px; top:50%; transform:translateY(-50%); width:120px; height:120px; opacity:.16;}
+
+/* ---------- تبويبات فرعية داخل الوحدة ---------- */
+.subtabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
+.subtab-btn{
+  padding:9px 18px; border-radius:10px; border:1.5px solid var(--cream-line); background:#fff;
+  font-weight:700; font-size:.88rem; color:var(--ink-soft); cursor:pointer; transition:.15s;
+  display:flex; align-items:center; gap:7px;
+}
+.subtab-btn:hover{border-color:var(--gold);}
+.subtab-btn.active{background:var(--ink); border-color:var(--ink); color:#fff;}
+.subtab-btn.active{background:linear-gradient(135deg, var(--burgundy), var(--burgundy-deep)); border-color:transparent; color:#fff;}
+.subpanel{display:none;}
+.subpanel.active{display:block; animation:fadeUp .35s ease;}
+
+/* ---------- نص قرائي / شعري ---------- */
+.reading-block{
+  background:var(--parchment-card); border-radius:var(--radius); padding:26px 30px;
+  border:1px solid var(--cream-line); margin-bottom:20px; position:relative;
+}
+.reading-block .quote-mark{
+  position:absolute; top:6px; right:18px; font-family:var(--serif-display); font-size:3.4rem;
+  color:var(--gold-pale); line-height:1; user-select:none;
+}
+.poetry-line{
+  font-family:var(--serif-poetry); font-size:1.28rem; text-align:center; margin:0 auto 14px;
+  max-width:720px; color:var(--teal-deeper); line-height:2.3;
+}
+.poetry-line .hemistich{display:inline-block; padding:0 18px;}
+.poetry-line .sep{color:var(--gold); font-weight:700; padding:0 6px;}
+.author-line{text-align:left; color:var(--burgundy); font-weight:700; margin-top:14px; font-size:.92rem;}
+
+/* ---------- بطاقة المؤلف/الأديب ---------- */
+.author-card{
+  display:flex; gap:18px; align-items:flex-start; background:#fff; border:1px solid var(--cream-line);
+  border-radius:var(--radius); padding:20px 22px; margin-bottom:20px;
+}
+.author-avatar{
+  flex:none; width:64px; height:64px; border-radius:50%;
+  background:linear-gradient(135deg, var(--gold-light), var(--gold));
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif-display); font-size:1.6rem; color:#3a2708; font-weight:700;
+  box-shadow:0 4px 10px rgba(184,134,58,.35);
+}
+.author-card h4{margin:0 0 4px; color:var(--teal-deeper);}
+.author-card .dates{color:var(--burgundy); font-weight:700; font-size:.85rem; margin-inline-start:8px;}
+
+/* ---------- شبكة المفردات (المعجم) ---------- */
+.vocab-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:12px;}
+.vocab-item{
+  background:#fff; border:1px solid var(--cream-line); border-radius:10px; padding:13px 16px;
+  transition:.15s;
+}
+.vocab-item:hover{border-color:var(--gold); box-shadow:var(--shadow-soft); transform:translateY(-2px);}
+.vocab-item .term{color:var(--burgundy); font-weight:800; font-size:1.02rem;}
+.vocab-item .mean{color:var(--ink-soft); font-size:.92rem; margin-top:3px;}
+
+/* ---------- قاعدة نحوية / صرفية ---------- */
+.rule-card{
+  border-inline-start:5px solid var(--teal-deep); background:#fff; border-radius:0 var(--radius) var(--radius) 0;
+  padding:18px 22px; margin-bottom:16px; box-shadow:var(--shadow-soft);
+}
+.rule-card h5{color:var(--teal-deep); font-weight:800; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+.rule-card .example-box{
+  background:var(--teal-mist); border-radius:8px; padding:10px 14px; margin-top:10px; font-size:.94rem;
+}
+.rule-card .example-box .ex-ar{font-family:var(--serif-poetry); color:var(--teal-deeper); font-size:1.08rem;}
+
+/* ---------- نصائح الكتابة ---------- */
+.tip-list{list-style:none; padding:0; margin:0;}
+.tip-list li{
+  display:flex; gap:10px; padding:9px 0; border-bottom:1px dashed var(--cream-line); align-items:flex-start;
+}
+.tip-list li:last-child{border-bottom:none;}
+.tip-list li .ic{flex:none; color:var(--gold); font-size:1.1rem; margin-top:2px;}
+
+/* ---------- الحل خطوة بخطوة ---------- */
+.step-solution{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius); padding:18px 20px; margin:14px 0;}
+.step-solution .step{display:flex; gap:12px; margin-bottom:10px; align-items:flex-start;}
+.step-solution .step .badge-step{
+  flex:none; width:26px; height:26px; border-radius:50%; background:var(--teal-deep); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:.78rem; font-weight:800;
+}
+.final-answer{
+  background:#1f7a4d; color:#fff; font-weight:800; border-radius:8px; padding:10px 16px; margin-top:8px;
+  display:inline-block; font-size:1.02rem; box-shadow:0 3px 10px rgba(31,122,77,.3);
+}
+
+/* ---------- المعجم القابل للبحث ---------- */
+.glossary-search{position:sticky; top:120px; z-index:5; background:var(--parchment); padding:10px 0 16px;}
+.search-box{position:relative;}
+.search-box input{
+  width:100%; padding:14px 50px 14px 18px; border-radius:30px; border:2px solid var(--cream-line);
+  font-family:var(--sans); font-size:1rem; background:#fff; transition:.2s;
+}
+.search-box input:focus{outline:none; border-color:var(--teal-deep); box-shadow:0 0 0 4px rgba(14,82,89,.1);}
+.search-box .ic-search{position:absolute; right:18px; top:50%; transform:translateY(-50%); color:var(--gold);}
+.glossary-count{color:var(--ink-soft); font-size:.85rem; margin-top:8px;}
+.glossary-table-wrap{background:#fff; border-radius:var(--radius); border:1px solid var(--cream-line); overflow:hidden;}
+.glossary-row{
+  display:grid; grid-template-columns:170px 1fr 130px; gap:14px; padding:14px 20px;
+  border-bottom:1px solid var(--parchment-deep); align-items:center;
+}
+.glossary-row:last-child{border-bottom:none;}
+.glossary-row:hover{background:var(--teal-mist);}
+.glossary-row .g-term{font-weight:800; color:var(--burgundy); font-size:1.05rem;}
+.glossary-row .g-mean{color:var(--ink-soft);}
+.glossary-row .g-unit{font-size:.75rem; color:var(--teal-deep); font-weight:700; text-align:left;}
+.g-highlight{background:var(--gold-pale); border-radius:3px; padding:0 2px;}
+
+/* ---------- الاختبار الشامل ---------- */
+.quiz-intro{text-align:center; padding:40px 20px;}
+.quiz-intro .big-num{font-family:var(--sans); font-weight:800; font-size:4.2rem; color:var(--teal-deep); line-height:1.3; padding:0.1em 0;}
+.quiz-progress-wrap{background:#fff; border-radius:30px; padding:6px; border:1px solid var(--cream-line); margin-bottom:26px;}
+.quiz-progress-bar{height:10px; border-radius:30px; background:var(--parchment-deep); overflow:hidden;}
+.quiz-progress-fill{height:100%; background:linear-gradient(90deg, var(--gold), var(--teal-deep)); transition:.3s;}
+.quiz-meta-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:.88rem; color:var(--ink-soft); font-weight:600;}
+.q-card{background:#fff; border-radius:var(--radius); padding:28px 30px; box-shadow:var(--shadow-lift); border:1px solid var(--cream-line);}
+.q-diff{display:inline-flex; align-items:center; gap:6px; font-size:.72rem; font-weight:800; padding:4px 12px; border-radius:30px; margin-bottom:14px;}
+.q-diff.easy{background:#e1f3e8; color:var(--ok);}
+.q-diff.medium{background:var(--gold-pale); color:#7a5518;}
+.q-diff.hard{background:#f6dede; color:var(--bad);}
+.q-points{float:left; background:var(--teal-mist); color:var(--teal-deep); font-weight:800; font-size:.78rem; padding:4px 12px; border-radius:30px;}
+.q-text{font-size:1.18rem; font-weight:700; color:var(--ink); margin:6px 0 22px; line-height:1.9;}
+.q-text .q-ar{font-family:var(--serif-poetry); color:var(--teal-deeper);}
+.q-options{display:flex; flex-direction:column; gap:11px;}
+.q-option{
+  display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:11px;
+  border:2px solid var(--cream-line); cursor:pointer; transition:.15s; background:#fffdf8;
+}
+.q-option:hover{border-color:var(--gold);}
+.q-option .opt-letter{
+  flex:none; width:30px; height:30px; border-radius:50%; border:2px solid var(--cream-line);
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.85rem; color:var(--ink-soft);
+}
+.q-option.selected{border-color:var(--teal-deep); background:var(--teal-mist);}
+.q-option.selected .opt-letter{background:var(--teal-deep); border-color:var(--teal-deep); color:#fff;}
+.q-option.correct{border-color:var(--ok); background:#e6f5ec;}
+.q-option.correct .opt-letter{background:var(--ok); border-color:var(--ok); color:#fff;}
+.q-option.wrong{border-color:var(--bad); background:#fbeaea;}
+.q-option.wrong .opt-letter{background:var(--bad); border-color:var(--bad); color:#fff;}
+.q-option.disabled{cursor:default;}
+.quiz-nav-row{display:flex; justify-content:space-between; margin-top:24px; gap:10px;}
+.quiz-explain{
+  margin-top:18px; padding:16px 18px; border-radius:10px; background:var(--teal-mist); font-size:.94rem;
+  border-inline-start:4px solid var(--teal-deep); display:none;
+}
+.quiz-explain.show{display:block; animation:fadeUp .3s ease;}
+
+/* نتائج الاختبار */
+.results-hero{text-align:center; padding:34px 20px;}
+.score-ring{
+  width:190px; height:190px; margin:0 auto 20px; position:relative;
+}
+.score-ring svg{transform:rotate(-90deg);}
+.score-ring .ring-bg{fill:none; stroke:var(--parchment-deep); stroke-width:12;}
+.score-ring .ring-fill{fill:none; stroke:url(#ringGrad); stroke-width:12; stroke-linecap:round; transition:stroke-dashoffset 1s ease;}
+.score-ring .ring-text{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.score-ring .ring-text b{font-size:2.4rem; color:var(--teal-deep); font-family:var(--sans); font-weight:800;}
+.score-ring .ring-text span{font-size:.78rem; color:var(--ink-soft);}
+.review-item{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius); padding:20px 22px; margin-bottom:14px;}
+.review-item.wrong-item{border-inline-start:5px solid var(--bad);}
+.review-item .rev-q{font-weight:700; margin-bottom:10px;}
+.review-item .rev-answers{display:flex; flex-direction:column; gap:6px; font-size:.92rem;}
+.review-item .rev-your{color:var(--bad);}
+.review-item .rev-correct{color:var(--ok);}
+.review-item .rev-explain{margin-top:10px; padding-top:10px; border-top:1px dashed var(--cream-line); color:var(--ink-soft); font-size:.92rem;}
+
+/* ---------- ورقة الغش ---------- */
+.cheat-unit-block{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius); padding:20px 24px; margin-bottom:16px; break-inside:avoid;}
+.cheat-unit-block h5{color:var(--burgundy); font-weight:800; border-bottom:2px solid var(--gold-pale); padding-bottom:8px; margin-bottom:12px;}
+.cheat-list{margin:0; padding-inline-start:20px; font-size:.92rem;}
+.cheat-list li{margin-bottom:6px;}
+.cheat-columns{column-count:1; column-gap:18px;}
+@media(min-width:900px){.cheat-columns{column-count:2;}}
+
+/* ---------- التحدي ---------- */
+.challenge-card{
+  background:linear-gradient(160deg,#fffdf8,var(--parchment-card)); border:1.5px dashed var(--gold);
+  border-radius:var(--radius); padding:20px 22px; margin-bottom:14px; cursor:pointer; transition:.2s;
+}
+.challenge-card:hover{box-shadow:var(--shadow-lift); transform:translateY(-2px);}
+.challenge-card .ch-num{color:var(--gold); font-family:var(--serif-display); font-size:1.3rem;}
+.challenge-card .ch-q{font-weight:700; margin:8px 0;}
+.challenge-card .ch-ans{
+  display:none; margin-top:12px; padding-top:12px; border-top:1px dashed var(--cream-line); color:var(--teal-deeper);
+}
+.challenge-card.open .ch-ans{display:block; animation:fadeUp .25s ease;}
+.challenge-card .ch-toggle{font-size:.8rem; color:var(--teal-deep); font-weight:700;}
+
+/* ---------- العروض / Canvas ---------- */
+.meter-card{background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius); padding:22px 24px; margin-bottom:20px;}
+.meter-card h5{color:var(--teal-deep); font-family:var(--serif-display); font-size:1.5rem; margin-bottom:4px;}
+.meter-formula{font-family:var(--serif-poetry); font-size:1.15rem; color:var(--burgundy); letter-spacing:1px; margin:10px 0;}
+canvas.meter-canvas{width:100%; max-width:100%; height:auto; border-radius:10px; background:var(--parchment-card); border:1px solid var(--cream-line);}
+.meter-play-btn{
+  display:inline-flex; align-items:center; gap:8px; background:var(--teal-deep); color:#fff; border:none;
+  padding:9px 20px; border-radius:30px; font-weight:700; font-size:.85rem; margin-top:10px; cursor:pointer;
+}
+.meter-play-btn:hover{background:var(--teal-deeper);}
+
+/* ---------- بطاقات الرئيسية ---------- */
+.hero-home{
+  border-radius:24px; padding:56px 40px; margin-bottom:32px; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, var(--teal-deeper) 0%, var(--teal-deep) 55%, #1c8188 100%);
+  color:#fdf8ec; text-align:center;
+}
+.hero-home .rosette-big{width:92px; height:92px; margin:0 auto 18px; opacity:.92;}
+.hero-home h1{font-size:clamp(2.1rem,5vw,3.4rem); margin-bottom:12px;}
+.hero-home p{max-width:600px; margin:0 auto 26px; opacity:.92; font-size:1.08rem;}
+.hero-home .hero-cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+.home-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; margin-bottom:30px;}
+.home-card{
+  background:#fff; border:1px solid var(--cream-line); border-radius:var(--radius); padding:24px;
+  cursor:pointer; transition:.2s; text-align:center;
+}
+.home-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lift); border-color:var(--gold);}
+.home-card .hc-ic{font-size:2.1rem; margin-bottom:10px;}
+.home-card h5{color:var(--teal-deeper); margin-bottom:6px;}
+.home-card p{font-size:.86rem; color:var(--ink-soft); margin:0;}
+.units-overview{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:16px;}
+.unit-mini-card{
+  background:#fff; border:1px solid var(--cream-line); border-radius:12px; padding:18px 20px; cursor:pointer;
+  transition:.18s; display:flex; gap:14px; align-items:flex-start;
+}
+.unit-mini-card:hover{border-color:var(--gold); box-shadow:var(--shadow-soft); transform:translateY(-2px);}
+.unit-mini-card .umc-num{
+  flex:none; width:38px; height:38px; border-radius:10px; background:var(--teal-mist); color:var(--teal-deep);
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-family:var(--serif-display); font-size:1.1rem;
+}
+.unit-mini-card.prosody .umc-num{background:var(--gold-pale); color:#7a5518;}
+.unit-mini-card h6{margin:0 0 4px; color:var(--ink); font-weight:800; font-size:.98rem;}
+.unit-mini-card small{color:var(--ink-soft); font-size:.78rem;}
+
+/* ---------- تذييل ---------- */
+.site-footer{text-align:center; padding:30px 20px; color:var(--ink-soft); font-size:.85rem; border-top:1px solid var(--cream-line);}
+
+/* ---------- عناصر مساعدة ---------- */
+.badge-soft{background:var(--teal-mist); color:var(--teal-deep); padding:3px 10px; border-radius:20px; font-size:.72rem; font-weight:700;}
+.fill-blank{
+  display:inline-block; min-width:90px; border-bottom:2px solid var(--burgundy); text-align:center;
+  font-weight:700; color:var(--burgundy); padding:0 4px; background:transparent; font-family:inherit; font-size:1em;
+}
+input.fill-blank{outline:none;}
+input.fill-blank:focus{background:var(--gold-pale);}
+.check-btn{
+  background:var(--teal-deep); color:#fff; border:none; padding:6px 16px; border-radius:20px; font-size:.8rem; font-weight:700; cursor:pointer; margin-top:10px;
+}
+.check-btn:hover{background:var(--teal-deeper);}
+.fb-result{margin-inline-start:10px; font-weight:800; font-size:.85rem;}
+
+@media (max-width:767px){
+  .unit-hero{padding:28px 20px;}
+  .unit-hero h1{font-size:1.7rem;}
+  .unit-hero .rosette-deco{display:none;}
+  .section-card{padding:20px 18px;}
+  .glossary-row{grid-template-columns:1fr; gap:4px;}
+  .glossary-row .g-unit{text-align:right;}
+  .author-card{flex-direction:column; text-align:center; align-items:center;}
+  .top-bar-inner{padding:9px 12px;}
+  .brand-text b{font-size:1.05rem;}
+  .brand-text span{display:none;}
+  .hero-home{padding:38px 20px;}
+}
+@media (min-width:1400px){
+  .page-wrap{max-width:1280px;}
+}
+</style>
+</head>
+<body>
+
+<!-- شريط علوي -->
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <div class="brand" onclick="goHome()" style="cursor:pointer">
+      <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#d4af6a" stroke-width="2.2">
+          <circle cx="50" cy="50" r="30"/>
+          <path d="M50 20 L58 40 L80 40 L62 53 L69 74 L50 61 L31 74 L38 53 L20 40 L42 40 Z"/>
+        </g>
+        <circle cx="50" cy="50" r="6" fill="#d4af6a"/>
+      </svg>
+      <div class="brand-text">
+        <b>ديوان البلاغة</b>
+        <span>مرشدك في اللغة العربية · الثاني عشر</span>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn btn-outline-parchment" onclick="showView('glossary')"><i class="bi"></i>📖 المعجم</button>
+      <button class="btn btn-gold" onclick="showView('quiz')">📝 الاختبار الشامل</button>
+    </div>
+  </div>
+</header>
+
+<!-- تبويبات قابلة للتمرير الأفقي -->
+<div class="tabs-scroll-wrap">
+  <div class="tabs-scroll" id="tabsScroll">
+    <div class="tab-pill" data-view="home" onclick="showView('home')">🏠 الرئيسية</div>
+    <!-- سيتم إدراج تبويبات الوحدات 1-14 هنا عبر JS -->
+    <div id="unitTabsInject"></div>
+    <div class="tab-pill special" data-view="glossary" onclick="showView('glossary')">🔎 المعجم</div>
+    <div class="tab-pill special" data-view="cheatsheet" onclick="showView('cheatsheet')">🗂️ ورقة المراجعة</div>
+    <div class="tab-pill special" data-view="quiz" onclick="showView('quiz')">📝 الاختبار (٥٠)</div>
+    <div class="tab-pill special" data-view="challenge" onclick="showView('challenge')">💡 أسئلة التحدي</div>
+  </div>
+</div>
+
+<main class="page-wrap" id="mainWrap">
+
+  <!-- ================= الرئيسية ================= -->
+  <section class="view" id="view-home">
+    <div class="hero-home">
+      <svg class="rosette-big" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#d4af6a" stroke-width="1.6">
+          <circle cx="50" cy="50" r="34"/>
+          <circle cx="50" cy="50" r="26"/>
+          <path d="M50 16 L59 39 L84 39 L64 54 L72 78 L50 63 L28 78 L36 54 L16 39 L41 39 Z"/>
+        </g>
+      </svg>
+      <h1 class="font-display">ديوان البلاغة</h1>
+      <p>مرافقك الكامل في مادة اللغة العربية للصف الثاني عشر — شرح مبسّط لكل درس، ومعجم بحث فوري، واختبار تفاعلي شامل، وورقة مراجعة نهائية، لتصل إلى أعلى الدرجات بإذن الله.</p>
+      <div class="hero-cta">
+        <button class="btn btn-gold btn-lg" onclick="showView('u1')">ابدأ من الوحدة الأولى ←</button>
+        <button class="btn btn-outline-parchment btn-lg" onclick="showView('quiz')">جرّب الاختبار الشامل</button>
+      </div>
+    </div>
+
+    <div class="divider-orn"><span class="font-display" style="color:var(--gold); font-size:1.3rem;">۞</span></div>
+
+    <div class="home-grid">
+      <div class="home-card" onclick="showView('glossary')">
+        <div class="hc-ic">🔎</div>
+        <h5>معجم قابل للبحث</h5>
+        <p>كل مفردات الكتاب الصعبة مشروحة وقابلة للبحث الفوري</p>
+      </div>
+      <div class="home-card" onclick="showView('quiz')">
+        <div class="hc-ic">📝</div>
+        <h5>اختبار شامل ٥٠ سؤالًا</h5>
+        <p>تفاعلي، بمستويات صعوبة ودرجات، وشرح لكل خطأ</p>
+      </div>
+      <div class="home-card" onclick="showView('cheatsheet')">
+        <div class="hc-ic">🗂️</div>
+        <h5>ورقة مراجعة شاملة</h5>
+        <p>كل القواعد والمصطلحات في صفحة واحدة قبل الامتحان</p>
+      </div>
+      <div class="home-card" onclick="showView('challenge')">
+        <div class="hc-ic">💡</div>
+        <h5>٢٠ سؤال تحدٍّ</h5>
+        <p>أسئلة ذكية وممتعة لمن يريد التفوق الحقيقي</p>
+      </div>
+    </div>
+
+    <h3 class="font-display" style="color:var(--teal-deeper);">وحدات الكتاب الأربع عشرة</h3>
+    <div class="divider-orn"></div>
+    <div class="units-overview" id="unitsOverviewGrid"></div>
+  </section>
+
+  <!-- ================= صفحات الوحدات (تُبنى ديناميكيًا) ================= -->
+  <div id="unitViewsInject"></div>
+
+  <!-- ================= المعجم ================= -->
+  <section class="view" id="view-glossary">
+    <div class="section-tag tag-burgundy">📖 معجم المصطلحات والمفردات</div>
+    <h2 class="font-display" style="color:var(--teal-deeper);">معجم الديوان</h2>
+    <p style="color:var(--ink-soft); max-width:680px;">كل المفردات والتراكيب اللغوية الواردة في «المعجم والدلالة» عبر وحدات الكتاب الأربع عشرة، مجمّعة هنا بحث فوري وسهل.</p>
+    <div class="glossary-search">
+      <div class="search-box">
+        <input type="text" id="glossarySearchInput" placeholder="اكتب أي كلمة أو معنى للبحث... مثال: الحصور" oninput="renderGlossary()">
+        <span class="ic-search">🔍</span>
+      </div>
+      <div class="glossary-count" id="glossaryCount"></div>
+    </div>
+    <div class="glossary-table-wrap" id="glossaryTable"></div>
+  </section>
+
+  <!-- ================= ورقة المراجعة ================= -->
+  <section class="view" id="view-cheatsheet">
+    <div class="section-tag tag-gold">🗂️ ورقة المراجعة النهائية</div>
+    <h2 class="font-display" style="color:var(--teal-deeper);">كل ما تحتاجه قبل الامتحان</h2>
+    <p style="color:var(--ink-soft);">ملخّص مركّز لأهم القواعد والمفاهيم من الوحدات الأربع عشرة — راجعها في آخر ليلة بثقة.</p>
+    <div class="cheat-columns" id="cheatSheetContainer"></div>
+  </section>
+
+  <!-- ================= الاختبار الشامل ================= -->
+  <section class="view" id="view-quiz">
+    <div id="quizContainer"></div>
+  </section>
+
+  <!-- ================= أسئلة التحدي ================= -->
+  <section class="view" id="view-challenge">
+    <div class="section-tag tag-burgundy">💡 أسئلة التحدي</div>
+    <h2 class="font-display" style="color:var(--teal-deeper);">٢٠ سؤالًا لمن يريد التميّز</h2>
+    <p style="color:var(--ink-soft);">اضغط على أي سؤال لكشف الإجابة والشرح. جرّب أن تجيب بنفسك أولًا!</p>
+    <div id="challengeContainer"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  ديوان البلاغة — مُعدّ لطلبة الثانوية العامة (الفرع الأدبي/الأكاديمي) بالاعتماد على كتاب اللغة العربية للصف الثاني عشر، فصلين دراسيين. بالتوفيق للجميع 🌿
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ============================================================
+   بيانات الوحدات — الفصل الدراسي الأول (١-٧)
+   مبنية من محتوى كتاب اللغة العربية - الصف الثاني عشر (الأكاديمي/المهني)
+   ============================================================ */
+const UNITS = [
+{
+  id:1, semester:1, kind:"regular",
+  title:"التنشئة الصالحة", icon:"🕊️",
+  readingType:"قرآن كريم", readingTitle:"مريم ابنة عمران",
+  readingRef:"سورة آل عمران، الآيات ٣٣ - ٥١",
+  readingNote:`الآيات (٣٣-٤٢) من هذا النص مقرَّرة للحفظ.`,
+  authorBio:null,
+  textSummary:`تبيّن الآيات الكريمة من سورة آل عمران (وهي من السور المدنيّة) عُلوّ درجات الرُّسل عند الله تعالى، وتقصّ قصّة مولد مريم ابنة عمران، وكفالة زكريا عليه السلام لها، ثم قصّة مولد يحيى عليه السلام، ثم اصطفاء الله تعالى مريم على نساء العالمين وتفضيلها، وما رافق ذلك من معجزات تدلّ على قدرة الله تعالى، جاءت تأكيدًا لصدق نبوّة محمد ﷺ. وتناولت الآيات كذلك قصّة ميلاد المسيح عيسى ابن مريم عليه السلام ومعجزاته.`,
+  vocabulary:[
+    {term:"نَذَرْتُ", meaning:"من النَّذْر، وهو ما يُوجبه المرء على نفسه من صدقة أو عبادة أو نحوهما"},
+    {term:"كَفَّلَها زكريّا", meaning:"عَهِدها إليه بالرعاية"},
+    {term:"الحَصُور", meaning:"من يعصم نفسه عن النساء عفّة"},
+    {term:"أُعِيذُها بك", meaning:"ألجأ إليك لتحفظها وتحصّنها"},
+    {term:"الأَكْمَه", meaning:"الذي يُولد أعمى"},
+  ],
+  grammarTopics:[
+    {title:"النداء", explanation:`النداء: دعوة المخاطَب بواسطة حرف من أحرف النداء (يا، أ، أي، آ، أيا، هيا، وا...)، للفت الانتباه والإقبال. أشهر أحرف النداء هو «يا». يأتي المنادى معربًا منصوبًا في ثلاث حالات: إذا كان مضافًا (يا طالبَ العلم)، أو شبيهًا بالمضاف (يا رافعًا شعارَ الوئام)، أو نكرة غير مقصودة (يا راكبًا نجران). ويأتي المنادى مبنيًّا في محلّ نصب إذا كان علمًا مفردًا (يا قُدسُ) أو نكرة مقصودة (يا رجلُ). ويجوز في المنادى المضاف إلى ياء المتكلم حذف الياء والاكتفاء بالكسرة (يا ربِّ). وقد يُحذف حرف النداء ويبقى المنادى منصوبًا تقديرًا.`,
+     examples:[
+       {ar:`يا طالبَ العلمِ، واظِبْ على دروسِك`, note:"منادى مضاف، منصوب"},
+       {ar:`﴿رَبِّ اجْعَلْ لِي آيَةً﴾`, note:"منادى مضاف إلى ياء المتكلم، حُذفت الياء وبقيت الكسرة دليلًا عليها"},
+       {ar:`يوسُفُ أَعرِضْ عَن هَذا`, note:"حُذف حرف النداء وتقديره: يا يوسف"},
+     ]},
+    {title:"مراجعة: اسم الفاعل واسم المفعول", explanation:`اسم الفاعل: مشتقّ يدلّ على الحدث ومَن قام به، يُصاغ من الثلاثي على وزن (فاعِل): فَهِمَ - فاهِم، ومن غير الثلاثي بإبدال حرف المضارعة ميمًا مضمومة وكسر ما قبل الآخر: يبتسمُ - مُبتسِم. أمّا اسم المفعول فيدلّ على الحدث ومَن وقع عليه، ويُصاغ من الثلاثي على وزن (مفعول): دَعا - مَدْعُوّ، ومن غير الثلاثي بإبدال حرف المضارعة ميمًا مضمومة وفتح ما قبل الآخر: استُخدِم - مُستخدَم.`,
+     examples:[
+       {ar:`سائِل، سائِح، آمِن`, note:"أسماء فاعل من الثلاثي"},
+       {ar:`مَرْمِيّ، مُبِيع`, note:"أسماء مفعول من الثلاثي المعتلّ"},
+     ]},
+  ],
+  writingGenre:{title:"القصّة القصيرة", explanation:`فنّ أدبيّ يتناول حادثة أو مجموعة حوادث تتعلّق بشخصية أو مجموعة من الشخصيّات الإنسانية، في بيئة زمانيّة أو مكانيّة، تنتهي إلى غاية أو هدف بأسلوب أدبيّ ممتع. تهدف إلى التأثير في القارئ وإمتاعه من خلال التلميح والرمز.`,
+   tips:[
+     "عناصر القصّة: الحدث، الحبكة (تتكشّف تدريجيًّا)، الصراع الداخلي والخارجي، الحوار، الزمان والمكان، الشخصيّات الرئيسة والثانوية والنامية والثابتة.",
+     "صنِّف شخوص قصّتك بوضوح: رئيسة وثانوية.",
+     "راعِ عنصري الزمان والمكان في نسج الأحداث.",
+     "اختر عنوانًا مناسبًا وشائقًا لمضمون القصّة.",
+     "أنهِ القصّة بحلٍّ هادف ونبيل.",
+   ]},
+  literaryPiece:{title:"لأُسَمِّيَنَّه محمدًا", author:"طه حسين",
+    authorBio:"أديب مصريّ (١٨٨٩ - ١٩٧٣م)، فقد بصره صغيرًا، لُقّب بعميد الأدب العربيّ، من مؤلفاته: الوعد الحقّ، وحديث الأربعاء، وعلى هامش السيرة، والأيام.",
+    note:"نصّ نثريّ عن مولد الرسول ﷺ، مقتطف من كتاب «على هامش السيرة»."},
+  keyPoints:[
+    "الوحدة الأولى تدور حول قصّة مريم وزكريا عليهما السلام من سورة آل عمران (٣٣-٥١) — احفظ الآيات ٣٣-٤٢.",
+    "النداء: المنادى يُنصب إذا كان مضافًا أو شبيهًا بالمضاف أو نكرة غير مقصودة، ويُبنى في محل نصب إذا كان عَلَمًا مفردًا أو نكرة مقصودة.",
+    "اسم الفاعل من الثلاثي: فاعِل — من غير الثلاثي: إبدال حرف المضارعة ميمًا مضمومة وكسر ما قبل الآخر.",
+    "اسم المفعول من الثلاثي: مفعول — من غير الثلاثي: إبدال حرف المضارعة ميمًا مضمومة وفتح ما قبل الآخر.",
+    "فنّ الكتابة: القصّة القصيرة — عناصرها: الحدث، الحبكة، الشخصيّات، الزمان والمكان، الحوار.",
+  ],
+},
+
+{
+  id:2, semester:1, kind:"regular",
+  title:"صناعة السرور", icon:"🌤️",
+  readingType:"مقالة", readingTitle:"فنّ السّرور", readingAuthor:"أحمد أمين",
+  authorBio:{name:"أحمد أمين", dates:"١٨٨٦ - ١٩٥٤م",
+    bio:"أديب ومفكّر مصريّ، عمل في جامعة القاهرة، أنشأ «مجلّة الثقافة» وشارك في إخراج «مجلّة الرسالة». من أهمّ مؤلّفاته: فجر الإسلام، وضحى الإسلام، وفيض الخاطر (مصدر هذا النصّ)."},
+  textSummary:`يبيّن أحمد أمين في هذا النصّ كيف يمكن للإنسان أن يكون سعيدًا؛ لأنّ السرور ينبع من داخل الإنسان لا من الظروف الخارجيّة المحيطة به فحسب، ويذكر السبل والوسائل التي يمكن بها تحقيق الفرح والسرور، نحو أن يكون قويًّا متحمّلًا للصعاب، وألّا يفكّر بنفسه كثيرًا وكأنّها مركز العالم، وأن يملأ وقت فراغه بما هو نافع ومفيد مثل العمل، وهو يرى أنّ الإنسان الذي يبحث عن السرور عن طريق ألّا يفكّر فيما هو سلبيّ، بل يوجّه تفكيره نحو كلّ ما هو إيجابيّ، وأن يجتهد في أن يجعل السعادة طبعًا من طباعه، ولا يضيّعها فيما يكدّر عيشه.`,
+  vocabulary:[
+    {term:"الهالة", meaning:"الدائرة من الضوء تحيط بجرم سماويّ"},
+    {term:"تُوَرَّق جَفْنه", meaning:"تمنعه من النوم"},
+    {term:"التَّناجي", meaning:"تبادل الأسرار بين اثنين في أمر ما"},
+    {term:"الشَّقاء", meaning:"التعب والعناء"},
+  ],
+  grammarTopics:[
+    {title:"الهمزة وأقسامها (إملاء)", explanation:`الهمزة ثلاثة أقسام بحسب موقعها من الكلمة: همزة في أول الكلمة (وهي همزة الوصل وهمزة القطع)، والهمزة المتوسطة، والهمزة المتطرّفة في آخر الكلمة. همزة الوصل تُكتب بصورة الألف (ا) ولا تُنطق في درج الكلام، ومواضعها: الأسماء العشرة (ابن، ابنة، اسم، اثنان، اثنتان، امرؤ، امرأة...)، وأمر الفعل الثلاثيّ (اكتبْ)، وماضي الفعل الخماسيّ والسداسيّ ومصدرهما وأمرهما (اجتمعَ، استخدمَ)، وهمزة (أل) التعريف. أمّا همزة القطع فتُكتب بصورة (أ) أو (إ) وتُنطق دائمًا. والهمزة المتوسطة تعتمد كتابتها على حركتها وحركة الحرف الذي قبلها (أقوى الحركتين). والهمزة المتطرّفة تُكتب على حرف يناسب حركة ما قبلها.`,
+     examples:[
+       {ar:`اجتمعَ الطلابُ`, note:"همزة وصل: ماضي فعل خماسيّ"},
+       {ar:`أحسنَ، إحسان`, note:"همزة قطع: فعل رباعيّ مهموز ومصدره"},
+       {ar:`ذِئْب، مُؤْتة، مَأمون`, note:"همزة متوسطة بحسب أقوى الحركتين"},
+       {ar:`قرأَ، شاطِئ، مِلْء، دُعاء`, note:"همزة متطرّفة بحسب الحرف الذي قبلها"},
+     ]},
+  ],
+  writingGenre:{title:"المقالة", explanation:`فنّ نثريّ يُعالج فكرة أو موضوعًا محدَّدًا، ويمرّ إعدادها بثلاث خطوات: الإعداد والتحضير (جمع الحقائق والآراء)، والتنفيذ (ترتيب الأفكار وعرضها في فقرات متسلسلة ومترابطة)، والتنقيح والتحرير (مراجعة اللغة وصحّة التراكيب ورصانة العبارات).`,
+   tips:[
+     "اجمع الحقائق والآراء المتعلقة بالموضوع قبل الكتابة.",
+     "رتّب أفكارك في فقرات متسلسلة ومترابطة منطقيًّا.",
+     "راجع مقالتك لغويًّا (الإملاء والنحو) وأسلوبيًّا قبل التسليم.",
+     "لا تقلّ مقالتك عن ١٥٠ كلمة، وحافظ على وحدة الموضوع.",
+   ]},
+  literaryPiece:{title:"تبسّم", author:"عبد الرحيم محمود",
+    authorBio:"شاعر فلسطينيّ (١٩١٣ - ١٩٤٨م)، وُلد في عنبتا قضاء طولكرم، عمل معلّمًا، استُشهد عام ١٩٤٨م، ولُقّب بشاعر الشهيد؛ لقصيدته الشهيرة التي مطلعها «سأحمل روحي على راحتي».",
+    note:"قصيدة تدعو الإنسان إلى التبسّم ومواجهة صعاب الحياة بروح إيجابية متفائلة."},
+  keyPoints:[
+    "«فنّ السرور» لأحمد أمين: السعادة تنبع من الداخل لا من الظروف الخارجية فقط.",
+    "الهمزة: وصل (لا تُنطق، تُكتب ا) وقطع (تُنطق دائمًا، تُكتب أ/إ) في أول الكلمة.",
+    "الهمزة المتوسطة تُكتب وفق أقوى الحركتين (الكسرة > الضمة > الفتحة > السكون).",
+    "فنّ الكتابة: المقالة — إعداد، تنفيذ، تنقيح.",
+    "الأديب أحمد أمين: فجر الإسلام، ضحى الإسلام، فيض الخاطر.",
+  ],
+},
+
+{
+  id:3, semester:1, kind:"regular",
+  title:"في أدب الصداقة", icon:"🤝",
+  readingType:"شعر", readingTitle:"واحرّ قلباه", readingAuthor:"المتنبّي",
+  readingNote:"ثمانية أبيات من هذه القصيدة مقرَّرة للحفظ.",
+  authorBio:{name:"المتنبّي (أبو الطيّب أحمد بن الحسين)", dates:"٣٠٣ - ٣٥٤هـ",
+    bio:"شاعر حكيم، وأحد مفاخر الأدب العربيّ، وُلد في محلّة بالكوفة تُسمّى (كِنْدة) وإليها نسبته. عاش أفضل أيام حياته وأكثرها عطاءً في بلاط سيف الدولة الحمدانيّ في حلب، وكان من أعظم شعراء العرب وأكثرهم تمكّنًا من اللغة العربية وقواعدها ومفرداتها، وله مكانة سامية لم تتحّ لغيره من شعراء العربية."},
+  textSummary:`اتّصل المتنبّي بسيف الدولة الحمدانيّ فوجد عنده طموحه في القائد العربيّ، فنال الحظوة والرعاية، وخصّه بالعطف وقرّبه، فمدحه بقصائد من عيون الشعر العربيّ. وهذه القصيدة عاتب فيها المتنبّي سيف الدولة على سماعه أقوال الواشين فيه، وخاطبه بحديث المحبّ المعاتب لا حديث المستجدي المستعطف، وطلب إلى سيف الدولة أن يكون عادلًا في معاملته، وأكّد في نهايتها أنّ عتابه لسيف الدولة ما هو إلّا محبّة ووُدّ، وأظهر المتنبّي في هذه القصيدة براعة فائقة في نظم الشعر.`,
+  vocabulary:[
+    {term:"الشَّبِم", meaning:"البارد"},
+    {term:"الغُرّة", meaning:"غرّة الرجل ووجهه"},
+    {term:"الشَّوارِد", meaning:"جمع شاردة، قصائد سائرة تُروى بكلّ مكان"},
+    {term:"جرّاها", meaning:"من أجلها"},
+    {term:"الأَمَمُ", meaning:"القريب"},
+  ],
+  grammarTopics:[
+    {title:"أسلوب الشرط", explanation:`أسلوب الشرط جملة مركّبة من جملتين متلازمتين مسبوقتين بأداة شرط، لا يتمّ معنى أولاهما إلّا بالثانية. أدوات الشرط الجازمة أشهرها: إنْ، مَن، ما، مهما، متى، أيّان، حيثما، أينما، أيّ. وأدوات الشرط غير الجازمة: لو، لولا، لوما، كلّما، إذا (وهما اسمان).`,
+     examples:[
+       {ar:`وَمَنْ يَجْعَلِ المَعْروفَ في غَيرِ أهْلِهِ يَكُنْ حَمْدُه ذَمًّا عَلَيْهِ ويَنْدَمِ`, note:"شرط جازم: مَنْ + فعلا الشرط والجواب مجزومان"},
+       {ar:`لَوْلا الحَياءُ لَهاجَني اسْتِعبارُ`, note:"لولا: أداة شرط غير جازمة تفيد امتناع الجواب لوجود الشرط"},
+     ]},
+    {title:"الصفة المشبَّهة وصيغة المبالغة (صرف)", explanation:`الصفة المشبَّهة: اسم مشتقّ يدلّ على مَن يتّصف بالفعل اتّصافًا دائمًا أو غالبًا، تدلّ على مزايا وطبائع أو عيوب أو ألوان. أشهر أوزانها: أَفْعَل مؤنّثه فَعْلاء (أحمر - حمراء)، وفَعْلان مؤنّثه فَعْلى (حيران - حيرى)، وفَعَل، وفَعِل، وفُعال، وفَعيل، وفَعْل. أمّا صيغة المبالغة فاسم مشتقّ يدلّ على الحدث ومَن يقوم به على وجه الكثرة والمبالغة، وتُشتقّ غالبًا من الفعل الثلاثيّ المتعدّي؛ وأشهر أوزانها: فَعّال، مِفْعال، فَعول، فَعيل، مِفْعيل.`,
+     examples:[
+       {ar:`جوادٌ على العِلّاتِ`, note:"جواد: صيغة مبالغة على وزن فَعال"},
+       {ar:`ظَنَنْتُ أنَّ الحُلَّ سَهْلٌ`, note:"سهل: صفة مشبَّهة على وزن فَعْل"},
+     ]},
+  ],
+  writingGenre:{title:"الرسالة الشخصيّة", explanation:`كلام مكتوب يتبادله شخصان بينهما صداقة أو قرابة، يكشف فيه الكاتب عن مشاعره وانفعالاته، وتختلف موضوعاتها وفق المواقف الحياتية (عتاب، تهنئة، اعتذار، عزاء، إهداء، شكر). أهمّ سماتها الفنية: الوضوح والبساطة والإيجاز غير المخلّ بالمعنى.`,
+   tips:[
+     "اجعل لغتك واضحة وبسيطة، بلا تعقيد أو غموض.",
+     "التزم الإيجاز، وتجنّب الإطالة غير المفيدة.",
+     "حدّد نوع الرسالة (عتاب، تهنئة، اعتذار...) وابنِ عباراتها على ذلك.",
+     "اختم الرسالة بخاتمة مناسبة (تحية، توقيع).",
+   ]},
+  literaryPiece:{title:"فتح عمّورية", author:"أبو تمّام",
+    authorBio:"حبيب بن أوس الطائيّ (١٩٠ - ٢٣١هـ)، أحد الشعراء المشهورين في العصر العباسيّ، عُرف بالظرف وحسن الأخلاق والفطنة، وتقدّم على شعراء عصره في حسن أسلوبه، وله ديوان «الحماسة».",
+    note:"قصيدة مدح مشهورة في فتح المعتصم لمدينة عمّورية، من أشهر القصائد في مدح الفتوحات."},
+  keyPoints:[
+    "«واحرّ قلباه» للمتنبّي: قصيدة عتاب لسيف الدولة الحمدانيّ — احفظ ثمانية أبيات منها.",
+    "أسلوب الشرط: أداة شرط + فعل الشرط + جواب الشرط، وينقسم إلى جازم (إنْ، مَن، ما) وغير جازم (لو، لولا، إذا).",
+    "الصفة المشبَّهة تدلّ على اتصاف دائم (أَفْعَل/فَعْلاء، فَعْلان/فَعْلى) — صيغة المبالغة تدلّ على الكثرة (فَعّال، مِفْعال، فَعول، فَعيل، مِفْعيل).",
+    "فنّ الكتابة: الرسالة الشخصية — الوضوح والبساطة والإيجاز.",
+    "المتنبّي: أعظم شعراء العرب، اتّصل بسيف الدولة الحمدانيّ في حلب.",
+  ],
+},
+
+{
+  id:4, semester:1, kind:"regular",
+  title:"الثقافة الصحيّة", icon:"🩺",
+  readingType:"مقالة علميّة", readingTitle:"الحساسيّة", readingAuthor:null,
+  authorBio:null,
+  textSummary:`تتناول المقالة العلمية مرض الحساسيّة بوصفه من أمراض العصر الشائعة، خاصّة لدى الأطفال، ولها أسباب شتّى وتنشط في مواسم معيّنة، وتحدث نتيجة تفاعل غير طبيعيّ في أنسجة الجسم مع مادة غريبة (مثل غبار الطلع أو شعر الحيوانات أو بعض الأدوية)، وللحساسية أنواع عدّة منها حساسية الجلد وحساسية الجهاز التنفسيّ وحساسية الأنف، وتناولت المقالة طرق الوقاية منها كتغيير الوسائد بفترات متقاربة، والتهوية الدائمة للمنازل، وتجنّب الأحذية داخل غرف النوم.`,
+  vocabulary:[
+    {term:"الحساسيّة", meaning:"تفاعل غير طبيعيّ يحدث في أنسجة الجسم نتيجة مادّة غريبة"},
+    {term:"الرَّبْو القَصَبيّ", meaning:"حساسيّة الصدر التي تصيب الشُّعب الهوائية"},
+    {term:"البدل", meaning:"في اللغة، ما يُذكر توضيحًا أو تفصيلًا لما قبله من الاسم"},
+  ],
+  grammarTopics:[
+    {title:"اسما الزمان والمكان (صرف)", explanation:`اسمان مشتقّان يدلّان على زمان الحدث ومكان وقوعه، ويُصاغان من الفعل الثلاثيّ على وزن (مَفْعَل) إذا كان مضارعه مضموم العين أو مفتوحها أو معتلّ العين أو ناقصًا: مكتَب، مسبَح، مَرمى؛ وعلى وزن (مَفْعِل) إذا كان مضارعه مكسور العين أو معتلّ الفاء واويًّا: مجلِس، موقِف، مورِد. ومن غير الثلاثي يُصاغان بالطريقة نفسها لصياغة اسم المفعول: مُستودَع، مُرتقَب، مُنتهى.`,
+     examples:[
+       {ar:`جلسَ الطلابُ في المَجلِس`, note:"اسم مكان على وزن مَفْعِل"},
+       {ar:`المَشْبَح مكان اجتماع العائلة`, note:"اسم مكان على وزن مَفْعَل"},
+     ]},
+  ],
+  writingGenre:{title:"التلخيص", explanation:`فنّ نثريّ يقوم على إعادة صوغ نصٍّ أطول منه بلغة الكاتب الخاصّة، بإيجاز وتكثيف من غير إخلال بأفكاره ومعانيه التي أرادها صاحب النصّ الأصليّ. خطواته: قراءة النصّ الأصليّ وفهم الموضوع، استخراج الأفكار الرئيسة وترك الثانوية، إعادة صياغة النصّ بلغتنا الخاصّة، والمحافظة على الأفكار من غير تدخّل أو إصدار أحكام، وإظهار النصّ الجديد في حدود الحجم المحدَّد.`,
+   tips:[
+     "اقرأ النصّ الأصليّ كاملًا وافهم موضوعه قبل البدء بالتلخيص.",
+     "استخرج الأفكار الرئيسة فقط، واترك التفاصيل الثانوية.",
+     "أعد الصياغة بأسلوبك الخاصّ لا بنسخ عبارات النصّ الأصليّ.",
+     "لا تُقحم رأيك الشخصيّ أو أحكامك في التلخيص.",
+     "التزم بحدود عدد الكلمات المطلوب (غالبًا مئة كلمة).",
+   ]},
+  literaryPiece:{title:"المذاق عند الإنسان", author:"أحمد زكي",
+    authorBio:"عالم مصريّ (١٨٩٤ - ١٩٧٥م)، من أكبر العلماء الكيميائيين في مصر والوطن العربيّ والعالم، أسّس أكاديمية للبحث العلميّ والتكنولوجيا، عُرف بكتابه «في سبيل موسوعة علمية».",
+    note:"نصّ علميّ ميسّر عن أصول المذاق الأربعة: الحلو والمرّ والحامض والمالح."},
+  keyPoints:[
+    "الحساسيّة: تفاعل غير طبيعيّ في أنسجة الجسم، أنواعها: جلديّة وتنفسيّة وأنفيّة، والوقاية بالتهوية والنظافة.",
+    "اسم الزمان والمكان من الثلاثي: مَفْعَل (مضارع مضموم/مفتوح العين أو معتلّ) أو مَفْعِل (مضارع مكسور العين).",
+    "من غير الثلاثي: بصياغة اسم المفعول نفسها (مُستودَع، مُنتهى).",
+    "فنّ الكتابة: التلخيص — إيجاز أمين لأفكار النصّ الأصليّ بلغة جديدة.",
+  ],
+},
+
+{
+  id:5, semester:1, kind:"regular",
+  title:"وأنت الحبّ يا أردنّ", icon:"🇯🇴",
+  readingType:"شعر", readingTitle:"سأكتبُ عنكَ يا وطني", readingAuthor:"محمود فضيل التلّ",
+  readingNote:"عشرة أسطر متتالية من هذه القصيدة مقرَّرة للحفظ.",
+  authorBio:{name:"محمود فضيل التلّ", dates:null,
+    bio:"شاعر أردنيّ معاصر، من أعلام الشعر الوطنيّ الأردنيّ، عبّرت قصائده عن حبّ عميق للأردن وتغنّت بخيراته رغم قلّة موارده."},
+  textSummary:`قصيدة وطنيّة وجدانيّة يعبّر فيها الشاعر عن حبّه العميق للأردن، فيصف مظاهر الشوق إلى الوطن، ويرسم لوحة فنيّة يحمل فيها راية الحبّ للوطن، ويؤكّد أنّه سيكتب عن وطنه في كلّ الأحوال والأزمنة وفي شتّى الظروف، وتتجلّى في القصيدة القيم الوطنية السامية، وتدلّ الأسطر الشعرية على أنّ الأردنّ بلد الخير رغم قلّة موارده.`,
+  vocabulary:[
+    {term:"أُوضِعَ راحلته", meaning:"جعلها تُسرِع"},
+    {term:"الجَدّ", meaning:"الحظّ"},
+    {term:"الصَّبَب", meaning:"ما انحدر من الأرض"},
+  ],
+  grammarTopics:[
+    {title:"إعراب الفعل المضارع المعتلّ الآخر", explanation:`الفعل المضارع المعتلّ الآخر (بالألف أو الواو أو الياء) يكون مرفوعًا بضمّة مقدَّرة على آخره إذا لم يُسبق بناصب أو جازم؛ نحو: يهتدي العاقلُ. ويكون منصوبًا بفتحة مقدَّرة على الألف، وفتحة ظاهرة على الواو والياء إذا سبق بأداة نصب؛ نحو: لن يَرضى. ويكون مجزومًا بحذف حرف العلّة من آخره إذا سبق بأداة جزم؛ نحو: لا تَرمِ المهملات في ساحة المدرسة.`,
+     examples:[
+       {ar:`العاقلُ يهتدي بنصْحِ المُجرِّبين`, note:"مرفوع بضمّة مقدَّرة"},
+       {ar:`يجبُ أنْ نتوحَّدَ`, note:"منصوب بفتحة ظاهرة"},
+       {ar:`لا تَرْمِ المهملاتِ في ساحةِ المدرسة`, note:"مجزوم بحذف حرف العلّة"},
+     ]},
+    {title:"اسما المرّة والهيئة (صرف)", explanation:`اسم المرّة: مصدر يدلّ على عدد مرّات وقوع الحدث، يُصاغ من الثلاثي على وزن (فَعْلة): جلسَ - جَلْسة، ومن غير الثلاثي بزيادة تاء مربوطة على المصدر: انطلقَ - انطلاقة. أمّا اسم الهيئة فيدلّ على هيئة وقوع الحدث، ويُصاغ من الثلاثي فقط على وزن (فِعْلة): جلسَ - جِلْسة.`,
+     examples:[
+       {ar:`ضربتُه ضَرْبةً واحدة`, note:"اسم مرّة"},
+       {ar:`جلسَ جِلْسةَ المتكبِّر`, note:"اسم هيئة"},
+     ]},
+  ],
+  writingGenre:{title:"التعبير الوظيفيّ", explanation:`تعبير عمليّ يمارسه الناس في شؤون حياتهم المختلفة، ولا يستغني عنه الطالب بعد تخرّجه واندماجه في المجتمع؛ لارتباطه بالحاجات الضرورية للناس. من نماذجه: كتابة الإعلانات (وظائف شاغرة، شقق للإيجار)، والاستدعاءات الرسمية إلى مؤسسات الدولة.`,
+   tips:[
+     "اجعل الإعلان مختصرًا وواضحًا يتضمّن كل المعلومات الضرورية.",
+     "في الاستدعاء: اذكر جهة الاستدعاء، والغرض منه بوضوح ودقّة، ثم التوقيع والتاريخ.",
+     "التزم الصيغة الرسمية المتعارف عليها في المخاطبات الرسمية.",
+   ]},
+  literaryPiece:{title:"الحنين إلى الوطن", author:"أحمد شوقي",
+    authorBio:"شاعر مصريّ (١٨٦٨ - ١٩٣٢م)، من أشهر شعراء العصور الحديثة، لُقّب بأمير الشعراء، تناول أكثر فنون الشعر: مديحًا وغزلًا ورثاءً ووصفًا، وله ديوان (الشوقيّات)، وله مسرحيات شعرية تمثيلية، منها (مصرع كليوباترا) و(مجنون ليلى)."},
+  keyPoints:[
+    "«سأكتب عنك يا وطني» لمحمود فضيل التلّ: قصيدة وطنية عن حبّ الأردن — احفظ عشرة أسطر متتالية منها.",
+    "الفعل المضارع المعتلّ الآخر: يُرفع بضمّة مقدَّرة، يُنصب بفتحة (مقدَّرة على الألف، ظاهرة على الواو والياء)، ويُجزم بحذف حرف العلّة.",
+    "اسم المرّة على وزن (فَعْلة) من الثلاثي، واسم الهيئة على وزن (فِعْلة) من الثلاثي فقط.",
+    "فنّ الكتابة: التعبير الوظيفيّ — إعلانات واستدعاءات رسمية.",
+  ],
+},
+
+{
+  id:6, semester:1, kind:"regular",
+  title:"بين الأصالة والحداثة", icon:"⚖️",
+  readingType:"مقالة", readingTitle:"بين الأصالة والحداثة", readingAuthor:"عبد العزيز المقالح",
+  authorBio:{name:"عبد العزيز المقالح", dates:null,
+    bio:"شاعر وناقد يمنيّ معاصر، من أبرز الأصوات الثقافية العربية، تناولت كتاباته قضايا التراث والهوية والحداثة في الفكر العربيّ."},
+  textSummary:`مقالة فكرية تناقش العلاقة بين التراث (الأصالة) والمعاصرة (الحداثة)، وتدعو إلى عدم الانبتات عن الجذور مع الانفتاح على مستجدّات العصر، وتحذّر من موقفين متطرّفين: الانغلاق التامّ على الماضي والوقوف عند الأطلال من جهة، والانسلاخ الكامل عن التراث بدعوى التجديد من جهة أخرى، وتدعو إلى موقف وسط متوازن يحافظ على الهوية ويواكب العصر.`,
+  vocabulary:[
+    {term:"حبيس الخزائن", meaning:"تراث محفوظ لا يُستفاد منه، مخبّأ لا يُنتفع به"},
+    {term:"الأطلال", meaning:"ما تبقّى من آثار الديار، ويُقصد بها هنا الوقوف عند الماضي دون تجاوز"},
+  ],
+  grammarTopics:[
+    {title:"التوكيد", explanation:`التوكيد: تابع يؤكِّد ما قبله ويتبعه في الحكم الإعرابيّ، وهو نوعان: لفظيّ (بتكرار اللفظ المراد توكيده): حَذارِ حَذارِ؛ ومعنويّ (بألفاظ مخصوصة: كلّ، وجميع، ونفس، وعين، وكلا، وكلتا)، مسبوقة بالاسم المؤكَّد ومتّصلة بضمير يربطها به ويطابقه في الجنس والعدد.`,
+     examples:[
+       {ar:`حَذارِ حَذارِ مِنْ بَطْشي وَفَتْكي`, note:"توكيد لفظيّ"},
+       {ar:`جاء الطلابُ كلُّهم`, note:"توكيد معنويّ بـ(كلّ)"},
+     ]},
+    {title:"اسم الآلة (صرف)", explanation:`اسم مشتقّ يدلّ على أداة يتمّ بها الفعل، ويأتي من الفعل الثلاثيّ على خمسة أوزان مشهورة: مِفْعَل (مِبرد)، مِفْعال (مِفتاح)، مِفْعَلة (مِلعقة)، فِعال (سِكّين)، فَعّالة (غسّالة، ثلّاجة).`,
+     examples:[
+       {ar:`نظَّفَ الحقلَ بالمِحراث`, note:"اسم آلة على وزن مِفعال"},
+     ]},
+  ],
+  writingGenre:{title:"الحكاية", explanation:`شكل أدبيّ قصصيّ شفاهيّ، ليس لها مؤلّف معروف في الغالب، تُقدّم أحداثًا ذات بداية ونهاية، وتناقش موضوعات نادرة وغريبة، ولا تقف على حوادث صغيرة بتفصيلاتها، وفيها مجال واسع للخيال الشعبيّ، وتعتمد على التأثير في مشاعر المتلقّي، وتتميّز عادة بالبساطة والإيجاز والإسراع في السرد.`,
+   tips:[
+     "اجعل الحكاية بسيطة الأسلوب وسريعة الإيقاع في السرد.",
+     "استلهم من الموروث الشعبيّ أو من خيالك موضوعًا شائقًا.",
+     "لا تُثقل الحكاية بتفاصيل جانبية كثيرة.",
+   ]},
+  literaryPiece:null,
+  keyPoints:[
+    "«بين الأصالة والحداثة»: التوازن بين التمسّك بالتراث والانفتاح على العصر، دون تطرّف في أيّ من الاتجاهين.",
+    "التوكيد اللفظيّ: تكرار اللفظ نفسه — التوكيد المعنويّ: بألفاظ (كلّ، جميع، نفس، عين، كلا، كلتا) مع ضمير مطابق.",
+    "اسم الآلة من الثلاثي: مِفْعَل، مِفْعال، مِفْعَلة، فِعال، فَعّالة.",
+    "فنّ الكتابة: الحكاية — قصصيّة شفاهية بسيطة الأسلوب سريعة السرد.",
+  ],
+},
+
+{
+  id:7, semester:1, kind:"prosody",
+  title:"العَروض (١)", icon:"🎼",
+  intro:`علم العَروض هو العلم الذي وضعه الخليل بن أحمد الفراهيديّ لمعرفة أوزان الشعر العربيّ (البحور) وما يطرأ عليها من تغييرات. في هذه الوحدة الأولى ندرس ثلاثة بحور: الوافر، والمتقارب، والرجز.`,
+  meters:[
+    {
+      name:"بحر الوافر",
+      taamTafeela:"مُفَاعَلَتُنْ مُفَاعَلَتُنْ فَعُولُنْ", taamPattern:"مُفَاعَلَتُنْ مُفَاعَلَتُنْ فَعُولُنْ / مُفَاعَلَتُنْ مُفَاعَلَتُنْ فَعُولُنْ",
+      majzoo:true, majzooTafeela:"مُفَاعَلَتُنْ مُفَاعَلَتُنْ",
+      key:"بُحورُ الشِّعرِ وافِرُها جميلُ",
+      example:{ar:"ظَلِمْتُ وَفِي فَمِي الأَدَبُ المُصَفَّى", scan:"ظَ لِمْ تُ وَ / فِي فَ مِلْ / أَ دَ بُلْ مُ صَفْ فَى", pattern:"مُفَاعَلَتُنْ / مُفَاعَلَتُنْ / فَعُولُنْ"},
+      note:"للوافر تفعيلتان رئيستان: (مُفَاعَلَتُنْ) وصورتها الفرعية (مُفاعَلْتُنْ)، و(فَعولُنْ) وتأتي عروضًا وضربًا فقط."
+    },
+    {
+      name:"بحر المتقارب",
+      taamTafeela:"فَعُولُنْ فَعُولُنْ فَعُولُنْ فَعُولُنْ", taamPattern:"فَعُولُنْ فَعُولُنْ فَعُولُنْ فَعُولُنْ / فَعُولُنْ فَعُولُنْ فَعُولُنْ فَعُولُنْ",
+      majzoo:true, majzooTafeela:"فَعُولُنْ فَعُولُنْ فَعُولُنْ",
+      key:"عَنِ المُتَقارَبِ قالَ الخليلُ",
+      example:{ar:"أَلا انْهَضْ وَسِرْ فِي سَبيلِ الحَياةْ", scan:"أَ لَنْ هَضْ / وَ سِرْ فِي سَ / بي لِلْ حَ يَاةْ", pattern:"فَعُولُنْ / فَعُولُنْ / فَعُولُنْ / فَعُو"},
+      note:"للمتقارب تفعيلة واحدة متكرِّرة (فَعُولُنْ) ثماني مرّات في البيت التامّ، ولها صور فرعية: فَعُو، وفَعْلُنْ (في الضرب)."
+    },
+    {
+      name:"بحر الرجز",
+      taamTafeela:"مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ", taamPattern:"مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ / مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ",
+      majzoo:true, majzooTafeela:"مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ",
+      mashtoor:true, mashtoorNote:"يأتي الرجز أيضًا (مشطورًا) بثلاث تفعيلات في السطر الواحد فقط، ويُسمَّى حينها (الأرجوزة)، ويُسمَّى ناظمه (رجّازًا).",
+      key:"في أبحرِ الأرجازِ بَحرٌ يَسْهُلُ",
+      example:{ar:"عَوِّلْ عَلى الصَّبْرِ الجَميلِ إِنَّهُ", scan:"عَوْ وِلْ عَ / لَصْ صَبْ رِلْ جَ / مي لِ إِنْ نَهو", pattern:"مُسْتَفْعِلُنْ / مُسْتَفْعِلُنْ / مُسْتَفْعِلُنْ"},
+      note:"للرجز تفعيلة رئيسة (مُسْتَفْعِلُنْ) ولها صور فرعية: مُتَفْعِلُنْ، مُسْتَعِلُنْ، مُتَفْعِلْ."
+    },
+  ],
+  keyPoints:[
+    "بحر الوافر: مُفَاعَلَتُنْ مُفَاعَلَتُنْ فَعُولُنْ (×٢) — يأتي تامًّا ومجزوءًا.",
+    "بحر المتقارب: فَعُولُنْ ×٨ — يأتي تامًّا ومجزوءًا؛ تفعيلته الوحيدة (فَعُولُنْ).",
+    "بحر الرجز: مُسْتَفْعِلُنْ ×٦ — يأتي تامًّا ومجزوءًا، ومشطورًا (٣ تفعيلات في السطر) ويُسمَّى أرجوزة.",
+    "البحور الصافية: تتكرّر فيها تفعيلة واحدة (كالمتقارب والرجز) — الممزوجة: تتكرّر فيها تفعيلتان (كالوافر).",
+  ],
+},
+];
+/* ============================================================
+   بيانات الوحدات — الفصل الدراسي الثاني (٨-١٤)
+   ============================================================ */
+UNITS.push(
+{
+  id:8, semester:2, kind:"regular",
+  title:"الفكر العربيّ المتجدّد", icon:"💭",
+  readingType:"مقالة", readingTitle:"النهضة العربيّة المتجدّدة: تأييدٌ للحقّ ونصرة للعدل", readingAuthor:"الأمير الحسن بن طلال",
+  authorBio:{name:"صاحب السموّ الملكيّ الأمير الحسن بن طلال", dates:null,
+    bio:"كاتب هذا المقال بمناسبة حلول شهر رمضان المبارك، يستذكر فيه أمجاد الثورة العربية الكبرى التي أطلقها المغفور له الشريف الحسين بن عليّ، وما واكبها من نهضة اتّخذت من قيم الحقّ والعدل ركيزة لها، ويدعو إلى تعزيز ثقافة الحوار والتسامح ونبذ التعصّب بأشكاله."},
+  textSummary:`تتناول المقالة مفهوم النهضة العربية الحديثة وربطها بالمبادئ القومية من الحرية والوحدة والاستقلال والمساواة والتقدّم، وتستذكر الثورة العربية الكبرى وأهدافها في تحرّر الأمّة، وتدعو إلى التمسّك بكرامة العروبة والتمسّك بقيم الإسلام السمحة النبيلة، والتحذير من مظاهر استغلال الدين الحنيف، وتؤكّد أنّ الإرادة العربية الحرّة المسؤولة لا تنفصل عن تغليب العقل والحكمة، وتدعو إلى الحوار والتسامح بين الثقافات ونبذ التطرّف والإرهاب.`,
+  vocabulary:[
+    {term:"يترنّى", meaning:"يتطلّع بأمل"},
+    {term:"الاستبداد", meaning:"التحكّم والانفراد بالرأي دون شورى"},
+    {term:"يُنأى بها", meaning:"يُبعَد بها"},
+  ],
+  grammarTopics:[
+    {title:"العدد والمعدود", explanation:`العددان (١، ٢) يوافقان المعدود تذكيرًا وتأنيثًا ويُعربان صفة له. الأعداد من (٣-١٠) تخالف المعدود، ومعدودها جمع مجرور بالإضافة. الأعداد المركّبة (١١-١٩) جزؤها الأول يخالف المعدود والثاني يوافقه، ومعدودها مفرد منصوب على التمييز (إلّا ١٢). ألفاظ العقود (٢٠-٩٠) ملحقة بجمع المذكّر السالم، تُعرب إعرابه، ومعدودها مفرد منصوب دائمًا سواء كان مذكّرًا أو مؤنّثًا. أمّا (مئة، ألف، مليون) فمعدودها مفرد مجرور بالإضافة دائمًا.`,
+     examples:[
+       {ar:`اشترك في الرحلة خمسةَ عشرَ طالبًا`, note:"عدد مركّب، معدوده تمييز منصوب"},
+       {ar:`شارك في الحوار عشرون طالبةً`, note:"لفظ عقد، معدوده مفرد منصوب رغم التأنيث"},
+       {ar:`كتبتُ فقرةً في مئةِ كلمةٍ`, note:"مئة، معدودها مفرد مجرور بالإضافة"},
+     ]},
+    {title:"المصادر الصريحة (صرف)", explanation:`مصدر الفعل الثلاثيّ سماعيّ يُحفظ من كلام العرب ولا يخضع لقاعدة واحدة مطّردة (فَهِمَ - فَهْمًا، كَتَبَ - كِتابةً). أمّا مصادر الأفعال غير الثلاثية فقياسية تتبع أوزانًا محدَّدة: الرباعيّ (أفعَلَ - إفعال: أكرمَ - إكرامًا)، والخماسيّ والسداسيّ يُصاغان بضمّ ما قبل الآخر وزيادة تاء مربوطة في آخرهما إن لم يكن معتلّ الآخر (استخدمَ - استخدامًا).`,
+     examples:[
+       {ar:`أحسنَ إحسانًا`, note:"مصدر قياسيّ لفعل رباعيّ"},
+       {ar:`اجتمعوا اجتماعًا`, note:"مصدر قياسيّ لفعل خماسيّ"},
+     ]},
+  ],
+  writingGenre:{title:"كتابة عنوان المقالة", explanation:`لكلّ مقالة عنوان يدلّ على موضوعها؛ لأنّه أول ما يطالعه القارئ، فينبغي أن يكون لافتًا ومثيرًا لاهتمامه. من سمات العنوان الجيّد: يتّصف بالجدّة والابتكار، يعالج فكرة واحدة فقط، يوجز من غير تكرار للألفاظ، يتجنّب اللهجة العاميّة، يتميّز بالوضوح الذي لا تعقيد فيه ولا غموض، يتجنّب العبارات المهجورة والغريبة.`,
+   tips:[
+     "اختر عنوانًا يعالج فكرة واحدة محدَّدة فقط.",
+     "اجعله موجزًا وواضحًا، بلا تعقيد أو ألفاظ غريبة.",
+     "تجنّب اللهجة العامية والعبارات المهجورة.",
+   ]},
+  literaryPiece:{title:"من ذلك البيت", author:"فؤاد الخطيب",
+    authorBio:"أديب وشاعر وكاتب (١٨٨٠ - ١٩٥٧م)، وُلد في لبنان، انضمّ إلى الثورة العربية الكبرى، ولُقّب بشاعر الثورة. من آثاره: ديوان فؤاد الخطيب، ورواية (فتح الأندلس)، وكتاب في قواعد اللغة العربية."},
+  keyPoints:[
+    "مقالة الأمير الحسن بن طلال: النهضة العربية مرتبطة بقيم الحقّ والعدل، ودعوة إلى الحوار ونبذ التطرّف.",
+    "العدد ١-٢ يوافق المعدود، ٣-١٠ يخالفه (معدوده جمع مجرور)، ١١-١٩ جزؤه الأول يخالف والثاني يوافق (معدوده مفرد منصوب).",
+    "ألفاظ العقود (٢٠-٩٠): معدودها دائمًا مفرد منصوب، بلا فرق بين المذكر والمؤنث.",
+    "مصدر الثلاثي سماعيّ، ومصدر غير الثلاثي قياسيّ (أفعَلَ-إفعال، اسْتَفْعَلَ-استفعال).",
+    "فنّ الكتابة: عنوان المقالة — الجدّة والوضوح ومعالجة فكرة واحدة.",
+  ],
+},
+
+{
+  id:9, semester:2, kind:"regular",
+  title:"مفاتيح القلوب", icon:"🔑",
+  readingType:"مقالة", readingTitle:"الكلمة الحُلوة", readingAuthor:"محمد النقّاش",
+  authorBio:{name:"محمد النقّاش", dates:null,
+    bio:"كاتب وناقد لبنانيّ، جمع مقالاته في كتابه «مواليد الأرق» عام ١٩٦٠م، ومنها هذه المقالة."},
+  textSummary:`تتناول المقالة قيمة الكلمة الطيّبة (الحلوة) في التعامل بين الناس، وأنّها من مفاتيح القلوب التي تفتح أبواب المودّة والاحترام، وتبيّن أنّ الكلمة الحلوة لا تكلّف قائلها شيئًا من المال لكنّها تعادل الكثير في أثرها النفسيّ والاجتماعيّ، وأنّها ينبغي أن تصدر عن إخلاص وصدق لا نفاق وتصنّع، وتدعو إلى أن تلازم الكلمة الطيّبة العلاقات الإنسانية كافّة: بين الزوجين والأبناء والأصدقاء.`,
+  vocabulary:[
+    {term:"يختنق بالبكاء", meaning:"كناية عن شدّة التأثّر"},
+    {term:"الأميّة", meaning:"الجهل بالقراءة والكتابة، ويُقصد بها هنا البساطة في التعبير"},
+  ],
+  grammarTopics:[
+    {title:"أسلوب التعجّب", explanation:`أسلوب التعجّب قسمان: قياسيّ وله صيغتان: (ما أَفْعَلَ) نحو: ما أجمل الابتسامةَ! و(أَفْعِلْ بِ) نحو: أعظِمْ بقاضٍ يعدل بين الناس! ويُعرب تركيب (ما أفعَلَ): ما: نكرة تعجبية مبنية على السكون في محل رفع مبتدأ، أفعَلَ: فعل ماضٍ جامد مبنيّ على الفتح لإنشاء التعجّب وفاعله ضمير مستتر وجوبًا تقديره هو، والاسم بعده مفعول به منصوب. وسماعيّ يُفهم من سياق الجملة نحو: الله أكبر! لله درُّ اللغة العربية!`,
+     examples:[
+       {ar:`ما أجمَلَ الابتسامةَ المرسومةَ على محيّاك!`, note:"تعجّب قياسيّ بصيغة (ما أفعَلَ)"},
+       {ar:`أعظِمْ بقاضٍ يعدلُ بين الناس!`, note:"تعجّب قياسيّ بصيغة (أفعِلْ بِ)"},
+     ]},
+    {title:"المصدر الميميّ (صرف)", explanation:`اسم مشتقّ من فعله للدلالة على الحدث المجرَّد من الزمن مع زيادة ميم في أوله، ويُصاغ من الثلاثي المعتلّ الآخر أو المضعَّف على وزن (مَفعِل) نحو: وعَدَ - مَوعِد، ومن الثلاثي الصحيح غير المعتلّ ولا المضعَّف على وزن (مَفعَل) نحو: ذهبَ - مَذهَب. ومن غير الثلاثي على وزن اسم المفعول نفسه نحو: استخرجَ - مُستخرَج.`,
+     examples:[
+       {ar:`لهُ في العلمِ مَذهَبٌ عظيمٌ`, note:"مصدر ميميّ من ثلاثيّ صحيح"},
+     ]},
+  ],
+  writingGenre:{title:"المقالة الاجتماعية", explanation:`فنّ أدبيّ نثريّ توضّح فيها فكرة خاصّة أو مسألة اجتماعية بأسلوب شائق يقنع القارئ بالبراهين، تتناول حقائق وأفكارًا متّصلة بظواهر اجتماعية، وتعتمد على اللغة البسيطة، وتنأى عن التعقيد، وتتّسم غالبًا بالإيجاز؛ قصيرة أو متوسطة الطول، وبسهولة الألفاظ، وقربها من الحياة الواقعية ووضوح معانيها وترابطها.`,
+   tips:[
+     "اختر ظاهرة اجتماعية واقعية قريبة من حياة الناس.",
+     "ادعم فكرتك بحقائق وأمثلة وبراهين مقنعة.",
+     "استخدم لغة بسيطة سهلة الألفاظ بعيدة عن التعقيد.",
+   ]},
+  literaryPiece:null,
+  keyPoints:[
+    "«الكلمة الحُلوة»: الكلمة الطيّبة الصادقة من أهمّ مفاتيح القلوب في العلاقات الإنسانية.",
+    "أسلوب التعجّب القياسيّ: (ما أفعَلَ) و(أفعِلْ بِ) — ويوجد تعجّب سماعيّ يُفهم من السياق.",
+    "المصدر الميميّ: على وزن (مَفعِل) من الثلاثي المعتلّ/المضعَّف، و(مَفعَل) من الثلاثي الصحيح السالم.",
+    "فنّ الكتابة: المقالة الاجتماعية — ظاهرة اجتماعية + حقائق وبراهين + لغة بسيطة.",
+  ],
+},
+
+{
+  id:10, semester:2, kind:"regular",
+  title:"القدس في قلوب الهاشميّين", icon:"🕌",
+  readingType:"شعر", readingTitle:"رسالة من باب العامود", readingAuthor:"حيدر محمود",
+  readingNote:"ثمانية أبيات من هذه القصيدة مقرَّرة للحفظ.",
+  authorBio:{name:"حيدر محمود", dates:null,
+    bio:"شاعر أردنيّ معاصر من أبرز شعراء الأردن، تناولت قصائده القدس والقضايا الوطنية والعربية بعاطفة دينية ووطنية صادقة."},
+  textSummary:`قصيدة وجدانية يخاطب فيها الشاعر مدينة القدس، مستحضرًا مكانتها الرفيعة عند الملك الحسين بن طلال (طيّب الله ثراه) ومكانتها عند أهلها والأمّة العربية والإسلامية، ويشير إلى دور الجيش العربيّ في الدفاع عنها، وتفيض القصيدة بالعواطف الدينية والقومية والوطنية المتّقدة في وجدان الشاعر، ويؤكّد أنّ القدس ستبقى للمسجد الأقصى وللعروبة مهما طال أمد الاحتلال.`,
+  vocabulary:[
+    {term:"القِباب", meaning:"جمع قُبّة، وهي بناء دائريّ مقوّس"},
+    {term:"شَيَّعَتْه", meaning:"رافقته وودّعته"},
+    {term:"الجباه السُّمر", meaning:"كناية عن المجاهدين"},
+  ],
+  grammarTopics:[
+    {title:"كم الاستفهامية وكم الخبرية", explanation:`كم الاستفهامية: تدخل على الاسم والفعل، ويُطلب بها التعيين؛ فتحتاج إلى جواب، ويأتي تمييزها مفردًا منصوبًا إذا كان اسمًا؛ نحو: كم طالبًا نجح في الامتحان؟ أمّا كم الخبرية فتفيد التكثير، ويأتي تمييزها مجرورًا بالإضافة أو بحرف الجرّ، سواء أكان اسمًا مفردًا أم جمعًا؛ نحو: كم مِن عالمٍ خدمَ الوطنَ! ويجوز حذفه إن دلّ عليه السياق.`,
+     examples:[
+       {ar:`كَمْ طالبًا نجحَ في الامتحان؟`, note:"كم استفهامية، تمييزها مفرد منصوب"},
+       {ar:`كَمْ عالمٍ خَدَمَ الوطنَ`, note:"كم خبرية، تمييزها مفرد مجرور بالإضافة"},
+     ]},
+    {title:"الألف المقصورة (إملاء)", explanation:`تُكتب الألف اللينة المتطرّفة في الأسماء والأفعال ألفًا مقصورة (ى) أو ممدودة (ا) وفق قواعد محدَّدة تتعلّق بعدد أحرف الكلمة وأصل الألف (منقلبة عن واو أو ياء).`,
+     examples:[
+       {ar:`الهُدى، سَعى`, note:"أصل الألف ياء، فتُكتب مقصورة"},
+       {ar:`العَصا، دَعا`, note:"أصل الألف واو، فتُكتب ممدودة (على صورة الألف)"},
+     ]},
+  ],
+  writingGenre:{title:"الأسلوب الوصفيّ", explanation:`يقوم التعبير عن جمال المكان أو الموضوع بأسلوب أدبيّ راقٍ، معتمدًا على القوّة في إيقاظ العقول وبعث الشعور والحماسة، وإثارة العواطف والانفعالات في نفس المتلقّي، مع الوضوح والجمال في الملاءمة الطبيعية بين الألفاظ والمعاني.`,
+   tips:[
+     "استحضر التفاصيل الحسّية (المرئية والمسموعة) في الوصف.",
+     "وظّف الصور الفنية (التشبيه والاستعارة) لإثراء الوصف.",
+     "اربط الوصف بمشاعرك وعاطفتك الصادقة تجاه الموضوع.",
+   ]},
+  literaryPiece:{title:"من ذلك البيت", author:"فؤاد الخطيب", authorBio:null,
+    note:"أبيات تحضّ على الاعتزاز بالانتماء والأصل العريق."},
+  keyPoints:[
+    "«رسالة من باب العامود» لحيدر محمود: قصيدة وجدانية عن القدس ومكانتها عند الهاشميين — احفظ ثمانية أبيات منها.",
+    "كم الاستفهامية: تحتاج جوابًا، تمييزها مفرد منصوب. كم الخبرية: للتكثير، تمييزها مفرد أو جمع مجرور.",
+    "الألف اللينة المتطرّفة: تُكتب مقصورة (ى) أو ممدودة (ا) حسب أصلها وعدد أحرف الكلمة.",
+    "فنّ الكتابة: الأسلوب الوصفيّ — إثارة العاطفة بجمال اللفظ ودقّة المعنى.",
+  ],
+},
+
+{
+  id:11, semester:2, kind:"regular",
+  title:"قلب نبتة", icon:"🌱",
+  readingType:"قصّة", readingTitle:"رسم القلب", readingAuthor:null,
+  textSummary:`قصّة رمزية على لسان راوٍ يصف علاقته المتوتّرة بنبتة منزلية على شكل قلب، أهداها له صديقه، وكيف تحوّلت مشاعره تجاهها من الكراهية والضيق (بسبب أعباء رعايتها اليومية من ريّ وتنظيف) إلى تفهّم تدريجيّ ثم محبّة، بعد أن أدرك أنّ النباتات كائنات حيّة حسّاسة تستحقّ الرعاية والاهتمام، وتحمل القصّة إشارات إلى حقائق علمية عن حياة النبات وحساسيّته للضوء والري.`,
+  vocabulary:[
+    {term:"السَّأَم", meaning:"الملل والضجر"},
+    {term:"الانسحاب", meaning:"التراجع والتخلّي"},
+  ],
+  grammarTopics:[
+    {title:"التمييز", explanation:`التمييز: اسم نكرة فضلة منصوب يُذكر لبيان المراد من اسم مبهم قبله (تمييز الذات) أو لرفع إبهام نسبة سابقة (تمييز النسبة/الجملة)، نحو: اشتريتُ عشرين كتابًا (تمييز ذات)، وازداد الطلابُ إقبالًا على العلم (تمييز نسبة محوَّل عن الفاعل).`,
+     examples:[
+       {ar:`ازدادَ الطلبةُ إقبالًا على تعلّمِ المِهَن`, note:"تمييز نسبة محوَّل عن فاعل"},
+       {ar:`لله دَرُّهُ رجُلًا!`, note:"تمييز نسبة بعد أسلوب تعجّب"},
+     ]},
+  ],
+  writingGenre:{title:"التلخيص (تلخيص القصّة)", explanation:`تطبيق فنّ التلخيص على النصوص القصصية، بإعادة صوغ أحداث القصّة الرئيسة بإيجاز شديد، مع الحفاظ على تسلسل الأحداث والشخصيات الرئيسة والعقدة والحلّ، من غير الدخول في تفصيلات الحوار أو الوصف الجانبيّ.`,
+   tips:[
+     "التزم بعنصري الزمان والمكان في تلخيصك للقصّة.",
+     "صنّف الشخوص إلى رئيسة وثانوية بوضوح.",
+     "حدّد عقدة القصّة وحلّها في التلخيص.",
+     "التزم بالحدّ الأقصى المطلوب من الكلمات.",
+   ]},
+  literaryPiece:{title:"حديث الزّهور", author:"الصنوبريّ",
+    authorBio:"أحمد بن محمد الحسن الحلبيّ الأنطاكيّ، المعروف بالصنوبريّ (تُوفّي نحو ٣٣٤هـ)، شاعر اقتصر في أكثر شعره على وصف الرياض والأزهار، وُلد ونشأ في أنطاكية، وكان كثير التجوال في البلاد، وكان ممّن يحضر مجالس سيف الدولة الحمدانيّ ويمدحه."},
+  keyPoints:[
+    "«رسم القلب»: قصّة رمزية عن نبتة تعلّم صاحبها معنى الرعاية والمحبّة للكائنات الحيّة.",
+    "التمييز نوعان: تمييز ذات (بعد عدد أو مقياس) وتمييز نسبة/جملة (يرفع إبهام جملة سابقة)، وكلاهما منصوب.",
+    "فنّ الكتابة: تطبيق التلخيص على القصّة — إيجاز الأحداث مع الحفاظ على الشخصيات والعقدة والحلّ.",
+  ],
+},
+
+{
+  id:12, semester:2, kind:"regular",
+  title:"لغة البيان", icon:"🖋️",
+  readingType:"شعر", readingTitle:"العربيّة في ماضيها وحاضرها", readingAuthor:null,
+  readingNote:"ثمانية أبيات من هذه القصيدة مقرَّرة للحفظ.",
+  textSummary:`قصيدة تتغنّى بجمال اللغة العربية وأصالتها وثرائها البيانيّ، مستحضرة أمجادها في الماضي حين كانت لغة العلم والأدب والحضارة، متغنّية بمزاياها التي تفرّدت بها عن سائر اللغات، وتدعو إلى النهوض بها لتستعيد مكانتها ومنزلتها اللائقة بها بين اللغات الحيّة، وتحضّ أبناءها على صونها من الذوبان في اللغات الأخرى.`,
+  vocabulary:[
+    {term:"البيان", meaning:"الإبانة عن المعنى القائم في النفس وتصويره تصويرًا صحيحًا"},
+    {term:"الهَذَر", meaning:"سَقَط الكلام الذي لا يُعبأ به"},
+  ],
+  grammarTopics:[
+    {title:"المنقوص والمقصور والممدود", explanation:`الاسم المنقوص: معرب ينتهي بياء لازمة مكسور ما قبلها (القاضي، الهادي، الداعي)، تُحذف ياؤه في حالتي الرفع والجرّ إذا كان نكرة وتُعوَّض عنها تنوينًا (جاء قاضٍ)، وتثبت في حالة النصب (رأيتُ قاضيًا). الاسم المقصور: معرب ينتهي بألف لازمة مقصورة (الدنيا، الكبرى)، يُعرب بحركات مقدَّرة على الألف في جميع حالاته. الاسم الممدود: معرب ينتهي بألف زائدة ممدودة (ألف وهمزة)، سواء كانت الهمزة أصلية (إنشاء) أم منقلبة عن أصل (بناء - من بنى) أم زائدة للتأنيث (صحراء)، ويُعرب بحركات ظاهرة في جميع حالاته إلّا إن كانت الهمزة زائدة للتأنيث فتُجرّ بالفتحة عوضًا عن الكسرة (ممنوعة من الصرف).`,
+     examples:[
+       {ar:`جاءَ قاضٍ — رأيتُ قاضيًا — مررتُ بقاضٍ`, note:"اسم منقوص: تُحذف الياء رفعًا وجرًّا، وتثبت نصبًا"},
+       {ar:`الدُّنيا دارُ ابتلاء`, note:"اسم مقصور: حركات مقدَّرة دائمًا"},
+       {ar:`حمراء، علماء`, note:"اسم ممدود بهمزة زائدة للتأنيث: ممنوع من الصرف"},
+     ]},
+  ],
+  writingGenre:{title:"الخاطرة", explanation:`لون أدبيّ نثريّ قصير يعبّر فيه الكاتب عن شعور أو فكرة تجول في خاطره بصدق دون تكلّف، تتّسم بالاختصار والإيجاز، وحسن التصوير والخيال، والتعبير الصادق عن وجهة نظر الكاتب بوضوح تامّ.`,
+   tips:[
+     "عبِّر بصدق عمّا يجول في خاطرك من غير تكلّف أو مبالغة.",
+     "التزم الاختصار والإيجاز.",
+     "استخدم لغة تصويرية جميلة (خيال، تصوير) بقدر مناسب.",
+   ]},
+  literaryPiece:{title:"البيان", author:"المنفلوطي",
+    authorBio:"مصطفى لطفي المنفلوطي (١٨٧٢ - ١٩٢٤م)، أديب وشاعر مصريّ، نابغة في الإنشاء والأدب، تعلّم في الأزهر، من آثاره: كتاب (النظرات) وهو مجموعة مقالات في الأدب الاجتماعيّ والنقد، وكتاب (العَبَرات) وهي مجموعة روايات قصيرة، وكتاب (محاضرات المنفلوطي)."},
+  keyPoints:[
+    "«العربية في ماضيها وحاضرها»: قصيدة عن أمجاد اللغة العربية ودعوة للنهوض بها — احفظ ثمانية أبيات.",
+    "المنقوص (ينتهي بياء لازمة): تُحذف ياؤه رفعًا وجرًّا في النكرة، تثبت نصبًا.",
+    "المقصور (ينتهي بألف لازمة): حركات مقدَّرة دائمًا في كل حالاته.",
+    "الممدود (ينتهي بألف وهمزة): حركات ظاهرة، إلّا إن كانت الهمزة للتأنيث فممنوع من الصرف.",
+    "فنّ الكتابة: الخاطرة — تعبير صادق وموجز عن فكرة أو شعور.",
+  ],
+},
+
+{
+  id:13, semester:2, kind:"regular",
+  title:"من صفحات الحياة", icon:"📜",
+  readingType:"سيرة غيرية", readingTitle:"خليل السكاكينيّ وفلسفته في الحياة", readingAuthor:null,
+  textSummary:`نصّ سيريّ (سيرة غيرية) يتناول حياة المربّي والأديب الفلسطينيّ خليل السكاكينيّ، وفلسفته القائمة على المحبّة والتعاطف الذي يتجاوز حدود العرق والدين والجنس والقومية، ويتناول طرفًا من طرائفه ومواقفه الإنسانية النبيلة، مثل موقفه مع أحد طلابه الفقراء ومنديله الممزّق، ويبيّن أنّه كان محبًّا كبيرًا لوطنه وأهله وأصدقائه، بعيدًا عن الحقد والحسد والتعصّب.`,
+  vocabulary:[
+    {term:"دماثة الأخلاق", meaning:"لين الجانب وحسن المعاملة"},
+    {term:"التندّر", meaning:"إطلاق النكات والفكاهات"},
+  ],
+  grammarTopics:[
+    {title:"كاد وأخواتها", explanation:`أفعال ناقصة تدخل على الجملة الاسمية فترفع الاسم (اسمها) وتنصب الخبر (خبرها) الذي يكون جملة فعلية فعلها مضارع مقترن بـ(أنْ) أو غير مقترن بها. وهي ثلاثة أقسام: أفعال المقاربة (تدلّ على قُرب وقوع الفعل): كاد، وأوشك؛ وأفعال الرجاء (تدلّ على رجاء وقوع الفعل): عسى، وحرى، واخلولق؛ وأفعال الشروع (تدلّ على الشروع بالفعل): أخذ، وشرع، وبدأ، وجعل، وأنشأ، وطفِق.`,
+     examples:[
+       {ar:`كادَ المُذنِبُ لا يَنْدَمُ`, note:"كاد: فعل مقاربة، واسمه (المذنب)، وخبره جملة فعلية"},
+       {ar:`عسى اللهُ أنْ يَجْعَلَ بعدَ عُسْرٍ يُسرًا`, note:"عسى: فعل رجاء، خبرها مقترن بـ(أنْ)"},
+     ]},
+  ],
+  writingGenre:{title:"السيرة", explanation:`فنّ نثريّ يتناول حياة شخصية بارزة لها أثر في أحد المجالات الحياتية (الأدبيّ أو السياسيّ أو الفكريّ أو الاجتماعيّ)، ولها نوعان: السيرة الذاتية (يتحدّث فيها الكاتب عن حياته هو نفسه، مثل كتاب «الأيام» لطه حسين)، والسيرة الغيرية (يتناول فيها الكاتب شخصية أخرى، مثل «أخي إبراهيم» لفدوى طوقان). من سماتها الفنية: النزاهة والموضوعية في نقل الأحداث، ودقّة الوصف وبراعته، والاتّكاء على التصوير البلاغيّ، والاهتمام بعنصر التشويق وسلامة اللغة، والقدرة على الإقناع والتأثير.`,
+   tips:[
+     "حدّد نوع السيرة التي تكتبها بوضوح: ذاتية أم غيرية.",
+     "راعِ الموضوعية والنزاهة في نقل الأحداث.",
+     "اتّكئ على التصوير البلاغيّ لإثراء السرد.",
+     "راعِ عنصري الإقناع والتشويق في السرد.",
+   ]},
+  literaryPiece:null,
+  keyPoints:[
+    "«خليل السكاكيني وفلسفته في الحياة»: سيرة غيرية عن مربٍّ فلسطينيّ آمن بالمحبّة الإنسانية العابرة للانتماءات.",
+    "كاد وأخواتها: أفعال مقاربة (كاد، أوشك)، رجاء (عسى، حرى، اخلولق)، شروع (أخذ، شرع، بدأ، جعل، أنشأ، طفِق).",
+    "خبر كاد وأخواتها جملة فعلية فعلها مضارع، ويجوز اقترانه بـ(أنْ) مع أفعال الرجاء خاصّة.",
+    "فنّ الكتابة: السيرة (ذاتية وغيرية) — النزاهة والموضوعية والتصوير البلاغيّ.",
+  ],
+},
+
+{
+  id:14, semester:2, kind:"prosody",
+  title:"العَروض (٢)", icon:"🎶",
+  intro:`في هذه الوحدة الختامية نكمل دراسة بحور الشعر العربيّ بثلاثة بحور جديدة: الخفيف، والبسيط، والطويل، ثم نتعرّف مفاهيم القافية والرويّ والضرورات الشعرية.`,
+  meters:[
+    {
+      name:"بحر الخفيف",
+      taamTafeela:"فَاعِلَاتُنْ مُسْتَفْعِلُنْ فَاعِلَاتُنْ", taamPattern:"فَاعِلَاتُنْ مُسْتَفْعِلُنْ فَاعِلَاتُنْ / فَاعِلَاتُنْ مُسْتَفْعِلُنْ فَاعِلَاتُنْ",
+      majzoo:true, majzooTafeela:"فَاعِلَاتُنْ مُسْتَفْعِلُنْ",
+      key:"يا خَفيفًا خَفَّتْ بِهِ الحَرَكاتُ",
+      example:{ar:"نَغَمٌ في السَّماءِ وَالأَرضِ شَتَّى", scan:"نَ غَ مُنْ فِسْ / سَ مَا ءِ وَلْ / أَرْ ضِ شَتْ تَى", pattern:"فَاعِلَاتُنْ / مُسْتَفْعِلُنْ / فَاعِلَاتُنْ"},
+      note:"للخفيف تفعيلتان: (فَاعِلَاتُنْ) و(مُسْتَفْعِلُنْ)، وتأتي (فَاعِلَاتُنْ) ثلاث مرات في الشطر التامّ ومرّتين في المجزوء."
+    },
+    {
+      name:"بحر البسيط",
+      taamTafeela:"مُسْتَفْعِلُنْ فَاعِلُنْ مُسْتَفْعِلُنْ فَاعِلُنْ", taamPattern:"مُسْتَفْعِلُنْ فَاعِلُنْ مُسْتَفْعِلُنْ فَاعِلُنْ / مُسْتَفْعِلُنْ فَاعِلُنْ مُسْتَفْعِلُنْ فَاعِلُنْ",
+      majzoo:true, majzooTafeela:"مُسْتَفْعِلُنْ فَاعِلُنْ مُسْتَفْعِلُنْ",
+      key:"إنَّ البُسيطَ لَدَيهِ يُبْسَطُ الأَمَلُ",
+      example:{ar:"لَاقَيْتُها هِيَ تَهْوَاني وَأَهْوَاها", scan:"لَا قَيْ تُ هَا / هِ يَ تَهْ وَا / نِي وَ أَهْ وَا هَا", pattern:"مُسْتَفْعِلُنْ / فَاعِلُنْ / مُسْتَفْعِلُنْ / فَاعِلُنْ"},
+      note:"للبسيط تفعيلتان رئيستان تتكرّران بالتناوب: (مُسْتَفْعِلُنْ) و(فَاعِلُنْ)، أربع مرّات لكلّ منهما في البيت التامّ."
+    },
+    {
+      name:"بحر الطويل",
+      taamTafeela:"فَعُولُنْ مَفَاعِيلُنْ فَعُولُنْ مَفَاعِيلُنْ", taamPattern:"فَعُولُنْ مَفَاعِيلُنْ فَعُولُنْ مَفَاعِيلُنْ / فَعُولُنْ مَفَاعِيلُنْ فَعُولُنْ مَفَاعِيلُنْ",
+      majzoo:false,
+      key:"طَويلٌ لَهُ دُونَ البُحورِ فَضائِلُ",
+      example:{ar:"قِفا نَبْكِ مِنْ ذِكْرى حَبيبٍ وَعِرْفانِ", scan:"قِ فَا نَبْ كِ / مِنْ ذِكْ رَى حَ / بي بِنْ وَ عِرْ / فَا نِي", pattern:"فَعُولُنْ / مَفَاعِيلُنْ / فَعُولُنْ / مَفَاعِيلُنْ"},
+      note:"بحر الطويل لا يأتي إلّا تامًّا (لا مجزوء له)، وله تفعيلتان: (فَعُولُنْ) و(مَفَاعِيلُنْ)، ولهذا سُمّي طويلًا لطول بيته (٨ تفعيلات)."
+    },
+  ],
+  qafiya:{
+    title:"القافية والرويّ",
+    explanation:`القافية: مجموعة الحروف من آخر البيت الشعريّ إلى أول ساكن يسبقه مع الحركة التي قبله، وأهمّ حروفها حرف الرويّ. الرويّ: هو الحرف الذي تُبنى عليه القصيدة، ويتكرّر في نهاية أبياتها، وتُنسب إليه القصيدة فيُقال: قصيدة (تائية) إذا كان رويّها التاء، أو (بائية) إذا كان رويّها الباء. وجميع الحروف تصلح أن تكون رويًّا، ما عدا حروف المدّ الساكنة، وتكون الهاء رويًّا إذا سبقها ساكن سواء أكانت أصلية أم زائدة، أمّا إذا سبقها متحرّك فلا تكون رويًّا.`,
+  },
+  dharurat:{
+    title:"الضرورات الشعرية",
+    explanation:`رخصة أُعطيت للشعراء للتخفّف من بعض قيود قواعد اللغة ليستقيم الوزن العروضيّ، إذ إنّ الشاعر قد يُضطرّ إلى ذلك في بعض الحالات لا في كلّ شيء؛ من أشهرها: صرف ما لا ينصرف، وتخفيف المشدَّد في القوافي، وقطع همزة الوصل، ووصل همزة القطع.`,
+    examples:[
+      {ar:`وَأَلْقَى الشَّرْقُ منها في ثِيابي دَنانيرًا تَفِرُّ مِنَ البَنانِ`, note:"صرف الممنوع من الصرف (دنانير) للضرورة"},
+      {ar:`فَلا وَأَبيكَ ابنةَ العامِريّ لا يَدَّعي القَومُ أنّي أَفِرّ`, note:"تخفيف المشدَّد (أفَرَّ) للضرورة"},
+    ]
+  },
+  keyPoints:[
+    "بحر الخفيف: فَاعِلَاتُنْ مُسْتَفْعِلُنْ فَاعِلَاتُنْ (×٢) — تامّ ومجزوء.",
+    "بحر البسيط: مُسْتَفْعِلُنْ فَاعِلُنْ ×٤ (بالتناوب) — تامّ ومجزوء.",
+    "بحر الطويل: فَعُولُنْ مَفَاعِيلُنْ ×٤ — لا يأتي إلّا تامًّا، لا مجزوء له.",
+    "الرويّ: الحرف الذي تُبنى عليه القصيدة ويتكرّر آخر كل بيت، وتُنسب إليه القصيدة (تائية، بائية...).",
+    "الضرورة الشعرية: تخفّف من القيود اللغوية ليستقيم الوزن، مثل صرف الممنوع من الصرف وتخفيف المشدّد.",
+  ],
+}
+);
+/* ============================================================
+   الاختبار الشامل — ٥٠ سؤالًا تغطّي الوحدات الأربع عشرة
+   difficulty: easy(1pt) / medium(2pt) / hard(3pt)
+   ============================================================ */
+const QUIZ_QUESTIONS = [
+// ---------------- الوحدة الأولى ----------------
+{id:1, unit:1, difficulty:"easy", points:1,
+ question:"من أيّ سورة قرآنية جاء نصّ «مريم ابنة عمران» المقرَّر في الوحدة الأولى؟",
+ options:["سورة مريم","سورة آل عمران","سورة البقرة","سورة النساء"], correct:1,
+ explanation:"النصّ من سورة آل عمران، الآيات ٣٣-٥١، وهي من السور المدنيّة. سورة مريم تحمل اسم مريم عليها السلام لكنّ نصّ الوحدة مأخوذ تحديدًا من آل عمران."},
+{id:2, unit:1, difficulty:"medium", points:2,
+ question:"في جملة «يا طالبَ العلمِ اجتهد»، ما إعراب المنادى «طالبَ»؟",
+ options:["مبنيّ على الضمّ في محلّ نصب","معرب منصوب؛ لأنّه مضاف","معرب مرفوع؛ لأنّه نكرة مقصودة","مبنيّ على الفتح"], correct:1,
+ explanation:"«طالبَ» منادى مضاف (مضاف إلى «العلم»)، والمنادى المضاف يكون معربًا منصوبًا دائمًا، بخلاف العلَم المفرد أو النكرة المقصودة اللذين يُبنيان في محل نصب."},
+{id:3, unit:1, difficulty:"easy", points:1,
+ question:"اسم الفاعل من الفعل «استخدمَ» هو:",
+ options:["مُستخدَم","استخدام","مُستخدِم","مُستخدَمَة"], correct:2,
+ explanation:"اسم الفاعل من غير الثلاثي يُصاغ بإبدال حرف المضارعة ميمًا مضمومة وكسر ما قبل الآخر: يستخدِمُ ← مُستخدِم. أمّا «مُستخدَم» (بفتح الدال) فهو اسم المفعول."},
+{id:4, unit:1, difficulty:"hard", points:3,
+ question:"الأديب الذي كتب نصّ «لأُسَمِّيَنَّه محمدًا» ولُقّب بـ«عميد الأدب العربيّ» هو:",
+ options:["أحمد أمين","المنفلوطي","طه حسين","أحمد شوقي"], correct:2,
+ explanation:"طه حسين (١٨٨٩-١٩٧٣م)، أديب مصريّ فقد بصره صغيرًا ولُقّب بعميد الأدب العربيّ، والنصّ مقتطف من كتابه «على هامش السيرة»."},
+
+// ---------------- الوحدة الثانية ----------------
+{id:5, unit:2, difficulty:"easy", points:1,
+ question:"همزة الوصل في كلمة «اجتمعَ» سُمّيت بذلك لأنّها:",
+ options:["تُنطق دائمًا مهما وقعت","لا تُنطق في درج الكلام ويُتوصَّل بها للنطق بالساكن بعدها","تُكتب على السطر دائمًا","تأتي في وسط الكلمة فقط"], correct:1,
+ explanation:"همزة الوصل تُكتب على صورة الألف (ا)، ولا تُنطق إن وقعت في درج الكلام (أي في وسط الكلام لا في بدايته)، وهي وسيلة للتوصّل إلى النطق بالساكن الذي يليها."},
+{id:6, unit:2, difficulty:"medium", points:2,
+ question:"ما نوع الهمزة في كلمة «دُعاء» ولماذا كُتبت على السطر؟",
+ options:["متوسطة؛ لأنّ ما قبلها مكسور","متطرّفة؛ لأنّ ما قبلها ألف ساكنة (حرف مدّ)","وصل؛ لأنّها في أول الكلمة","قطع؛ لأنّها تُنطق دائمًا فقط"], correct:1,
+ explanation:"همزة «دُعاء» متطرّفة (في آخر الكلمة)، وقاعدتها أنّها إذا وقع قبلها حرف مدّ ساكن (كالألف هنا) كُتبت مفردة على السطر: قَرَأ، دُعاء، شَاطِئ فيها استثناءات لكن دعاء وضوء تكتب على السطر لأن ما قبلها ألف ساكنة."},
+{id:7, unit:2, difficulty:"easy", points:1,
+ question:"من خطوات كتابة المقالة الثلاث:",
+ options:["الحفظ، التلاوة، الإلقاء","الإعداد والتحضير، التنفيذ، التنقيح والتحرير","العنوان، المقدمة، الخاتمة فقط","القراءة، التلخيص، النشر"], correct:1,
+ explanation:"خطوات إعداد المقالة: أولًا الإعداد والتحضير (جمع الحقائق والآراء)، ثانيًا التنفيذ (ترتيب الأفكار في فقرات مترابطة)، ثالثًا التنقيح والتحرير (مراجعة اللغة والتراكيب)."},
+{id:8, unit:2, difficulty:"medium", points:2,
+ question:"الشاعر الفلسطينيّ الذي استُشهد عام ١٩٤٨م ولُقّب بـ«شاعر الشهيد»، وهو صاحب قصيدة «تبسّم»:",
+ options:["أبو تمّام","عبد الرحيم محمود","حيدر محمود","فؤاد الخطيب"], correct:1,
+ explanation:"عبد الرحيم محمود (١٩١٣-١٩٤٨م)، شاعر فلسطينيّ من عنبتا قضاء طولكرم، استُشهد عام ١٩٤٨م، ولُقّب بشاعر الشهيد لقصيدته «سأحمل روحي على راحتي»."},
+
+// ---------------- الوحدة الثالثة ----------------
+{id:9, unit:3, difficulty:"easy", points:1,
+ question:"قصيدة «واحرّ قلباه» قالها المتنبّي عاتبًا فيها:",
+ options:["الخليفة العباسيّ","سيف الدولة الحمدانيّ","كافور الإخشيديّ","هارون الرشيد"], correct:1,
+ explanation:"عاتب المتنبّي في هذه القصيدة سيف الدولة الحمدانيّ الذي اتّصل به ومدحه بأروع قصائده، بعد أن سمع سيف الدولة أقوال الوشاة فيه."},
+{id:10, unit:3, difficulty:"medium", points:2,
+ question:"في قول أبي فراس: «لَوْلا الحَياءُ لَهاجَني اسْتِعبارُ»، أداة الشرط «لولا»:",
+ options:["أداة شرط جازمة تجزم فعلين","أداة شرط غير جازمة تفيد امتناع الجواب لوجود الشرط","اسم استفهام","حرف نفي"], correct:1,
+ explanation:"«لولا» من أدوات الشرط غير الجازمة، وتفيد امتناع الجواب لوجود الشرط؛ أي: امتنع الاستعبار (البكاء) بسبب وجود الحياء."},
+{id:11, unit:3, difficulty:"hard", points:3,
+ question:"كلمة «حِيران» (مؤنّثها حَيرى) في قولنا «رجل حيران» تُعرب صرفيًّا:",
+ options:["صيغة مبالغة على وزن فَعْلان","صفة مشبَّهة على وزن فَعْلان، مؤنّثها فَعْلى","اسم فاعل","اسم مفعول"], correct:1,
+ explanation:"من أوزان الصفة المشبَّهة: فَعْلان الذي مؤنّثه فَعْلى، مثل: حيران - حيرى، عطشان - عطشى. وتدلّ الصفة المشبَّهة على اتصاف دائم أو غالب لا على المبالغة والكثرة."},
+{id:12, unit:3, difficulty:"easy", points:1,
+ question:"من أهمّ سمات الرسالة الشخصية الفنيّة:",
+ options:["التعقيد والإطالة","الوضوح والبساطة والإيجاز","استخدام الرموز الغامضة فقط","الابتعاد عن التعبير عن المشاعر"], correct:1,
+ explanation:"الرسالة الشخصية تتّسم بالوضوح والبساطة والإيجاز غير المخلّ، وتكشف عن مشاعر الكاتب وانفعالاته الصادقة تجاه المرسَل إليه."},
+
+// ---------------- الوحدة الرابعة ----------------
+{id:13, unit:4, difficulty:"easy", points:1,
+ question:"موضوع المقالة العلمية في الوحدة الرابعة هو:",
+ options:["أمراض القلب","الحساسيّة","التغذية السليمة","الرياضة البدنية"], correct:1,
+ explanation:"تناولت المقالة مرض الحساسية من حيث أسبابه وأنواعه (جلدية، تنفسية، أنفية) وطرق الوقاية منه."},
+{id:14, unit:4, difficulty:"medium", points:2,
+ question:"اسم المكان من الفعل «جَلَسَ» (مضارعه يَجلِس، مكسور العين) يُصاغ على وزن:",
+ options:["مَفْعَل","مَفْعِل","مُفْعَل","فاعِل"], correct:1,
+ explanation:"إذا كان مضارع الفعل الثلاثيّ مكسور العين، صيغ اسم المكان/الزمان على وزن (مَفْعِل): جلسَ - يجلِس - مَجلِس."},
+{id:15, unit:4, difficulty:"medium", points:2,
+ question:"من أهمّ خطوات كتابة التلخيص:",
+ options:["إضافة رأي الملخِّص الشخصيّ إلى النصّ","استخراج الأفكار الرئيسة وترك الأفكار الثانوية","نسخ النصّ الأصليّ حرفيًّا","إطالة النصّ الأصليّ وزيادة تفاصيله"], correct:1,
+ explanation:"من أهمّ خطوات التلخيص: قراءة النصّ وفهمه، ثم استخراج الأفكار الرئيسة وترك الثانوية، ثم إعادة الصياغة بلغة الملخِّص من غير تدخّل بالأفكار أو إصدار أحكام."},
+
+// ---------------- الوحدة الخامسة ----------------
+{id:16, unit:5, difficulty:"easy", points:1,
+ question:"قصيدة «سأكتبُ عنكَ يا وطني» تتغنّى بحبّ:",
+ options:["مصر","الأردنّ","فلسطين","سوريا"], correct:1,
+ explanation:"القصيدة لمحمود فضيل التلّ، شاعر أردنيّ، وتعبّر عن حبّه العميق للأردن ووصف مظاهر الشوق إليه."},
+{id:17, unit:5, difficulty:"hard", points:3,
+ question:"في جملة «يجبُ أنْ نتوحَّدَ»، الفعل المضارع المعتلّ الآخر «نتوحَّدَ» يُعرب:",
+ options:["مرفوع بضمّة مقدَّرة","منصوب بفتحة ظاهرة؛ لأنّه سُبق بأداة نصب","مجزوم بحذف حرف العلّة","مبنيّ على الفتح"], correct:1,
+ explanation:"«نتوحَّدَ» فعل مضارع معتلّ الآخر بالألف، سُبق بـ«أنْ» الناصبة، فيُنصب بفتحة ظاهرة على آخره (بخلاف الأفعال المعتلّة بالألف التي تُقدَّر عليها الفتحة، فهنا الفتحة ظاهرة لأنّه لم ينتهِ بألف بل بحرف صحيح مسبوق بحرف علة مختلف — والقاعدة العامة: الفتحة تُقدَّر فقط إذا كان آخر الفعل ألفًا)."},
+{id:18, unit:5, difficulty:"medium", points:2,
+ question:"اسم الهيئة يُصاغ من الفعل الثلاثيّ فقط على وزن:",
+ options:["فَعْلة","فِعْلة","مَفْعَل","فاعِل"], correct:1,
+ explanation:"اسم الهيئة يدلّ على هيئة وقوع الحدث، ويُصاغ من الثلاثي فقط على وزن (فِعْلة) بكسر الفاء: جلسَ - جِلْسة. أمّا (فَعْلة) بفتح الفاء فهي وزن اسم المرّة."},
+{id:19, unit:5, difficulty:"easy", points:1,
+ question:"لُقّب الشاعر أحمد شوقي بـ:",
+ options:["شاعر الشهيد","أمير الشعراء","حكيم الشعراء","شاعر الثورة"], correct:1,
+ explanation:"أحمد شوقي (١٨٦٨-١٩٣٢م) لُقّب بأمير الشعراء، وله ديوان (الشوقيّات)، وله مسرحيّات شعرية مثل (مصرع كليوباترا) و(مجنون ليلى)."},
+
+// ---------------- الوحدة السادسة ----------------
+{id:20, unit:6, difficulty:"easy", points:1,
+ question:"مقالة «بين الأصالة والحداثة» تدعو إلى:",
+ options:["الانغلاق التامّ على الماضي","الانسلاخ الكامل عن التراث","التوازن بين التمسّك بالتراث والانفتاح على العصر","تجاهل قضايا الهوية"], correct:2,
+ explanation:"تحذّر المقالة من موقفين متطرّفين (الانغلاق على الماضي، أو الانسلاخ التامّ عنه)، وتدعو إلى موقف وسط متوازن يحافظ على الهوية ويواكب العصر في آن."},
+{id:21, unit:6, difficulty:"medium", points:2,
+ question:"في جملة «جاء الطلابُ كلُّهم»، كلمة «كلّ»:",
+ options:["توكيد لفظيّ","توكيد معنويّ","بدل","نعت"], correct:1,
+ explanation:"«كلّ» من ألفاظ التوكيد المعنويّ المشهورة (كلّ، جميع، نفس، عين، كلا، كلتا)، وتتصل بضمير يعود على المؤكَّد ويطابقه في الجنس والعدد."},
+{id:22, unit:6, difficulty:"easy", points:1,
+ question:"اسم الآلة من الفعل «غَسَلَ» على وزن (فَعّالة) هو:",
+ options:["مِغسَل","غسّالة","مِغسال","غَسيل"], correct:1,
+ explanation:"«غسّالة» اسم آلة على وزن (فَعّالة)، وهو أحد أوزان اسم الآلة الخمسة المشهورة إلى جانب: مِفْعَل، مِفْعال، مِفْعَلة، فِعال."},
+
+// ---------------- الوحدة السابعة: العَروض ١ ----------------
+{id:23, unit:7, difficulty:"medium", points:2,
+ question:"تفعيلات بحر الوافر التامّ الرئيسة هي:",
+ options:["فَعُولُنْ فَعُولُنْ","مُسْتَفْعِلُنْ مُسْتَفْعِلُنْ","مُفَاعَلَتُنْ مُفَاعَلَتُنْ فَعُولُنْ","فَاعِلَاتُنْ مُسْتَفْعِلُنْ"], correct:2,
+ explanation:"بحر الوافر تفعيلته: مُفَاعَلَتُنْ مُفَاعَلَتُنْ فَعُولُنْ، تتكرّر مرّتين في البيت التامّ (شطرين)، وتأتي (فَعُولُنْ) عروضًا وضربًا فقط."},
+{id:24, unit:7, difficulty:"easy", points:1,
+ question:"بحر شعريّ تفعيلته الوحيدة المتكرّرة (فَعُولُنْ) ثماني مرّات في البيت التامّ هو:",
+ options:["الرجز","المتقارب","الوافر","الطويل"], correct:1,
+ explanation:"بحر المتقارب من البحور الصافية؛ إذ تتكرّر فيه تفعيلة واحدة هي (فَعُولُنْ) ثماني مرّات في البيت التامّ (٤ في كل شطر)."},
+{id:25, unit:7, difficulty:"hard", points:3,
+ question:"إذا جاء بحر الرجز في السطر الواحد بثلاث تفعيلات فقط (مُسْتَفْعِلُنْ ×٣)، سُمّي هذا الوزن:",
+ options:["الرجز المجزوء","الأرجوزة (الرجز المشطور)","الرجز التامّ","المتقارب المجزوء"], correct:1,
+ explanation:"يأتي الرجز (مشطورًا) بثلاث تفعيلات في السطر الواحد فقط، ويُسمّى حينها (الأرجوزة)، ويُسمّى ناظمه (رجّازًا). وهذا يختلف عن (المجزوء) الذي يكون بحذف تفعيلة من كل شطر من الشطرين."},
+
+// ---------------- الوحدة الثامنة ----------------
+{id:26, unit:8, difficulty:"easy", points:1,
+ question:"كاتب مقالة «النهضة العربية المتجدّدة» هو:",
+ options:["الملك عبد الله الثاني","الأمير الحسن بن طلال","الشريف الحسين بن عليّ","الملك الحسين بن طلال"], correct:1,
+ explanation:"كتب هذه المقالة صاحب السموّ الملكيّ الأمير الحسن بن طلال بمناسبة حلول شهر رمضان، مستذكرًا الثورة العربية الكبرى وقيمها."},
+{id:27, unit:8, difficulty:"medium", points:2,
+ question:"في جملة «اشترك في الرحلة خمسةَ عشرَ طالبًا»، إعراب «طالبًا»:",
+ options:["مضاف إليه مجرور","تمييز منصوب","فاعل مرفوع","نعت منصوب"], correct:1,
+ explanation:"الأعداد المركّبة من (١١-١٩) معدودها يأتي دائمًا مفردًا منصوبًا على التمييز (باستثناء العدد ١٢ الذي يوافق المعدود في التذكير والتأنيث في جزئه الأول)."},
+{id:28, unit:8, difficulty:"hard", points:3,
+ question:"في جملة «شارك في الحوار عشرون طالبةً»، لماذا نُصب «طالبةً» رغم أنّها مؤنّثة وكذلك «عشرون»؟",
+ options:["لأنّ العدد عشرين لا يوافق المعدود إطلاقًا","لأنّ ألفاظ العقود (٢٠-٩٠) معدودها دائمًا مفرد منصوب بلا اعتبار للتذكير والتأنيث","خطأ في الجملة، والصواب طالبٌ","لأنّها تمييز لعدد مركّب"], correct:1,
+ explanation:"ألفاظ العقود (عشرون، ثلاثون...، تسعون) ملحقة بجمع المذكر السالم، ومعدودها يأتي دائمًا مفردًا منصوبًا على التمييز، بصرف النظر عن كون المعدود مذكرًا أو مؤنّثًا."},
+{id:29, unit:8, difficulty:"medium", points:2,
+ question:"مصدر الفعل الرباعيّ «أكرمَ» على وزن (إفعال) هو:",
+ options:["كَرَم","إكرام","مُكرَم","كريم"], correct:1,
+ explanation:"مصدر الفعل الرباعيّ على وزن (أَفْعَلَ) يأتي قياسيًّا على وزن (إفعال): أكرمَ - إكرامًا، أحسنَ - إحسانًا."},
+
+// ---------------- الوحدة التاسعة ----------------
+{id:30, unit:9, difficulty:"easy", points:1,
+ question:"موضوع مقالة «الكلمة الحُلوة» لمحمد النقّاش هو:",
+ options:["أثر المال في السعادة","قيمة الكلمة الطيّبة الصادقة في العلاقات الإنسانية","أهمية العلم","وصف الطبيعة"], correct:1,
+ explanation:"تتناول المقالة قيمة الكلمة الطيّبة (الحلوة) بوصفها من مفاتيح القلوب التي تفتح أبواب المودّة، شريطة أن تصدر عن إخلاص لا نفاق."},
+{id:31, unit:9, difficulty:"medium", points:2,
+ question:"صيغة التعجّب القياسية في «ما أجملَ الابتسامةَ!» تُعرب فيها كلمة «ما»:",
+ options:["اسم استفهام مبنيّ في محل نصب","نكرة تعجبية مبنية على السكون في محل رفع مبتدأ","حرف نفي لا محل له","اسم موصول"], correct:1,
+ explanation:"في تركيب (ما أفعَلَ)، تُعرب «ما»: نكرة تعجبية مبنية على السكون في محل رفع مبتدأ، و«أفعَلَ» فعل ماضٍ جامد للتعجّب في محل رفع خبر."},
+{id:32, unit:9, difficulty:"hard", points:3,
+ question:"المصدر الميميّ من الفعل «وَعَدَ» (معتلّ الآخر) يأتي على وزن:",
+ options:["مَفْعَل مثل مَذهَب","مَفْعِل مثل مَوعِد","مُفاعَلة","فَعالة"], correct:1,
+ explanation:"يُصاغ المصدر الميميّ من الثلاثي المعتلّ الآخر أو المضعَّف على وزن (مَفْعِل) بكسر العين: وعدَ - مَوعِد. أمّا الثلاثي الصحيح غير المعتلّ وغير المضعَّف فيصاغ على وزن (مَفْعَل): ذهبَ - مَذهَب."},
+
+// ---------------- الوحدة العاشرة ----------------
+{id:33, unit:10, difficulty:"easy", points:1,
+ question:"قصيدة «رسالة من باب العامود» تتحدّث عن مدينة:",
+ options:["عمّان","القدس","بغداد","دمشق"], correct:1,
+ explanation:"القصيدة لحيدر محمود، ويخاطب فيها الشاعر مدينة القدس مستحضرًا مكانتها عند الملك الحسين بن طلال وعند أهلها والأمّة العربية."},
+{id:34, unit:10, difficulty:"medium", points:2,
+ question:"في «كَمْ طالبًا نجحَ في الامتحان؟» ما نوع «كم» وإعراب تمييزها؟",
+ options:["كم خبرية، وتمييزها مجرور","كم استفهامية، وتمييزها مفرد منصوب","كم خبرية، وتمييزها مرفوع","كم زائدة لا محل لها"], correct:1,
+ explanation:"«كم» هنا استفهامية؛ لأنّها تحتاج جوابًا (تحتاج تعيين عدد الناجحين)، وتمييزها يأتي مفردًا منصوبًا: طالبًا."},
+{id:35, unit:10, difficulty:"medium", points:2,
+ question:"في «كَمْ عالمٍ خَدَمَ الوطنَ!» ما نوع «كم» ودلالتها؟",
+ options:["استفهامية تحتاج جوابًا","خبرية تفيد التكثير، وتمييزها مجرور","شرطية","موصولة"], correct:1,
+ explanation:"«كم» هنا خبرية تفيد التكثير (وليس سؤالًا يحتاج جوابًا)، ويأتي تمييزها مفردًا أو جمعًا مجرورًا بالإضافة أو بحرف الجرّ (مِن)."},
+
+// ---------------- الوحدة الحادية عشرة ----------------
+{id:36, unit:11, difficulty:"easy", points:1,
+ question:"قصّة «رسم القلب» تدور حول علاقة الراوي بـ:",
+ options:["صديق قديم","نبتة منزلية على شكل قلب","كتاب نادر","حيوان أليف"], correct:1,
+ explanation:"القصّة رمزية عن علاقة الراوي بنبتة منزلية على شكل قلب أهداها له صديقه، وكيف تحوّلت مشاعره تجاهها من الضيق إلى المحبّة."},
+{id:37, unit:11, difficulty:"hard", points:3,
+ question:"في «ازدادَ الطلبةُ إقبالًا على العلم»، كلمة «إقبالًا» تُعرب:",
+ options:["مفعول مطلق","تمييز نسبة محوَّل عن فاعل","حال منصوب","مفعول به"], correct:1,
+ explanation:"«إقبالًا» تمييز نسبة (جملة) منصوب، وهو محوَّل في الأصل عن فاعل؛ إذ التقدير: ازداد إقبالُ الطلبة، فحوّلنا الجملة وجعلنا (إقبالًا) تمييزًا يرفع إبهام النسبة في الجملة السابقة."},
+{id:38, unit:11, difficulty:"medium", points:2,
+ question:"الشاعر «الصنوبريّ» صاحب «حديث الزهور» اشتهر بوصف:",
+ options:["المعارك والحروب","الرياض والأزهار","القصور والمدائن","الصحراء"], correct:1,
+ explanation:"الصنوبريّ (توفي نحو ٣٣٤هـ) شاعر اقتصر في أكثر شعره على وصف الرياض والأزهار، وكان يحضر مجالس سيف الدولة الحمدانيّ."},
+
+// ---------------- الوحدة الثانية عشرة ----------------
+{id:39, unit:12, difficulty:"easy", points:1,
+ question:"كلمة «الهُدى» اسم:",
+ options:["منقوص","مقصور","ممدود","صحيح الآخر"], correct:1,
+ explanation:"«الهدى» اسم مقصور؛ لأنّه ينتهي بألف لازمة (مقصورة)، ويُعرب بحركات مقدَّرة على الألف في كل حالاته الإعرابية."},
+{id:40, unit:12, difficulty:"medium", points:2,
+ question:"لماذا تُحذف ياء الاسم المنقوص «قاضٍ» في «جاء قاضٍ» وتثبت في «رأيتُ قاضيًا»؟",
+ options:["لأنّها تُحذف في كل الحالات دون استثناء","تُحذف في حالتي الرفع والجرّ (إن كان نكرة) ويُعوَّض عنها تنوين، وتثبت في حالة النصب","لأنّ الفعل جاء لازمًا","لا علاقة للإعراب بحذف الياء"], correct:1,
+ explanation:"الاسم المنقوص النكرة تُحذف ياؤه في حالتي الرفع والجرّ ويُعوَّض عنها بتنوين (جاء قاضٍ)، بينما تثبت الياء في حالة النصب لأنها تظهر عليها الفتحة (رأيتُ قاضيًا)."},
+{id:41, unit:12, difficulty:"hard", points:3,
+ question:"كلمة «حمراء» اسم ممدود، وسبب منعها من الصرف أنّ:",
+ options:["همزتها أصلية من بنية الكلمة","همزتها منقلبة عن حرف علّة أصليّ","همزتها زائدة للتأنيث","الكلمة نكرة مطلقًا"], correct:2,
+ explanation:"«حمراء» اسم ممدود همزته زائدة للتأنيث (وليست أصلية كـ«إنشاء» ولا منقلبة كـ«بناء»)، وهذا النوع من الأسماء الممدودة يُمنع من الصرف ويُجرّ بالفتحة عوضًا عن الكسرة."},
+{id:42, unit:12, difficulty:"medium", points:2,
+ question:"الأديب المصريّ صاحب كتابَي «النظرات» و«العَبَرات»، ولُقّب بـ«نابغة الإنشاء»، هو:",
+ options:["أحمد أمين","طه حسين","المنفلوطي","أحمد شوقي"], correct:2,
+ explanation:"مصطفى لطفي المنفلوطي (١٨٧٢-١٩٢٤م)، أديب وشاعر مصريّ نابغة في الإنشاء والأدب، من آثاره: النظرات (مقالات أدبية اجتماعية ونقدية)، والعَبَرات (روايات قصيرة)."},
+
+// ---------------- الوحدة الثالثة عشرة ----------------
+{id:43, unit:13, difficulty:"easy", points:1,
+ question:"النصّ الذي يتناول حياة «خليل السكاكينيّ» يُصنَّف على أنّه:",
+ options:["سيرة ذاتية","سيرة غيرية","قصّة قصيرة","مقالة اجتماعية"], correct:1,
+ explanation:"النصّ سيرة غيرية؛ لأنّ الكاتب يتحدّث فيه عن شخصية أخرى (خليل السكاكينيّ) لا عن نفسه، بخلاف السيرة الذاتية كـ«الأيام» لطه حسين."},
+{id:44, unit:13, difficulty:"medium", points:2,
+ question:"في «عسى اللهُ أنْ يجعلَ بعدَ عُسْرٍ يُسرًا»، «عسى» فعل من:",
+ options:["أفعال المقاربة","أفعال الرجاء","أفعال الشروع","الأفعال الناسخة العادية"], correct:1,
+ explanation:"«عسى» من أفعال الرجاء (مع حرى واخلولق)، وتدلّ على رجاء وقوع الخبر، وقد اقترن خبرها هنا بـ«أنْ» الناصبة وهذا شائع مع أفعال الرجاء."},
+{id:45, unit:13, difficulty:"easy", points:1,
+ question:"من أفعال الشروع التي تدخل على الجملة الاسمية فترفع الاسم وتنصب الخبر جملة فعلية:",
+ options:["كاد وأوشك","عسى وحرى","أخذ وشرع وبدأ وجعل","إنّ وأخواتها"], correct:2,
+ explanation:"أفعال الشروع تدلّ على البدء الفوريّ بالفعل، وأشهرها: أخذ، شرع، بدأ، جعل، أنشأ، طفِق، وخبرها جملة فعلية فعلها مضارع غير مقترن بـ(أنْ)."},
+
+// ---------------- الوحدة الرابعة عشرة: العَروض ٢ ----------------
+{id:46, unit:14, difficulty:"medium", points:2,
+ question:"بحر شعريّ لا يأتي إلّا تامًّا، وليس له وزن مجزوء، وتفعيلتاه (فَعُولُنْ) و(مَفَاعِيلُنْ):",
+ options:["البسيط","الخفيف","الطويل","الوافر"], correct:2,
+ explanation:"بحر الطويل من البحور التي لا تأتي إلّا تامّة (لا مجزوء له)، وتفعيلتاه: فَعُولُنْ ومَفَاعِيلُنْ، وسُمّي طويلًا لطول بيته (٨ تفعيلات في البيت التامّ)."},
+{id:47, unit:14, difficulty:"easy", points:1,
+ question:"تفعيلتا بحر البسيط اللتان تتكرّران بالتناوب هما:",
+ options:["فَعُولُنْ ومَفَاعِيلُنْ","مُسْتَفْعِلُنْ وفَاعِلُنْ","فَاعِلَاتُنْ ومُسْتَفْعِلُنْ","مُفَاعَلَتُنْ وفَعُولُنْ"], correct:1,
+ explanation:"بحر البسيط تفعيلتاه: مُسْتَفْعِلُنْ فَاعِلُنْ، تتكرّران بالتناوب أربع مرّات لكلّ منهما في البيت التامّ (مستفعلن فاعلن مستفعلن فاعلن ×٢)."},
+{id:48, unit:14, difficulty:"hard", points:3,
+ question:"الحرف الذي تُبنى عليه القصيدة ويتكرّر في نهاية كلّ أبياتها، وتُنسب إليه القصيدة (فيُقال: تائية أو بائية)، يُسمّى:",
+ options:["القافية","الرويّ","العروض","الضرب"], correct:1,
+ explanation:"الرويّ هو الحرف الذي تُبنى عليه القصيدة ويتكرّر آخر كلّ بيت، وتُنسب إليه القصيدة. أمّا القافية فهي مجموعة الحروف من آخر البيت إلى أول ساكن يسبقها مع حركته، والرويّ أهمّ حروف القافية."},
+{id:49, unit:14, difficulty:"hard", points:3,
+ question:"«صرف الممنوع من الصرف» في قول الشاعر لضرورة الوزن يُسمّى:",
+ options:["خطأ لغويًّا يُستنكر على الشاعر","ضرورة شعرية: رخصة للتخفّف من بعض قيود القواعد لإقامة الوزن","حكمًا نحويًّا ثابتًا في كل السياقات","نوعًا من الزحاف العروضيّ فقط"], correct:1,
+ explanation:"الضرورة الشعرية رخصة أُعطيت للشعراء دون غيرهم للتخفّف من بعض قيود قواعد اللغة عند الاضطرار، ليستقيم الوزن العروضيّ، ومنها: صرف ما لا ينصرف، وتخفيف المشدَّد، وقطع همزة الوصل أو وصل همزة القطع."},
+{id:50, unit:14, difficulty:"medium", points:2,
+ question:"بحر الخفيف تفعيلتاه:",
+ options:["فَاعِلَاتُنْ ومُسْتَفْعِلُنْ","مُتَفَاعِلُنْ ومُسْتَفْعِلُنْ","فَعُولُنْ ومَفَاعِيلُنْ","مُفَاعَلَتُنْ وفَعُولُنْ"], correct:0,
+ explanation:"بحر الخفيف تفعيلتاه: فَاعِلَاتُنْ ومُسْتَفْعِلُنْ، وتأتي (فَاعِلَاتُنْ) ثلاث مرّات في الشطر التامّ (فاعلاتن مستفعلن فاعلاتن) ومرّتين في المجزوء."},
+];
+/* ============================================================
+   أسئلة التحدّي — ٢٠ سؤالًا ممتعًا وذكيًّا
+   ============================================================ */
+const CHALLENGE_QUESTIONS = [
+{q:"في قصيدة المتنبّي، وصف نفسه بأنّه «الذي نظر الأعمى إلى أدبي». ما الصورة البلاغية في هذا التعبير، وما الذي يريد المتنبّي إثباته عن شعره؟",
+ a:"الصورة كناية/استعارة عن شدّة شهرة شعره وذيوعه حتى إنّ الأعمى (الذي لا يبصر) استطاع أن «يبصر» أدبه لفرط انتشاره وبيانه ووضوحه؛ فالمتنبّي يريد أن يثبت أنّ شعره بلغ من الفصاحة والانتشار حدًّا يجعله محسوسًا كالمرئيّات، وفي هذا اعتداد كبير بنفسه وشعره، وهي سمة معروفة عند المتنبّي."},
+{q:"لماذا تُحذف همزة الوصل من كلمة «ابن» إذا وقعت بين علمين والثاني أبٌ للأول، مثل: «محمدُ بنُ عبدِ الله»، بينما تبقى في «هذا ابنُ خالد»؟",
+ a:"لأنّ همزة الوصل في «ابن» تُحذف كتابةً حين تقع بين علمين، ثانيهما أبٌ مباشر للأول ولم يُفصل بينهما بشيء (كأن تكون في أول السطر، أو مسبوقة بـ«يا» النداء، أو غير مسبوقة بشيء) — أمّا إذا لم تتحقّق الشروط (كأن يسبقها لفظ «هذا» وليس علمًا) فتبقى الهمزة مكتوبة."},
+{q:"في بحر الوافر، لماذا سُمّي «الوافر»؟ وما الذي يميّزه صوتيًّا عن بقية البحور التي درستها؟",
+ a:"سُمّي الوافر لوفرة حركاته (كثرة المقاطع القصيرة المتحرّكة) مقارنة ببحور أخرى، فتفعيلته (مُفاعَلَتُنْ) تحوي أربع حركات متتالية قبل الساكن، ما يمنحه إيقاعًا متدفّقًا وموسيقى داخلية غنية، بخلاف بحور مثل المتقارب ذات الإيقاع الأكثر انتظامًا وتكرارًا."},
+{q:"تخيّل بيتًا شعريًّا يبدأ بـ«يا» ثم اسم عَلَم مفرد مثل «يا سعيدُ». كيف تُعرب «سعيد»؟ وماذا يتغيّر لو أضفنا إليه فقلنا «يا سعيدَ الحظّ»؟",
+ a:"في «يا سعيدُ»: سعيد منادى، عَلَم مفرد، مبنيّ على الضمّ في محل نصب. أمّا في «يا سعيدَ الحظّ»: أصبح «سعيد» مضافًا إلى «الحظّ»، فيتحوّل من مبنيّ إلى معرب منصوب وجوبًا؛ لأنّ المنادى المضاف يكون معربًا دائمًا."},
+{q:"ما الفرق الدقيق بين اسم الآلة واسم المفعول في كلمة مثل «مِفتاح»؟ ولماذا لا نعتبرها اسم مفعول رغم أنها تبدأ بميم؟",
+ a:"اسم المفعول يدلّ على مَن/ما وقع عليه الفعل (كأن يُفتح البابُ فهو مفتوح)، أمّا اسم الآلة فيدلّ على الأداة التي يُنجَز بها الفعل (المفتاح أداة يُفتح بها الباب، ولا يقع عليه فعل الفتح هو نفسه). والفارق الصرفيّ: اسم المفعول من الثلاثي على وزن مفعول (مفتوح)، بينما اسم الآلة على أوزان مختلفة كـ(مِفْعال): مِفتاح."},
+{q:"في «كم كتابًا قرأتَ هذا الصيف؟» و«كم كتابٍ أفادني!» ما الفرق بين الجملتين مع أنّ الكلمة الأولى «كم» في الحالتين واحدة؟",
+ a:"الأولى «كم» استفهامية تطلب تحديد عدد الكتب (تحتاج جوابًا رقميًّا)، وتمييزها «كتابًا» مفرد منصوب. الثانية «كم» خبرية تفيد التكثير (بمعنى: كتبٌ كثيرة أفادتني)، وتمييزها «كتابٍ» مفرد مجرور بالإضافة."},
+{q:"لو أردتَ أن تكتب خاطرة عن «الأمل»، ما الفرق بين ما ستكتبه هنا وبين ما تكتبه في مقالة اجتماعية عن الموضوع نفسه؟",
+ a:"الخاطرة أقصر وأكثر ذاتية وعفوية، تعبّر عن شعورك الشخصيّ الصادق تجاه الأمل بأسلوب أدبيّ مكثّف ومصوَّر دون التزام بعرض حجج أو أدلّة. أمّا المقالة الاجتماعية فتتطلّب معالجة الموضوع بحقائق وبراهين وأمثلة واقعية من المجتمع، بلغة أكثر موضوعية وتحليلًا، وقد تكون أطول."},
+{q:"ما الذي يجعل بحر «الطويل» بلا مجزوء، بينما تأتي بحور أخرى كالوافر والرجز تامّة ومجزوءة؟",
+ a:"هذا من خصائص كل بحر التي حدّدها العروضيّون استقراءً من كلام العرب واستعمالهم الفعليّ، فبحر الطويل بطبيعته وطول تفعيلاته (فعولن مفاعيلن) لم يرد عن العرب مجزوءًا؛ فحذف تفعيلة منه يُخِلّ بإيقاعه المميّز، بخلاف بحور كالوافر والرجز التي وردت عن العرب بصورتيها التامة والمجزوءة معًا."},
+{q:"في «ما أجملَ الابتسامةَ!»، حاول أن تحوّل الجملة إلى صيغة التعجّب الثانية (أفعِلْ بِ). ماذا يحدث لإعراب «الابتسامة»؟",
+ a:"تصبح: «أجْمِلْ بالابتسامةِ!». وتتغيّر «الابتسامة» من مفعول به منصوب (في صيغة ما أفعَلَ) إلى فاعل مجرور لفظًا مرفوع محلًّا؛ لأنّ الباء في هذه الصيغة زائدة وجوبًا، والفعل «أجمِلْ» فعل ماضٍ جامد جاء على صورة الأمر لإنشاء التعجّب."},
+{q:"لماذا تُعَدّ قصّة «رسم القلب» رمزية، وما الرمز الذي تحمله النبتة برأيك؟",
+ a:"تُعَدّ رمزية لأنّ علاقة الراوي بالنبتة تتجاوز كونها مجرّد نبات منزليّ لتصبح مرآة لعلاقة الإنسان بكل كائن حيّ يحتاج رعاية ووقتًا، وربما ترمز النبتة إلى العلاقات الإنسانية أو الالتزامات التي نستثقلها في البداية، لكنّها تكشف عمقها وقيمتها الحقيقية كلّما استثمرنا فيها الوقت والعناية."},
+{q:"ميّز بين الاسم الممدود الممنوع من الصرف والاسم الممدود المصروف بمثالين من عندك.",
+ a:"الممدود الممنوع من الصرف: همزته زائدة للتأنيث، مثل «صحراء» (لا تُنوَّن، وتُجرّ بالفتحة: سرتُ في صحراءَ). الممدود المصروف: همزته أصلية أو منقلبة عن أصل، مثل «إنشاء» و«بناء» (من بنى)، وهذان يُصرفان وينوَّنان بشكل طبيعيّ: كتبتُ إنشاءً."},
+{q:"ما العلاقة بين مضمون قصيدة «العربية في ماضيها وحاضرها» ونصّ «البيان» للمنفلوطي في هذه الوحدة؟ لماذا اختار واضعو الكتاب أن يجمعوا بينهما؟",
+ a:"كلاهما يتمحور حول قيمة اللغة العربية وبيانها؛ فالقصيدة تتغنّى بأمجاد اللغة ماضيًا وتدعو للنهوض بها حاضرًا، بينما يتأمّل المنفلوطي في نصّه مفهوم «البيان» ذاته بوصفه جوهر الفصاحة. جمعُهما يعزّز رسالة الوحدة (لغة البيان) من زاويتين: عاطفية شعرية، وفكرية تأمّلية نثرية."},
+{q:"اشرح بأسلوبك: لماذا تُعَدّ «كاد» فعلًا ناقصًا مثل «كان»، رغم اختلاف المعنى تمامًا بينهما؟",
+ a:"سُمّيت ناقصة لأنّها -مثل كان- لا تكتفي بمرفوعها (اسمها) لتمام المعنى، بل تحتاج خبرًا لإتمام الجملة، وتدخل على المبتدأ والخبر فترفع الأول وتنصب الثاني. الفارق أنّ «كان» تدلّ على الزمن المطلق، بينما «كاد» (وأخواتها) تضيف معنى خاصًّا كالمقاربة من وقوع الفعل، لا مجرّد كينونته."},
+{q:"في بحر المتقارب، بيت «ألا انهضْ وسِرْ في سبيلِ الحياةْ» - جرّب أن تُقطّع الشطر الثاني بنفسك ذهنيًّا قبل أن تراجع الجواب.",
+ a:"التقطيع: وسر في سبي / لل حياتْ ← وَ سِرْ فِي سَ / بِي لِلْ حَ / يَاةْ، على وزن: فَعُولُنْ فَعُولُنْ فَعُو (فعولن منقوصة في الضرب، وهذا شائع في هذا البحر)."},
+{q:"لماذا نقول إنّ التمييز «فضلة» في الجملة، مع أنّه أحيانًا يبدو ضروريًّا لفهم المعنى، كما في «عندي عشرون»؟",
+ a:"يُقصد بـ«فضلة» في الاصطلاح النحويّ أنّه ليس ركنًا أساسيًّا في الجملة (كالفاعل أو المبتدأ أو الخبر) تكتمل به الجملة تركيبيًّا من دونه، لا أنّه غير مهمّ للمعنى. فجملة «عندي عشرون» صحيحة تركيبيًّا وإن كان معناها مبهمًا، والتمييز يأتي ليكمل هذا الإبهام الدلاليّ لا التركيبيّ."},
+{q:"ما الحكمة من كون الرثاء والاعتذار والتهنئة كلّها أنواعًا لفنّ واحد هو «الرسالة الشخصية»؟",
+ a:"لأنّ الرسالة الشخصية في جوهرها وسيلة تواصل وجدانيّ بين طرفين تجمعهما صداقة أو قرابة، وما يوحّد أنواعها المختلفة (عتاب، تهنئة، عزاء...) هو الأسلوب الفنيّ المشترك: الوضوح والبساطة والإيجاز والصدق العاطفيّ، وإن اختلف الموقف الحياتيّ الذي استدعى كتابتها."},
+{q:"في «أعِذْها بك» التي قالتها امرأة عمران، ما الذي يكشفه هذا الدعاء عن مكانة مريم عليها السلام قبل ولادتها حتى؟",
+ a:"يكشف الدعاء عن حرص أمّها الشديد ومحبّتها العميقة، إذ التجأت إلى الله تعالى لحماية مريم وذريتها من الشيطان الرجيم قبل أن تراها حتى، وهذا يمهّد لما سيكشفه سياق الآيات لاحقًا من اصطفاء الله تعالى لمريم على نساء العالمين، فكأنّ دعاء الأمّ كان إرهاصًا مبكّرًا لهذه المكانة العظيمة."},
+{q:"لو قارنّا بين «الحكاية» و«القصّة القصيرة» بوصفهما فنّين درستهما هذا العام، فما أبرز فارق بينهما؟",
+ a:"القصّة القصيرة فنّ أدبيّ مكتوب له مؤلّف معروف، تُعنى بحبكة محكمة وتحليل نفسيّ للشخصيات وأبعاد داخلية وخارجية. أمّا الحكاية فشكل شفاهيّ شعبيّ غالبًا بلا مؤلّف معروف، أبسط بناءً وأسرع سردًا، وتُعنى بالموضوعات الغريبة والنادرة أكثر من التحليل النفسيّ العميق."},
+{q:"«جواد على العِلّاتِ بالمال كلّه» - حدّد وزن كلمة «جواد» صرفيًّا، ثم بيّن الفرق بينها وبين لو قلنا «رجل كريم».",
+ a:"«جواد» صيغة مبالغة على وزن (فَعال)، تفيد الكثرة والمبالغة في صفة الجود (أي: كثير الجود جدًّا، تكرّر منه الفعل مرارًا). أمّا «كريم» فصفة مشبَّهة تدلّ على اتصاف صاحبها بالكرم اتصافًا دائمًا أو غالبًا من غير تأكيد على تكرار الفعل ذاته وكثرته، فالفارق دقيق بين الدوام (المشبَّهة) والكثرة/التكرار (المبالغة)."},
+{q:"إذا كانت القافية في بيت شعريّ تنتهي بـ«...القمرِ»، والحرف الذي قبل الراء متحرّك (مكسور)، فهل تصلح الراء أن تكون رويًّا؟ ولماذا؟",
+ a:"نعم تصلح؛ فجميع الحروف تصلح أن تكون رويًّا ما عدا حروف المدّ الساكنة، والراء هنا حرف صحيح متحرّك (مكسور) في آخر الكلمة فيصلح رويًّا بلا إشكال؛ والقاعدة الخاصة بعدم الصلاحية تتعلق أساسًا بحروف العلّة الساكنة الممدودة، وبالهاء إذا سبقها متحرّك لا حرف ساكن."},
+];
+/* ============================================================
+   تمارين تعبئة الفراغات — لكل وحدة نظامية تمرينان
+   ============================================================ */
+const FILL_BLANKS = {
+1:[
+  {text:"«يا ___َ العلمِ، واظِبْ على دروسِك» — أكمل المنادى المضاف المناسب:", answer:"طالب", hint:"اسم من يطلب العلم"},
+  {text:"اسم الفاعل من الفعل «سعى» هو: ___", answer:"ساعٍ", hint:"وزن فاعِل من ثلاثي معتلّ"},
+],
+2:[
+  {text:"كلمة «___تُخذ» (فعل خماسيّ ماضٍ) هل تبدأ بهمزة وصل أم قطع؟ اكتب الكلمة كاملة (اتّخذ):", answer:"اتخذ", hint:"ماضي خماسيّ يبدأ بهمزة وصل"},
+  {text:"الهمزة في كلمة «مُؤْتة» همزة ___ (نوعها):", answer:"متوسطة", hint:"ليست في أول الكلمة ولا آخرها"},
+],
+3:[
+  {text:"في «___ يجتهدْ ينجحْ»، أكمل بأداة الشرط الجازمة المناسبة (بمعنى: من):", answer:"من", hint:"اسم شرط جازم للعاقل"},
+  {text:"مؤنّث «حيران» على وزن فَعْلى هو: ___", answer:"حيرى", hint:"صفة مشبَّهة، وزن فَعْلى"},
+],
+4:[
+  {text:"اسم المكان من «جلسَ» (مضارعه يجلِس) هو: م___", answer:"مجلس", hint:"وزن مَفْعِل؛ لأن مضارعه مكسور العين"},
+  {text:"اسم المكان من «لعبَ» (مضارعه يلعَب، مفتوح العين) هو: م___", answer:"ملعب", hint:"وزن مَفْعَل"},
+],
+5:[
+  {text:"«يجب أن ___َ (نتوحَّد) بلا خلاف» - اضبط الفعل بعد أنْ الناصبة (اكتب الفعل كاملًا):", answer:"نتوحد", hint:"منصوب بفتحة ظاهرة"},
+  {text:"اسم المرّة من «ضَرَبَ» هو: ضَرْ___", answer:"ضربة", hint:"وزن فَعْلة"},
+],
+6:[
+  {text:"«جاء الطلابُ ___هم» - أكمل بلفظ التوكيد المعنويّ المناسب:", answer:"كل", hint:"لفظ توكيد معنويّ شائع"},
+  {text:"اسم الآلة من «غَسَلَ» على وزن فَعّالة هو: ___", answer:"غسالة", hint:"جهاز يُغسل به"},
+],
+8:[
+  {text:"«اشتركَ في الرحلة خمسةَ ___ طالبًا» أكمل العدد المركّب (١٥):", answer:"عشر", hint:"جزء العدد المركّب الثاني"},
+  {text:"مصدر الفعل «أحسنَ» على وزن إفعال هو: إ___", answer:"إحسان", hint:"مصدر قياسي لفعل رباعي"},
+],
+9:[
+  {text:"«___ أجملَ الابتسامةَ!» أكمل بأداة التعجّب القياسية:", answer:"ما", hint:"نكرة تعجبية"},
+  {text:"المصدر الميميّ من «ذهبَ» (ثلاثي صحيح) هو: مَ___", answer:"مذهب", hint:"وزن مَفْعَل"},
+],
+10:[
+  {text:"«___ طالبًا نجح في الامتحان؟» أكمل بأداة الاستفهام المناسبة:", answer:"كم", hint:"أداة استفهام عن العدد"},
+  {text:"اسم مقصور مضادّ لكلمة «الباطل» في المعنى (الحقّ/الهدى)، اكتبه: ___", answer:"الهدى", hint:"ينتهي بألف مقصورة"},
+],
+11:[
+  {text:"«ازدادَ الطلبةُ ___ا على العلم» أكمل بتمييز نسبة مناسب (من الفعل أقبل):", answer:"إقبالا", hint:"مصدر الفعل أقبل"},
+],
+12:[
+  {text:"«جاء ___ٍ» (من القضاء) أكمل الاسم المنقوص نكرة في حالة الرفع:", answer:"قاض", hint:"يُحذف آخره وينوَّن"},
+],
+13:[
+  {text:"«___ اللهُ أنْ يجعلَ بعد عسرٍ يسرًا» أكمل بفعل الرجاء المناسب:", answer:"عسى", hint:"من أفعال الرجاء"},
+],
+};
+/* ============================================================
+   المحرّك الرئيس — التنقّل وبناء الصفحات
+   ============================================================ */
+const UNIT_COLORS = ["#0e5259","#8c2144","#b8863a","#0e5259","#8c2144","#b8863a","#0e5259","#8c2144","#b8863a","#0e5259","#8c2144","#b8863a","#0e5259","#8c2144"];
+
+function esc(s){
+  if(s===null||s===undefined) return "";
+  return String(s);
+}
+
+/* -------------------- التنقّل بين الصفحات -------------------- */
+function showView(id){
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  const target = document.getElementById("view-"+id);
+  if(target) target.classList.add("active");
+  document.querySelectorAll(".tab-pill").forEach(p=>p.classList.remove("active"));
+  const pill = document.querySelector('.tab-pill[data-view="'+id+'"]');
+  if(pill){ pill.classList.add("active"); if(typeof pill.scrollIntoView==="function") pill.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"}); }
+  if(typeof window.scrollTo==="function") window.scrollTo({top:0, behavior:"smooth"});
+  if(id==="glossary") renderGlossary();
+  if(id==="cheatsheet") renderCheatSheet();
+  if(id==="quiz" && !quizState.started) renderQuizIntro();
+  if(id==="challenge") renderChallenge();
+}
+function goHome(){ showView("home"); }
+
+/* -------------------- بناء شريط التبويبات -------------------- */
+function buildTabs(){
+  const wrap = document.getElementById("unitTabsInject");
+  let html = "";
+  UNITS.forEach(u=>{
+    html += `<div class="tab-pill" data-view="u${u.id}" onclick="showView('u${u.id}')">
+      <span class="num">${toArabicDigits(u.id)}</span> ${esc(u.title)}
+    </div>`;
+  });
+  wrap.innerHTML = html;
+}
+function toArabicDigits(n){
+  const map = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+  return String(n).split("").map(d=> map[+d] !== undefined ? map[+d] : d).join("");
+}
+
+/* -------------------- الصفحة الرئيسية: شبكة الوحدات -------------------- */
+function buildHomeGrid(){
+  const grid = document.getElementById("unitsOverviewGrid");
+  let html = "";
+  UNITS.forEach(u=>{
+    const sub = u.kind==="prosody" ? "علم العروض" : (u.readingAuthor ? (u.readingType+" — "+u.readingAuthor) : u.readingType);
+    html += `<div class="unit-mini-card ${u.kind==='prosody'?'prosody':''}" onclick="showView('u${u.id}')">
+      <div class="umc-num">${u.icon||toArabicDigits(u.id)}</div>
+      <div><h6>${esc(u.title)}</h6><small>الوحدة ${toArabicDigits(u.id)} · ${esc(sub)}</small></div>
+    </div>`;
+  });
+  grid.innerHTML = html;
+}
+
+/* -------------------- بناء صفحات الوحدات -------------------- */
+function buildUnitViews(){
+  const wrap = document.getElementById("unitViewsInject");
+  let html = "";
+  UNITS.forEach(u=>{
+    html += (u.kind==="prosody") ? renderProsodyUnit(u) : renderRegularUnit(u);
+  });
+  wrap.innerHTML = html;
+}
+
+function renderRegularUnit(u){
+  const semLabel = u.semester===1 ? "الفصل الدراسيّ الأول" : "الفصل الدراسيّ الثاني";
+  let subtabsHtml = `
+    <div class="subtabs">
+      <div class="subtab-btn active" data-sub="reading" onclick="switchSubtab(${u.id},'reading')">📖 القراءة والأدب</div>
+      <div class="subtab-btn" data-sub="vocab" onclick="switchSubtab(${u.id},'vocab')">🔤 المعجم والدلالة</div>
+      <div class="subtab-btn" data-sub="grammar" onclick="switchSubtab(${u.id},'grammar')">📐 القضايا اللغوية</div>
+      <div class="subtab-btn" data-sub="writing" onclick="switchSubtab(${u.id},'writing')">✍️ الكتابة</div>
+      <div class="subtab-btn" data-sub="heritage" onclick="switchSubtab(${u.id},'heritage')">🏺 من لغتنا الجميلة</div>
+      ${FILL_BLANKS[u.id] ? `<div class="subtab-btn" data-sub="practice" onclick="switchSubtab(${u.id},'practice')">✅ تدرّب</div>` : ""}
+    </div>`;
+
+  // ---- لوحة القراءة والأدب ----
+  let readingPanel = `<div class="subpanel active" id="panel-${u.id}-reading">`;
+  readingPanel += `<div class="reading-block"><span class="quote-mark">"</span>
+      <div class="section-tag ${u.readingType==='قرآن كريم'?'tag-gold':''}">${u.readingType}${u.readingAuthor? " — "+esc(u.readingAuthor):""}</div>
+      <h3 class="font-display" style="color:var(--teal-deeper)">${esc(u.readingTitle)}</h3>
+      ${u.readingRef? `<p style="color:var(--ink-soft); font-size:.85rem;">${esc(u.readingRef)}</p>`:""}
+      ${u.readingNote? `<div class="meta-chip" style="background:var(--gold-pale); color:#7a5518; display:inline-flex; border:none; margin-bottom:10px;">📌 ${esc(u.readingNote)}</div>`:""}
+      <p style="margin-top:14px;">${esc(u.textSummary)}</p>
+    </div>`;
+  if(u.authorBio){
+    readingPanel += `<div class="author-card">
+      <div class="author-avatar">${esc(u.authorBio.name).trim().charAt(0)}</div>
+      <div><h4>${esc(u.authorBio.name)} ${u.authorBio.dates?`<span class="dates">(${esc(u.authorBio.dates)})</span>`:""}</h4>
+      <p style="margin:0; color:var(--ink-soft);">${esc(u.authorBio.bio)}</p></div>
+    </div>`;
+  }
+  readingPanel += `</div>`;
+
+  // ---- لوحة المعجم والدلالة ----
+  let vocabPanel = `<div class="subpanel" id="panel-${u.id}-vocab">
+    <div class="section-card"><div class="section-tag">🔤 المعجم والدلالة</div>
+    <div class="vocab-grid">`;
+  (u.vocabulary||[]).forEach(v=>{
+    vocabPanel += `<div class="vocab-item"><div class="term">${esc(v.term)}</div><div class="mean">${esc(v.meaning)}</div></div>`;
+  });
+  vocabPanel += `</div></div></div>`;
+
+  // ---- لوحة القضايا اللغوية ----
+  let grammarPanel = `<div class="subpanel" id="panel-${u.id}-grammar">`;
+  (u.grammarTopics||[]).forEach(g=>{
+    grammarPanel += `<div class="rule-card"><h5>📐 ${esc(g.title)}</h5><p>${esc(g.explanation)}</p>`;
+    (g.examples||[]).forEach(ex=>{
+      grammarPanel += `<div class="example-box"><div class="ex-ar">${esc(ex.ar)}</div>
+        <div style="margin-top:6px; font-size:.85rem; color:var(--ink-soft);">💡 ${esc(ex.note)}</div></div>`;
+    });
+    grammarPanel += `</div>`;
+  });
+  grammarPanel += `</div>`;
+
+  // ---- لوحة الكتابة ----
+  let writingPanel = `<div class="subpanel" id="panel-${u.id}-writing">`;
+  if(u.writingGenre){
+    writingPanel += `<div class="section-card tinted"><div class="section-tag tag-gold">✍️ فنّ الكتابة: ${esc(u.writingGenre.title)}</div>
+      <p>${esc(u.writingGenre.explanation)}</p>
+      <ul class="tip-list">`;
+    (u.writingGenre.tips||[]).forEach(t=>{
+      writingPanel += `<li><span class="ic">◆</span><span>${esc(t)}</span></li>`;
+    });
+    writingPanel += `</ul></div>`;
+  }
+  writingPanel += `</div>`;
+
+  // ---- لوحة من لغتنا الجميلة ----
+  let heritagePanel = `<div class="subpanel" id="panel-${u.id}-heritage">`;
+  if(u.literaryPiece){
+    heritagePanel += `<div class="reading-block">
+      <div class="section-tag tag-burgundy">🏺 مختارات من لغتنا الجميلة</div>
+      <h4 class="font-display" style="color:var(--burgundy)">${esc(u.literaryPiece.title)}</h4>
+      ${u.literaryPiece.author? `<p class="author-line">${esc(u.literaryPiece.author)}</p>`:""}
+      ${u.literaryPiece.note? `<p>${esc(u.literaryPiece.note)}</p>`:""}
+    </div>`;
+    if(u.literaryPiece.authorBio){
+      heritagePanel += `<div class="author-card">
+        <div class="author-avatar">${esc(u.literaryPiece.author||"؟").charAt(0)}</div>
+        <div><h4>${esc(u.literaryPiece.author)}</h4><p style="margin:0; color:var(--ink-soft);">${esc(u.literaryPiece.authorBio)}</p></div>
+      </div>`;
+    }
+  } else {
+    heritagePanel += `<div class="section-card"><p style="color:var(--ink-soft);">راجع كتابك المدرسيّ لقراءة النصّ الختاميّ الكامل لهذه الوحدة من «مختارات من لغتنا الجميلة».</p></div>`;
+  }
+  heritagePanel += `</div>`;
+
+  // ---- لوحة التدرّب (تعبئة الفراغات) ----
+  let practicePanel = "";
+  if(FILL_BLANKS[u.id]){
+    practicePanel = `<div class="subpanel" id="panel-${u.id}-practice"><div class="section-card">
+      <div class="section-tag tag-gold">✅ تدرّب: أكمل الفراغ</div>`;
+    FILL_BLANKS[u.id].forEach((fb,i)=>{
+      const inputId = `fb-${u.id}-${i}`;
+      practicePanel += `<div style="margin-bottom:18px; padding-bottom:16px; border-bottom:1px dashed var(--cream-line);">
+        <p style="margin-bottom:8px;">${i+1}. ${esc(fb.text)}</p>
+        <input type="text" class="fill-blank" id="${inputId}" placeholder="اكتب إجابتك">
+        <button class="check-btn" onclick="checkBlank('${inputId}', '${esc(fb.answer)}')">تحقّق</button>
+        <span class="fb-result" id="${inputId}-result"></span>
+        <div style="font-size:.8rem; color:var(--gold); margin-top:4px;">💡 تلميح: ${esc(fb.hint)}</div>
+      </div>`;
+    });
+    practicePanel += `</div></div>`;
+  }
+
+  return `
+  <section class="view" id="view-u${u.id}">
+    <div class="unit-hero" style="background:linear-gradient(135deg, ${UNIT_COLORS[(u.id-1)%UNIT_COLORS.length]}dd, var(--teal-deeper) 70%);">
+      <svg class="rosette-deco" viewBox="0 0 100 100"><g fill="none" stroke="#fff" stroke-width="1.6"><circle cx="50" cy="50" r="34"/><path d="M50 16 L59 39 L84 39 L64 54 L72 78 L50 63 L28 78 L36 54 L16 39 L41 39 Z"/></g></svg>
+      <div class="eyebrow">📚 ${semLabel} · الوحدة ${toArabicDigits(u.id)}</div>
+      <h1 class="font-display">${u.icon||""} ${esc(u.title)}</h1>
+      <div class="desc">${esc(u.textSummary ? u.textSummary.slice(0,150)+"…" : "")}</div>
+      <div class="meta-chips">
+        <div class="meta-chip">📖 ${esc(u.readingType)}${u.readingAuthor?" — "+esc(u.readingAuthor):""}</div>
+        ${u.writingGenre? `<div class="meta-chip">✍️ ${esc(u.writingGenre.title)}</div>`:""}
+        ${(u.grammarTopics||[]).map(g=>`<div class="meta-chip">📐 ${esc(g.title)}</div>`).join("")}
+      </div>
+    </div>
+    ${subtabsHtml}
+    ${readingPanel}${vocabPanel}${grammarPanel}${writingPanel}${heritagePanel}${practicePanel}
+
+    <div class="section-card" style="margin-top:26px;">
+      <div class="section-tag tag-outline">🗝️ أهمّ ما يجب أن تتذكّره من هذه الوحدة</div>
+      <ul class="tip-list">
+        ${(u.keyPoints||[]).map(k=>`<li><span class="ic">✓</span><span>${esc(k)}</span></li>`).join("")}
+      </ul>
+    </div>
+    <div style="display:flex; justify-content:space-between; margin-top:20px;">
+      ${u.id>1 ? `<button class="btn btn-outline-secondary" onclick="showView('u${u.id-1}')">→ الوحدة السابقة</button>`:"<span></span>"}
+      ${u.id<14 ? `<button class="btn" style="background:var(--teal-deep); color:#fff;" onclick="showView('u${u.id+1}')">الوحدة التالية ←</button>`:"<span></span>"}
+    </div>
+  </section>`;
+}
+
+function switchSubtab(unitId, sub){
+  const unitView = document.getElementById("view-u"+unitId);
+  unitView.querySelectorAll(".subtab-btn").forEach(b=>b.classList.remove("active"));
+  unitView.querySelector(`.subtab-btn[data-sub="${sub}"]`).classList.add("active");
+  unitView.querySelectorAll(".subpanel").forEach(p=>p.classList.remove("active"));
+  document.getElementById(`panel-${unitId}-${sub}`).classList.add("active");
+}
+
+function checkBlank(inputId, correctAnswer){
+  const input = document.getElementById(inputId);
+  const resultEl = document.getElementById(inputId+"-result");
+  if(normalizeAr(input.value)===normalizeAr(correctAnswer)){
+    resultEl.innerHTML = "✅ إجابة صحيحة!";
+    resultEl.style.color = "var(--ok)";
+    input.style.borderColor = "var(--ok)";
+  } else {
+    resultEl.innerHTML = `❌ حاول مجددًا (الإجابة: ${correctAnswer})`;
+    resultEl.style.color = "var(--bad)";
+    input.style.borderColor = "var(--bad)";
+  }
+}
+
+/* ============================================================
+   المعجم القابل للبحث (مُجمَّع تلقائيًّا من كل الوحدات)
+   ============================================================ */
+function buildGlossaryData(){
+  let list = [];
+  UNITS.forEach(u=>{
+    (u.vocabulary||[]).forEach(v=>{
+      list.push({term:v.term, meaning:v.meaning, unitId:u.id, unitTitle:u.title});
+    });
+  });
+  return list;
+}
+const GLOSSARY_DATA = null; // سيُبنى عند التحميل عبر buildGlossaryData()
+let GLOSSARY_CACHE = [];
+
+/* تطبيع النص العربي: إزالة التشكيل وتوحيد صور الألف والتاء المربوطة والياء
+   لأنّ مفردات المعجم مشكَّلة، بينما يكتب الطالب غالبًا بلا تشكيل */
+const TASHKEEL_RX = /[\u064B-\u0652\u0670\u0640]/g;
+function normalizeAr(s){
+  return String(s).replace(TASHKEEL_RX,"").replace(/[إأآا]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").trim();
+}
+function escapeRegex(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+// يبني نمط بحث "متسامحًا" يسمح بوجود علامات تشكيل اختيارية بين أحرف كلمة البحث
+function buildLenientPattern(q){
+  return q.split("").map(ch=> escapeRegex(ch)).join("[\\u064B-\\u0652\\u0670\\u0640]*");
+}
+
+function renderGlossary(){
+  if(GLOSSARY_CACHE.length===0) GLOSSARY_CACHE = buildGlossaryData();
+  const qRaw = (document.getElementById("glossarySearchInput").value||"").trim();
+  const qNorm = normalizeAr(qRaw);
+  const filtered = qNorm ? GLOSSARY_CACHE.filter(g=> normalizeAr(g.term).includes(qNorm) || normalizeAr(g.meaning).includes(qNorm)) : GLOSSARY_CACHE;
+  document.getElementById("glossaryCount").textContent = `عدد المفردات: ${toArabicDigits(filtered.length)} من أصل ${toArabicDigits(GLOSSARY_CACHE.length)}`;
+  let html = "";
+  if(filtered.length===0){
+    html = `<div style="padding:30px; text-align:center; color:var(--ink-soft);">لا توجد نتائج مطابقة لبحثك. جرّب كلمة أخرى أو بلا تشكيل.</div>`;
+  } else {
+    let rx = null;
+    if(qRaw){ try{ rx = new RegExp("("+buildLenientPattern(qRaw)+")","g"); }catch(e){ rx=null; } }
+    filtered.forEach(g=>{
+      let term = esc(g.term), mean = esc(g.meaning);
+      if(rx){
+        term = term.replace(rx, '<span class="g-highlight">$1</span>');
+        mean = mean.replace(rx, '<span class="g-highlight">$1</span>');
+      }
+      html += `<div class="glossary-row">
+        <div class="g-term">${term}</div>
+        <div class="g-mean">${mean}</div>
+        <div class="g-unit" style="cursor:pointer;" onclick="showView('u${g.unitId}')">و${toArabicDigits(g.unitId)}: ${esc(g.unitTitle)}</div>
+      </div>`;
+    });
+  }
+  document.getElementById("glossaryTable").innerHTML = html;
+}
+
+/* ============================================================
+   ورقة المراجعة الشاملة
+   ============================================================ */
+function renderCheatSheet(){
+  let html = "";
+  UNITS.forEach(u=>{
+    html += `<div class="cheat-unit-block">
+      <h5>${u.icon||""} و${toArabicDigits(u.id)} — ${esc(u.title)}</h5>
+      <ul class="cheat-list">${(u.keyPoints||[]).map(k=>`<li>${esc(k)}</li>`).join("")}</ul>
+    </div>`;
+  });
+  document.getElementById("cheatSheetContainer").innerHTML = html;
+}
+
+/* ============================================================
+   أسئلة التحدّي
+   ============================================================ */
+function renderChallenge(){
+  let html = "";
+  CHALLENGE_QUESTIONS.forEach((c,i)=>{
+    html += `<div class="challenge-card" id="ch-${i}" onclick="toggleChallenge(${i})">
+      <div class="ch-num">تحدٍّ ${toArabicDigits(i+1)}</div>
+      <div class="ch-q">${esc(c.q)}</div>
+      <div class="ch-toggle">👆 اضغط لكشف الإجابة</div>
+      <div class="ch-ans">${esc(c.a)}</div>
+    </div>`;
+  });
+  document.getElementById("challengeContainer").innerHTML = html;
+}
+function toggleChallenge(i){
+  document.getElementById("ch-"+i).classList.toggle("open");
+}
+/* ============================================================
+   محرّك الاختبار الشامل التفاعليّ (٥٠ سؤالًا)
+   ============================================================ */
+let quizState = {started:false, currentIndex:0, answers:[], finished:false, order:[]};
+
+function renderQuizIntro(){
+  const totalPts = QUIZ_QUESTIONS.reduce((s,q)=>s+q.points,0);
+  document.getElementById("quizContainer").innerHTML = `
+    <div class="section-card quiz-intro">
+      <div class="section-tag tag-burgundy" style="margin:0 auto 18px;">📝 الاختبار الشامل</div>
+      <div class="big-num font-display">${toArabicDigits(QUIZ_QUESTIONS.length)}</div>
+      <p style="font-size:1.1rem; margin:6px 0 4px;">سؤالًا يغطّي الوحدات الأربع عشرة كاملة</p>
+      <p style="color:var(--ink-soft);">بمجموع ${toArabicDigits(totalPts)} درجة، بمستويات صعوبة متدرّجة (سهل، متوسط، صعب) — بعد الانتهاء ستحصل على نتيجتك، وشرحًا مفصّلًا لكل سؤال أخطأت فيه، ثم ورقة مراجعة جاهزة.</p>
+      <button class="btn btn-lg" style="background:var(--teal-deep); color:#fff; margin-top:18px; padding:14px 44px; border-radius:30px; font-weight:800;" onclick="startQuiz()">ابدأ الاختبار الآن ←</button>
+    </div>`;
+}
+
+function startQuiz(){
+  quizState = {started:true, currentIndex:0, answers:[], finished:false};
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const idx = quizState.currentIndex;
+  const q = QUIZ_QUESTIONS[idx];
+  const total = QUIZ_QUESTIONS.length;
+  const pct = Math.round((idx/total)*100);
+  const diffLabel = {easy:"سهل", medium:"متوسط", hard:"صعب"}[q.difficulty];
+  const letters = ["أ","ب","ج","د"];
+
+  let optsHtml = "";
+  q.options.forEach((opt,i)=>{
+    optsHtml += `<div class="q-option" id="opt-${i}" onclick="selectAnswer(${i})">
+      <span class="opt-letter">${letters[i]}</span><span>${esc(opt)}</span>
+    </div>`;
+  });
+
+  document.getElementById("quizContainer").innerHTML = `
+    <div class="quiz-progress-wrap"><div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${pct}%"></div></div></div>
+    <div class="quiz-meta-row">
+      <span>السؤال ${toArabicDigits(idx+1)} من ${toArabicDigits(total)}</span>
+      <span>الوحدة ${toArabicDigits(q.unit)}</span>
+    </div>
+    <div class="q-card">
+      <span class="q-points">${toArabicDigits(q.points)} ${q.points===1?'درجة':'درجات'}</span>
+      <div class="q-diff ${q.difficulty}">${diffLabel}</div>
+      <div class="q-text">${esc(q.question)}</div>
+      <div class="q-options" id="qOptions">${optsHtml}</div>
+      <div class="quiz-explain" id="quizExplain"></div>
+      <div class="quiz-nav-row">
+        <span></span>
+        <button class="btn" id="nextBtn" style="background:var(--gold); color:#2a1c05; font-weight:800; border-radius:30px; padding:10px 30px; display:none;" onclick="nextQuestion()">
+          ${idx===total-1 ? "عرض النتيجة النهائية ←" : "السؤال التالي ←"}
+        </button>
+      </div>
+    </div>`;
+}
+
+function selectAnswer(i){
+  const q = QUIZ_QUESTIONS[quizState.currentIndex];
+  if(quizState.answers[quizState.currentIndex]!==undefined) return; // مُجاب مسبقًا
+  const isCorrect = i===q.correct;
+  quizState.answers[quizState.currentIndex] = {selected:i, correct:isCorrect, points: isCorrect?q.points:0};
+
+  document.querySelectorAll(".q-option").forEach((el,idx)=>{
+    el.classList.add("disabled");
+    if(idx===q.correct) el.classList.add("correct");
+    if(idx===i && !isCorrect) el.classList.add("wrong");
+    if(idx===i) el.classList.add("selected");
+  });
+  const explainBox = document.getElementById("quizExplain");
+  explainBox.innerHTML = (isCorrect? "✅ إجابة صحيحة! " : "❌ إجابة غير دقيقة. ") + esc(q.explanation);
+  explainBox.classList.add("show");
+  document.getElementById("nextBtn").style.display = "inline-block";
+}
+
+function nextQuestion(){
+  if(quizState.currentIndex < QUIZ_QUESTIONS.length-1){
+    quizState.currentIndex++;
+    renderQuestion();
+    if(typeof window.scrollTo==="function") window.scrollTo({top:0, behavior:"smooth"});
+  } else {
+    quizState.finished = true;
+    renderResults();
+  }
+}
+
+function renderResults(){
+  const totalPts = QUIZ_QUESTIONS.reduce((s,q)=>s+q.points,0);
+  const earnedPts = quizState.answers.reduce((s,a)=> s + (a? a.points:0), 0);
+  const correctCount = quizState.answers.filter(a=>a && a.correct).length;
+  const pct = Math.round((earnedPts/totalPts)*100);
+  const circumference = 2*Math.PI*80;
+  const offset = circumference - (pct/100)*circumference;
+
+  let verdict = "";
+  if(pct>=90) verdict = "🏆 ممتاز جدًّا! أنت في طريقك لأعلى الدرجات بإذن الله.";
+  else if(pct>=75) verdict = "🌟 أداء جيّد جدًّا! راجع نقاط ضعفك القليلة وستتقن المادّة كاملة.";
+  else if(pct>=50) verdict = "📘 أداء لا بأس به، لكن ثمّة وحدات تحتاج مراجعة أعمق.";
+  else verdict = "💪 هذه بداية جيّدة للمراجعة. اقرأ الشرح أدناه بعناية، وكرّر الاختبار لاحقًا.";
+
+  let reviewHtml = "";
+  const wrongOnes = quizState.answers.map((a,i)=>({a,i})).filter(x=> x.a && !x.a.correct);
+  if(wrongOnes.length===0){
+    reviewHtml = `<div class="section-card" style="text-align:center; color:var(--ok); font-weight:700;">🎉 أجبت عن جميع الأسئلة إجابة صحيحة! لا توجد أخطاء لمراجعتها.</div>`;
+  } else {
+    reviewHtml += `<h4 class="font-display" style="color:var(--teal-deeper); margin:26px 0 14px;">مراجعة الأسئلة التي أخطأت فيها (${toArabicDigits(wrongOnes.length)})</h4>`;
+    wrongOnes.forEach(x=>{
+      const q = QUIZ_QUESTIONS[x.i];
+      const letters = ["أ","ب","ج","د"];
+      reviewHtml += `<div class="review-item wrong-item">
+        <div class="rev-q">و${toArabicDigits(q.unit)} · ${esc(q.question)}</div>
+        <div class="rev-answers">
+          <div class="rev-your">إجابتك: ${letters[x.a.selected]}) ${esc(q.options[x.a.selected])}</div>
+          <div class="rev-correct">الإجابة الصحيحة: ${letters[q.correct]}) ${esc(q.options[q.correct])}</div>
+        </div>
+        <div class="rev-explain">${esc(q.explanation)}</div>
+      </div>`;
+    });
+  }
+
+  document.getElementById("quizContainer").innerHTML = `
+    <div class="section-card results-hero">
+      <div class="score-ring">
+        <svg width="190" height="190" viewBox="0 0 190 190">
+          <defs><linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d4af6a"/><stop offset="100%" stop-color="#0e5259"/>
+          </linearGradient></defs>
+          <circle class="ring-bg" cx="95" cy="95" r="80"/>
+          <circle class="ring-fill" cx="95" cy="95" r="80" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"/>
+        </svg>
+        <div class="ring-text"><b>${toArabicDigits(pct)}%</b><span>${toArabicDigits(earnedPts)} من ${toArabicDigits(totalPts)} درجة</span></div>
+      </div>
+      <p style="font-size:1.05rem; font-weight:700; color:var(--teal-deeper);">${verdict}</p>
+      <p style="color:var(--ink-soft);">أجبتَ إجابة صحيحة عن ${toArabicDigits(correctCount)} من أصل ${toArabicDigits(QUIZ_QUESTIONS.length)} سؤالًا.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:16px;">
+        <button class="btn" style="background:var(--teal-deep); color:#fff; border-radius:30px; padding:10px 26px; font-weight:700;" onclick="startQuiz()">🔁 أعد الاختبار</button>
+        <button class="btn" style="background:var(--gold); color:#2a1c05; border-radius:30px; padding:10px 26px; font-weight:700;" onclick="showView('cheatsheet')">🗂️ اذهب إلى ورقة المراجعة</button>
+      </div>
+    </div>
+    ${reviewHtml}
+  `;
+  if(typeof window.scrollTo==="function") window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ============================================================
+   العَروض التفاعليّ — رسم وتشغيل الإيقاع (Canvas + صوت)
+   ============================================================ */
+const RHYTHM_MAP = {
+  "فَعُولُنْ":['S','L','L'], "فَعُو":['S','L'], "فَعْلُنْ":['L','L'],
+  "مَفَاعِيلُنْ":['S','L','L','L'], "مَفَاعِي":['S','L','L'],
+  "مُفَاعَلَتُنْ":['S','L','S','S','L'], "مُفَاعَلْتُنْ":['S','L','L','L'],
+  "مُسْتَفْعِلُنْ":['L','L','S','L'], "مُتَفْعِلُنْ":['S','L','S','L'], "مُسْتَعِلُنْ":['L','S','L'], "مُتَفْعِلْ":['S','L','L'],
+  "فَاعِلَاتُنْ":['L','S','L','L'], "فَاعِلَاتُ":['L','S','L','S'], "فَعِلَاتُنْ":['S','S','L','L'], "فَالَاتُنْ":['L','L','L'],
+  "فَاعِلُنْ":['L','S','L'], "فَعِلُنْ":['S','S','L'],
+};
+let audioCtx = null;
+function beep(freq, dur){
+  try{
+    if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+    osc.type = "sine"; osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.16, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+dur);
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.start(); osc.stop(audioCtx.currentTime+dur);
+  }catch(e){/* الصوت غير متاح، لا بأس */}
+}
+
+function getBeats(tafeelaStr){
+  const names = tafeelaStr.trim().split(/\s+/);
+  let beats = []; let groups = [];
+  names.forEach(n=>{
+    const rhythm = RHYTHM_MAP[n] || ['S','L'];
+    groups.push({name:n, beats:rhythm});
+    rhythm.forEach(b=> beats.push(b));
+  });
+  return {groups, beats};
+}
+
+function drawMeterCanvas(canvasId, tafeelaStr){
+  const canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  const dpr = window.devicePixelRatio||1;
+  const cssWidth = canvas.clientWidth || canvas.parentElement.clientWidth || 600;
+  const cssHeight = 110;
+  canvas.width = cssWidth*dpr; canvas.height = cssHeight*dpr;
+  canvas.style.height = cssHeight+"px";
+  const ctx = canvas.getContext("2d");
+  ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,cssWidth,cssHeight);
+
+  const {groups} = getBeats(tafeelaStr);
+  const gap=6, groupGap=20, sWidth=22, lWidth=42, blockH=34, top=18;
+  let totalW = 0;
+  groups.forEach(g=> totalW += g.beats.reduce((s,b)=> s+(b==='S'?sWidth:lWidth)+gap,0) - gap + groupGap);
+  totalW -= groupGap;
+  let x = Math.max(10,(cssWidth-totalW)/2);
+  canvas._blocks = [];
+
+  groups.forEach((g)=>{
+    const gStartX = x;
+    g.beats.forEach(b=>{
+      const w = b==='S'? sWidth : lWidth;
+      ctx.fillStyle = b==='S' ? "#d4af6a" : "#0e5259";
+      roundRect(ctx, x, top, w, blockH, 7);
+      ctx.fill();
+      canvas._blocks.push({x, y:top, w, h:blockH, type:b});
+      x += w+gap;
+    });
+    const gEndX = x-gap;
+    ctx.fillStyle = "#5c4a33"; ctx.font = "13px Cairo, sans-serif"; ctx.textAlign="center";
+    ctx.fillText(g.name, (gStartX+gEndX)/2, top+blockH+22);
+    x += groupGap-gap;
+  });
+  canvas._ctx = ctx; canvas._top = top; canvas._blockH = blockH;
+}
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath();
+}
+
+function playMeterCanvas(canvasId, tafeelaStr, btn){
+  const canvas = document.getElementById(canvasId);
+  if(!canvas || !canvas._blocks) return;
+  if(btn) btn.disabled = true;
+  const blocks = canvas._blocks;
+  let i = 0;
+  function step(){
+    drawMeterCanvas(canvasId, tafeelaStr); // إعادة رسم لمسح التظليل السابق
+    if(i>0){ /* no-op */ }
+    if(i>=blocks.length){ if(btn) btn.disabled=false; return; }
+    const b = blocks[i];
+    const ctx = canvas.getContext("2d");
+    ctx.save();
+    ctx.strokeStyle = "#8c2144"; ctx.lineWidth = 3;
+    ctx.strokeRect(b.x-2, b.y-2, b.w+4, b.h+4);
+    ctx.restore();
+    beep(b.type==='S' ? 740 : 440, b.type==='S' ? 0.14 : 0.28);
+    i++;
+    setTimeout(step, b.type==='S' ? 230 : 380);
+  }
+  step();
+}
+
+/* -------------------- بناء وحدة العَروض -------------------- */
+function renderProsodyUnit(u){
+  const semLabel = u.semester===1 ? "الفصل الدراسيّ الأول" : "الفصل الدراسيّ الثاني";
+  let metersHtml = "";
+  u.meters.forEach((m,mi)=>{
+    const taamCanvasId = `cv-${u.id}-${mi}-taam`;
+    const majzooCanvasId = `cv-${u.id}-${mi}-majzoo`;
+    metersHtml += `<div class="meter-card">
+      <h5>${esc(m.name)}</h5>
+      <div class="meta-chip" style="background:var(--gold-pale); color:#7a5518; border:none; display:inline-flex; margin-bottom:6px;">🔑 مفتاح البحر: ${esc(m.key)}</div>
+      <p style="color:var(--ink-soft); margin-top:8px;">التفعيلة (تامّ): <strong style="color:var(--burgundy)">${esc(m.taamTafeela)}</strong></p>
+      <canvas class="meter-canvas" id="${taamCanvasId}"></canvas>
+      <button class="meter-play-btn" onclick="playMeterCanvas('${taamCanvasId}','${m.taamTafeela.replace(/'/g,"")}', this)">▶ استمع للإيقاع (تامّ)</button>
+      ${m.majzoo? `
+        <p style="color:var(--ink-soft); margin-top:18px;">التفعيلة (مجزوء): <strong style="color:var(--burgundy)">${esc(m.majzooTafeela)}</strong></p>
+        <canvas class="meter-canvas" id="${majzooCanvasId}"></canvas>
+        <button class="meter-play-btn" onclick="playMeterCanvas('${majzooCanvasId}','${m.majzooTafeela.replace(/'/g,"")}', this)">▶ استمع للإيقاع (مجزوء)</button>
+      `:""}
+      ${m.mashtoorNote? `<div class="example-box" style="margin-top:14px;">📌 ${esc(m.mashtoorNote)}</div>`:""}
+      <div class="example-box" style="margin-top:14px;">
+        <div style="font-size:.8rem; color:var(--teal-deep); font-weight:700; margin-bottom:6px;">مثال من الكتاب:</div>
+        <div class="poetry-line" style="font-size:1.1rem; margin-bottom:6px;">${esc(m.example.ar)}</div>
+        <div style="text-align:center; font-family:var(--serif-poetry); color:var(--gold); font-size:.95rem;">${esc(m.example.pattern)}</div>
+      </div>
+      <p style="margin-top:12px; font-size:.92rem;">${esc(m.note)}</p>
+    </div>`;
+  });
+
+  let qafiyaHtml = "";
+  if(u.qafiya){
+    qafiyaHtml = `<div class="rule-card"><h5>🔖 ${esc(u.qafiya.title)}</h5><p>${esc(u.qafiya.explanation)}</p></div>`;
+  }
+  let dharuratHtml = "";
+  if(u.dharurat){
+    dharuratHtml = `<div class="rule-card"><h5>🎭 ${esc(u.dharurat.title)}</h5><p>${esc(u.dharurat.explanation)}</p>`;
+    (u.dharurat.examples||[]).forEach(ex=>{
+      dharuratHtml += `<div class="example-box"><div class="ex-ar">${esc(ex.ar)}</div><div style="margin-top:6px; font-size:.85rem; color:var(--ink-soft);">💡 ${esc(ex.note)}</div></div>`;
+    });
+    dharuratHtml += `</div>`;
+  }
+
+  return `
+  <section class="view" id="view-u${u.id}">
+    <div class="unit-hero" style="background:linear-gradient(135deg, #5c1530dd, var(--teal-deeper) 70%);">
+      <svg class="rosette-deco" viewBox="0 0 100 100"><g fill="none" stroke="#fff" stroke-width="1.6"><circle cx="50" cy="50" r="34"/><path d="M50 16 L59 39 L84 39 L64 54 L72 78 L50 63 L28 78 L36 54 L16 39 L41 39 Z"/></g></svg>
+      <div class="eyebrow">🎼 ${semLabel} · الوحدة ${toArabicDigits(u.id)}</div>
+      <h1 class="font-display">${u.icon||""} ${esc(u.title)}</h1>
+      <div class="desc">${esc(u.intro)}</div>
+    </div>
+    <div class="divider-orn"><span class="font-display" style="color:var(--gold); font-size:1.2rem;">۞ اضغط «استمع للإيقاع» تحت كل بحر لتسمع نغمته وتشاهد تفعيلاته حيّة</span></div>
+    ${metersHtml}
+    ${qafiyaHtml}
+    ${dharuratHtml}
+    <div class="section-card" style="margin-top:26px;">
+      <div class="section-tag tag-outline">🗝️ أهمّ ما يجب أن تتذكّره من هذه الوحدة</div>
+      <ul class="tip-list">${(u.keyPoints||[]).map(k=>`<li><span class="ic">✓</span><span>${esc(k)}</span></li>`).join("")}</ul>
+    </div>
+    <div style="display:flex; justify-content:space-between; margin-top:20px;">
+      ${u.id>1 ? `<button class="btn btn-outline-secondary" onclick="showView('u${u.id-1}')">→ الوحدة السابقة</button>`:"<span></span>"}
+      ${u.id<14 ? `<button class="btn" style="background:var(--teal-deep); color:#fff;" onclick="showView('u${u.id+1}')">الوحدة التالية ←</button>`:"<span></span>"}
+    </div>
+  </section>`;
+}
+
+/* ============================================================
+   التهيئة عند تحميل الصفحة
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", function(){
+  buildTabs();
+  buildHomeGrid();
+  buildUnitViews();
+  showView("home");
+  // رسم كل لوحات العروض بعد إدراجها في الصفحة (حتى لو غير ظاهرة، لضمان أبعاد صحيحة عند الظهور)
+  window.addEventListener("resize", ()=>{
+    document.querySelectorAll("canvas.meter-canvas").forEach(cv=>{
+      if(cv.id && cv.closest(".view.active")){
+        // إعادة الرسم تُدار عند فتح الوحدة فعليًّا
+      }
+    });
+  });
+});
+
+/* إعادة رسم لوحات العروض عند تفعيل عرض وحدة تحتوي عليها */
+const _origShowView = showView;
+showView = function(id){
+  _origShowView(id);
+  const activeView = document.getElementById("view-"+id);
+  if(activeView){
+    const canvases = activeView.querySelectorAll("canvas.meter-canvas");
+    canvases.forEach(cv=>{
+      const unitMatch = id.match(/^u(\d+)$/);
+      if(unitMatch){
+        const unit = UNITS.find(x=>x.id===+unitMatch[1]);
+        if(unit && unit.kind==="prosody"){
+          unit.meters.forEach((m,mi)=>{
+            const taamId = `cv-${unit.id}-${mi}-taam`;
+            const majzooId = `cv-${unit.id}-${mi}-majzoo`;
+            if(document.getElementById(taamId)) drawMeterCanvas(taamId, m.taamTafeela);
+            if(m.majzoo && document.getElementById(majzooId)) drawMeterCanvas(majzooId, m.majzooTafeela);
+          });
+        }
+      }
+    });
+  }
+};
+
+</script>
+</body>
+</html>
